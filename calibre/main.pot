@@ -4,9 +4,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: calibre 1.38.0\n"
-"POT-Creation-Date: 2014-05-26 09:04+IST\n"
-"PO-Revision-Date: 2014-05-26 09:04+IST\n"
+"Project-Id-Version: calibre 1.39.0\n"
+"POT-Creation-Date: 2014-05-29 09:46+IST\n"
+"PO-Revision-Date: 2014-05-29 09:46+IST\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: LANGUAGE\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,8 @@ msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/customize/__init__.py:59
 #: /home/kovid/work/calibre/src/calibre/db/__init__.py:102
-#: /home/kovid/work/calibre/src/calibre/db/backend.py:1117
+#: /home/kovid/work/calibre/src/calibre/db/backend.py:1120
+#: /home/kovid/work/calibre/src/calibre/db/backend.py:1142
 #: /home/kovid/work/calibre/src/calibre/db/cache.py:227
 #: /home/kovid/work/calibre/src/calibre/db/cache.py:230
 #: /home/kovid/work/calibre/src/calibre/db/cache.py:241
@@ -1659,12 +1660,12 @@ msgstr ""
 msgid "Communicate with the JetBook Color reader."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/apnx.py:39
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/apnx.py:40
 #, python-format
 msgid "Not a valid MOBI file. Reports identity of %s"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/apnx.py:75
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/apnx.py:82
 msgid "Could not generate page mapping."
 msgstr ""
 
@@ -1672,32 +1673,32 @@ msgstr ""
 msgid "Communicate with the Kindle eBook reader."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:185
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:184
 #, python-format
 msgid "%(time)s<br />Last Page Read: %(loc)d (%(pr)d%%)"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:191
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:190
 #, python-format
 msgid "%(time)s<br />Last Page Read: Location %(loc)d (%(pr)d%%)"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:210
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:209
 #, python-format
 msgid "<b>Location %(dl)d &bull; %(typ)s</b><br />%(text)s<br />"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:219
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:218
 #, python-format
 msgid "<b>Page %(dl)d &bull; %(typ)s</b><br />"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:224
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:223
 #, python-format
 msgid "<b>Location %(dl)d &bull; %(typ)s</b><br />"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:289
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:287
 msgid "Communicate with the Kindle 2/3/4/Touch/PaperWhite eBook reader."
 msgstr ""
 
@@ -1705,31 +1706,36 @@ msgstr ""
 msgid "Send page number information when sending books"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:303
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:302
 msgid "The Kindle 3 and newer versions can use page number information in MOBI files. With this option, calibre will calculate and send this information to the Kindle when uploading MOBI files by USB. Note that the page numbers do not correspond to any paper book."
 msgstr ""
 
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:307
+msgid "Page count calculation method"
+msgstr ""
+
 #: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:308
-msgid "Use slower but more accurate page number calculation"
+msgid ""
+"There are multiple ways to generate the page number information. If a page count is given then the book will be divided into that many pages. Otherwise the number of pages will be approximated using one of the following methods.<ul> <li>fast: 2300 characters of uncompressed text per page.\n"
+"\n"
+" <li>accurate: Based on the number of chapters, paragraphs, and visible lines in the book. This method is designed to simulate an average paperback book where there are 32 lines per page and a maximum of 70 characters per line.\n"
+"\n"
+" <li>pagebreak: The \"pagebreak\" method uses the presense of <mbp:pagebreak> tags within the book to determine pages.</ul>Methods other than \"fast\" are going to be much slower. Further, if \"pagebreak\" fails to determine a page count accurate will be used, and if  \"accurate\" fails fast will be used."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:310
-msgid "There are two ways to generate the page number information. Using the more accurate generator will produce pages that correspond better to a printed book. However, this method is slower and will slow down sending files to the Kindle."
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:314
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:321
 msgid "Custom column name to retrieve page counts from"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:316
-msgid "If you have a custom column in your library that you use to store the page count of books, you can have calibre use that information, instead of calculating a page count. Specify the name of the custom column here, for example, #pages. "
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:322
+msgid "If you have a custom column in your library that you use to store the page count of books, you can have calibre use that information, instead of calculating a page count. Specify the name of the custom column here, for example, #pages."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:456
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:471
 msgid "Communicate with the Kindle DX eBook reader."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:468
+#: /home/kovid/work/calibre/src/calibre/devices/kindle/driver.py:483
 msgid "Communicate with the Kindle Fire"
 msgstr ""
 
@@ -2430,32 +2436,32 @@ msgstr ""
 msgid "Configure Device"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:59
+#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:62
 msgid "settings for device drivers"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:61
+#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:64
 msgid "Ordered list of formats the device will accept"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:63
+#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:66
 msgid "Place files in sub directories if the device supports them"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:65
+#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:68
 #: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget_ui.py:90
 msgid "Read metadata from files on device"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:67
+#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:70
 msgid "Use author sort instead of author"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:69
+#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:72
 msgid "Template to control how books are saved"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:72
+#: /home/kovid/work/calibre/src/calibre/devices/usbms/deviceconfig.py:75
 msgid "Extra customization"
 msgstr ""
 
@@ -4307,12 +4313,12 @@ msgid "This is an Amazon Topaz book. It cannot be processed."
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/mobi/tweak.py:46
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1064
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1070
 msgid "This is not a MOBI file. It is a Topaz file."
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/mobi/tweak.py:51
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1069
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1075
 msgid "This is not a MOBI file."
 msgstr ""
 
@@ -4521,53 +4527,63 @@ msgstr ""
 msgid "The file %s is not listed in the manifest"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:106
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:104
+#, python-format
+msgid "Remove %s from the book"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:105
+#, python-format
+msgid "Add %s to the manifest"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:117
 msgid "This file stores the bookmarks and last opened information from the calibre ebook viewer. You can remove it if you do not need that information, or dont want to share it with other people you send this book to."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:110
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:121
 msgid "Remove this file"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:115
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:126
 msgid "The bookmarks file used by the calibre ebook viewer is present"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:129
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:140
 #, python-format
 msgid "The file %s has a mimetype that does not match its extension"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:131
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:142
 #, python-brace-format
 msgid "The file {0} has its mimetype specified as {1} in the OPF file. The recommended mimetype for files with the extension \"{2}\" is {3}. You should change either the file extension or the mimetype in the OPF."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:136
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:147
 msgid "Change the file extension to .xhtml"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:139
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:150
 #, python-format
 msgid "Change the mimetype for this file in the OPF to %s"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:211
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:222
 #, python-format
 msgid "The linked resource %s is a directory"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:219
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:230
 #, python-format
 msgid "The linked resource %s does not exist"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:223
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:234
 #, python-format
 msgid "The link %s is a file:// URL"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:225
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/check/links.py:236
 #, python-format
 msgid "The link %s points to a file outside the book"
 msgstr ""
@@ -4829,11 +4845,11 @@ msgstr ""
 msgid "The id {0} is present on more than one element in {1}. This is not allowed. Remove the id from all but one of the elements"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1077
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1083
 msgid "This MOBI file does not contain a KF8 format book. KF8 is the new format from Amazon. calibre can only edit MOBI files that contain KF8 books. Older MOBI files without KF8 are not editable."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1083
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1089
 msgid "This MOBI file contains both KF8 and older Mobi6 data. calibre can only edit MOBI files that contain only KF8 data."
 msgstr ""
 
@@ -8350,7 +8366,7 @@ msgid "Choose background color"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/comments_editor.py:219
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/text.py:672
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/text.py:671
 msgid "Image"
 msgstr ""
 
@@ -10285,16 +10301,16 @@ msgstr ""
 msgid "Device"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:145
+#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:154
 msgid "Unknown formats"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:146
+#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:155
 #, python-brace-format
 msgid "You have enabled the <b>{0}</b> formats for your {1}. The {1} may not support them. If you send these formats to your {1} they may not work. Are you sure?"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:158
+#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:167
 #: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/mtp_config.py:113
 #: /home/kovid/work/calibre/src/calibre/gui2/library/delegates.py:495
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/plugboard.py:288
@@ -10302,7 +10318,7 @@ msgstr ""
 msgid "Invalid template"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:159
+#: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/configwidget.py:168
 #: /home/kovid/work/calibre/src/calibre/gui2/device_drivers/mtp_config.py:114
 #: /home/kovid/work/calibre/src/calibre/gui2/library/delegates.py:496
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/plugboard.py:289
@@ -12866,6 +12882,7 @@ msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/tag_categories.py:200
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/tag_categories.py:230
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:330
 msgid "Name already used"
 msgstr ""
 
@@ -13738,35 +13755,35 @@ msgstr ""
 msgid "Clear the font family"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:113
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:112
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/look_feel_ui.py:508
 msgid "Cover Browser"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:138
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:137
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/look_feel_ui.py:498
 msgid "Tag Browser"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:192
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:191
 msgid "Connected "
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:212
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:211
 #, python-format
 msgid " %(created)s %(name)s"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:212
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:211
 msgid "created by"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:215
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:214
 #, python-format
 msgid "%(num)d of %(total)d books"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:217
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:216
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/toolbar.py:59
 #: /home/kovid/work/calibre/src/calibre/library/server/browse.py:168
 #: /home/kovid/work/calibre/src/calibre/library/server/opds.py:130
@@ -13774,57 +13791,57 @@ msgstr ""
 msgid "%d books"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:219
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:218
 #, python-format
 msgid "%(num)s, %(sel)d selected"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:221
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:220
 #, python-brace-format
 msgid "{0}, {1} total"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:249
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:248
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/look_feel_ui.py:458
 msgid "Cover Grid"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:251
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:250
 #: /home/kovid/work/calibre/src/calibre/gui2/widgets.py:1003
 msgid "Toggle"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:331
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:334
 #: /home/kovid/work/calibre/src/calibre/library/server/ajax.py:316
 #: /home/kovid/work/calibre/src/calibre/library/server/browse.py:351
 #: /home/kovid/work/calibre/src/calibre/library/server/browse.py:655
 msgid "All books"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:334
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:337
 msgid "Search expression for this virtual library:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:359
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:362
 msgid "Sort alphabetically"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:362
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:365
 msgid "Restore hidden tabs"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:365
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:368
 #: /home/kovid/work/calibre/src/calibre/gui2/search_restriction_mixin.py:374
 msgid "Hide virtual library tabs"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:389
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:400
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:392
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:403
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/look_feel_ui.py:473
 msgid "Book Details"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/init.py:492
+#: /home/kovid/work/calibre/src/calibre/gui2/init.py:495
 #, python-format
 msgid "Restore %s"
 msgstr ""
@@ -14178,12 +14195,12 @@ msgid "Change text alignment for %s"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/library/views.py:323
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:254
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:275
 msgid "Left"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/library/views.py:323
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:254
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:275
 msgid "Right"
 msgstr ""
 
@@ -20817,6 +20834,7 @@ msgid "Choose file name"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/insert_resource.py:64
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:327
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/file_list.py:743
 msgid "No name specified"
 msgstr ""
@@ -20950,8 +20968,157 @@ msgstr ""
 msgid "A tag name cannot end with a colon"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/text.py:632
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/text.py:631
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:365
 msgid "Choose color"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:302
+msgid "Create custom theme"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:309
+msgid "&Name of custom theme:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:313
+msgid "&Builtin theme to base on:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:328
+msgid "You must specify a name for your theme"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:331
+#, python-format
+msgid "A custom theme with the name %s already exists"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:375
+msgid "No color"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:375
+#, python-brace-format
+msgid "Red: {0} Green: {1} Blue: {2}"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:418
+msgid "Remove color"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:424
+msgid "&Background"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:424
+msgid "&Foreground"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:428
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/widget.py:40
+msgid "&Italic"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:428
+msgid "B&old"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:438
+msgid "&Underline:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:443
+msgid "Color"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:454
+msgid "Create/edit custom theme"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:463
+msgid "&Edit theme:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:474
+msgid "Add &new theme"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:478
+msgid "&Remove theme"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/themes.py:492
+#, python-brace-format
+msgid ""
+"            <h2>Creating a custom theme</h2>\n"
+"\n"
+"            <p id=\"attribute\" lang=\"und\">You can create a custom syntax highlighting\n"
+"            theme, with your own colors and font styles. The most important\n"
+"            types of highlighting rules are described below. Note that not\n"
+"            every rule supports every kind of customization, for example,\n"
+"            changing font or underline styles for the <code>Cursor</code> rule\n"
+"            does not have any effect as that rule is used only for the color of\n"
+"            the blinking cursor.</p>\n"
+"\n"
+"            <p>As you make changes to your them on the left, the changes will\n"
+"            be reflected live in this panel.</p>\n"
+"\n"
+"            <p xml:lang=\"und\">\n"
+"            {0}\n"
+"                The most important rule. Sets the\n"
+"                foreground and background colors for the editor as well as the\n"
+"                style of \"normal\" text, that is, text that does not match any\n"
+"                special syntax.\n"
+"\n"
+"            {1}\n"
+"                Defines the colors for text selected by the mouse.\n"
+"\n"
+"            {2}\n"
+"                Defines the color for the line containing the cursor.\n"
+"\n"
+"            {3}\n"
+"                Defines the colors for the line numbers on the left.\n"
+"\n"
+"            {4}\n"
+"                Defines the colors for matching tags in HTML and matching\n"
+"                braces in CSS.\n"
+"\n"
+"            {5}\n"
+"                Used for highlighting tags in HTML\n"
+"\n"
+"            {6}\n"
+"                Used for highlighting attributes in HTML\n"
+"\n"
+"            {7}\n"
+"                Tag names in HTML\n"
+"\n"
+"            {8}\n"
+"                Namespace prefixes in XML and constants in CSS\n"
+"\n"
+"            {9}\n"
+"                Non-breaking spaces/hyphens in HTML\n"
+"\n"
+"            {10}\n"
+"                Syntax errors such as <this <>\n"
+"\n"
+"            {11}\n"
+"                Misspelled words such as <span lang=\"en\">thisword</span>\n"
+"\n"
+"            {12}\n"
+"                Comments like <!-- this one -->\n"
+"            </p>\n"
+"\n"
+"            <style type=\"text/css\">\n"
+"            /* Some CSS so you can see how the highlighting rules affect it */\n"
+"\n"
+"            p.someclass {{\n"
+"                font-family: serif;\n"
+"                font-size: 12px;\n"
+"                line-height: 1.2;\n"
+"            }}\n"
+"            </style>\n"
+"            "
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/widget.py:38
@@ -20964,10 +21131,6 @@ msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/widget.py:39
 msgid "<h3>Bold</h3>Make the selected text bold"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/widget.py:40
-msgid "&Italic"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/editor/widget.py:40
@@ -21344,25 +21507,25 @@ msgstr ""
 msgid "Choose the master file. All selected files will be merged into the master file:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:260
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:264
 #, python-format
 msgid "Inherited from %s"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:262
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:266
 #, python-format
 msgid "Matched CSS rules for %s"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:271
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:275
 msgid "Computed final style"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:316
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:333
 msgid "No style information found"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:317
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/live_css.py:334
 msgid "Move the cursor inside a HTML tag to see what styles apply to that tag."
 msgstr ""
 
@@ -21385,186 +21548,190 @@ msgstr ""
 msgid "Editor font &size:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:164
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:166
+msgid "Create/edit &custom color schemes"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:170
+msgid "&Color scheme:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:174
+msgid " characters"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:175
+msgid "Width of &tabs:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:178
+msgid "&Wrap long lines in the editor"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:182
+msgid "&Replace HTML entities as they are typed"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:184
+msgid "With this option, every time you type in a complete html entity, such as &amp;hellip; it is automatically replaced by its corresponding character. The replacement happens only when the trailing semi-colon is typed."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:190
+msgid "Show the name of the current character before the cursor along with the line and column number"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:194
+msgid "Beautify individual files automatically when they are opened"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:196
+msgid "This will cause the beautify current file action to be performed automatically every time you open a HTML/CSS/etc. file for editing."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:201
+msgid "Show misspelled words underlined in the code view"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:203
+msgid "This will cause spelling errors to be highlighted in the code view for easy correction as you type."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:207
+msgid "Manage &spelling dictionaries"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:219
 #, python-format
 msgid "Automatic (%s)"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:168
-msgid "&Color scheme:"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:171
-msgid " characters"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:172
-msgid "Width of &tabs:"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:175
-msgid "&Wrap long lines in the editor"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:179
-msgid "&Replace HTML entities as they are typed"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:181
-msgid "With this option, every time you type in a complete html entity, such as &amp;hellip; it is automatically replaced by its corresponding character. The replacement happens only when the trailing semi-colon is typed."
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:187
-msgid "Show the name of the current character before the cursor along with the line and column number"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:191
-msgid "Beautify individual files automatically when they are opened"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:193
-msgid "This will cause the beautify current file action to be performed automatically every time you open a HTML/CSS/etc. file for editing."
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:198
-msgid "Show misspelled words underlined in the code view"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:200
-msgid "This will cause spelling errors to be highlighted in the code view for easy correction as you type."
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:204
-msgid "Manage &spelling dictionaries"
-msgstr ""
-
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:222
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:243
 msgid "Update metadata embedded in the book when opening"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:224
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:245
 msgid "When the file is opened, update the metadata embedded in the book file to the current metadata in the calibre library."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:229
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:250
 msgid "Ask which format to edit if more than one format is available for the book"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:233
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:254
 msgid "When auto-selecting the format to edit for a book with multiple formats, this is the preference order."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:235
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:256
 msgid "Preferred format order (drag and drop to change)"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:245
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:266
 msgid "Allow dockable windows to be nested inside the dock areas"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:247
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:268
 msgid "By default, you can have only a single row or column of windows in the dock areas (the areas around the central editors). This option allows for more flexible window layout, but is a little more complex to use."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:252
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:273
 msgid "Choose which windows will occupy the corners of the dockable areas"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:255
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:276
 msgid "Bottom"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:255
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:276
 msgid "Top"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:258
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:279
 msgid "The top-left corner"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:258
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:279
 msgid "The top-right corner"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:259
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:280
 msgid "The bottom-left corner"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:259
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:280
 msgid "The bottom-right corner"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:275
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:296
 msgid "Monospaced text"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:275
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:296
 msgid "Sans-serif text"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:275
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:296
 msgid "Serif text"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:279
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:300
 #, python-format
 msgid "Font family for &%s:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:282
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:303
 msgid "&Style for standard text:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:286
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:307
 #: /home/kovid/work/calibre/src/calibre/gui2/viewer/config_ui.py:407
 msgid "&Default font size:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:289
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:310
 msgid "&Monospace font size:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:292
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:313
 msgid "Mi&nimum font size:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:300
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:321
 msgid "Preferences for Edit Book"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:320
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:341
 msgid "Restore all defaults"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:321
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:342
 msgid "Restore defaults for all preferences"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:323
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:344
 msgid "Restore current defaults"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:324
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:345
 msgid "Restore defaults for currently displayed preferences"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:341
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:362
 msgid "Main window"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:342
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:363
 msgid "Editor settings"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:343
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:364
 msgid "Preview settings"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:344
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:365
 msgid "Keyboard shortcuts"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:345
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preferences.py:366
 msgid "Integration with calibre"
 msgstr ""
 
@@ -21576,7 +21743,7 @@ msgstr ""
 msgid "Cannot split on the body tag"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:409
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:417
 msgid ""
 "\n"
 "            <h3>Live preview</h3>\n"
@@ -21592,47 +21759,47 @@ msgid ""
 "            "
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:442
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:450
 msgid "Inspect element"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:444
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:452
 msgid "Open link"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:509
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:517
 msgid "Search in preview"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:610
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:618
 msgid "Cannot disable"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:611
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:619
 msgid "Auto reloading of the preview panel cannot be disabled while the Live CSS panel is open."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:614
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:622
 msgid "Auto reload preview when text changes in editor"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:615
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:623
 msgid "Disable auto reload of preview"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:619
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:627
 msgid "Disable syncing of preview position to editor position"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:620
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:628
 msgid "Enable syncing of preview position to editor position"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:628
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:636
 msgid "Abort file split"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:629
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/preview.py:637
 msgid ""
 "Split this file at a specified location.\n"
 "\n"
