@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Kovid Goyal
+# This file is distributed under the same license as the calibre package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: calibre\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-17 18:11+0530\n"
+"PO-Revision-Date: 2014-06-18 03:40+0000\n"
+"Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
+"Language-Team: Breton (http://www.transifex.com/projects/p/calibre/language/br/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: br\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# 9504ab43f0c24897a4acdbb05bc6bebc
+#: ../../xpath.rst:6
+msgid "XPath Tutorial"
+msgstr ""
+
+# 68562135206b45b9a41df462a713025b
+#: ../../xpath.rst:8
+msgid ""
+"In this tutorial, you will be given a gentle introduction to `XPath "
+"<http://en.wikipedia.org/wiki/XPath>`_, a query language that can be used to"
+" select arbitrary parts of `HTML <http://en.wikipedia.org/wiki/HTML>`_ "
+"documents in |app|. XPath is a widely used standard, and googling it will "
+"yield a ton of information. This tutorial, however, focuses on using XPath "
+"for ebook related tasks like finding chapter headings in an unstructured "
+"HTML document."
+msgstr ""
+
+# 0f2e7a6918ad41b184f26fec0be17e5d
+#: ../../xpath.rst:0
+msgid "Contents"
+msgstr ""
+
+# 8140a2af2e66442a875a63a89caf61e6
+#: ../../xpath.rst:21
+msgid "Selecting by tagname"
+msgstr ""
+
+# c6c4363bceae498d933651006736c957
+#: ../../xpath.rst:23
+msgid ""
+"The simplest form of selection is to select tags by name. For example, "
+"suppose you want to select all the ``<h2>`` tags in a document. The XPath "
+"query for this is simply::"
+msgstr ""
+
+# 2380b1c6d20f49048d9d3b2c2cfb067e
+#: ../../xpath.rst:29
+msgid ""
+"The prefix `//` means *search at any level of the document*. Now suppose you"
+" want to search for ``<span>`` tags that are inside ``<a>`` tags. That can "
+"be achieved with::"
+msgstr ""
+
+# ec5abbce8c6345149636bdefc1c28dd6
+#: ../../xpath.rst:35
+msgid ""
+"If you want to search for tags at a particular level in the document, change"
+" the prefix::"
+msgstr ""
+
+# 3afb839bd9fc4334b4d92f73d56dafa6
+#: ../../xpath.rst:41
+msgid ""
+"This will match only ``<p>A very short ebook to demonstrate the use of "
+"XPath.</p>`` in the `Sample ebook`_ but not any of the other ``<p>`` tags. "
+"The ``h:`` prefix in the above examples is needed to match XHTML tags. This "
+"is because internally, |app| represents all content as XHTML. In XHTML tags "
+"have a *namespace*, and ``h:`` is the namespace prefix for HTML tags."
+msgstr ""
+
+# 3e2b68f1193d4168a7bb7322685d8106
+#: ../../xpath.rst:47
+msgid ""
+"Now suppose you want to select both ``<h1>`` and ``<h2>`` tags. To do that, "
+"we need a XPath construct called *predicate*. A :dfn:`predicate` is simply a"
+" test that is used to select tags. Tests can be arbitrarily powerful and as "
+"this tutorial progresses, you will see more powerful examples. A predicate "
+"is created by enclosing the test expression in square brackets::"
+msgstr ""
+
+# 8537fe2bf12a4d2888f75ceb67e5da44
+#: ../../xpath.rst:55
+msgid ""
+"There are several new features in this XPath expression. The first is the "
+"use of the wildcard ``*``. It means *match any tag*. Now look at the test "
+"expression ``name()='h1' or name()='h2'``. :term:`name()` is an example of a"
+" *built-in function*. It simply evaluates to the name of the tag. So by "
+"using it, we can select tags whose names are either `h1` or `h2`. Note that "
+"the :term:`name()` function ignores namespaces so that there is no need for "
+"the ``h:`` prefix. XPath has several useful built-in functions. A few more "
+"will be introduced in this tutorial."
+msgstr ""
+
+# e0651feab27b4751b88f5e178a44d0ff
+#: ../../xpath.rst:64
+msgid "Selecting by attributes"
+msgstr ""
+
+# f6eeb277e4e74032b6b3fa484c93487d
+#: ../../xpath.rst:66
+msgid ""
+"To select tags based on their attributes, the use of predicates is "
+"required::"
+msgstr ""
+
+# cb59d4d62c7a4ebc897fb22574413073
+#: ../../xpath.rst:72
+msgid ""
+"Here, the ``@`` operator refers to the attributes of the tag. You can use "
+"some of the `XPath built-in functions`_ to perform more sophisticated "
+"matching on attribute values."
+msgstr ""
+
+# 2c0e195c08894fc68e2c90ada461e22c
+#: ../../xpath.rst:78
+msgid "Selecting by tag content"
+msgstr ""
+
+# 973700ff4b2f4223b0b8d6bd96e42ceb
+#: ../../xpath.rst:80
+msgid ""
+"Using XPath, you can even select tags based on the text they contain. The "
+"best way to do this is to use the power of *regular expressions* via the "
+"built-in function :term:`re:test()`::"
+msgstr ""
+
+# 4070b85e548948f9a2d30f0d735ef1fa
+#: ../../xpath.rst:86
+msgid ""
+"Here the ``.`` operator refers to the contents of the tag, just as the ``@``"
+" operator referred to its attributes."
+msgstr ""
+
+# c9ec7e4fce4f47c899dae3b3464bd3c7
+#: ../../xpath.rst:91
+msgid "Sample ebook"
+msgstr ""
+
+# 906f8879e4834b3fa2851c2d41779af6
+#: ../../xpath.rst:97
+msgid "XPath built-in functions"
+msgstr ""
+
+# c8b8b80e4f4c47be89c693b79dc938f2
+#: ../../xpath.rst:100
+msgid "name()"
+msgstr ""
+
+# 1d01b425579c49e1aa36da4a8c0b54e1
+#: ../../xpath.rst:102
+msgid "The name of the current tag."
+msgstr ""
+
+# c0c55aade6cc416b944bc9d4e11e4832
+#: ../../xpath.rst:103
+msgid "contains()"
+msgstr ""
+
+# cebc17b5d4894446a7bf0c477ba7aa5e
+#: ../../xpath.rst:105
+msgid "``contains(s1, s2)`` returns `true` if s1 contains s2."
+msgstr ""
+
+# c09e3e5c566f4504aa96a2b10a031107
+#: ../../xpath.rst:106
+msgid "re:test()"
+msgstr ""
+
+# cca1d165bd3b40548136eda26dac5d70
+#: ../../xpath.rst:108
+msgid ""
+"``re:test(src, pattern, flags)`` returns `true` if the string `src` matches "
+"the regular expression `pattern`. A particularly useful flag is ``i``, it "
+"makes matching case insensitive. A good primer on the syntax for regular "
+"expressions can be found at `regexp syntax <http://docs.python.org/lib/re-"
+"syntax.html>`_"
+msgstr ""
