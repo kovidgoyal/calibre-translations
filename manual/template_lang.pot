@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre 1.48.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-08 08:53+0530\n"
+"POT-Creation-Date: 2014-08-11 23:35+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,925 +16,925 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../template_lang.rst:7
-# f5645972c233450fac88c28543a0ba3b
+#: ../../template_lang.rst:5
+# a6128f8c0a4b491fb6fa71fb5d8ce2f2
 msgid "The |app| template language"
 msgstr ""
 
-#: ../../template_lang.rst:9
-# 820378514d3f422aaf94ccdc2b16ec2d
+#: ../../template_lang.rst:7
+# 4a84f3548f3f4cadac8eccf830a6ea84
 msgid "The |app| template language is used in various places. It is used to control the folder structure and file name when saving files from the |app| library to the disk or eBook reader. It is also used to define \"virtual\" columns that contain data from other columns and so on."
 msgstr ""
 
-#: ../../template_lang.rst:12
-# d6a7f39845ca4383af18ddad292a0002
+#: ../../template_lang.rst:10
+# a8279d1e369649a9890ad83a775b8f83
 msgid "The basic template language is very simple, but has very powerful advanced features. The basic idea is that a template consists of text and names in curly brackets that are then replaced by the corresponding metadata from the book being processed. So, for example, the default template used for saving books to device in |app| is::"
 msgstr ""
 
-#: ../../template_lang.rst:16
-#: ../../template_lang.rst:24
-# 6f941905696c49539df293665ad26ae6
-# 5db95b64be18471088a1917f6b8ec5e1
+#: ../../template_lang.rst:14
+#: ../../template_lang.rst:22
+# 683b4aec0bf74906a0a68df887e64379
+# 2bcb630b111a451da9887ed2ed96e9de
 msgid "For the book \"The Foundation\" by \"Isaac Asimov\" it will become::"
 msgstr ""
 
-#: ../../template_lang.rst:20
-# 33f5a0142cff4c0d841c8dc0273adc3b
+#: ../../template_lang.rst:18
+# 293d464ee99f469aa515460ebd619c9d
 msgid "The slashes are text, which is put into the template where it appears. For example, if your template is::"
 msgstr ""
 
-#: ../../template_lang.rst:28
-# 4fe4f8e9167843d9bd07a809bab61dae
+#: ../../template_lang.rst:26
+# 15d0d136102641a79d0bd890584affed
 msgid "You can use all the various metadata fields available in calibre in a template, including any custom columns you have created yourself. To find out the template name for a column simply hover your mouse over the column header. Names for custom fields (columns you have created yourself) always have a # as the first character. For series type custom fields, there is always an additional field named ``#seriesname_index`` that becomes the series index for that series. So if you have a custom series field named ``#myseries``, there will also be a field named ``#myseries_index``."
 msgstr ""
 
-#: ../../template_lang.rst:30
-# f774e1600f454b73b87f2031f63f5a8c
+#: ../../template_lang.rst:28
+# f144032bf76c493db443397241dec1ab
 msgid "In addition to the column based fields, you also can use::"
 msgstr ""
 
-#: ../../template_lang.rst:35
-# d4703288b87a4219ae536bdd62f2af4d
+#: ../../template_lang.rst:33
+# 9c04ef93abdb4add8745155ea931c863
 msgid "If a particular book does not have a particular piece of metadata, the field in the template is automatically removed for that book. Consider, for example::"
 msgstr ""
 
-#: ../../template_lang.rst:39
-# 8a8262d023424515a8bcc5b6241448d4
+#: ../../template_lang.rst:37
+# 524a8668bf4341f6beeb5b1b91a5f06f
 msgid "If a book has a series, the template will produce::"
 msgstr ""
 
-#: ../../template_lang.rst:43
-# 363e113cdaa14ad8b8ecf6fd2f3d1354
+#: ../../template_lang.rst:41
+# c9877acc65f247ffa87e7f7c03e39a3f
 msgid "and if a book does not have a series::"
 msgstr ""
 
-#: ../../template_lang.rst:47
-# 9cef32d73e6940b6a8f778d229a109aa
+#: ../../template_lang.rst:45
+# a3c3845fb4d6493783467d18108eb330
 msgid "(|app| automatically removes multiple slashes and leading or trailing spaces)."
 msgstr ""
 
-#: ../../template_lang.rst:50
-# d765b088f675432b81b55520d2112673
+#: ../../template_lang.rst:48
+# 1ab4b8a3e31c4c82b0ea99350df9e948
 msgid "Advanced formatting"
 msgstr ""
 
-#: ../../template_lang.rst:52
-# f5c96fe78c2b49cda0fed9a1d7e796de
+#: ../../template_lang.rst:50
+# 3fde0ee57fd44de8bb89077d8c0ed4b1
 msgid "You can do more than just simple substitution with the templates. You can also conditionally include text and control how the substituted data is formatted."
 msgstr ""
 
-#: ../../template_lang.rst:54
-# 1fa22a62513f447280ce6ff33180889c
+#: ../../template_lang.rst:52
+# dfb2b1d46281438ca5113759c1b06fe7
 msgid "First, conditionally including text. There are cases where you might want to have text appear in the output only if a field is not empty. A common case is ``series`` and ``series_index``, where you want either nothing or the two values with a hyphen between them. Calibre handles this case using a special field syntax."
 msgstr ""
 
-#: ../../template_lang.rst:56
-# c8f0d7dfefad45e2b51d63fb4bb9812c
+#: ../../template_lang.rst:54
+# 37093310602a47cb90520a36a684f9f7
 msgid "For example, assume you want to use the template::"
 msgstr ""
 
-#: ../../template_lang.rst:60
-# 60c53f7561c741a58e733a33cea50dcb
+#: ../../template_lang.rst:58
+# fbe2b70c3bc6488aaff5c8ebce13a5c2
 msgid "If the book has no series, the answer will be ``- - title``. Many people would rather the result be simply ``title``, without the hyphens. To do this, use the extended syntax ``{field:|prefix_text|suffix_text}``. When you use this syntax, if field has the value SERIES then the result will be ``prefix_textSERIESsuffix_text``. If field has no value, then the result will be the empty string (nothing); the prefix and suffix are ignored. The prefix and suffix can contain blanks. **Do not use subtemplates (`{ ... }`) or functions (see below) as the prefix or the suffix.**"
 msgstr ""
 
-#: ../../template_lang.rst:62
-# 465b5f22654040649658c57439e1132d
+#: ../../template_lang.rst:60
+# 9e8e1f5f2e8b40f98b730c2a716a3c07
 msgid "Using this syntax, we can solve the above series problem with the template::"
 msgstr ""
 
-#: ../../template_lang.rst:66
-# c2b0655501954790a216b4b3f769a8ff
+#: ../../template_lang.rst:64
+# 7807b1b763af49af8026cbf441b23227
 msgid "The hyphens will be included only if the book has a series index, which it will have only if it has a series."
 msgstr ""
 
-#: ../../template_lang.rst:68
-# 8cb1d97c3ddd48b7a866a677421335d7
+#: ../../template_lang.rst:66
+# 438e99825e314fc0885dc4b5bab68145
 msgid "Notes: you must include the : character if you want to use a prefix or a suffix. You must either use no \\| characters or both of them; using one, as in ``{field:| - }``, is not allowed. It is OK not to provide any text for one side or the other, such as in ``{series:|| - }``. Using ``{title:||}`` is the same as using ``{title}``."
 msgstr ""
 
-#: ../../template_lang.rst:70
-# 48414b92db9f40109fdd831f1754b275
+#: ../../template_lang.rst:68
+# 19df9565d1b748949a7be47e1eef0af3
 msgid "Second: formatting. Suppose you wanted to ensure that the series_index is always formatted as three digits with leading zeros. This would do the trick::"
 msgstr ""
 
-#: ../../template_lang.rst:74
-# ab867ca1dce24926b777076c002c700e
+#: ../../template_lang.rst:72
+# 908dd0617f4f48aab1a7eae605d5600a
 msgid "If instead of leading zeros you want leading spaces, use::"
 msgstr ""
 
-#: ../../template_lang.rst:78
-# 2d4d0f3e21274160b6ddc10dabcd7c22
+#: ../../template_lang.rst:76
+# a1965421efb04b7ab527f6fc2aa2a7b0
 msgid "For trailing zeros, use::"
 msgstr ""
 
-#: ../../template_lang.rst:82
-# 35ac09a3a56b41dd8777f344dbda162a
+#: ../../template_lang.rst:80
+# 80983c004c8843e8b3e92697729ba421
 msgid "If you use series indices with sub values (e.g., 1.1), you might want to ensure that the decimal points line up. For example, you might want the indices 1 and 2.5 to appear as 01.00 and 02.50 so that they will sort correctly. To do this, use::"
 msgstr ""
 
-#: ../../template_lang.rst:86
-# 81c6e331308a427cba19f65889d9180b
+#: ../../template_lang.rst:84
+# 82d0b81f017f434bb6d7aa645ab3c7bb
 msgid "If you want only the first two letters of the data, use::"
 msgstr ""
 
-#: ../../template_lang.rst:90
-# 47600993cb3c45d3a16f486cfa9c0293
+#: ../../template_lang.rst:88
+# 71a7cfe9d6a44d16a046c2bc9e33c0a4
 msgid "The |app| template language comes from python and for more details on the syntax of these advanced formatting operations, look at the `Python documentation <http://docs.python.org/library/string.html#format-string-syntax>`_."
 msgstr ""
 
-#: ../../template_lang.rst:93
-# 365db25172ea4aba9e17980335083a2e
+#: ../../template_lang.rst:91
+# e373a74c14a84d73b80e1dc4c5c9328b
 msgid "Advanced features"
 msgstr ""
 
-#: ../../template_lang.rst:96
-# 9adc0aed008246ee90863df9f6b7064c
+#: ../../template_lang.rst:94
+# 23bc2a0bb80c412e935de133a33b57bd
 msgid "Using templates in custom columns"
 msgstr ""
 
-#: ../../template_lang.rst:98
-# 4b72f92d84644b7a92d2bc51429b1916
+#: ../../template_lang.rst:96
+# 5c052f3135084b4890e2e09271e7cf89
 msgid "There are sometimes cases where you want to display metadata that |app| does not normally display, or to display data in a way different from how |app| normally does. For example, you might want to display the ISBN, a field that |app| does not display. You can use custom columns for this by creating a column with the type 'column built from other columns' (hereafter called composite columns), and entering a template. Result: |app| will display a column showing the result of evaluating that template. To display the ISBN, create the column and enter ``{identifiers:select(isbn)}`` into the template box. To display a column containing the values of two series custom columns separated by a comma, use ``{#series1:||,}{#series2}``."
 msgstr ""
 
-#: ../../template_lang.rst:100
-# 5d2643886c9349268031ae6cb7d11655
+#: ../../template_lang.rst:98
+# 77cd541a81f547e29d9352e48c81e691
 msgid "Composite columns can use any template option, including formatting."
 msgstr ""
 
-#: ../../template_lang.rst:102
-# 74c2548341c24071b11cae49fd372df7
+#: ../../template_lang.rst:100
+# a817d5cb693a417081589a90a2a0b043
 msgid "You cannot change the data contained in a composite column. If you edit a composite column by double-clicking on any item, you will open the template for editing, not the underlying data. Editing the template on the GUI is a quick way of testing and changing composite columns."
 msgstr ""
 
-#: ../../template_lang.rst:105
-# 17bb90ff0add433688cc91d5296c2a26
+#: ../../template_lang.rst:103
+# afc12efd473445648606b1aac14b95ea
 msgid "Using functions in templates - single-function mode"
 msgstr ""
 
-#: ../../template_lang.rst:107
-# 6ae78782698d4d67b1246bf87253138a
+#: ../../template_lang.rst:105
+# bdb62be4c7b948098d60029703fd1f5d
 msgid "Suppose you want to display the value of a field in upper case, when that field is normally in title case. You can do this (and many more things) using the functions available for templates. For example, to display the title in upper case, use ``{title:uppercase()}``. To display it in title case, use ``{title:titlecase()}``."
 msgstr ""
 
-#: ../../template_lang.rst:109
-# 619622078c484a29a6a4ec1db64c85c8
+#: ../../template_lang.rst:107
+# d41d6addcb56489aa9c58326f91c6856
 msgid "Function references appear in the format part, going after the ``:`` and before the first ``|`` or the closing ``}``. If you have both a format and a function reference, the function comes after another ``:``. Functions must always end with ``()``. Some functions take extra values (arguments), and these go inside the ``()``."
 msgstr ""
 
-#: ../../template_lang.rst:111
-# 0fd48bdc80044f9a92127502d0182be7
+#: ../../template_lang.rst:109
+# b2228f321f654294be8520fe71e4e310
 msgid "Functions are always applied before format specifications. See further down for an example of using both a format and a function, where this order is demonstrated."
 msgstr ""
 
-#: ../../template_lang.rst:113
-# eb9b7a8c06694b11a1a9b965905c3c3b
+#: ../../template_lang.rst:111
+# 158e5be3f23c4615a5fc0749046064f2
 msgid "The syntax for using functions is ``{field:function(arguments)}``, or ``{field:function(arguments)|prefix|suffix}``. Arguments are separated by commas. Commas inside arguments must be preceeded by a backslash ( '\\\\' ). The last (or only) argument cannot contain a closing parenthesis ( ')' ). Functions return the value of the field used in the template, suitably modified."
 msgstr ""
 
-#: ../../template_lang.rst:115
-# 8e7da64cdd124978b0c1c19ecb64ca75
+#: ../../template_lang.rst:113
+# 8541a0846e8e44b5bdc6a264fe060ad4
 msgid "Important: If you have programming experience, please note that the syntax in this mode (single function) is not what you might expect. Strings are not quoted. Spaces are significant. All arguments must be constants; there is no sub-evaluation. **Do not use subtemplates (`{ ... }`) as function arguments.** Instead, use :ref:`template program mode <template_mode>` and :ref:`general program mode <general_mode>`."
 msgstr ""
 
-#: ../../template_lang.rst:117
-# 586b4c1db1824d399c6923baf80c998b
+#: ../../template_lang.rst:115
+# c934881549f34dab9c3d99532f1dd096
 msgid "Many functions use regular expressions. In all cases, regular expression matching is case-insensitive."
 msgstr ""
 
-#: ../../template_lang.rst:119
-# b01f658664b8463e82f4dd0d3bb86d57
+#: ../../template_lang.rst:117
+# 49742a9467044d6cadd7aec7411849c2
 msgid "The functions available are listed below. Note that the definitive documentation for functions is available in the section :ref:`Function classification <template_functions_reference>`:"
 msgstr ""
 
-#: ../../template_lang.rst:121
-# 64b8fa37f9724a8bafef5f36e65441b3
+#: ../../template_lang.rst:119
+# 74f8a586a1d24f079b2157460a29e011
 msgid "``lowercase()``   -- return value of the field in lower case."
 msgstr ""
 
-#: ../../template_lang.rst:122
-# 52225f3fd4a041c6b2e68bdf2c7a068d
+#: ../../template_lang.rst:120
+# 7e5accf99bd54a59adf517a20afed94b
 msgid "``uppercase()``   -- return the value of the field in upper case."
 msgstr ""
 
-#: ../../template_lang.rst:123
-# 34f886fc344c49338a4218a37f81eede
+#: ../../template_lang.rst:121
+# 8cdfe9bb7214424d80f384a33117f4dc
 msgid "``titlecase()``   -- return the value of the field in title case."
 msgstr ""
 
-#: ../../template_lang.rst:124
-# 84837b90b5244a1db9687c276bf0011c
+#: ../../template_lang.rst:122
+# 53d1350424cf470b8e6440ca75b1cad2
 msgid "``capitalize()``  -- return the value with the first letter upper case and the rest lower case."
 msgstr ""
 
-#: ../../template_lang.rst:125
-# 9f2b3f3581fc412cb4faf6300b53cddc
+#: ../../template_lang.rst:123
+# ebac1869920240b880a233a23133132f
 msgid "``contains(pattern, text if match, text if not match)`` -- checks if field contains matches for the regular expression `pattern`. Returns `text if match` if matches are found, otherwise it returns `text if no match`."
 msgstr ""
 
-#: ../../template_lang.rst:126
-# a393f37b1ee54f5285e21170abd01cf6
+#: ../../template_lang.rst:124
+# 4e3afcb4fdc34cd1a43cd4c81574baa5
 msgid "``count(separator)`` -- interprets the value as a list of items separated by `separator`, returning the number of items in the list. Most lists use a comma as the separator, but authors uses an ampersand. Examples: `{tags:count(,)}`, `{authors:count(&)}`"
 msgstr ""
 
-#: ../../template_lang.rst:127
-# e408de2d050a429f94e452473d1dc2c6
+#: ../../template_lang.rst:125
+# ee6364186a3d4034b8ca068b9df60d30
 msgid "``format_number(template)`` -- interprets the value as a number and format that number using a python formatting template such as \"{0:5.2f}\" or \"{0:,d}\" or \"${0:5,.2f}\". The field_name part of the template must be a 0 (zero) (the \"{0:\" in the above examples). See the template language and python documentation for more examples. Returns the empty string if formatting fails."
 msgstr ""
 
-#: ../../template_lang.rst:128
-# 6c2f5a0a7c3842b19eb3308aa683aacc
+#: ../../template_lang.rst:126
+# 00fc95537b8b40a4af9124276797452b
 msgid "``human_readable()`` -- expects the value to be a number and returns a string representing that number in KB, MB, GB, etc."
 msgstr ""
 
-#: ../../template_lang.rst:129
-# 4efc246ac1da4f1189aa090eb5bda617
+#: ../../template_lang.rst:127
+# 24af0b3a5dea4dd2aadee7a69dbbcd0f
 msgid "``ifempty(text)`` -- if the field is not empty, return the value of the field. Otherwise return `text`."
 msgstr ""
 
-#: ../../template_lang.rst:130
-# 335610cc5512401288a7e032aac75fa0
+#: ../../template_lang.rst:128
+# 8af4222256f743b39db8873d570afb46
 msgid "``in_list(separator, pattern, found_val, not_found_val)`` -- interpret the field as a list of items separated by `separator`, comparing the `pattern` against each value in the list. If the pattern matches a value, return `found_val`, otherwise return `not_found_val`."
 msgstr ""
 
-#: ../../template_lang.rst:131
-# 10fd67badc40407ebaf6025f95b50a5d
+#: ../../template_lang.rst:129
+# fad4106110da44b7a808f2ab43dd6dbf
 msgid "``language_codes(lang_strings)`` -- return the language codes for the strings passed in `lang_strings`. The strings must be in the language of the current locale. `Lang_strings` is a comma-separated list."
 msgstr ""
 
-#: ../../template_lang.rst:132
-# 542278bf3987481bb84cca91b881b791
+#: ../../template_lang.rst:130
+# a3d2a2dd76c6437aa4a363a22c603b7e
 msgid "``language_strings(lang_codes, localize)`` -- return the strings for the language codes passed in `lang_codes`. If `localize` is zero, return the strings in English. If localize is not zero, return the strings in the language of the current locale. `Lang_codes` is a comma-separated list."
 msgstr ""
 
-#: ../../template_lang.rst:133
-# 5ee8af1611b24f8f925cca3808e3118f
+#: ../../template_lang.rst:131
+# 29e603217e9a4abc8536b83f1911b780
 msgid "``list_item(index, separator)`` -- interpret the field as a list of items separated by `separator`, returning the `index`th item. The first item is number zero. The last item can be returned using `list_item(-1,separator)`. If the item is not in the list, then the empty value is returned. The separator has the same meaning as in the `count` function."
 msgstr ""
 
-#: ../../template_lang.rst:134
-# 12444f8a15f44146985df5c001cf14dd
+#: ../../template_lang.rst:132
+# 3fd6e01d65ca411fad6f66c31ea858db
 msgid "``lookup(pattern, field, pattern, field, ..., else_field)`` -- like switch, except the arguments are field (metadata) names, not text. The value of the appropriate field will be fetched and used. Note that because composite columns are fields, you can use this function in one composite field to use the value of some other composite field. This is extremely useful when constructing variable save paths (more later)."
 msgstr ""
 
-#: ../../template_lang.rst:135
-# 56aecb3318b544dd8715317089b4e036
+#: ../../template_lang.rst:133
+# 01d4970c4ad740bb80e72d3b74b80ccb
 msgid "``re(pattern, replacement)`` -- return the field after applying the regular expression. All instances of `pattern` are replaced with `replacement`. As in all of |app|, these are python-compatible regular expressions."
 msgstr ""
 
-#: ../../template_lang.rst:136
-# ec0708e7d5814377a3e55cbaa53f067e
+#: ../../template_lang.rst:134
+# 300d7a90371b4f0b95dbf7c645e3bdf1
 msgid "``select(key)`` -- interpret the field as a comma-separated list of items, with the items being of the form \"id:value\". Find the pair with the id equal to key, and return the corresponding value. This function is particularly useful for extracting a value such as an isbn from the set of identifiers for a book."
 msgstr ""
 
-#: ../../template_lang.rst:137
-# 9b755830e2c14020a4760ea8507a81c7
+#: ../../template_lang.rst:135
+# b991322f6e4a451689028793ef4f5552
 msgid "``shorten(left chars, middle text, right chars)`` -- Return a shortened version of the field, consisting of `left chars` characters from the beginning of the field, followed by `middle text`, followed by `right chars` characters from the end of the string. `Left chars` and `right chars` must be integers. For example, assume the title of the book is `Ancient English Laws in the Times of Ivanhoe`, and you want it to fit in a space of at most 15 characters. If you use ``{title:shorten(9,-,5)}``, the result will be `Ancient E-nhoe`. If the field's length is less than ``left chars`` + ``right chars`` + the length of ``middle text``, then the field will be used intact. For example, the title `The Dome` would not be changed."
 msgstr ""
 
-#: ../../template_lang.rst:138
-# 631780750030498197876b28ccb355d8
+#: ../../template_lang.rst:136
+# 3726e93b35c8445f9325ef590da4b9cb
 msgid "``str_in_list(val, separator, string, found_val, not_found_val)`` -- treat val as a list of items separated by separator, comparing the string against each value in the list. If the string matches a value, return found_val, otherwise return not_found_val. If the string contains separators, then it is also treated as a list and each value is checked."
 msgstr ""
 
-#: ../../template_lang.rst:139
-# f4bd1d77295c416db20172ebf89afc74
+#: ../../template_lang.rst:137
+# f8595ae5d21342a8b1bf6e0a7df0ca4c
 msgid "``subitems(val, start_index, end_index)`` -- This function is used to break apart lists of tag-like hierarchical items such as genres. It interprets the value as a comma-separated list of tag-like items, where each item is a period-separated list. Returns a new list made by first finding all the period-separated tag-like items, then for each such item extracting the components from `start_index` to `end_index`, then combining the results back together. The first component in a period-separated list has an index of zero. If an index is negative, then it counts from the end of the list. As a special case, an end_index of zero is assumed to be the length of the list. Examples::"
 msgstr ""
 
-#: ../../template_lang.rst:149
-# 4d68b6091ddc4b769114b71ccdd91cf3
+#: ../../template_lang.rst:147
+# ff368bc9875d42a3879bfe173e6e5637
 msgid "``sublist(val, start_index, end_index, separator)`` -- interpret the value as a list of items separated by `separator`, returning a new list made from the items from `start_index`to `end_index`. The first item is number zero. If an index is negative, then it counts from the end of the list. As a special case, an end_index of zero is assumed to be the length of the list. Examples assuming that the tags column (which is comma-separated) contains \"A, B ,C\"::"
 msgstr ""
 
-#: ../../template_lang.rst:155
-# df838458724147c886532f32554f49ef
+#: ../../template_lang.rst:153
+# f5b1620937334ceaa0b66caf2157f1cc
 msgid "``swap_around_comma(val) `` -- given a value of the form ``B, A``, return ``A B``. This is most useful for converting names in LN, FN format to FN LN. If there is no comma, the function returns val unchanged."
 msgstr ""
 
-#: ../../template_lang.rst:156
-# 0ce18bae3fe34097966a88d5320a3411
+#: ../../template_lang.rst:154
+# 63433906f5e04b2a80d8bbd183af85d4
 msgid "``switch(pattern, value, pattern, value, ..., else_value)`` -- for each ``pattern, value`` pair, checks if the field matches the regular expression ``pattern`` and if so, returns that ``value``. If no ``pattern`` matches, then ``else_value`` is returned. You can have as many ``pattern, value`` pairs as you want."
 msgstr ""
 
-#: ../../template_lang.rst:157
-# 332b1055a065493f8cb883b05b126300
+#: ../../template_lang.rst:155
+# 209e8d9e434b4f8b8e2e4c77d64f2f68
 msgid "``test(text if not empty, text if empty)`` -- return `text if not empty` if the field is not empty, otherwise return `text if empty`."
 msgstr ""
 
-#: ../../template_lang.rst:158
-# 663d99f9cb71492788433be9adf45251
+#: ../../template_lang.rst:156
+# f15c784f1bfb4d0bb8fe8637760e61b4
 msgid "``transliterate()`` -- Returns a string in a latin alphabet formed by approximating the sound of the words in the source field. For example, if the source field is ``Фёдор Миха́йлович Достоевский`` the function returns ``Fiodor Mikhailovich Dostoievskii``.'"
 msgstr ""
 
-#: ../../template_lang.rst:160
-# 9a642db4e16c4e41a7bde6ebffbeb822
+#: ../../template_lang.rst:158
+# 7cbfc7270d124372a34d08480a15ca7f
 msgid "Now, what about using functions and formatting in the same field. Suppose you have an integer custom column called ``#myint`` that you want to see with leading zeros, as in ``003``. To do this, you would use a format of ``0>3s``. However, by default, if a number (integer or float) equals zero then the field produces the empty value, so zero values will produce nothing, not ``000``. If you really want to see ``000`` values, then you use both the format string and the ``ifempty`` function to change the empty value back to a zero. The field reference would be::"
 msgstr ""
 
-#: ../../template_lang.rst:164
-# 544dcda0f1c8429d9e41387899eec956
+#: ../../template_lang.rst:162
+# f32afd8376d148918adb88e289711caa
 msgid "Note that you can use the prefix and suffix as well. If you want the number to appear as ``[003]`` or ``[000]``, then use the field::"
 msgstr ""
 
-#: ../../template_lang.rst:171
-# 4ee67a40fc6c4347b1e21257eecaf88f
+#: ../../template_lang.rst:169
+# cae648987e6649489939d1436de5ae32
 msgid "Using functions in templates - template program mode"
 msgstr ""
 
-#: ../../template_lang.rst:173
-# b011531e6d89463d86cd21c369072db0
+#: ../../template_lang.rst:171
+# 7a7ff63416134571b98688bd7492ea98
 msgid "The template language program mode differs from single-function mode in that it permits you to write template expressions that refer to other metadata fields, modify values, and do arithmetic. It is a reasonably complete programming language."
 msgstr ""
 
-#: ../../template_lang.rst:175
-# 74555eccfe0e40e1bf7955024efb45f5
+#: ../../template_lang.rst:173
+# 66c966a01e0f434d974bedb9a6dea0b1
 msgid "You can use the functions documented above in template program mode. See below for details."
 msgstr ""
 
-#: ../../template_lang.rst:177
-# 6b911f2c16ce404785e265ec141d5b68
+#: ../../template_lang.rst:175
+# f62631a2471a4bd4ac1b38f022ef6644
 msgid "Beginning with an example, assume that you want your template to show the series for a book if it has one, otherwise show the value of a custom field #genre. You cannot do this in the basic language because you cannot make reference to another metadata field within a template expression. In program mode, you can. The following expression works::"
 msgstr ""
 
-#: ../../template_lang.rst:181
-# 55f13c82c1204312ac50d230ff09ab55
+#: ../../template_lang.rst:179
+# e6dcc66b1ead47bbba2ab90b8fae80ea
 msgid "The example shows several things:"
 msgstr ""
 
-#: ../../template_lang.rst:183
-# daa4248dc6b74ab6aab7135fbaf91ec8
+#: ../../template_lang.rst:181
+# 08414d796a704496be137ff658bc30fb
 msgid "program mode is used if the expression begins with ``:'`` and ends with ``'``. Anything else is assumed to be single-function."
 msgstr ""
 
-#: ../../template_lang.rst:184
-# b6b10efdb4024184ad304f5cd63573dc
+#: ../../template_lang.rst:182
+# 075692ab2d4441ec95bf93f5a1a54126
 msgid "the variable ``$`` stands for the field the expression is operating upon, ``#series`` in this case."
 msgstr ""
 
-#: ../../template_lang.rst:185
-# b3a1f59fe69f4b6193bdbd5f0a57dd3d
+#: ../../template_lang.rst:183
+# 7ba1df7c269c4d348e25fe776ba00a1b
 msgid "functions must be given all their arguments. There is no default value. For example, the standard built-in functions must be given an additional initial parameter indicating the source field, which is a significant difference from single-function mode."
 msgstr ""
 
-#: ../../template_lang.rst:186
-# 8c1e853ee2e449819210c1617391fd87
+#: ../../template_lang.rst:184
+# d066a2f8a88347d5905a74f456109fc7
 msgid "white space is ignored and can be used anywhere within the expression."
 msgstr ""
 
-#: ../../template_lang.rst:187
-# 1cb88918a43547cb9aeba04ff7429eb7
+#: ../../template_lang.rst:185
+# 601cb7d5ae6f4a4ba6930ecaaf26b8b8
 msgid "constant strings are enclosed in matching quotes, either ``'`` or ``\"``."
 msgstr ""
 
-#: ../../template_lang.rst:189
-# 56f1de686c994014835886be56517c85
+#: ../../template_lang.rst:187
+# 4ca40c9352c44be9b087255208ac9432
 msgid "The language is similar to ``functional`` languages in that it is built almost entirely from functions. A statement is a function. An expression is a function. Constants and identifiers can be thought of as functions returning the value indicated by the constant or stored in the identifier."
 msgstr ""
 
-#: ../../template_lang.rst:191
-# 7b65f433c9594762b5b3d53e1f427651
+#: ../../template_lang.rst:189
+# efd6d9abce0c4a9ab4262b36e2df55be
 msgid "The syntax of the language is shown by the following grammar::"
 msgstr ""
 
-#: ../../template_lang.rst:201
-# f3c6045554dd498fadb09c847ba89425
+#: ../../template_lang.rst:199
+# ccb0ff9eb4554070ac42688c227c650b
 msgid "Comments are lines with a '#' character at the beginning of the line."
 msgstr ""
 
-#: ../../template_lang.rst:203
-# bcf1394bac85489ebc4b34f55e0b9bbe
+#: ../../template_lang.rst:201
+# 2587f6d996d94d7d93e06da3ac58d1f4
 msgid "An ``expression`` always has a value, either the value of the constant, the value contained in the identifier, or the value returned by a function. The value of a ``statement`` is the value of the last expression in the sequence of statements. As such, the value of the program (statement)::"
 msgstr ""
 
-#: ../../template_lang.rst:207
-# 0bb57f02887240eca52aa251f24a152b
+#: ../../template_lang.rst:205
+# 13fcda6fb9a4409fbfcf6ca7992fd38f
 msgid "is 3."
 msgstr ""
 
-#: ../../template_lang.rst:209
-# 92130e638ebc4c1e8937c522156a14e1
+#: ../../template_lang.rst:207
+# 37a4a3cdaa0a41c284cd278e8a0dc301
 msgid "Another example of a complex but rather silly program might help make things clearer::"
 msgstr ""
 
-#: ../../template_lang.rst:220
-# 36cce95736eb430e9a00a54e08b6f3fe
+#: ../../template_lang.rst:218
+# c2ed68dbd42a4ade9f483a4cffc2b55b
 msgid "This program does the following:"
 msgstr ""
 
-#: ../../template_lang.rst:222
-# b6758bef8e94455087e21e65b9b04888
+#: ../../template_lang.rst:220
+# 46642e2c7c994e90a3d3fce7a8422726
 msgid "specify that the field being looked at is series_index. This sets the value of the variable ``$``."
 msgstr ""
 
-#: ../../template_lang.rst:223
-# a7bf6c91778e40aabf66425efdf8b283
+#: ../../template_lang.rst:221
+# b57248865a0b4b43946302456a52f578
 msgid "calls the ``substr`` function, which takes 3 parameters ``(str, start, end)``. It returns a string formed by extracting the start through end characters from string, zero-based (the first character is character zero). In this case the string will be computed by the ``strcat`` function, the start is 0, and the end is 6. In this case it will return the first 6 characters of the string returned by ``strcat``, which must be evaluated before substr can return."
 msgstr ""
 
-#: ../../template_lang.rst:224
-# 6ab91f6cd96e4c41b887c87e11413f4c
+#: ../../template_lang.rst:222
+# ab469ff4fe93408291ecfd0c2b532781
 msgid "calls the ``strcat`` (string concatenation) function. Strcat accepts 1 or more arguments, and returns a string formed by concatenating all the values. In this case there are three arguments. The first parameter is the value in ``$``, which here is the value of ``series_index``. The second paremeter is the constant string ``'->'``. The third parameter is the value returned by the ``cmp`` function, which must be fully evaluated before ``strcat`` can return."
 msgstr ""
 
-#: ../../template_lang.rst:225
-# 498bade8ad014bb59cf0c85553a1108c
+#: ../../template_lang.rst:223
+# 9a98c09984a040eaacb01d8a57e82539
 msgid "The ``cmp`` function takes 5 arguments ``(x, y, lt, eq, gt)``. It compares x and y and returns the third argument ``lt`` if x < y, the fourth argument ``eq`` if x == y, and the fifth argument ``gt`` if x > y. As with all functions, all of the parameters can be statements. In this case the first parameter (the value for ``x``) is the result of dividing the series_index by 2. The second parameter ``y`` is the constant ``1``. The third parameter ``lt`` is a statement (more later). The fourth parameter ``eq`` is the constant string ``'eq'``. The fifth parameter is the constant string ``'gt'``."
 msgstr ""
 
-#: ../../template_lang.rst:226
-# 2f9ae433f2c949d7b9c4158087b9e9f0
+#: ../../template_lang.rst:224
+# d0ca894e0a8c4cafaf593a5b7f1caedb
 msgid "The third parameter (the one for ``lt``) is a statement, or a sequence of expressions. Remember that a statement (a sequence of semicolon-separated expressions) is also an expression, returning the value of the last expression in the list. In this case, the program first assigns the value ``1`` to a local variable ``c``, then returns a substring made by extracting the c'th character to the end. Since c always contains the constant ``1``, the substring will return the second through end'th characters, or ``'t123'``."
 msgstr ""
 
-#: ../../template_lang.rst:227
-# 7df0268cce8f4f2fb77e0c7e3eba9b42
+#: ../../template_lang.rst:225
+# b31a6a64cd464f2ba3e0d92e70bd7c21
 msgid "Once the statement providing the value to the third parameter is executed, ``cmp`` can return a value. At that point, ``strcat` can return a value, then ``substr`` can return a value. The program then terminates."
 msgstr ""
 
-#: ../../template_lang.rst:229
-# f2443e25cc43463f841c806554c2d875
+#: ../../template_lang.rst:227
+# 23d9afa758274c668b2d4a3eb371789b
 msgid "For various values of series_index, the program returns:"
 msgstr ""
 
-#: ../../template_lang.rst:231
-# 9d2bc0db96c541239120a8a6a2f637db
+#: ../../template_lang.rst:229
+# 8dcd461580dc4eb18b890f57d9737a4d
 msgid "series_index == undefined, result = ``prefix ->t123 suffix``"
 msgstr ""
 
-#: ../../template_lang.rst:232
-# 094a6909f6a744a281e65c80f95d1730
+#: ../../template_lang.rst:230
+# 078c13944cb94208aaede41e3b36ce75
 msgid "series_index == 0.5, result = ``prefix 0.50-> suffix``"
 msgstr ""
 
-#: ../../template_lang.rst:233
-# 978d2b81afee4d12b8686b2479008ec3
+#: ../../template_lang.rst:231
+# 0a2aeae242c24f1f8dd3b2114a2e7a47
 msgid "series_index == 1, result = ``prefix 1->t12 suffix``"
 msgstr ""
 
-#: ../../template_lang.rst:234
-# bd7bb9348d33422ab6010c31737a7035
+#: ../../template_lang.rst:232
+# cea06ec5ba444dcf9793823a60433b47
 msgid "series_index == 2, result = ``prefix 2->eq suffix``"
 msgstr ""
 
-#: ../../template_lang.rst:235
-# bc59568bb71b4fd7a69cb903c187b334
+#: ../../template_lang.rst:233
+# a35fa22ff20647508545184df67c92f7
 msgid "series_index == 3, result = ``prefix 3->gt suffix``"
 msgstr ""
 
-#: ../../template_lang.rst:237
-# 0be292df81c14fc8bfc49b75e6006b8c
+#: ../../template_lang.rst:235
+# 4d2d9a0fb7944ce1b3c1d6a01b2a3d73
 msgid "**All the functions listed under single-function mode can be used in program mode**. To do so, you must supply the value that the function is to act upon as the first parameter, in addition to the parameters documented above. For example, in program mode the parameters of the `test` function are ``test(x, text_if_not_empty, text_if_empty)``. The `x` parameter, which is the value to be tested, will almost always be a variable or a function call, often `field()`."
 msgstr ""
 
-#: ../../template_lang.rst:239
-# 37eade76d47f42559ac3231ad44e426c
+#: ../../template_lang.rst:237
+# 57018d39b5e24a9cb0b01cabfbed72dd
 msgid "The following functions are available in addition to those described in single-function mode. Remember from the example above that the single-function mode functions require an additional first parameter specifying the field to operate on. With the exception of the ``id`` parameter of assign, all parameters can be statements (sequences of expressions). Note that the definitive documentation for functions is available in the section :ref:`Function classification <template_functions_reference>`:"
 msgstr ""
 
-#: ../../template_lang.rst:241
-# d7f71ee727bd44459f263602af30bf35
+#: ../../template_lang.rst:239
+# 7d6f63964566497296dcd5b1ef526d30
 msgid "``and(value, value, ...)`` -- returns the string \"1\" if all values are not empty, otherwise returns the empty string. This function works well with test or first_non_empty. You can have as many values as you want."
 msgstr ""
 
-#: ../../template_lang.rst:242
-# 9cb645d6779f4232a6c0675bad65eec6
+#: ../../template_lang.rst:240
+# 8209ab6dfcef4a799fee065bc3e15264
 msgid "``add(x, y)`` -- returns x + y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
-#: ../../template_lang.rst:243
-# 3ae2713f277f467fa489029985949137
+#: ../../template_lang.rst:241
+# 8858acb0337d492380d0de72d618a2c9
 msgid "``assign(id, val)`` -- assigns val to id, then returns val. id must be an identifier, not an expression"
 msgstr ""
 
-#: ../../template_lang.rst:244
-# 198cb9a8f3f54907baaa3e3b53fe9466
+#: ../../template_lang.rst:242
+# cb5df9bbfa0143dbb76928c2c6fd3847
 msgid "``approximate_formats()`` -- return a comma-separated list of formats that at one point were associated with the book. There is no guarantee that the list is correct, although it probably is. This function can be called in template program mode using the template ``{:'approximate_formats()'}``. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
-#: ../../template_lang.rst:245
-# 503455c3bd0e45df907e5dc190d7dc98
+#: ../../template_lang.rst:243
+# 1c55fce37cc2442ea38e10c123f4db06
 msgid "``author_links(val_separator, pair_separator)`` -- returns a string containing a list of authors and that author's link values in the form ``author1 val_separator author1link pair_separator author2 val_separator author2link`` etc. An author is separated from its link value by the ``val_separator`` string with no added spaces. ``author:linkvalue`` pairs are separated by the ``pair_separator`` string argument with no added spaces. It is up to you to choose separator strings that do not occur in author names or links. An author is included even if the author link is empty."
 msgstr ""
 
-#: ../../template_lang.rst:246
-# dcdd3ecc1eb64b6593442f2379d395cc
+#: ../../template_lang.rst:244
+# eb340bbef8074c93b9133562d682f9c8
 msgid "``booksize()`` -- returns the value of the |app| 'size' field. Returns '' if there are no formats."
 msgstr ""
 
-#: ../../template_lang.rst:247
-# f8ed32933d934ab3ad9cfbe8c1a7229f
+#: ../../template_lang.rst:245
+# 18f1a06848b34df2a6b3b1701aa5d810
 msgid "``cmp(x, y, lt, eq, gt)`` -- compares x and y after converting both to numbers. Returns ``lt`` if x < y. Returns ``eq`` if x == y. Otherwise returns ``gt``."
 msgstr ""
 
-#: ../../template_lang.rst:248
-# 5376b34aced340618ebcf1d286a36aa2
+#: ../../template_lang.rst:246
+# 76d6d43f072340069c216c6542f71e43
 msgid "``current_library_name() -- `` return the last name on the path to the current calibre library. This function can be called in template program mode using the template ``{:'current_library_name()'}``."
 msgstr ""
 
-#: ../../template_lang.rst:249
-# 5932fb76f715431c9368c861ae02ee31
+#: ../../template_lang.rst:247
+# 333ead58a14347348bd637c65097ade4
 msgid "``current_library_path() -- `` return the path to the current calibre library. This function can be called in template program mode using the template ``{:'current_library_path()'}``.."
 msgstr ""
 
-#: ../../template_lang.rst:250
-# 2bc8413c28384468afac2340ab5ed936
+#: ../../template_lang.rst:248
+# bf1d87dd02474186a4216a87e5ca7787
 msgid "``days_between(date1, date2)`` -- return the number of days between ``date1`` and ``date2``. The number is positive if ``date1`` is greater than ``date2``, otherwise negative. If either ``date1`` or ``date2`` are not dates, the function returns the empty string."
 msgstr ""
 
-#: ../../template_lang.rst:251
-# 2a874699f2d3486c9e3bc1bb515a6f7d
+#: ../../template_lang.rst:249
+# f7858be01c3e4d278f63106aabbd2272
 msgid "``divide(x, y)`` -- returns x / y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
-#: ../../template_lang.rst:252
-# 2d367ea809324e49a5e8f3ba9bc1ef22
+#: ../../template_lang.rst:250
+# ca5a75bd8a3241f9a5be947fb8ef7842
 msgid "``eval(string)`` -- evaluates the string as a program, passing the local variables (those ``assign`` ed to). This permits using the template processor to construct complex results from local variables. Because the `{` and `}` characters are special, you must use `[[` for the `{` character and `]]` for the '}' character; they are converted automatically. Note also that prefixes and suffixes (the `|prefix|suffix` syntax) cannot be used in the argument to this function when using template program mode."
 msgstr ""
 
-#: ../../template_lang.rst:253
-# df67119c034a42918eb7ad76b339b09f
+#: ../../template_lang.rst:251
+# 69f5e2014e7743b995bb5d6cc013fec6
 msgid "``field(name)`` -- returns the metadata field named by ``name``."
 msgstr ""
 
-#: ../../template_lang.rst:254
-# 3377ded8f12d4bfba73be2de5506d00f
+#: ../../template_lang.rst:252
+# 8e66519ee2414e2085870dca052a2fab
 msgid "``first_matching_cmp(val, cmp1, result1, cmp2, r2, ..., else_result)`` -- compares \"val < cmpN\" in sequence, returning resultN for the first comparison that succeeds. Returns else_result if no comparison succeeds. Example::"
 msgstr ""
 
-#: ../../template_lang.rst:258
-# 4a9086f9a2994921a016f1dc65e0f995
+#: ../../template_lang.rst:256
+# f7dac70133bc46e48ba32dc4feadb025
 msgid "returns \"large\". The same example with a first value of 16 returns \"giant\". * ``first_non_empty(value, value, ...)`` -- returns the first value that is not empty. If all values are empty, then the empty value is returned. You can have as many values as you want. * ``format_date(x, date_format)`` -- format_date(val, format_string) -- format the value, which must be a date field, using the format_string, returning a string. The formatting codes are::"
 msgstr ""
 
-#: ../../template_lang.rst:282
-# bed91b2f1d1c4374a6e0f46a6eb1624c
+#: ../../template_lang.rst:280
+# 104a0ece74914ab7bf9a6ac3629ddee2
 msgid "You might get unexpected results if the date you are formatting contains localized month names, which can happen if you changed the format tweaks to contain MMMM. In this case, instead of using something like ``{pubdate:format_date(yyyy)}``, write the template using template program mode as in ``{:'format_date(raw_field('pubdate'),'yyyy')'}``."
 msgstr ""
 
-#: ../../template_lang.rst:284
-# 2758f0793c624140b0f5a90939c93ef3
+#: ../../template_lang.rst:282
+# e8947e890673444fa126afa319edf248
 msgid "finish_formatting(val, fmt, prefix, suffix) -- apply the format, prefix, and suffix to a value in the same way as done in a template like ``{series_index:05.2f| - |- }``. This function is provided to ease conversion of complex single-function- or template-program-mode templates to :ref:`general program mode <general_mode>` (see below) to take advantage of GPM template compilation. For example, the following program produces the same output as the above template::"
 msgstr ""
 
-#: ../../template_lang.rst:288
-# e7184b051d5f4ea3a66dfe7a9858fb09
+#: ../../template_lang.rst:286
+# c883c7d0a25149b0be11d5fecf535827
 msgid "Another example: for the template ``{series:re(([^\\s])[^\\s]+(\\s|$),\\1)}{series_index:0>2s| - | - }{title}`` use::"
 msgstr ""
 
-#: ../../template_lang.rst:297
-# 1122f56f6a054205839e79a97a9b3db2
+#: ../../template_lang.rst:295
+# b78229fd398346c69823dd8b09c37268
 msgid "``formats_modtimes(date_format)`` -- return a comma-separated list of colon_separated items representing modification times for the formats of a book. The date_format parameter specifies how the date is to be formatted. See the date_format function for details. You can use the select function to get the mod time for a specific format. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
-#: ../../template_lang.rst:298
-# f91784b077d0466f874f9023d2d9c10f
+#: ../../template_lang.rst:296
+# 8dc8cd9f9e904ab9929a8526af816231
 msgid "``formats_paths()`` -- return a comma-separated list of colon_separated items representing full path to the formats of a book. You can use the select function to get the path for a specific format. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
-#: ../../template_lang.rst:299
-# e1d8221bc7be4e55b6d26a4aab174393
+#: ../../template_lang.rst:297
+# 9fb91e147e17409193c9bb1b1c10ccbf
 msgid "``formats_sizes()`` -- return a comma-separated list of colon_separated items representing sizes in bytes of the formats of a book. You can use the select function to get the size for a specific format. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
-#: ../../template_lang.rst:300
-# 4c7b0256a1d74b289387a1d62573ed57
+#: ../../template_lang.rst:298
+# d19dc4c713da47288f3079a1b868afa0
 msgid "``has_cover()`` -- return ``Yes`` if the book has a cover, otherwise return the empty string"
 msgstr ""
 
-#: ../../template_lang.rst:301
-# 197ed16687474003b515e82d686587cd
+#: ../../template_lang.rst:299
+# 2b20557c9c744b848fb14913bb9280cd
 msgid "``not(value)`` -- returns the string \"1\" if the value is empty, otherwise returns the empty string. This function works well with test or first_non_empty. You can have as many values as you want."
 msgstr ""
 
-#: ../../template_lang.rst:302
-# f23d5297284440579d62c6eba09b87a5
+#: ../../template_lang.rst:300
+# 0150e2b8c6a64cd7b798282e0f3ea9e0
 msgid "``list_difference(list1, list2, separator)`` -- return a list made by removing from `list1` any item found in `list2`, using a case-insensitive compare. The items in `list1` and `list2` are separated by separator, as are the items in the returned list."
 msgstr ""
 
-#: ../../template_lang.rst:303
-# 6b590d7399b54c37af8c0c2677ca471c
+#: ../../template_lang.rst:301
+# 6214338a23814bd7a8934fd17b6bea55
 msgid "``list_equals(list1, sep1, list2, sep2, yes_val, no_val)`` -- return `yes_val` if `list1` and `list2` contain the same items, otherwise return `no_val`. The items are determined by splitting each list using the appropriate separator character (`sep1` or `sep2`). The order of items in the lists is not relevant. The compare is case insensitive."
 msgstr ""
 
-#: ../../template_lang.rst:304
-# af1a20404f6c427b96d2059a6c011e3d
+#: ../../template_lang.rst:302
+# afde6df6d36546ada3a0bd6a8fffae66
 msgid "``list_intersection(list1, list2, separator)`` -- return a list made by removing from `list1` any item not found in `list2`, using a case-insensitive compare. The items in `list1` and `list2` are separated by separator, as are the items in the returned list."
 msgstr ""
 
-#: ../../template_lang.rst:305
-# 802e63a320434823bc14f7b147fac982
+#: ../../template_lang.rst:303
+# dc056eecd152453d8f1d876afbd4315a
 msgid "``list_re(src_list, separator, include_re, opt_replace)`` -- Construct a list by first separating `src_list` into items using the `separator` character. For each item in the list, check if it matches `include_re`. If it does, then add it to the list to be returned. If `opt_replace` is not the empty string, then apply the replacement before adding the item to the returned list."
 msgstr ""
 
-#: ../../template_lang.rst:306
-# 3fc18f27a64c4a50953394453546d41e
+#: ../../template_lang.rst:304
+# 6f29d34d4e3f4e2fa5893c166f74d217
 msgid "``list_re_group(src_list, separator, include_re, search_re, template_for_group_1, for_group_2, ...)`` -- Like list_re except replacements are not optional. It uses re_group(item, search_re, template ...) when doing the replacements."
 msgstr ""
 
-#: ../../template_lang.rst:307
-# 3605ba4f911547c08bfa1f7b0950049b
+#: ../../template_lang.rst:305
+# 16f24c0d0aa74faa92ac01fd6c7278f5
 msgid "``list_sort(list, direction, separator)`` -- return list sorted using a case-insensitive sort. If `direction` is zero, the list is sorted ascending, otherwise descending. The list items are separated by separator, as are the items in the returned list."
 msgstr ""
 
-#: ../../template_lang.rst:308
-# 3a00d8f0ff944c898e9eb67662ac9687
+#: ../../template_lang.rst:306
+# 8b4b5b4252f04d1b9f09996fbfb0532f
 msgid "``list_union(list1, list2, separator)`` -- return a list made by merging the items in list1 and list2, removing duplicate items using a case-insensitive compare. If items differ in case, the one in list1 is used. The items in list1 and list2 are separated by separator, as are the items in the returned list."
 msgstr ""
 
-#: ../../template_lang.rst:309
-# 70b558a76e084bd59747b9e40642a560
+#: ../../template_lang.rst:307
+# 1f470c1e859046c89d5937a68eeb483c
 msgid "``multiply(x, y)`` -- returns x * y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
-#: ../../template_lang.rst:310
-# 9fce73b1d61943a5ae9fadb0c1e8f927
+#: ../../template_lang.rst:308
+# 01b74eb9835d4910ac5acfbf0dde9f99
 msgid "``ondevice()`` -- return the string \"Yes\" if ondevice is set, otherwise return the empty string"
 msgstr ""
 
-#: ../../template_lang.rst:311
-# 44987991a5e54ab49abdd7017ffddf04
+#: ../../template_lang.rst:309
+# 309ee7cfbbb841a38ba2c0c5965db28f
 msgid "``or(value, value, ...)`` -- returns the string \"1\" if any value is not empty, otherwise returns the empty string. This function works well with test or first_non_empty. You can have as many values as you want."
 msgstr ""
 
-#: ../../template_lang.rst:312
-# 97812ff3ed004be4a2d72e60a19c30ff
+#: ../../template_lang.rst:310
+# 2d7fa88972224f5fa868df6bac9db94d
 msgid "``print(a, b, ...)`` -- prints the arguments to standard output. Unless you start calibre from the command line (``calibre-debug -g``), the output will go to a black hole."
 msgstr ""
 
-#: ../../template_lang.rst:313
-# 7091e6a999a546dbb30e952ca6930b8f
+#: ../../template_lang.rst:311
+# 042392dca0574bd8953003858b800e87
 msgid "``raw_field(name)`` -- returns the metadata field named by name without applying any formatting."
 msgstr ""
 
-#: ../../template_lang.rst:314
-# 252fadb321b14d7883e67167b1064a99
+#: ../../template_lang.rst:312
+# 278099512152434a952d60a4e5d446b7
 msgid "``re_group(val, pattern, template_for_group_1, for_group_2, ...)`` --  return a string made by applying the reqular expression pattern to the val and replacing each matched instance with the string computed by replacing each matched group by the value returned by the corresponding template. The original matched value for the group is available as $. In template program mode, like for the template and the eval functions, you use [[ for { and ]] for }. The following example in template program mode looks for series with more than one word and uppercases the first word::"
 msgstr ""
 
-#: ../../template_lang.rst:318
-# 1f1664e330634fe0a97c865310b2353f
+#: ../../template_lang.rst:316
+# 6b1602b32f314c02ab6d6d5abda0c00c
 msgid "``series_sort()`` -- returns the series sort value."
 msgstr ""
 
-#: ../../template_lang.rst:319
-# 695f9fa8a8254f72bca1b70a1e2f50bb
+#: ../../template_lang.rst:317
+# 615e2cf9dddd4108a6391c34c158c157
 msgid "``strcat(a, b, ...)`` -- can take any number of arguments. Returns a string formed by concatenating all the arguments."
 msgstr ""
 
-#: ../../template_lang.rst:320
-# aac14de6973e4fae84cd3df30c055ee9
+#: ../../template_lang.rst:318
+# 824a59e8db024947914b89f353309911
 msgid "``strcat_max(max, string1, prefix2, string2, ...)`` -- Returns a string formed by concatenating the arguments. The returned value is initialized to string1. `Prefix, string` pairs are added to the end of the value as long as the resulting string length is less than `max`. String1 is returned even if string1 is longer than max. You can pass as many `prefix, string` pairs as you wish."
 msgstr ""
 
-#: ../../template_lang.rst:321
-# 598ad2bbc6b94134941ce2869d2f12b2
+#: ../../template_lang.rst:319
+# 8c715c92af63499ea4de3f269e6cf362
 msgid "``strcmp(x, y, lt, eq, gt)`` -- does a case-insensitive comparison x and y as strings. Returns ``lt`` if x < y. Returns ``eq`` if x == y. Otherwise returns ``gt``."
 msgstr ""
 
-#: ../../template_lang.rst:322
-# 60ae63390bdb477c971a54d4cb47f3df
+#: ../../template_lang.rst:320
+# 9b0935e4a07e4adca97539ac4ea90319
 msgid "``strlen(a)`` -- Returns the length of the string passed as the argument."
 msgstr ""
 
-#: ../../template_lang.rst:323
-# 57afc06fd8ac4e5f83e286a567a5b9a1
+#: ../../template_lang.rst:321
+# 1f852a13899641fead0ef9585ae6f8e8
 msgid "``substr(str, start, end)`` -- returns the ``start``'th through the ``end``'th characters of ``str``. The first character in ``str`` is the zero'th character. If end is negative, then it indicates that many characters counting from the right. If end is zero, then it indicates the last character. For example, ``substr('12345', 1, 0)`` returns ``'2345'``, and ``substr('12345', 1, -1)`` returns ``'234'``."
 msgstr ""
 
-#: ../../template_lang.rst:324
-# e4410762ce004ba394babacb22273454
+#: ../../template_lang.rst:322
+# 503357cff17046d194ca7023ea34c505
 msgid "``subtract(x, y)`` -- returns x - y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
-#: ../../template_lang.rst:325
-# 8d7fa10b30ac4c6eab83c130918edf8f
+#: ../../template_lang.rst:323
+# 7f0391cf36674f83af543c5b46d75746
 msgid "``today()`` -- return a date string for today. This value is designed for use in format_date or days_between, but can be manipulated like any other string. The date is in ISO format."
 msgstr ""
 
-#: ../../template_lang.rst:326
-# 0e45dd272e9f469cb085d6abeed92714
+#: ../../template_lang.rst:324
+# 06b278dc53884e93bb11d0d57e3955ff
 msgid "``template(x)`` -- evaluates x as a template. The evaluation is done in its own context, meaning that variables are not shared between the caller and the template evaluation. Because the `{` and `}` characters are special, you must use `[[` for the `{` character and `]]` for the '}' character; they are converted automatically. For example, ``template('[[title_sort]]') will evaluate the template ``{title_sort}`` and return its value. Note also that prefixes and suffixes (the `|prefix|suffix` syntax) cannot be used in the argument to this function when using template program mode."
 msgstr ""
 
-#: ../../template_lang.rst:331
-# 316a9cf99ce54adbb740e5c84ee4e0fe
+#: ../../template_lang.rst:329
+# e1cd4cbe5ead4dacbd66ab4d4271202e
 msgid "Function classification"
 msgstr ""
 
-#: ../../template_lang.rst:342
-# dc59d707e41f4339bdb350e14fe6798b
+#: ../../template_lang.rst:340
+# 13ea8f0d744447e989839e03c96c7adb
 msgid "Using general program mode"
 msgstr ""
 
-#: ../../template_lang.rst:344
-# 47b8b00b39c745649316f8bca18e5129
+#: ../../template_lang.rst:342
+# e2685dd2f3e240a19288397e0d1d89c8
 msgid "For more complicated template programs, it is sometimes easier to avoid template syntax (all the `{` and `}` characters), instead writing a more classical-looking program. You can do this in |app| by beginning the template with `program:`. In this case, no template processing is done. The special variable `$` is not set. It is up to your program to produce the correct results."
 msgstr ""
 
-#: ../../template_lang.rst:346
-# 4e85b7bb6259450ca501f8e2c6b5a47d
+#: ../../template_lang.rst:344
+# e8413d3818d14654a9b09d2be4f8d5ad
 msgid "One advantage of `program:` mode is that the brackets are no longer special. For example, it is not necessary to use `[[` and `]]` when using the `template()` function. Another advantage is that program mode templates are compiled to Python and can run much faster than  templates in the other two modes. Speed improvement depends on the complexity of the templates; the more complicated the template the more the improvement. Compilation is turned off or on using the tweak ``compile_gpm_templates`` (Compile General Program Mode templates to Python). The main reason to turn off compilation is if a compiled template does not work, in which case please file a bug report."
 msgstr ""
 
-#: ../../template_lang.rst:348
-# 2b78becb4aab46f79a7d86a0925dfee9
+#: ../../template_lang.rst:346
+# 624669e332584654a9a66effe6548c2b
 msgid "The following example is a `program:` mode implementation of a recipe on the MobileRead forum: \"Put series into the title, using either initials or a shortened form. Strip leading articles from the series name (any).\" For example, for the book The Two Towers in the Lord of the Rings series, the recipe gives `LotR [02] The Two Towers`. Using standard templates, the recipe requires three custom columns and a plugboard, as explained in the following:"
 msgstr ""
 
-#: ../../template_lang.rst:350
-# 02719a53a4c74c268bcce68598228082
+#: ../../template_lang.rst:348
+# 4f7c1b5833a040f7ad9dc5926cf2f21c
 msgid "The solution requires creating three composite columns. The first column is used to remove the leading articles. The second is used to compute the 'shorten' form. The third is to compute the 'initials' form. Once you have these columns, the plugboard selects between them. You can hide any or all of the three columns on the library view."
 msgstr ""
 
-#: ../../template_lang.rst:352
-# b94625d50eb440fbaa2f17c6bb59d04c
+#: ../../template_lang.rst:350
+# 2c7ab1f871844e5e9417c7ecf4793839
 msgid "First column: Name: #stripped_series. Template: {series:re(^(A|The|An)\\s+,)||}"
 msgstr ""
 
-#: ../../template_lang.rst:356
-# 1324d8da6a734e51bd991cfcb9e84496
+#: ../../template_lang.rst:354
+# 1b48f44f3219403091ddbf4102eacf42
 msgid "Second column (the shortened form): Name: #shortened. Template: {#stripped_series:shorten(4,-,4)}"
 msgstr ""
 
-#: ../../template_lang.rst:360
-# d1b9001c5197464399da4406702b8612
+#: ../../template_lang.rst:358
+# 78e1bfb812944c62a9969647ca08a421
 msgid "Third column (the initials form): Name: #initials. Template: {#stripped_series:re(([^\\s])[^\\s]+(\\s|$),\\1)}"
 msgstr ""
 
-#: ../../template_lang.rst:364
-# b24166e655cc4897aff77a4d9343f400
+#: ../../template_lang.rst:362
+# 0b8d54e1651342de899d412e80befd03
 msgid "Plugboard expression: Template:{#stripped_series:lookup(.\\s,#initials,.,#shortened,series)}{series_index:0>2.0f| [|] }{title} Destination field: title"
 msgstr ""
 
-#: ../../template_lang.rst:368
-# 4493f941d1f741689029f65f6589c597
+#: ../../template_lang.rst:366
+# f05f74bcef5146ad9628b60a105671a9
 msgid "This set of fields and plugboard produces: Series: The Lord of the Rings Series index: 2 Title: The Two Towers Output: LotR [02] The Two Towers"
 msgstr ""
 
-#: ../../template_lang.rst:374
-# d29b81d3cf1a4ac39a6462888a4e116a
+#: ../../template_lang.rst:372
+# 62cf01b222fe4a93b8dda11798f148b5
 msgid "Series: Dahak Series index: 1 Title: Mutineers Moon Output: Dahak [01] Mutineers Moon"
 msgstr ""
 
-#: ../../template_lang.rst:379
-# dd5aa0892d1947a7973cffd15483735a
+#: ../../template_lang.rst:377
+# 7fbda09debed4f52abacabf7d0e3c001
 msgid "Series: Berserkers Series Index: 4 Title: Berserker Throne Output: Bers-kers [04] Berserker Throne"
 msgstr ""
 
-#: ../../template_lang.rst:384
-# ec10b241c30d4e79b035b72ba9d95d7e
+#: ../../template_lang.rst:382
+# 106a27c6e8424366a27f70362bd31cf2
 msgid "Series: Meg Langslow Mysteries Series Index: 3 Title: Revenge of the Wrought-Iron Flamingos Output: MLM [03] Revenge of the Wrought-Iron Flamingos"
 msgstr ""
 
-#: ../../template_lang.rst:389
-# d6da5eb7a50841fbbde679a4856c2de3
+#: ../../template_lang.rst:387
+# 9cbd54b55c55465f93aafba64c397dc0
 msgid "The following program produces the same results as the original recipe, using only one custom column to hold the results of a program that computes the special title value::"
 msgstr ""
 
-#: ../../template_lang.rst:426
-# dd09f3d9678148ae8245b165e8b6a92a
+#: ../../template_lang.rst:424
+# 63012a1bcaa642f1a4bf99c0f6c433d1
 msgid "It would be possible to do the above with no custom columns by putting the program into the template box of the plugboard. However, to do so, all comments must be removed because the plugboard text box does not support multi-line editing. It is debatable whether the gain of not having the custom column is worth the vast increase in difficulty caused by the program being one giant line."
 msgstr ""
 
-#: ../../template_lang.rst:430
-# 8bbb42f865344bb5b38712719bf11c7d
+#: ../../template_lang.rst:428
+# 743243d707124b0f89c4dd40549f656e
 msgid "User-defined Template Functions"
 msgstr ""
 
-#: ../../template_lang.rst:432
-# cc12b11dc6714bf389fb529be31e4aa9
+#: ../../template_lang.rst:430
+# dcc292d21d5342e6a133a2b119d0de7a
 msgid "You can add your own functions to the template processor. Such functions are written in python, and can be used in any of the three template programming modes. The functions are added by going to Preferences -> Advanced -> Template Functions. Instructions are shown in that dialog."
 msgstr ""
 
-#: ../../template_lang.rst:435
-# d1adbb66f2f04af6bd8b16b940acbb6c
+#: ../../template_lang.rst:433
+# 523f601fed074fe88293735086078b7c
 msgid "Special notes for save/send templates"
 msgstr ""
 
-#: ../../template_lang.rst:437
-# f1a4f5aedf3543caa6b5826c3224c12a
+#: ../../template_lang.rst:435
+# e81c3d5a515e46b698fe37e35447eca5
 msgid "Special processing is applied when a template is used in a `save to disk` or `send to device` template. The values of the fields are cleaned, replacing characters that are special to file systems with underscores, including slashes. This means that field text cannot be used to create folders. However, slashes are not changed in prefix or suffix strings, so slashes in these strings will cause folders to be created. Because of this, you can create variable-depth folder structure."
 msgstr ""
 
-#: ../../template_lang.rst:439
-# 86fc57f9da804b8b82bedb468144a201
+#: ../../template_lang.rst:437
+# 13c6587b438b4b918db25bc735118acd
 msgid "For example, assume we want the folder structure `series/series_index - title`, with the caveat that if series does not exist, then the title should be in the top folder. The template to do this is::"
 msgstr ""
 
-#: ../../template_lang.rst:443
-# e7ca52cf536f4519bb1ba988a5c74224
+#: ../../template_lang.rst:441
+# 41a36118e2ef4067a91f2a2ecdf1f7da
 msgid "The slash and the hyphen appear only if series is not empty."
 msgstr ""
 
-#: ../../template_lang.rst:445
-# 7fb6f00c89ec483dbe953ad9e4bd393e
+#: ../../template_lang.rst:443
+# 6bd2cc14d9334b469b3886f8c567d392
 msgid "The lookup function lets us do even fancier processing. For example, assume that if a book has a series, then we want the folder structure `series/series index - title.fmt`. If the book does not have a series, then we want the folder structure `genre/author_sort/title.fmt`. If the book has no genre, we want to use 'Unknown'. We want two completely different paths, depending on the value of series."
 msgstr ""
 
-#: ../../template_lang.rst:450
-# 4c775e2cbcc741bba5add8f3cf9a26e7
+#: ../../template_lang.rst:448
+# 43fc753cd53145c1ab9e2c489c480a13
 msgid "To accomplish this, we:"
 msgstr ""
 
-#: ../../template_lang.rst:448
-# f19e3b8354684f809940f98851d65be7
+#: ../../template_lang.rst:446
+# 60bb0a3db7c44c71bec28abda236c44d
 msgid "Create a composite field (call it AA) containing ``{series}/{series_index} - {title'}``. If the series is not empty, then this template will produce `series/series_index - title`."
 msgstr ""
 
-#: ../../template_lang.rst:449
-# f1241de7918a4a89ad40d6ef8e721da9
+#: ../../template_lang.rst:447
+# 7a3a6b0cdabb44839d0885efedd6abc3
 msgid "Create a composite field (call it BB) containing ``{#genre:ifempty(Unknown)}/{author_sort}/{title}``. This template produces `genre/author_sort/title`, where an empty genre is replaced wuth `Unknown`."
 msgstr ""
 
-#: ../../template_lang.rst:450
-# 0757611fa9ee42c0a79c04425fc08648
+#: ../../template_lang.rst:448
+# bcab1cab04e54f469eff81921b071858
 msgid "Set the save template to ``{series:lookup(.,AA,BB)}``. This template chooses composite field AA if series is not empty, and composite field BB if series is empty. We therefore have two completely different save paths, depending on whether or not `series` is empty."
 msgstr ""
 
-#: ../../template_lang.rst:453
-# d3aabfcf7f544c64b9a89778335f8f86
+#: ../../template_lang.rst:451
+# cb5259d347b44020b9acad458a91c4f0
 msgid "Templates and Plugboards"
 msgstr ""
 
-#: ../../template_lang.rst:455
-# e98937b05bf74eb1b355ac8c02bcaf4a
+#: ../../template_lang.rst:453
+# 622f5f272e25413594f7e28bcc4369e3
 msgid "Plugboards are used for changing the metadata written into books during send-to-device and save-to-disk operations. A plugboard permits you to specify a template to provide the data to write into the book's metadata. You can use plugboards to modify the following fields: authors, author_sort, language, publisher, tags, title, title_sort. This feature helps people who want to use different metadata in books on devices to solve sorting or display issues."
 msgstr ""
 
-#: ../../template_lang.rst:457
-# e6394c98bdd74bdab52e433a2506ad42
+#: ../../template_lang.rst:455
+# 4a86046929914106a9781c073c64e44f
 msgid "When you create a plugboard, you specify the format and device for which the plugboard is to be used. A special device is provided, save_to_disk, that is used when saving formats (as opposed to sending them to a device). Once you have chosen the format and device, you choose the metadata fields to change, providing templates to supply the new values. These templates are `connected` to their destination fields, hence the name `plugboards`. You can, of course, use composite columns in these templates."
 msgstr ""
 
-#: ../../template_lang.rst:459
-# b4dbdd4818274b08aa60c56442f35edf
+#: ../../template_lang.rst:457
+# ff20f4eb744f4c8993c85e1b455bfa00
 msgid "When a plugboard might apply (content server, save to disk, or send to device), |app| searches the defined plugboards to choose the correct one for the given format and device. For example, to find the appropriate plugboard for an EPUB book being sent to an ANDROID device, |app| searches the plugboards using the following search order:"
 msgstr ""
 
-#: ../../template_lang.rst:461
-# 2fae8932cf69485196295d8863e3d23b
+#: ../../template_lang.rst:459
+# bed7e8d68ef34e88a2742e4385151f2f
 msgid "a plugboard with an exact match on format and device, e.g., ``EPUB`` and ``ANDROID``"
 msgstr ""
 
-#: ../../template_lang.rst:462
-# a2c3ee2682864164ac46493f1ffb4bd9
+#: ../../template_lang.rst:460
+# d1b8f6f4215c4c85a6b2aef00f752a30
 msgid "a plugboard with an exact match on format and the special ``any device`` choice, e.g., ``EPUB`` and ``any device``"
 msgstr ""
 
-#: ../../template_lang.rst:463
-# 5ef51f35a4f842148b32f19cb144a619
+#: ../../template_lang.rst:461
+# bc19d8ab20dc4e41898035d906bd8795
 msgid "a plugboard with the special ``any format`` choice and an exact match on device, e.g., ``any format`` and ``ANDROID``"
 msgstr ""
 
-#: ../../template_lang.rst:464
-# d194a9367db74f778f244bce98520ecc
+#: ../../template_lang.rst:462
+# 0a28bf0a3dbc49979f33dddf281813ab
 msgid "a plugboard with ``any format`` and ``any device``"
 msgstr ""
 
-#: ../../template_lang.rst:466
-# e76fd69bbf91408b998ab58404666ea6
+#: ../../template_lang.rst:464
+# 5205f6ebbe8b43c2a2d21f547bb6247f
 msgid "The tags and authors fields have special treatment, because both of these fields can hold more than one item. A book can have many tags and many authors. When you specify that one of these two fields is to be changed, the template's result is examined to see if more than one item is there. For tags, the result is cut apart wherever |app| finds a comma. For example, if the template produces the value ``Thriller, Horror``, then the result will be two tags, ``Thriller`` and ``Horror``. There is no way to put a comma in the middle of a tag."
 msgstr ""
 
-#: ../../template_lang.rst:468
-# 3c74b7622e9047508e49c48f8fddc7e1
+#: ../../template_lang.rst:466
+# 2ecf1283d4254e888f6c5e13cc48e0b4
 msgid "The same thing happens for authors, but using a different character for the cut, a `&` (ampersand) instead of a comma. For example, if the template produces the value ``Blogs, Joe&Posts, Susan``, then the book will end up with two authors, ``Blogs, Joe`` and ``Posts, Susan``. If the template produces the value ``Blogs, Joe;Posts, Susan``, then the book will have one author with a rather strange name."
 msgstr ""
 
-#: ../../template_lang.rst:470
-# 6f9e8d807df54bdda2d9905eff89aa07
+#: ../../template_lang.rst:468
+# f3a24bf36f6f45949db38de36d808bc8
 msgid "Plugboards affect the metadata written into the book when it is saved to disk or written to the device. Plugboards do not affect the metadata used by ``save to disk`` and ``send to device`` to create the file names. Instead, file names are constructed using the templates entered on the appropriate preferences window."
 msgstr ""
 
-#: ../../template_lang.rst:473
-# 1c5324bfe8f244ae8fa17a63841ca374
+#: ../../template_lang.rst:471
+# 7d46a481b0c542648f2967d7c0c117b8
 msgid "Helpful Tips"
 msgstr ""
 
-#: ../../template_lang.rst:475
-# efc2faa48c0d4870a27bef47ae3f8d82
+#: ../../template_lang.rst:473
+# e0467193ad1d4157ada3fa5b0a3abab2
 msgid "You might find the following tips useful."
 msgstr ""
 
-#: ../../template_lang.rst:477
-# 9f661744129849879ea965839787c135
+#: ../../template_lang.rst:475
+# 4a89a6592fcc4820a6b1dda4d8d4b035
 msgid "Create a custom composite column to test templates. Once you have the column, you can change its template simply by double-clicking on the column. Hide the column when you are not testing."
 msgstr ""
 
-#: ../../template_lang.rst:478
-# a7e05faec54249ed88763aeea33a17b8
+#: ../../template_lang.rst:476
+# b16dc61f1c4b4c55ac66242464886fd0
 msgid "Templates can use other templates by referencing a composite custom column."
 msgstr ""
 
-#: ../../template_lang.rst:479
-# 5bafe1dc8b0d4a08a4c994106901b61a
+#: ../../template_lang.rst:477
+# 3c9257c38dd34d15a37fca4fef015f8e
 msgid "In a plugboard, you can set a field to empty (or whatever is equivalent to empty) by using the special template ``{}``. This template will always evaluate to an empty string."
 msgstr ""
 
-#: ../../template_lang.rst:480
-# 56a74f0dd3de4b76928a89f2a6e77f04
+#: ../../template_lang.rst:478
+# 536ae4d0249e4fb4a31ddc182d5dd615
 msgid "The technique described above to show numbers even if they have a zero value works with the standard field series_index."
 msgstr ""
 

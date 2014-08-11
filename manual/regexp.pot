@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre 1.48.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-08 08:53+0530\n"
+"POT-Creation-Date: 2014-08-11 23:35+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,253 +16,253 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../regexp.rst:6
-# de1002aa434c47d0a11219908d230535
+#: ../../regexp.rst:5
+# 167cde8b6cc6464ca81af97d18fd69e7
 msgid "All about using regular expressions in |app|"
 msgstr ""
 
-#: ../../regexp.rst:8
-# 4f93732f61ea4a46a433475210437f34
+#: ../../regexp.rst:7
+# 4779745885a4406eba0b833f7c67da6b
 msgid "Regular expressions are features used in many places in |app| to perform sophisticated manipulation of ebook content and metadata. This tutorial is a gentle introduction to getting you started with using regular expressions in |app|."
 msgstr ""
 
 #: ../../regexp.rst:0
-# 8645941608114d1c98908dea857fd313
+# b9521d6759b84f0ebb41d3f38e1d78e1
 msgid "Contents"
 msgstr ""
 
-#: ../../regexp.rst:16
-# 805972fa0f8d4eb0b9fce67e0ac3415b
+#: ../../regexp.rst:15
+# 34745f30bb7040f8881bec71e15f71c5
 msgid "First, a word of warning and a word of courage"
 msgstr ""
 
-#: ../../regexp.rst:18
-# 57b427ef7d634297936ab3a061864084
+#: ../../regexp.rst:17
+# 5495f2fb6e944fc6b592e479864bca45
 msgid "This is, inevitably, going to be somewhat technical- after all, regular expressions are a technical tool for doing technical stuff. I'm going to have to use some jargon and concepts that may seem complicated or convoluted. I'm going to try to explain those concepts as clearly as I can, but really can't do without using them at all. That being said, don't be discouraged by any jargon, as I've tried to explain everything new. And while regular expressions themselves may seem like an arcane, black magic (or, to be more prosaic, a random string of mumbo-jumbo letters and signs), I promise that they are not all that complicated. Even those who understand regular expressions really well have trouble reading the more complex ones, but writing them isn't as difficult- you construct the expression step by step. So, take a step and follow me into the rabbit hole."
 msgstr ""
 
-#: ../../regexp.rst:21
-# c47af56bcc834b1a8e5c716bc57e04d2
+#: ../../regexp.rst:20
+# 47b52e1a3e7549efa1f074dc320385a7
 msgid "Where in |app| can you use regular expressions?"
 msgstr ""
 
-#: ../../regexp.rst:23
-# d30f3108742d4c7880e65ae4412d26e1
+#: ../../regexp.rst:22
+# f6d4adebd613468cb169020bb25322e9
 msgid "There are a few places |app| uses regular expressions. There's the Search & Replace in conversion options, metadata detection from filenames in the import settings and Search & Replace when editing the metadata of books in bulk."
 msgstr ""
 
-#: ../../regexp.rst:26
-# 0c02996fabe24b2182ad85ad64c85e55
+#: ../../regexp.rst:25
+# 923e9d0a7adc488a9bb1110c2dd50046
 msgid "What on earth *is* a regular expression?"
 msgstr ""
 
-#: ../../regexp.rst:28
-# d32362fc7d8b49e0a56316bb32a91dc7
+#: ../../regexp.rst:27
+# 27310ec70f9648c6a8cbb28b0bd68168
 msgid "A regular expression is a way to describe sets of strings. A single regular expression can *match* a number of different strings. This is what makes regular expression so powerful -- they are a concise way of describing a potentially large number of variations."
 msgstr ""
 
-#: ../../regexp.rst:30
-# 5b536e53fb044303a8c650865cb2f890
+#: ../../regexp.rst:29
+# dd60f5053dc2415b8dd58d8a2a8cec8a
 msgid "I'm using string here in the sense it is used in programming languages: a string of one or more characters, characters including actual characters, numbers, punctuation and so-called whitespace (linebreaks, tabulators etc.). Please note that generally, uppercase and lowercase characters are not considered the same, thus \"a\" being a different character from \"A\" and so forth. In |app|, regular expressions are case insensitive in the search bar, but not in the conversion options. There's a way to make every regular expression case insensitive, but we'll discuss that later. It gets complicated because regular expressions allow for variations in the strings it matches, so one expression can match multiple strings, which is why people bother using them at all. More on that in a bit."
 msgstr ""
 
-#: ../../regexp.rst:33
-# 523c41369d4a4950976c5d4bbc0c4ee6
+#: ../../regexp.rst:32
+# ba1bcf4ddde6483cb850297a2f339680
 msgid "Care to explain?"
 msgstr ""
 
-#: ../../regexp.rst:35
-# 9ecfabb034014b808b79121842d269f6
+#: ../../regexp.rst:34
+# 063ea38c20b244539e7bc68c5eb1dd9f
 msgid "Well, that's why we're here. First, this is the most important concept in regular expressions: *A string by itself is a regular expression that matches itself*. That is to say, if I wanted to match the string ``\"Hello, World!\"`` using a regular expression, the regular expression to use would be ``Hello, World!``. And yes, it really is that simple. You'll notice, though, that this *only* matches the exact string ``\"Hello, World!\"``, not e.g. ``\"Hello, wOrld!\"`` or ``\"hello, world!\"`` or any other such variation."
 msgstr ""
 
-#: ../../regexp.rst:38
-# 9decb435cf6948f28fb8bfa31795cf3a
+#: ../../regexp.rst:37
+# 7ec17231893a42b48e377945a10a0b0e
 msgid "That doesn't sound too bad. What's next?"
 msgstr ""
 
-#: ../../regexp.rst:40
-# eb22d995db9340a2b264081720e9a902
+#: ../../regexp.rst:39
+# 74d07987b0e34343a5c81955dd3042ee
 msgid "Next is the beginning of the really good stuff. Remember where I said that regular expressions can match multiple strings? This is were it gets a little more complicated. Say, as a somewhat more practical exercise, the ebook you wanted to convert had a nasty footer counting the pages, like \"Page 5 of 423\". Obviously the page number would rise from 1 to 423, thus you'd have to match 423 different strings, right? Wrong, actually: regular expressions allow you to define sets of characters that are matched: To define a set, you put all the characters you want to be in the set into square brackets. So, for example, the set ``[abc]`` would match either the character \"a\", \"b\" or \"c\". *Sets will always only match one of the characters in the set*. They \"understand\" character ranges, that is, if you wanted to match all the lower case characters, you'd use the set ``[a-z]`` for lower- and uppercase characters you'd use ``[a-zA-Z]`` and so on. Got the idea? So, obviously, using the expression ``Page [0-9] of 423`` you'd be able to match the first 9 pages, thus reducing the expressions needed to three: The second expression ``Page [0-9][0-9] of 423`` would match all two-digit page numbers, and I'm sure you can guess what the third expression would look like. Yes, go ahead. Write it down."
 msgstr ""
 
-#: ../../regexp.rst:43
-# fa3f287f41c14c9d914c0afa3e0e18d6
+#: ../../regexp.rst:42
+# 134d97921fe44efeb0fe3e23f7184ef6
 msgid "Hey, neat! This is starting to make sense!"
 msgstr ""
 
-#: ../../regexp.rst:45
-# e0d5c38f1cda4a47ba775b2d711bf655
+#: ../../regexp.rst:44
+# aad1c070fd864c04b51010e98119bb00
 msgid "I was hoping you'd say that. But brace yourself, now it gets even better! We just saw that using sets, we could match one of several characters at once. But you can even repeat a character or set, reducing the number of expressions needed to handle the above page number example to one. Yes, ONE! Excited? You should be! It works like this: Some so-called special characters, \"+\", \"?\" and \"*\", *repeat the single element preceding them*. (Element means either a single character, a character set, an escape sequence or a group (we'll learn about those last two later)- in short, any single entity in a regular expression.) These characters are called wildcards or quantifiers. To be more precise, \"?\" matches *0 or 1* of the preceding element, \"*\" matches *0 or more* of the preceding element and \"+\" matches *1 or more* of the preceding element. A few examples: The expression ``a?`` would match either \"\" (which is the empty string, not strictly useful in this case) or \"a\", the expression ``a*`` would match \"\", \"a\", \"aa\" or any number of a's in a row, and, finally, the expression ``a+`` would match \"a\", \"aa\" or any number of a's in a row (Note: it wouldn't match the empty string!). Same deal for sets: The expression ``[0-9]+`` would match *every integer number there is*! I know what you're thinking, and you're right: If you use that in the above case of matching page numbers, wouldn't that be the single one expression to match all the page numbers? Yes, the expression ``Page [0-9]+ of 423`` would match every page number in that book!"
 msgstr ""
 
-#: ../../regexp.rst:48
-# 636f554abb5e4f2ba403aa47c5fa5cef
+#: ../../regexp.rst:47
+# 5013188842dc4583b0caafb4b9bda1a2
 msgid "A note on these quantifiers: They generally try to match as much text as possible, so be careful when using them. This is called \"greedy behaviour\"- I'm sure you get why. It gets problematic when you, say, try to match a tag. Consider, for example, the string ``\"<p class=\"calibre2\">Title here</p>\"`` and let's say you'd want to match the opening tag (the part between the first pair of angle brackets, a little more on tags later). You'd think that the expression ``<p.*>`` would match that tag, but actually, it matches the whole string! (The character \".\" is another special character. It matches anything *except* linebreaks, so, basically, the expression ``.*`` would match any single line you can think of.) Instead, try using ``<p.*?>`` which makes the quantifier ``\"*\"`` non-greedy. That expression would only match the first opening tag, as intended. There's actually another way to accomplish this: The expression ``<p[^>]*>`` will match that same opening tag- you'll see why after the next section. Just note that there quite frequently is more than one way to write a regular expression."
 msgstr ""
 
-#: ../../regexp.rst:52
-# 0d94c1bf94014a3b836cebf05d632667
+#: ../../regexp.rst:51
+# e6816f1e0c10407eb79bcbab23367613
 msgid "Well, these special characters are very neat and all, but what if I wanted to match a dot or a question mark?"
 msgstr ""
 
-#: ../../regexp.rst:54
-# c0450fedf6504efd8c84b0967027875a
+#: ../../regexp.rst:53
+# e1326134ec56402299f8c1dd1b6408c5
 msgid "You can of course do that: Just put a backslash in front of any special character and it is interpreted as the literal character, without any special meaning. This pair of a backslash followed by a single character is called an escape sequence, and the act of putting a backslash in front of a special character is called escaping that character. An escape sequence is interpreted as a single element. There are of course escape sequences that do more than just escaping special characters, for example ``\"\\t\"`` means a tabulator. We'll get to some of the escape sequences later. Oh, and by the way, concerning those special characters: Consider any character we discuss in this introduction as having some function to be special and thus needing to be escaped if you want the literal character."
 msgstr ""
 
-#: ../../regexp.rst:57
-# 8836ecd0b1fe45219d657ee1112392bb
+#: ../../regexp.rst:56
+# a8cf651ab84342d2abc8c71e43568091
 msgid "So, what are the most useful sets?"
 msgstr ""
 
-#: ../../regexp.rst:59
-# 1a709546962a41248419755450e6ca9f
+#: ../../regexp.rst:58
+# 6ba95f9742754e679581cef8b924795d
 msgid "Knew you'd ask. Some useful sets are ``[0-9]`` matching a single number, ``[a-z]`` matching a single lowercase letter, ``[A-Z]`` matching a single uppercase letter, ``[a-zA-Z]`` matching a single letter and ``[a-zA-Z0-9]`` matching a single letter or number. You can also use an escape sequence as shorthand::"
 msgstr ""
 
-#: ../../regexp.rst:66
-# 213733d3530742e0ba9ea8e30947d7e3
+#: ../../regexp.rst:65
+# 344017b724a94940b75a756506aed2e2
 msgid "\"Whitespace\" is a term for anything that won't be printed. These characters include space, tabulator, line feed, form feed and carriage return."
 msgstr ""
 
-#: ../../regexp.rst:68
-# d212d939710046eeb6d0ffd8b2a05b02
+#: ../../regexp.rst:67
+# 7e113af1b0804daa93fcc7f2445fd653
 msgid "As a last note on sets, you can also define a set as any character *but* those in the set. You do that by including the character ``\"^\"`` as the *very first character in the set*. Thus, ``[^a]`` would match any character excluding \"a\". That's called complementing the set. Those escape sequence shorthands we saw earlier can also be complemented: ``\"\\D\"`` means any non-number character, thus being equivalent to ``[^0-9]``. The other shorthands can be complemented by, you guessed it, using the respective uppercase letter instead of the lowercase one. So, going back to the example ``<p[^>]*>`` from the previous section, now you can see that the character set it's using tries to match any character except for a closing angle bracket."
 msgstr ""
 
-#: ../../regexp.rst:71
-# 19104f3d156944949fd5a1a4921f652b
+#: ../../regexp.rst:70
+# 16d88a83edae439ba58b7bc0afcb4abf
 msgid "But if I had a few varying strings I wanted to match, things get complicated?"
 msgstr ""
 
-#: ../../regexp.rst:73
-# 7d298c2aea0b47388dc1c2817febb2dd
+#: ../../regexp.rst:72
+# ca708422396046a3888a1cba3a4b976b
 msgid "Fear not, life still is good and easy. Consider this example: The book you're converting has \"Title\" written on every odd page and \"Author\" written on every even page. Looks great in print, right? But in ebooks, it's annoying. You can group whole expressions in normal parentheses, and the character ``\"|\"`` will let you match *either* the expression to its right *or* the one to its left. Combine those and you're done. Too fast for you? Okay, first off, we group the expressions for odd and even pages, thus getting ``(Title)(Author)`` as our two needed expressions. Now we make things simpler by using the vertical bar (``\"|\"`` is called the vertical bar character): If you use the expression ``(Title|Author)`` you'll either get a match for \"Title\" (on the odd pages) or you'd match \"Author\" (on the even pages). Well, wasn't that easy?"
 msgstr ""
 
-#: ../../regexp.rst:75
-# 65fd12b4d9634e64bd7ec989cc14ef3b
+#: ../../regexp.rst:74
+# 3b680380ebdf41168bc8328bcc18f080
 msgid "You can, of course, use the vertical bar without using grouping parentheses, as well. Remember when I said that quantifiers repeat the element preceding them? Well, the vertical bar works a little differently: The expression \"Title|Author\" will also match either the string \"Title\" or the string \"Author\", just as the above example using grouping. *The vertical bar selects between the entire expression preceding and following it*. So, if you wanted to match the strings \"Calibre\" and \"calibre\" and wanted to select only between the upper- and lowercase \"c\", you'd have to use the expression ``(c|C)alibre``, where the grouping ensures that only the \"c\" will be selected. If you were to use ``c|Calibre``, you'd get a match on the string \"c\" or on the string \"Calibre\", which isn't what we wanted. In short: If in doubt, use grouping together with the vertical bar."
 msgstr ""
 
-#: ../../regexp.rst:78
-# f68e33b5c2634ade9e07925fa630645a
+#: ../../regexp.rst:77
+# b0a7ed4882c64f338fa59e55054cbc97
 msgid "You missed..."
 msgstr ""
 
-#: ../../regexp.rst:80
-# fd5ea7954a7c4ed79e3c6af3e5a6b7bd
+#: ../../regexp.rst:79
+# bc78ba3d9f2442499b1cc576c64d9661
 msgid "... wait just a minute, there's one last, really neat thing you can do with groups. If you have a group that you previously matched, you can use references to that group later in the expression: Groups are numbered starting with 1, and you reference them by escaping the number of the group you want to reference, thus, the fifth group would be referenced as ``\\5``. So, if you searched for ``([^ ]+) \\1`` in the string \"Test Test\", you'd match the whole string!"
 msgstr ""
 
-#: ../../regexp.rst:84
-# c33a823a7e8e43cd95a914aa4641b374
+#: ../../regexp.rst:83
+# 3d6afe9fa10440758f234e34d10f6a8f
 msgid "In the beginning, you said there was a way to make a regular expression case insensitive?"
 msgstr ""
 
-#: ../../regexp.rst:86
-# 2a2ead932b63449f974ebb9f8d96226e
+#: ../../regexp.rst:85
+# dcbe1bb3301a4a6b86e5a341e6deb268
 msgid "Yes, I did, thanks for paying attention and reminding me. You can tell |app| how you want certain things handled by using something called flags. You include flags in your expression by using the special construct ``(?flags go here)`` where, obviously, you'd replace \"flags go here\" with the specific flags you want. For ignoring case, the flag is ``i``, thus you include ``(?i)`` in your expression. Thus, ``test(?i)`` would match \"Test\", \"tEst\", \"TEst\" and any case variation you could think of."
 msgstr ""
 
-#: ../../regexp.rst:88
-# e46821bf5a2247479411cd451b5ee363
+#: ../../regexp.rst:87
+# 04499c38e8164465a3476f042eb54237
 msgid "Another useful flag lets the dot match any character at all, *including* the newline, the flag ``s``. If you want to use multiple flags in an expression, just put them in the same statement: ``(?is)`` would ignore case and make the dot match all. It doesn't matter which flag you state first, ``(?si)`` would be equivalent to the above. By the way, good places for putting flags in your expression would be either the very beginning or the very end. That way, they don't get mixed up with anything else."
 msgstr ""
 
-#: ../../regexp.rst:91
-# 3f9630f4995c4e8ea5e47e7b68426c77
+#: ../../regexp.rst:90
+# 35c6a5a287164cc99e257f848afd80e6
 msgid "I think I'm beginning to understand these regular expressions now... how do I use them in |app|?"
 msgstr ""
 
-#: ../../regexp.rst:94
-# a892a9c6285040b8adf228a1becd75e8
+#: ../../regexp.rst:93
+# 9ae54f2e4edf4c84a09230c48447fd2a
 msgid "Conversions"
 msgstr ""
 
-#: ../../regexp.rst:96
-# 2a0a4f7acd944398b3097d4e665a8af5
+#: ../../regexp.rst:95
+# 6347f20737d34a91992b2a2db18ad696
 msgid "Let's begin with the conversion settings, which is really neat. In the Search and Replace part, you can input a regexp (short for regular expression) that describes the string that will be replaced during the conversion. The neat part is the wizard. Click on the wizard staff and you get a preview of what |app| \"sees\" during the conversion process. Scroll down to the string you want to remove, select and copy it, paste it into the regexp field on top of the window. If there are variable parts, like page numbers or so, use sets and quantifiers to cover those, and while you're at it, remember to escape special characters, if there are some. Hit the button labeled :guilabel:`Test` and |app| highlights the parts it would replace were you to use the regexp. Once you're satisfied, hit OK and convert. Be careful if your conversion source has tags like this example::"
 msgstr ""
 
-#: ../../regexp.rst:106
-# 567353ad3b5f4c86af5e309c7d475b68
+#: ../../regexp.rst:105
+# fa1d1145ba7b4bc4a9981f19a45a1aaa
 msgid "(shamelessly ripped out of `this thread <http://www.mobileread.com/forums/showthread.php?t=75594\">`_). You'd have to remove some of the tags as well. In this example, I'd recommend beginning with the tag ``<b class=\"calibre2\">``, now you have to end with the corresponding closing tag (opening tags are ``<tag>``, closing tags are ``</tag>``), which is simply the next ``</b>`` in this case. (Refer to a good HTML manual or ask in the forum if you are unclear on this point.) The opening tag can be described using ``<b.*?>``, the closing tag using ``</b>``, thus we could remove everything between those tags using ``<b.*?>.*?</b>``. But using this expression would be a bad idea, because it removes everything enclosed by <b>- tags (which, by the way, render the enclosed text in bold print), and it's a fair bet that we'll remove portions of the book in this way. Instead, include the beginning of the enclosed string as well, making the regular expression ``<b.*?>\\s*Generated\\s+by\\s+ABC\\s+Amber\\s+LIT.*?</b>`` The ``\\s`` with quantifiers are included here instead of explicitly using the spaces as seen in the string to catch any variations of the string that might occur. Remember to check what |app| will remove to make sure you don't remove any portions you want to keep if you test a new expression. If you only check one occurrence, you might miss a mismatch somewhere else in the text. Also note that should you accidentally remove more or fewer tags than you actually wanted to, |app| tries to repair the damaged code after doing the removal."
 msgstr ""
 
-#: ../../regexp.rst:109
-# 9af8c3b3851c4dd2a6d1639a77accbae
+#: ../../regexp.rst:108
+# c167961a5de8490889b6dbe98af9393e
 msgid "Adding books"
 msgstr ""
 
-#: ../../regexp.rst:111
-# 01124b36539049b894a0adf54529ec53
+#: ../../regexp.rst:110
+# 5d4c22ea730f48c3b765c05e565109f4
 msgid "Another thing you can use regular expressions for is to extract metadata from filenames. You can find this feature in the \"Adding books\" part of the settings. There's a special feature here: You can use field names for metadata fields, for example ``(?P<title>)`` would indicate that calibre uses this part of the string as book title. The allowed field names are listed in the windows, together with another nice test field. An example: Say you want to import a whole bunch of files named like ``Classical Texts: The Divine Comedy by Dante Alighieri.mobi``. (Obviously, this is already in your library, since we all love classical italian poetry) or ``Science Fiction epics: The Foundation Trilogy by Isaac Asimov.epub``. This is obviously a naming scheme that |app| won't extract any meaningful data out of - its standard expression for extracting metadata is ``(?P<title>.+) - (?P<author>[^_]+)``. A regular expression that works here would be ``[a-zA-Z]+: (?P<title>.+) by (?P<author>.+)``. Please note that, inside the group for the metadata field, you need to use expressions to describe what the field actually matches. And also note that, when using the test field |app| provides, you need to add the file extension to your testing filename, otherwise you won't get any matches at all, despite using a working expression."
 msgstr ""
 
-#: ../../regexp.rst:115
-# 03452ff458ef4ee1b6992bda18d0486c
+#: ../../regexp.rst:114
+# eaed5b38c13e40baa5789aba031e020f
 msgid "Bulk editing metadata"
 msgstr ""
 
-#: ../../regexp.rst:117
-# a24026bcc5324c418ad9b9fdb47c4099
+#: ../../regexp.rst:116
+# 52033f9a9b0d4c71b7e4a9830a76b64f
 msgid "The last part is regular expression search and replace in metadata fields. You can access this by selecting multiple books in the library and using bulk metadata edit. Be very careful when using this last feature, as it can do **Very Bad Things** to your library! Doublecheck that your expressions do what you want them to using the test fields, and only mark the books you really want to change! In the regular expression search mode, you can search in one field, replace the text with something and even write the result into another field. A practical example: Say your library contained the books of Frank Herbert's Dune series, named after the fashion ``Dune 1 - Dune``, ``Dune 2 - Dune Messiah`` and so on. Now you want to get ``Dune`` into the series field. You can do that by searching for ``(.*?) \\d+ - .*`` in the title field and replacing it with ``\\1`` in the series field. See what I did there? That's a reference to the first group you're replacing the series field with. Now that you have the series all set, you only need to do another search for ``.*? -`` in the title field and replace it with ``\"\"`` (an empty string), again in the title field, and your metadata is all neat and tidy. Isn't that great? By the way, instead of replacing the entire field, you can also append or prepend to the field, so, if you *wanted* the book title to be prepended with series info, you could do that as well. As you by now have undoubtedly noticed, there's a checkbox labeled :guilabel:`Case sensitive`, so you won't have to use flags to select behaviour here."
 msgstr ""
 
-#: ../../regexp.rst:119
-# 6c9f005e52474c12970ad2b01b6fd9d2
+#: ../../regexp.rst:118
+# 7745afd742184be4be9d6655a8397663
 msgid "Well, that just about concludes the very short introduction to regular expressions. Hopefully I'll have shown you enough to at least get you started and to enable you to continue learning by yourself- a good starting point would be the `Python documentation for regexps <http://docs.python.org/library/re.html>`_."
 msgstr ""
 
-#: ../../regexp.rst:121
-# 6b4a931bf5a64fbeb7ed340117cd2ed1
+#: ../../regexp.rst:120
+# 25f2a388e39a4b68bc9755c91da4747e
 msgid "One last word of warning, though: Regexps are powerful, but also really easy to get wrong. |app| provides really great testing possibilities to see if your expressions behave as you expect them to. Use them. Try not to shoot yourself in the foot. (God, I love that expression...) But should you, despite the warning, injure your foot (or any other body parts), try to learn from it."
 msgstr ""
 
-#: ../../regexp.rst:124
-# 6595c5b5b6b24871b76b69aedfc7ed19
+#: ../../regexp.rst:123
+# 9f015064f55645e08593087a9234f0ee
 msgid "Credits"
 msgstr ""
 
-#: ../../regexp.rst:126
-# 2c0e806447a64317b28e2d51bb68b763
+#: ../../regexp.rst:125
+# 15b0318786cc4e27932c51d0f6fe4600
 msgid "Thanks for helping with tips, corrections and such:"
 msgstr ""
 
-#: ../../regexp.rst:128
-# 3c5ecb4acc3d4d1785311bb58ea46536
+#: ../../regexp.rst:127
+# af22b5ad316e43a29f22a6a164cb1d05
 msgid "ldolse"
 msgstr ""
 
-#: ../../regexp.rst:129
-# 8ae5c5e4817f4f9386cfb825cae6b6a1
+#: ../../regexp.rst:128
+# 4a3b87a3aefe405ea55f02cfc3a2163b
 msgid "kovidgoyal"
 msgstr ""
 
-#: ../../regexp.rst:130
-# d22c6589778945bf87ca4a3bd049b908
+#: ../../regexp.rst:129
+# 9d8f41616eb34c5c8fcd67e9ad0655ab
 msgid "chaley"
 msgstr ""
 
-#: ../../regexp.rst:131
-# bfe911c7830a48f2afe37824d0dd0b33
+#: ../../regexp.rst:130
+# 7778a7c807714cc891c03b1eb26bc995
 msgid "dwanthny"
 msgstr ""
 
-#: ../../regexp.rst:132
-# 22c1a6a01d7a491996bb991b8f34a2e2
+#: ../../regexp.rst:131
+# bc891b2788604b58981935aa1be5583b
 msgid "kacir"
 msgstr ""
 
-#: ../../regexp.rst:133
-# 34a3c170c8c6458b951f2a45e6ec1692
+#: ../../regexp.rst:132
+# d533931ad05248c6a1bdec066dda9599
 msgid "Starson17"
 msgstr ""
 
-#: ../../regexp.rst:135
-# d05ca2e58c4b49408100fcc007b231b2
+#: ../../regexp.rst:134
+# 8448e8c929614f93aa2b05dc96b38978
 msgid "For more about regexps see `The Python User Manual <http://docs.python.org/library/re.html>`_."
 msgstr ""
 
