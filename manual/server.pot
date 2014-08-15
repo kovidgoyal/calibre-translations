@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre 1.206.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-15 15:54+0530\n"
+"POT-Creation-Date: 2014-08-15 16:06+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,117 +17,117 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:5
-# 7299dee1b44845f8ad6a1fed7825e80e
+# 805ce4ecf51c43ccb18f88b393c4568e
 msgid "Integrating the |app| content server into other servers"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:7
-# 32bb75f4ecbc46e786987fe5bb9cb7d1
+# b69b9ed347fe4d2283c4c048dd4be201
 msgid "Here, we will show you how to integrate the |app| content server into another server. The most common reason for this is to make use of SSL or more sophisticated authentication. There are two main techniques: Running the |app| content server as a standalone process and using a reverse proxy to connect it with your main server or running the content server in process in your main server with WSGI. The examples below are all for Apache 2.x on linux, but should be easily adaptable to other platforms."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:0
-# 6e1fce070879498f93fbf4aad6cca794
+# 4cc8e33d4e0b4c9cb68ec55d75de810f
 msgid "Contents"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:13
-# 1bdd63f54e7b4f24a69db51c8245b595
+# ce9cea535e8d4faebf4aa2c2f6dd8f93
 msgid "This only applies to calibre releases >= 0.7.25"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:16
-# bce46009a65142fda8c25b0df00f2ec9
+# bcc8c30c4f274a3198fc4cdcafeeff49
 msgid "Using a reverse proxy"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:18
-# 584278bb8faf49da83b2bd8aa4030917
+# 81029650833c420d855ca6706cf80d54
 msgid "A reverse proxy is when your normal server accepts incoming requests and passes them onto the calibre server. It then reads the response from the calibre server and forwards it to the client. This means that you can simply run the calibre server as normal without trying to integrate it closely with your main server, and you can take advantage of whatever authentication systems you main server has in place. This is the simplest approach as it allows you to use the binary calibre install with no external dependencies/system integration requirements. Below, is an example of how to achieve this with Apache as your main server, but it will work with any server that supports Reverse Proxies."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:20
-# 93bccc411ccf40cc8d2cf5c3fd4ebf4b
+# 25da2c28525a426b9cd6fcd6eec7425d
 msgid "First start the |app| content server as shown below::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:24
-# 9ef4d13424de41d89d68d4007362b971
+# eadd585ff0cf465ca924563848510a61
 msgid "The key parameter here is ``--url-prefix /calibre``. This causes the content server to serve all URLs prefixed by calibre. To see this in action, visit ``http://localhost:8080/calibre`` in your browser. You should see the normal content server website, but now it will run under /calibre."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:26
-# d2ca0768519f4fa99dfce717227ba97f
+# a47f6452d0754167b1051fdc6741f923
 msgid "Now suppose you are using Apache as your main server. First enable the proxy modules in apache, by adding the following to :file:`httpd.conf`::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:31
-# 826f7c8e81fe4317814daf5384040cd6
+# 7d80140c98784fbfa98adfbb4dc2be3b
 msgid "The exact technique for enabling the proxy modules will vary depending on your Apache installation. Once you have the proxy modules enabled, add the following rules to httpd.conf (or if you are using virtual hosts to the conf file for the virtual host in question::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:39
-# eec19466f362403cb9a49dbb657adfc8
+# 0c779f62c6fd4b90b86f3e1caaf6e21c
 msgid "That's all, you will now be able to access the |app| Content Server under the /calibre URL in your apache server. The above rules pass all requests under /calibre to the calibre server running on port 8080 and thanks to the --url-prefix option above, the calibre server handles them transparently."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:41
-# 85f256bac4f04464ac7570429b11bbbb
+# 08a30f0744d84544ab3126d5a3c96a60
 msgid "If you are willing to devote an entire VirtualHost to the content server, then there is no need to use --url-prefix and RewriteRule, instead just use the ProxyPass directive."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:43
-# 2a679b21f474474e88ff28b8f425c47b
+# b9aa2fff7e4c4addb1949bfce589fc1b
 msgid "The server engine calibre uses, CherryPy, can have trouble with proxying and KeepAlive requests, so turn them off in Apache, with the SetEnv directives shown above."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:46
-# 34c6300770ff4b04bbd6f888a113ae39
+# 96636a32791a48fdac10507c7572cabd
 msgid "In process"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:48
-# b3aa196721a941a98dd58343de475ae4
+# d730490382ff4cac86e3b3d201084942
 msgid "The calibre content server can be run directly, in process, inside a host server like Apache using the WSGI framework."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:50
-# 79d88f03c51a4bd194ec0a938a6b3fc3
+# f8d1fd9552aa4a348f60a7d33088f260
 msgid "For this to work, all the dependencies needed by calibre must be installed on your system. Doing so is highly non-trivial and you are encouraged not to use in process servers. You will not get any assistance with debugging in process server problems."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:52
-# d4d42d63b433430ead1e4a07caeadb14
+# e8e6efd1d746456e8c79cfcac3329439
 msgid "First, we have to create a WSGI *adapter* for the calibre content server. Here is a template you can use for the purpose. Replace the paths as directed in the comments"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:102
-# c280fdcb41e14ed193e20bb3ae1fc6ab
+# de42756c82704c88ad25b849cee5e5fd
 msgid "Save this adapter as :file:`calibre-wsgi-adpater.py` somewhere your server will have access to it."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:104
-# e50cef73afae4726b9014864e30aab9e
+# 8dc1eb186205460697b3e690e5ae6b23
 msgid "Let's suppose that we want to use WSGI in Apache. First enable WSGI in Apache by adding the following to :file:`httpd.conf`::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:108
-# f66cd655f7fd4b57a98d27b87be7a176
+# 00de7350de5b42f78104325d27e18c11
 msgid "The exact technique for enabling the wsgi module will vary depending on your Apache installation. Once you have the proxy modules enabled, add the following rules to httpd.conf (or if you are using virtual hosts to the conf file for the virtual host in question::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:112
-# 0c783d160ea342659d083fcf8cc4c457
+# c35e0715058b48e3b16bc01a5eb613a8
 msgid "Change the path to :file:`calibre-wsgi-adapter.py` to wherever you saved it previously (make sure Apache has access to it)."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:114
-# 381277ced6144046bc58c02c55cdb752
+# 774b9e37cfdf407fa73aceb6902f540a
 msgid "That's all, you will now be able to access the |app| Content Server under the /calibre URL in your apache server."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:116
-# ae621350d32049e98805219633d14626
+# f19bb31189734cd8b3ef95339929c492
 msgid "For more help with using mod_wsgi in Apache, see `mod_wsgi <http://code.google.com/p/modwsgi/wiki/WhereToGetHelp>`_."
 msgstr ""
 
