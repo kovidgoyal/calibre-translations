@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre 2.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-24 08:49+0530\n"
+"POT-Creation-Date: 2014-10-25 15:48+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,934 +17,934 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:4
-# f31f7dd737bf466cae50c66f1157cedf
+# 00b1a7a8cf014fadbf2656e19e0e3d53
 msgid "The calibre template language"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:6
-# 6deb755e1d67430e80a389e1a584b761
+# dc972de3a4da472891abe3d00ddbea87
 msgid "The calibre template language is used in various places. It is used to control the folder structure and file name when saving files from the calibre library to the disk or eBook reader. It is also used to define \"virtual\" columns that contain data from other columns and so on."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:9
-# 94028b97059e498dbbce23cbfff9ea54
+# c01425a8a22940ae8367176870f21064
 msgid "The basic template language is very simple, but has very powerful advanced features. The basic idea is that a template consists of text and names in curly brackets that are then replaced by the corresponding metadata from the book being processed. So, for example, the default template used for saving books to device in calibre is::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:13
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:21
-# 0296b03f9dbd4eaca3fbcee76b980890
-# 81647d36605e4d1288114b260b1070ef
+# a24533cda4c34ab3b7c1587116d61bfc
+# 62ede67fac284e7facec2c08bf01ee45
 msgid "For the book \"The Foundation\" by \"Isaac Asimov\" it will become::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:17
-# 86bc8891afcf4f86b80d609eabd8c852
+# 71be0da31f714a1c9a76073d2db59d00
 msgid "The slashes are text, which is put into the template where it appears. For example, if your template is::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:25
-# 6f2ba2de57b44501b6089daf4845395f
+# fa50079053f24d7b87a93f66b1c185cd
 msgid "You can use all the various metadata fields available in calibre in a template, including any custom columns you have created yourself. To find out the template name for a column simply hover your mouse over the column header. Names for custom fields (columns you have created yourself) always have a # as the first character. For series type custom fields, there is always an additional field named ``#seriesname_index`` that becomes the series index for that series. So if you have a custom series field named ``#myseries``, there will also be a field named ``#myseries_index``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:27
-# e039f200bc2a41e386bae3a056edf393
+# 455c04cd61964f54b61e30068309d672
 msgid "In addition to the column based fields, you also can use::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:32
-# de883ad0088e4a269b491eb4168c9800
+# 1423b4ad1bfe4f6cbe891ba906a0ff33
 msgid "If a particular book does not have a particular piece of metadata, the field in the template is automatically removed for that book. Consider, for example::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:36
-# b329a7ef9ed14b0089e15ed01567c358
+# 31a74fa8ec6a4ca1b6a59fe2bbc0c331
 msgid "If a book has a series, the template will produce::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:40
-# cd02a52d7a2647ac96d052ba41c9b4dd
+# 96c0649203854daf83eb8625c9293146
 msgid "and if a book does not have a series::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:44
-# ba197ccfdaa145d1b52822b76a7d2526
+# 08369cde2edf47f7b5f391a32e53b34e
 msgid "(calibre automatically removes multiple slashes and leading or trailing spaces)."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:47
-# 57862fa4f91c47b6a190216b41aa79f4
+# ddd6fb970910408ba190eb0c99654b54
 msgid "Advanced formatting"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:49
-# 8adb96a5a80c46279969c1b202ffd36e
+# 9f67b0dbbcea451a946db743424be99f
 msgid "You can do more than just simple substitution with the templates. You can also conditionally include text and control how the substituted data is formatted."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:51
-# 7f4eac0fd1424c19a71c3824f69d266c
+# a2d424b8ff8a422baa36bf71c84f54bf
 msgid "First, conditionally including text. There are cases where you might want to have text appear in the output only if a field is not empty. A common case is ``series`` and ``series_index``, where you want either nothing or the two values with a hyphen between them. Calibre handles this case using a special field syntax."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:53
-# 5a72c02f5f58464695d1dc5ed5eb3294
+# 282687c9ff1b429fb5f893e62340eb0c
 msgid "For example, assume you want to use the template::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:57
-# 7f9456b07adc40058d92af8e7afba9a9
+# 30a7efba7485441da2e33e560f5c2eff
 msgid "If the book has no series, the answer will be ``- - title``. Many people would rather the result be simply ``title``, without the hyphens. To do this, use the extended syntax ``{field:|prefix_text|suffix_text}``. When you use this syntax, if field has the value SERIES then the result will be ``prefix_textSERIESsuffix_text``. If field has no value, then the result will be the empty string (nothing); the prefix and suffix are ignored. The prefix and suffix can contain blanks. **Do not use subtemplates (`{ ... }`) or functions (see below) as the prefix or the suffix.**"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:59
-# 97f09580d5654a8082bbf249b06a999a
+# 3345aef9d9204462bb0f9f6f1b7749b5
 msgid "Using this syntax, we can solve the above series problem with the template::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:63
-# 712f14e5b274465da12b9cfe10633a3f
+# 2903c5853e07487586b34878c8247080
 msgid "The hyphens will be included only if the book has a series index, which it will have only if it has a series."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:65
-# 8501449922a94acdb3b780cd0ad29d9b
+# 527428b45ec044508a541ddea0314a59
 msgid "Notes: you must include the : character if you want to use a prefix or a suffix. You must either use no \\| characters or both of them; using one, as in ``{field:| - }``, is not allowed. It is OK not to provide any text for one side or the other, such as in ``{series:|| - }``. Using ``{title:||}`` is the same as using ``{title}``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:67
-# c1281020a73f4d56a0f4d1d3af4d5afd
+# 9507ee7913374b46b7266ab50b92e7e7
 msgid "Second: formatting. Suppose you wanted to ensure that the series_index is always formatted as three digits with leading zeros. This would do the trick::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:71
-# 2e73deaa83a240cca5f99ececee4ced8
+# 32eae7250b2c4476a8b05303f01cfb21
 msgid "If instead of leading zeros you want leading spaces, use::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:75
-# 78a6c5547139416bbf9540bc94b27956
+# 40ed09609bfd4553b29e7e9855e65b8e
 msgid "For trailing zeros, use::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:79
-# a9a28918974a49f486bc002e3f0b9898
+# 5d17762fea944e908254553fe7135d66
 msgid "If you use series indices with sub values (e.g., 1.1), you might want to ensure that the decimal points line up. For example, you might want the indices 1 and 2.5 to appear as 01.00 and 02.50 so that they will sort correctly. To do this, use::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:83
-# 27b2888a14ee493483be2afedaa2c47d
+# 4f7b33010e55427aa53f7cd17c590803
 msgid "If you want only the first two letters of the data, use::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:87
-# 499cea36ee3a4b39b514cd36ecb53d72
+# 01660a0a16974f6ebf0d174be5d0eca3
 msgid "The calibre template language comes from python and for more details on the syntax of these advanced formatting operations, look at the `Python documentation <http://docs.python.org/library/string.html#format-string-syntax>`_."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:90
-# fb4dcb6a086c41e1a57e9ea379639114
+# 1a9306e2d33848c7b62ebaa72fcc26aa
 msgid "Advanced features"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:93
-# 7537886866f34864abdd7e2028aeaaf7
+# 8f8cf2b7bb184e97bdda109f48f629cd
 msgid "Using templates in custom columns"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:95
-# 816e6abf331d4c3bbeaaa6bd4666b1f4
+# f0e9c0c393464e3f955c1b0084af2c23
 msgid "There are sometimes cases where you want to display metadata that calibre does not normally display, or to display data in a way different from how calibre normally does. For example, you might want to display the ISBN, a field that calibre does not display. You can use custom columns for this by creating a column with the type 'column built from other columns' (hereafter called composite columns), and entering a template. Result: calibre will display a column showing the result of evaluating that template. To display the ISBN, create the column and enter ``{identifiers:select(isbn)}`` into the template box. To display a column containing the values of two series custom columns separated by a comma, use ``{#series1:||,}{#series2}``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:97
-# 75719ea34b6e4e1da775b460c091fbb2
+# f68c99cabb19429f92c36456dde6b71f
 msgid "Composite columns can use any template option, including formatting."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:99
-# 9cab07b037924c57b37546c073402c34
+# 8b081acade3d42f29e06882affd02ae3
 msgid "You cannot change the data contained in a composite column. If you edit a composite column by double-clicking on any item, you will open the template for editing, not the underlying data. Editing the template on the GUI is a quick way of testing and changing composite columns."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:102
-# 066b5cbed2bc4d76a534eb8ff5ce5609
+# 31492b50b15c45ee822424a74394d608
 msgid "Using functions in templates - single-function mode"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:104
-# ee132d1907f4434ea4b82978509cdcc3
+# bc995eb9895647c58603805eeb7b4a31
 msgid "Suppose you want to display the value of a field in upper case, when that field is normally in title case. You can do this (and many more things) using the functions available for templates. For example, to display the title in upper case, use ``{title:uppercase()}``. To display it in title case, use ``{title:titlecase()}``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:106
-# d92a6569cca1467f83f370048ee5a656
+# fc39d22bf7e04eecb48df987fc4f9931
 msgid "Function references appear in the format part, going after the ``:`` and before the first ``|`` or the closing ``}``. If you have both a format and a function reference, the function comes after another ``:``. Functions must always end with ``()``. Some functions take extra values (arguments), and these go inside the ``()``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:108
-# 422ab01407d346a99160561a4359ef13
+# 3c8a22bebca14f73968923d430412f43
 msgid "Functions are always applied before format specifications. See further down for an example of using both a format and a function, where this order is demonstrated."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:110
-# a153c4bc0c6146c695fee5172d9473d1
+# 33ad9833033740249845bd56642db5d3
 msgid "The syntax for using functions is ``{field:function(arguments)}``, or ``{field:function(arguments)|prefix|suffix}``. Arguments are separated by commas. Commas inside arguments must be preceeded by a backslash ( '\\\\' ). The last (or only) argument cannot contain a closing parenthesis ( ')' ). Functions return the value of the field used in the template, suitably modified."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:112
-# 22a72e2d9d5b4736854c1f7fe8fae90f
+# 2ebe4302cd684e01b804e0006c2873f2
 msgid "Important: If you have programming experience, please note that the syntax in this mode (single function) is not what you might expect. Strings are not quoted. Spaces are significant. All arguments must be constants; there is no sub-evaluation. **Do not use subtemplates (`{ ... }`) as function arguments.** Instead, use :ref:`template program mode <template_mode>` and :ref:`general program mode <general_mode>`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:114
-# 0f40ed1720a345a8b5fe2156957b5d93
+# 156603b05bde40af984dd8e888558b75
 msgid "Many functions use regular expressions. In all cases, regular expression matching is case-insensitive."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:116
-# a9ec0266ec674d4d8f38186b7b29db41
+# 7e835055340f4c5e80d938231dcf5781
 msgid "The functions available are listed below. Note that the definitive documentation for functions is available in the section :ref:`Function classification <template_functions_reference>`:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:118
-# 35c0289ca9cb44ed8949753f053a3827
+# 1782288174884be7a0b86e1c5c453ba2
 msgid "``lowercase()``   -- return value of the field in lower case."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:119
-# e253b0fba44847dc88162e50d0a2bd76
+# 71b6912980494c67b64f88c5307b4373
 msgid "``uppercase()``   -- return the value of the field in upper case."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:120
-# 50e20ff110584a3d98c2a0491b9ba7f2
+# ef0c804e623146bcb5a8aa8005764109
 msgid "``titlecase()``   -- return the value of the field in title case."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:121
-# 296835dbae444cf8b09ee41c813ff68e
+# 544efd63538343e7896bb8984d4b0711
 msgid "``capitalize()``  -- return the value with the first letter upper case and the rest lower case."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:122
-# b7e73f1f146548d081153e6ed7cf6aa0
+# 3d3277fd2d4f4269be72d3dcd7f55144
 msgid "``contains(pattern, text if match, text if not match)`` -- checks if field contains matches for the regular expression `pattern`. Returns `text if match` if matches are found, otherwise it returns `text if no match`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:123
-# 560df447b41a48e7849332a586cfa2fc
+# 5a0eeb274df347efa81a2193b2015b8d
 msgid "``count(separator)`` -- interprets the value as a list of items separated by `separator`, returning the number of items in the list. Most lists use a comma as the separator, but authors uses an ampersand. Examples: `{tags:count(,)}`, `{authors:count(&)}`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:124
-# 6429bb9822704966bdf46230302c6347
+# 4e265531df2d42d1a96117a0bab6b1d2
 msgid "``format_number(template)`` -- interprets the value as a number and format that number using a python formatting template such as \"{0:5.2f}\" or \"{0:,d}\" or \"${0:5,.2f}\". The field_name part of the template must be a 0 (zero) (the \"{0:\" in the above examples). See the template language and python documentation for more examples. Returns the empty string if formatting fails."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:125
-# 858da080e6aa493ba54f2ecb144ee9eb
+# 772ec3e4fbd34acf930bcf642e66013f
 msgid "``human_readable()`` -- expects the value to be a number and returns a string representing that number in KB, MB, GB, etc."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:126
-# 211e6e093cd9435699072b7d77f4ca05
+# 90d8bdde1ab14e36831b35179e1dc39d
 msgid "``ifempty(text)`` -- if the field is not empty, return the value of the field. Otherwise return `text`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:127
-# 1b67763d643845f3a15a446d56a6f0db
+# cde7b0a62aa84157a13cc9e942106c2b
 msgid "``in_list(separator, pattern, found_val, not_found_val)`` -- interpret the field as a list of items separated by `separator`, comparing the `pattern` against each value in the list. If the pattern matches a value, return `found_val`, otherwise return `not_found_val`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:128
-# 6b8201b02bac4adb9d2ce2cdd96b0b7c
+# e5bbb8d94e5946e5925d3771781c965f
 msgid "``language_codes(lang_strings)`` -- return the language codes for the strings passed in `lang_strings`. The strings must be in the language of the current locale. `Lang_strings` is a comma-separated list."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:129
-# cfbadeb9475c4607be8675b322d1e626
+# 83673a6857aa4f6b992cf736bfb25a92
 msgid "``language_strings(lang_codes, localize)`` -- return the strings for the language codes passed in `lang_codes`. If `localize` is zero, return the strings in English. If localize is not zero, return the strings in the language of the current locale. `Lang_codes` is a comma-separated list."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:130
-# ce220c4e8dae409bb40dd47aff1e48e6
+# 55531ca00bd64d2497036c6d53e9c688
 msgid "``list_item(index, separator)`` -- interpret the field as a list of items separated by `separator`, returning the `index`th item. The first item is number zero. The last item can be returned using `list_item(-1,separator)`. If the item is not in the list, then the empty value is returned. The separator has the same meaning as in the `count` function."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:131
-# d5bb09707b3f4d5a8c1f850004213a81
+# ae3687d5868743568a705f696b307d89
 msgid "``lookup(pattern, field, pattern, field, ..., else_field)`` -- like switch, except the arguments are field (metadata) names, not text. The value of the appropriate field will be fetched and used. Note that because composite columns are fields, you can use this function in one composite field to use the value of some other composite field. This is extremely useful when constructing variable save paths (more later)."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:132
-# 123dad5d03e84147bfe6f7553be6d65d
+# 9807432f2bd245e6bf7cc9ba86f251ed
 msgid "``re(pattern, replacement)`` -- return the field after applying the regular expression. All instances of `pattern` are replaced with `replacement`. As in all of calibre, these are python-compatible regular expressions."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:133
-# ae39b095670a4672881d59a90ab3a83a
+# 7a8a4bc4410348d1b7dd0eca3afc6c35
 msgid "``select(key)`` -- interpret the field as a comma-separated list of items, with the items being of the form \"id:value\". Find the pair with the id equal to key, and return the corresponding value. This function is particularly useful for extracting a value such as an isbn from the set of identifiers for a book."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:134
-# 21d7c673042048a690e09e16cb97b247
+# 1a805fa3cb264cbe85466d8e4fc37fc7
 msgid "``shorten(left chars, middle text, right chars)`` -- Return a shortened version of the field, consisting of `left chars` characters from the beginning of the field, followed by `middle text`, followed by `right chars` characters from the end of the string. `Left chars` and `right chars` must be integers. For example, assume the title of the book is `Ancient English Laws in the Times of Ivanhoe`, and you want it to fit in a space of at most 15 characters. If you use ``{title:shorten(9,-,5)}``, the result will be `Ancient E-nhoe`. If the field's length is less than ``left chars`` + ``right chars`` + the length of ``middle text``, then the field will be used intact. For example, the title `The Dome` would not be changed."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:135
-# 62bbefe556c4455a9ee9d4226acf6558
+# d7ea1e8f161b4e96b46809b9ce72f883
 msgid "``str_in_list(val, separator, string, found_val, not_found_val)`` -- treat val as a list of items separated by separator, comparing the string against each value in the list. If the string matches a value, return found_val, otherwise return not_found_val. If the string contains separators, then it is also treated as a list and each value is checked."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:136
-# 4fa7fd7e5f454c50803fd5c4b8f811c6
+# e1ab21b021964f4f853affd2cbcea07c
 msgid "``subitems(val, start_index, end_index)`` -- This function is used to break apart lists of tag-like hierarchical items such as genres. It interprets the value as a comma-separated list of tag-like items, where each item is a period-separated list. Returns a new list made by first finding all the period-separated tag-like items, then for each such item extracting the components from `start_index` to `end_index`, then combining the results back together. The first component in a period-separated list has an index of zero. If an index is negative, then it counts from the end of the list. As a special case, an end_index of zero is assumed to be the length of the list. Examples::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:146
-# e7b4b4611dd94bb38273f821ff9fa215
+# 321b6b8c5fcd4abba49d2b29fd0e0ec8
 msgid "``sublist(val, start_index, end_index, separator)`` -- interpret the value as a list of items separated by `separator`, returning a new list made from the items from `start_index`to `end_index`. The first item is number zero. If an index is negative, then it counts from the end of the list. As a special case, an end_index of zero is assumed to be the length of the list. Examples assuming that the tags column (which is comma-separated) contains \"A, B ,C\"::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:152
-# 2566412d418d4371ae786f51cf306a8b
+# 72da7015decf476595cd0cc7784a420d
 msgid "``swap_around_comma(val) `` -- given a value of the form ``B, A``, return ``A B``. This is most useful for converting names in LN, FN format to FN LN. If there is no comma, the function returns val unchanged."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:153
-# 550f20a11de34544bb6cfe84cbf511b9
+# 8df1b4a85956427cba0633725ef6756c
 msgid "``switch(pattern, value, pattern, value, ..., else_value)`` -- for each ``pattern, value`` pair, checks if the field matches the regular expression ``pattern`` and if so, returns that ``value``. If no ``pattern`` matches, then ``else_value`` is returned. You can have as many ``pattern, value`` pairs as you want."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:154
-# 9f8a9cbbb068485f925d32d1e3f429dd
+# 4b3b02acb35d41c591a0b6e2eb5a1ecf
 msgid "``test(text if not empty, text if empty)`` -- return `text if not empty` if the field is not empty, otherwise return `text if empty`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:155
-# 15b315494adb40679091a4b598444600
+# 93811ac40943425391c834fa2a163079
 msgid "``transliterate()`` -- Returns a string in a latin alphabet formed by approximating the sound of the words in the source field. For example, if the source field is ``Фёдор Миха́йлович Достоевский`` the function returns ``Fiodor Mikhailovich Dostoievskii``.'"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:157
-# ec16d998a89b45e7af5fe5517f574068
+# 9379e465c62f48b581fb9f175e6d2472
 msgid "Now, what about using functions and formatting in the same field. Suppose you have an integer custom column called ``#myint`` that you want to see with leading zeros, as in ``003``. To do this, you would use a format of ``0>3s``. However, by default, if a number (integer or float) equals zero then the field produces the empty value, so zero values will produce nothing, not ``000``. If you really want to see ``000`` values, then you use both the format string and the ``ifempty`` function to change the empty value back to a zero. The field reference would be::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:161
-# b804f8b5052f47348a9166de5ab31cb5
+# cfa4999f440c46c9a4d2fbdf9f716c2e
 msgid "Note that you can use the prefix and suffix as well. If you want the number to appear as ``[003]`` or ``[000]``, then use the field::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:168
-# 16b216d8f1e443378653c3e055109bf7
+# 3186260a307c447683bbbdad018eccff
 msgid "Using functions in templates - template program mode"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:170
-# 22a282b0628444b09ff7142521472f13
+# c80bf0778cbf4723b3360614870fa404
 msgid "The template language program mode differs from single-function mode in that it permits you to write template expressions that refer to other metadata fields, modify values, and do arithmetic. It is a reasonably complete programming language."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:172
-# 9f7023f7f6c24d8c986733e0637c82e8
+# d8f62b04d2a24c899c0b0f56f7c3120a
 msgid "You can use the functions documented above in template program mode. See below for details."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:174
-# 17acefff37504a33a78a5aeeb20c3dfe
+# 4de94deab5aa4e60b9cc9c43ee5e50dd
 msgid "Beginning with an example, assume that you want your template to show the series for a book if it has one, otherwise show the value of a custom field #genre. You cannot do this in the basic language because you cannot make reference to another metadata field within a template expression. In program mode, you can. The following expression works::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:178
-# 681219855c7b4feeae1d58628257efae
+# dd970b35b29844ffb95e587fe6ba6690
 msgid "The example shows several things:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:180
-# 9dfbfe25f5de4878b185d5288d7cdd2d
+# 61e8e238dcd64e879cbe43e879bcf398
 msgid "program mode is used if the expression begins with ``:'`` and ends with ``'``. Anything else is assumed to be single-function."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:181
-# 9d0eeff910464ba9aa0110ad4a140cef
+# d6ae072013624a668f96c9c2c33aacde
 msgid "the variable ``$`` stands for the field the expression is operating upon, ``#series`` in this case."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:182
-# 3385ac83df1a4d8789daea8ddcd2e8e7
+# 0f70ecf383b84f79bb4984a8f70d2b25
 msgid "functions must be given all their arguments. There is no default value. For example, the standard built-in functions must be given an additional initial parameter indicating the source field, which is a significant difference from single-function mode."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:183
-# 779f1029386c4467b460e555d4086f54
+# 24fc4123cb50429b8a242d1cdf184463
 msgid "white space is ignored and can be used anywhere within the expression."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:184
-# 23f9754d262d44a1b1bf6de53fd22e01
+# 91557f660dfd496984f20e7dc4d35af2
 msgid "constant strings are enclosed in matching quotes, either ``'`` or ``\"``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:186
-# af7d683212e14ebd9211b194d1dbc3ca
+# 475f125f2b684d7bbc9e85f51bc804c0
 msgid "The language is similar to ``functional`` languages in that it is built almost entirely from functions. A statement is a function. An expression is a function. Constants and identifiers can be thought of as functions returning the value indicated by the constant or stored in the identifier."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:188
-# c21939c5fa3048858064e1355ae03bb0
+# 442ab115649c40628c86cc05b880e281
 msgid "The syntax of the language is shown by the following grammar::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:198
-# 5fa77e571fe345f3a71449db59239e89
+# 5f5d6773adba4e9fa95881f02ccd125e
 msgid "Comments are lines with a '#' character at the beginning of the line."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:200
-# 46201337fe4a482f82053ad7f681040f
+# f3544d3928c040b2b4071526f7b12791
 msgid "An ``expression`` always has a value, either the value of the constant, the value contained in the identifier, or the value returned by a function. The value of a ``statement`` is the value of the last expression in the sequence of statements. As such, the value of the program (statement)::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:204
-# 44f01d921c0b4678adb40621b3bdbd8e
+# 85ff6a5caa1d4f9a9fa4a68a3f7654cc
 msgid "is 3."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:206
-# 0b662ac664f0494fa471667590828136
+# 2564da0877194d1bb8e808881ffc58d8
 msgid "Another example of a complex but rather silly program might help make things clearer::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:217
-# 02e0a5156a2142b882873a860a7d8b8a
+# 8685ba7b0ec645ebb4ee339daac5fa4c
 msgid "This program does the following:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:219
-# 86803e6d15214233ad317b89903716a9
+# c1fcef0a15a9416b809fcf06c3753961
 msgid "specify that the field being looked at is series_index. This sets the value of the variable ``$``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:220
-# 7c249db256864e06a08b217ee94103f9
+# 55b298e470274b6db3cbd5a3bd3d4aa1
 msgid "calls the ``substr`` function, which takes 3 parameters ``(str, start, end)``. It returns a string formed by extracting the start through end characters from string, zero-based (the first character is character zero). In this case the string will be computed by the ``strcat`` function, the start is 0, and the end is 6. In this case it will return the first 6 characters of the string returned by ``strcat``, which must be evaluated before substr can return."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:221
-# 07fd84aff5024b58bf6a4094de0a1002
+# 7c12965359d048c789c826429de7d01c
 msgid "calls the ``strcat`` (string concatenation) function. Strcat accepts 1 or more arguments, and returns a string formed by concatenating all the values. In this case there are three arguments. The first parameter is the value in ``$``, which here is the value of ``series_index``. The second paremeter is the constant string ``'->'``. The third parameter is the value returned by the ``cmp`` function, which must be fully evaluated before ``strcat`` can return."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:222
-# 0bc1b3413ffe4fa8a9a619d2f48b879f
+# fba2651ea3ba4fc3b4bd984e5cdeeea4
 msgid "The ``cmp`` function takes 5 arguments ``(x, y, lt, eq, gt)``. It compares x and y and returns the third argument ``lt`` if x < y, the fourth argument ``eq`` if x == y, and the fifth argument ``gt`` if x > y. As with all functions, all of the parameters can be statements. In this case the first parameter (the value for ``x``) is the result of dividing the series_index by 2. The second parameter ``y`` is the constant ``1``. The third parameter ``lt`` is a statement (more later). The fourth parameter ``eq`` is the constant string ``'eq'``. The fifth parameter is the constant string ``'gt'``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:223
-# dcfda11113a1487ebfec790a75990487
+# 8abe1804dc9b4f0d99e87b233f4d8efc
 msgid "The third parameter (the one for ``lt``) is a statement, or a sequence of expressions. Remember that a statement (a sequence of semicolon-separated expressions) is also an expression, returning the value of the last expression in the list. In this case, the program first assigns the value ``1`` to a local variable ``c``, then returns a substring made by extracting the c'th character to the end. Since c always contains the constant ``1``, the substring will return the second through end'th characters, or ``'t123'``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:224
-# c262a95a9b2743a39627e9b853f5d575
+# 7b4ba3f67d0947ce8e26e362cd76d21a
 msgid "Once the statement providing the value to the third parameter is executed, ``cmp`` can return a value. At that point, ``strcat` can return a value, then ``substr`` can return a value. The program then terminates."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:226
-# 1bec7b440c7c4f16b865e8167fa62a69
+# 067cb35bc3344746b16f267cf7edaf1a
 msgid "For various values of series_index, the program returns:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:228
-# 5d27c6259bf4430388aa96bb7a6455f7
+# 24d56415405741c68165e852c959eb5a
 msgid "series_index == undefined, result = ``prefix ->t123 suffix``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:229
-# d72079f1c0714a9ab8652d99e4b635ee
+# 5a7a2ba49a7b4eacb0dc36d5402fb087
 msgid "series_index == 0.5, result = ``prefix 0.50-> suffix``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:230
-# cb9d86e833a54f969322c113c3a6e2b9
+# 51d06e1df12e4052bb1fe303bfeb8fa0
 msgid "series_index == 1, result = ``prefix 1->t12 suffix``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:231
-# 07c14019ec6843dc902e44d9bcf43a50
+# e5af806f25cd4a8f86246d5b8f0e6d25
 msgid "series_index == 2, result = ``prefix 2->eq suffix``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:232
-# 83e1755cf4d14cf987fb8ae725f1240a
+# 642e1cbc6f04464d86da96b36bb5f7cb
 msgid "series_index == 3, result = ``prefix 3->gt suffix``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:234
-# fd2d0295facd441ba2ddd1d10ceb11af
+# a657bddb4a20403093811db94c1cf338
 msgid "**All the functions listed under single-function mode can be used in program mode**. To do so, you must supply the value that the function is to act upon as the first parameter, in addition to the parameters documented above. For example, in program mode the parameters of the `test` function are ``test(x, text_if_not_empty, text_if_empty)``. The `x` parameter, which is the value to be tested, will almost always be a variable or a function call, often `field()`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:236
-# 248d093105494534af58a6c0d4e91d1b
+# 76881aae0a5946b5aa35bf730f6bf563
 msgid "The following functions are available in addition to those described in single-function mode. Remember from the example above that the single-function mode functions require an additional first parameter specifying the field to operate on. With the exception of the ``id`` parameter of assign, all parameters can be statements (sequences of expressions). Note that the definitive documentation for functions is available in the section :ref:`Function classification <template_functions_reference>`:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:238
-# 1bc68dce65e24de28f8a64d3f0851c70
+# 63679d2557984111be7d1cbec71e6b03
 msgid "``and(value, value, ...)`` -- returns the string \"1\" if all values are not empty, otherwise returns the empty string. This function works well with test or first_non_empty. You can have as many values as you want."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:239
-# 3b718355824d4767aee33db5db743741
+# 3100c7ed2c024ec8ace3e9f051973945
 msgid "``add(x, y)`` -- returns x + y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:240
-# 57f78ad170a043c5b0a21cb2231977a5
+# c0b14a9508ca4ea5853b91cc33fd3233
 msgid "``assign(id, val)`` -- assigns val to id, then returns val. id must be an identifier, not an expression"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:242
-# 91f42e814ab0414abfc9176fc5e2831f
+# c24f49836ae7409aabe21da9bb66467c
 msgid "``approximate_formats()`` -- return a comma-separated list of formats that at one point were associated with the book. There is no guarantee that the list is correct, although it probably is. This function can be called in template program mode using the template ``{:'approximate_formats()'}``. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:242
-# 0d37dd8c62774d6ab19b3d794e0a8b71
+# 2aa2b9afc8664e6baf6a04b58ba74b2e
 msgid "``author_links(val_separator, pair_separator)`` -- returns a string containing a list of authors and that author's link values in the form ``author1 val_separator author1link pair_separator author2 val_separator author2link`` etc. An author is separated from its link value by the ``val_separator`` string with no added spaces. ``author:linkvalue`` pairs are separated by the ``pair_separator`` string argument with no added spaces. It is up to you to choose separator strings that do not occur in author names or links. An author is included even if the author link is empty."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:243
-# 120b4a2bca064bb7a1c424ce81eaa7fc
+# 35f17312069e4a4eb74d2c576a1c9915
 msgid "``author_sorts(val_separator)`` -- returns a string containing a list of author's sort values for the authors of the book. The sort is the one in the author metadata (different from the author_sort in books). The returned list has the form author sort 1 ``val_separator`` author sort 2 etc. The author sort values in this list are in the same order as the authors of the book. If you want spaces around ``val_separator`` then include them in the separator string"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:244
-# 8e2af2b76bd84503b9834e0c7ba49686
+# 0a979284af204130aba478191a9f399e
 msgid "``booksize()`` -- returns the value of the calibre 'size' field. Returns '' if there are no formats."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:245
-# 7eb53f18ae73426fbcca5b9e3b340e46
+# 505f73eb94e5498e8dd94d82213aa6a8
 msgid "``cmp(x, y, lt, eq, gt)`` -- compares x and y after converting both to numbers. Returns ``lt`` if x < y. Returns ``eq`` if x == y. Otherwise returns ``gt``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:246
-# 2ca321fc53dd4c589c8ef6918fe335cc
+# 311363720d304e5aa2888436fc882827
 msgid "``current_library_name() -- `` return the last name on the path to the current calibre library. This function can be called in template program mode using the template ``{:'current_library_name()'}``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:247
-# d92cd4d8da4d46e08471d39340d3d747
+# bc2f3f2e13db4c83bdeee5116095df5c
 msgid "``current_library_path() -- `` return the path to the current calibre library. This function can be called in template program mode using the template ``{:'current_library_path()'}``.."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:248
-# 46db1a9be0f54d099076e310dc34ef98
+# bd5b2e666aa14ab99ab9fa13100b775d
 msgid "``days_between(date1, date2)`` -- return the number of days between ``date1`` and ``date2``. The number is positive if ``date1`` is greater than ``date2``, otherwise negative. If either ``date1`` or ``date2`` are not dates, the function returns the empty string."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:249
-# a1fb4a1aba134bf98dd5bbb76726d760
+# c9d8ee6875fd4cf4a6b81bfdebb9f47d
 msgid "``divide(x, y)`` -- returns x / y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:250
-# 0cfbe4976e8d4560b454352fe49bd2cc
+# 197036cf454940b881cc3617d7774c98
 msgid "``eval(string)`` -- evaluates the string as a program, passing the local variables (those ``assign`` ed to). This permits using the template processor to construct complex results from local variables. Because the `{` and `}` characters are special, you must use `[[` for the `{` character and `]]` for the '}' character; they are converted automatically. Note also that prefixes and suffixes (the `|prefix|suffix` syntax) cannot be used in the argument to this function when using template program mode."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:251
-# 631e36523e924e6ab6b440cb2860e176
+# 8ec73bbad636463cbdff5d462f8b4899
 msgid "``field(name)`` -- returns the metadata field named by ``name``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:252
-# 325f1099916d4a458618b16e501e8caa
+# c32c3b705fb84496b19f3d77475b3e92
 msgid "``first_matching_cmp(val, cmp1, result1, cmp2, r2, ..., else_result)`` -- compares \"val < cmpN\" in sequence, returning resultN for the first comparison that succeeds. Returns else_result if no comparison succeeds. Example::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:256
-# e614c24661414e8cbb6027caa0b9e08f
+# 49ab6fbefaf842d3bd64e17a3f670514
 msgid "returns \"large\". The same example with a first value of 16 returns \"giant\". * ``first_non_empty(value, value, ...)`` -- returns the first value that is not empty. If all values are empty, then the empty value is returned. You can have as many values as you want. * ``format_date(x, date_format)`` -- format_date(val, format_string) -- format the value, which must be a date field, using the format_string, returning a string. The formatting codes are::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:280
-# 8c6ab9a1853b404e894effcf41b836c4
+# 569f3100826847078e46ca258bb70bcb
 msgid "You might get unexpected results if the date you are formatting contains localized month names, which can happen if you changed the format tweaks to contain MMMM. In this case, instead of using something like ``{pubdate:format_date(yyyy)}``, write the template using template program mode as in ``{:'format_date(raw_field('pubdate'),'yyyy')'}``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:282
-# 087509b89d8e4ada84a68953d0a6f4dd
+# 4a6b7ab618eb46a1b91c128992fb2bf6
 msgid "finish_formatting(val, fmt, prefix, suffix) -- apply the format, prefix, and suffix to a value in the same way as done in a template like ``{series_index:05.2f| - |- }``. This function is provided to ease conversion of complex single-function- or template-program-mode templates to :ref:`general program mode <general_mode>` (see below) to take advantage of GPM template compilation. For example, the following program produces the same output as the above template::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:286
-# b6f52241a9864fb9b0bd3c7bfd556303
+# c48c94216d104cbe8b5cfecee8869393
 msgid "Another example: for the template ``{series:re(([^\\s])[^\\s]+(\\s|$),\\1)}{series_index:0>2s| - | - }{title}`` use::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:295
-# 4a61d9d6d17944db9ecbf7526409b898
+# 97722be97fc74989b8a2f9145210be85
 msgid "``formats_modtimes(date_format)`` -- return a comma-separated list of colon_separated items representing modification times for the formats of a book. The date_format parameter specifies how the date is to be formatted. See the date_format function for details. You can use the select function to get the mod time for a specific format. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:296
-# 3c468b5ccc404cc8b739ecdba8620d6f
+# c2a8b6667f574745ae6ab1076ee3b592
 msgid "``formats_paths()`` -- return a comma-separated list of colon_separated items representing full path to the formats of a book. You can use the select function to get the path for a specific format. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:297
-# 4a6db20ff77a46dc94740cbc5fd5b8eb
+# d27d77f7e74a47d48ce3efef3e29a0f5
 msgid "``formats_sizes()`` -- return a comma-separated list of colon_separated items representing sizes in bytes of the formats of a book. You can use the select function to get the size for a specific format. Note that format names are always uppercase, as in EPUB."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:298
-# 036e4118d7bd4fa4a305ae8dc537283c
+# 5e937f2cea624ef8849f002459c966b8
 msgid "``has_cover()`` -- return ``Yes`` if the book has a cover, otherwise return the empty string"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:299
-# 7146cb4a17394601b60b5956bc578495
+# a699215d68fa4533840e35c051d3ce33
 msgid "``not(value)`` -- returns the string \"1\" if the value is empty, otherwise returns the empty string. This function works well with test or first_non_empty. You can have as many values as you want."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:300
-# e4d2042beb3743dd9f8e7c634e614200
+# 5e6338abdf2b427881c89fa2dc9221f5
 msgid "``list_difference(list1, list2, separator)`` -- return a list made by removing from `list1` any item found in `list2`, using a case-insensitive compare. The items in `list1` and `list2` are separated by separator, as are the items in the returned list."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:301
-# c450420fcfd3453b845dbc90c729c1e5
+# 5e84ebb920e54c3c91b716385efe1ac4
 msgid "``list_equals(list1, sep1, list2, sep2, yes_val, no_val)`` -- return `yes_val` if `list1` and `list2` contain the same items, otherwise return `no_val`. The items are determined by splitting each list using the appropriate separator character (`sep1` or `sep2`). The order of items in the lists is not relevant. The compare is case insensitive."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:302
-# ba7ce9e60e4a40ba8ec9cdba409b86e2
+# df802a67f63e49c8a396aa331f5dad50
 msgid "``list_intersection(list1, list2, separator)`` -- return a list made by removing from `list1` any item not found in `list2`, using a case-insensitive compare. The items in `list1` and `list2` are separated by separator, as are the items in the returned list."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:303
-# b01c65ea10424d43a81f6257587639b2
+# 2a0e3f12428947a099272c2878133dc0
 msgid "``list_re(src_list, separator, include_re, opt_replace)`` -- Construct a list by first separating `src_list` into items using the `separator` character. For each item in the list, check if it matches `include_re`. If it does, then add it to the list to be returned. If `opt_replace` is not the empty string, then apply the replacement before adding the item to the returned list."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:304
-# c3d1dcdd5dcb496bbf194e5b591c6f91
+# e8dbd50901124433bb53f6d538344231
 msgid "``list_re_group(src_list, separator, include_re, search_re, template_for_group_1, for_group_2, ...)`` -- Like list_re except replacements are not optional. It uses re_group(item, search_re, template ...) when doing the replacements."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:305
-# 180e24aadf4947969a6b59a59954b6b6
+# 44dcb5a48fe74e258ca1aa78f6d38683
 msgid "``list_sort(list, direction, separator)`` -- return list sorted using a case-insensitive sort. If `direction` is zero, the list is sorted ascending, otherwise descending. The list items are separated by separator, as are the items in the returned list."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:306
-# 2faeaa1dbb9d44c9b2f3a7c7ba2f4fa7
+# 01a648af73f74c03b67bd3f44b8ce3b1
 msgid "``list_union(list1, list2, separator)`` -- return a list made by merging the items in list1 and list2, removing duplicate items using a case-insensitive compare. If items differ in case, the one in list1 is used. The items in list1 and list2 are separated by separator, as are the items in the returned list."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:307
-# d94b4e964c0f4965abad4247762525a5
+# 2816939795e0449bbb286979a03e3f5c
 msgid "``multiply(x, y)`` -- returns x * y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:308
-# 9a591e9615ee4a83b9ffe3c30db51014
+# 7f09f70e4ca64e00b37665d8ed7dfc3a
 msgid "``ondevice()`` -- return the string \"Yes\" if ondevice is set, otherwise return the empty string"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:309
-# a12e8bb113d04be0af6301ebd0ffde6d
+# 05f026746ffc4af9ac92f3aa4578ff4d
 msgid "``or(value, value, ...)`` -- returns the string \"1\" if any value is not empty, otherwise returns the empty string. This function works well with test or first_non_empty. You can have as many values as you want."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:310
-# caf2763624904116b8aa3ad00dfc6af1
+# bcda63aa318f47fa9af332fe4f62b821
 msgid "``print(a, b, ...)`` -- prints the arguments to standard output. Unless you start calibre from the command line (``calibre-debug -g``), the output will go to a black hole."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:311
-# e52e53bbb8ca475d98f635ee6b5e9caf
+# d0ee9f9a6e9941b48846b045cd873cb6
 msgid "``raw_field(name)`` -- returns the metadata field named by name without applying any formatting."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:312
-# 7d2fd3e0f1b742098fc1269158d6c254
+# e1b1366ce5f948c8b65702f85e48f2ea
 msgid "``raw_list(name, separator)`` -- returns the metadata list named by name without applying any formatting or sorting and with items separated by separator."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:313
-# a3c84cd0a0f14bae822065a9cbf5686a
+# 445eeab48fa44cd8b59cfc912fd782fb
 msgid "``re_group(val, pattern, template_for_group_1, for_group_2, ...)`` --  return a string made by applying the reqular expression pattern to the val and replacing each matched instance with the string computed by replacing each matched group by the value returned by the corresponding template. The original matched value for the group is available as $. In template program mode, like for the template and the eval functions, you use [[ for { and ]] for }. The following example in template program mode looks for series with more than one word and uppercases the first word::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:317
-# bf199c6f0c3e49dcacc9402115d914cf
+# 8437e4c2c5a44ef2a2aae2e5eb7cb6a9
 msgid "``series_sort()`` -- returns the series sort value."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:318
-# f43aa84a0e3840c98f799d35e4861a87
+# c567cc731d8c4639a430c5f27ce61879
 msgid "``strcat(a, b, ...)`` -- can take any number of arguments. Returns a string formed by concatenating all the arguments."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:319
-# 61336f5645434c508021055962fcddd3
+# 9e3a8e3404894f378f041cea0898336f
 msgid "``strcat_max(max, string1, prefix2, string2, ...)`` -- Returns a string formed by concatenating the arguments. The returned value is initialized to string1. `Prefix, string` pairs are added to the end of the value as long as the resulting string length is less than `max`. String1 is returned even if string1 is longer than max. You can pass as many `prefix, string` pairs as you wish."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:320
-# 07eaaf5330e2466e80f2d623964d5e15
+# 98a6e06b26004598adfd645dfc748c8e
 msgid "``strcmp(x, y, lt, eq, gt)`` -- does a case-insensitive comparison x and y as strings. Returns ``lt`` if x < y. Returns ``eq`` if x == y. Otherwise returns ``gt``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:321
-# fa3e1a97fa2c432eac57975d56c412a4
+# 284193e7529f4e689cf6987dc0480115
 msgid "``strlen(a)`` -- Returns the length of the string passed as the argument."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:322
-# 855a29e75ebc4baa8bfbaaea9cd809fc
+# 92e11d0cab4142bdb0d92bb2e02fa816
 msgid "``substr(str, start, end)`` -- returns the ``start``'th through the ``end``'th characters of ``str``. The first character in ``str`` is the zero'th character. If end is negative, then it indicates that many characters counting from the right. If end is zero, then it indicates the last character. For example, ``substr('12345', 1, 0)`` returns ``'2345'``, and ``substr('12345', 1, -1)`` returns ``'234'``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:323
-# 24713c4803c74eadb4e572f2ebc16872
+# a42991aee49043c8a9ab8d99b3f295ca
 msgid "``subtract(x, y)`` -- returns x - y. Throws an exception if either x or y are not numbers."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:324
-# ef9b955b4d5e42b2ad1c28570ca6c561
+# 170043343f74438098505f42e2a30e09
 msgid "``today()`` -- return a date string for today. This value is designed for use in format_date or days_between, but can be manipulated like any other string. The date is in ISO format."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:325
-# 7a64fa6361fd49f79117a4a98a5321e5
+# c49a4c485d0a4d03bee388bafb3ea061
 msgid "``template(x)`` -- evaluates x as a template. The evaluation is done in its own context, meaning that variables are not shared between the caller and the template evaluation. Because the `{` and `}` characters are special, you must use `[[` for the `{` character and `]]` for the '}' character; they are converted automatically. For example, ``template('[[title_sort]]') will evaluate the template ``{title_sort}`` and return its value. Note also that prefixes and suffixes (the `|prefix|suffix` syntax) cannot be used in the argument to this function when using template program mode."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:330
-# 2ac9ef8841c447f8988b59d3a8c78c9a
+# 626fba039b954fc8a01fb38ce57a4394
 msgid "Function classification"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:341
-# 9693f2e326fd4cdcb1ce5b50a45c86d1
+# c501111a2bf84c95ad5b7d2082b51f90
 msgid "Using general program mode"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:343
-# 5c404b949e414ab4b6e0efdbfffa4448
+# 86bbd4d193a94560a9295736e0e21704
 msgid "For more complicated template programs, it is sometimes easier to avoid template syntax (all the `{` and `}` characters), instead writing a more classical-looking program. You can do this in calibre by beginning the template with `program:`. In this case, no template processing is done. The special variable `$` is not set. It is up to your program to produce the correct results."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:345
-# 45407fcdc1764968a829e1857ee49cd7
+# a8ff6aa4a73e44b6a487634421649fd9
 msgid "One advantage of `program:` mode is that the brackets are no longer special. For example, it is not necessary to use `[[` and `]]` when using the `template()` function. Another advantage is that program mode templates are compiled to Python and can run much faster than  templates in the other two modes. Speed improvement depends on the complexity of the templates; the more complicated the template the more the improvement. Compilation is turned off or on using the tweak ``compile_gpm_templates`` (Compile General Program Mode templates to Python). The main reason to turn off compilation is if a compiled template does not work, in which case please file a bug report."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:347
-# d8579568698444b3a80a73cc496bde0b
+# 072bd020e5b04c45803b2e14838ad224
 msgid "The following example is a `program:` mode implementation of a recipe on the MobileRead forum: \"Put series into the title, using either initials or a shortened form. Strip leading articles from the series name (any).\" For example, for the book The Two Towers in the Lord of the Rings series, the recipe gives `LotR [02] The Two Towers`. Using standard templates, the recipe requires three custom columns and a plugboard, as explained in the following:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:349
-# 83f0c23a8d8b4b1b9f054f94359c437e
+# b52605598ba646f3a2f7f7e60f05290a
 msgid "The solution requires creating three composite columns. The first column is used to remove the leading articles. The second is used to compute the 'shorten' form. The third is to compute the 'initials' form. Once you have these columns, the plugboard selects between them. You can hide any or all of the three columns on the library view."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:351
-# 0c1e659b0f2c479080fbd80deb8231a9
+# 0b6ddd9b71d74d468a6d3a82ef136cc1
 msgid "First column: Name: #stripped_series. Template: {series:re(^(A|The|An)\\s+,)||}"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:355
-# 157e683b99314127b1bf6a731c4a3cd6
+# 97976f9a0990434dae1ca1b0cfd80ea4
 msgid "Second column (the shortened form): Name: #shortened. Template: {#stripped_series:shorten(4,-,4)}"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:359
-# 995930567add4278909aff656701ed6a
+# c6ad68c8446b4aaab996a24822f43673
 msgid "Third column (the initials form): Name: #initials. Template: {#stripped_series:re(([^\\s])[^\\s]+(\\s|$),\\1)}"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:363
-# a058a7a57ac242749185bc65f1dccc6b
+# 24da5625027e41b8b6eece9e9630d786
 msgid "Plugboard expression: Template:{#stripped_series:lookup(.\\s,#initials,.,#shortened,series)}{series_index:0>2.0f| [|] }{title} Destination field: title"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:367
-# a24012c2bce244cb81b1a563b76488f1
+# 8d1364a5164c48bf9c9b600df6ad553c
 msgid "This set of fields and plugboard produces: Series: The Lord of the Rings Series index: 2 Title: The Two Towers Output: LotR [02] The Two Towers"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:373
-# cb7fbcca33c9465d9425a4b09a444a85
+# 39a900ee21f74ed2964a78b2f6196d83
 msgid "Series: Dahak Series index: 1 Title: Mutineers Moon Output: Dahak [01] Mutineers Moon"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:378
-# 6cd086bfbd374dd48434189397095e51
+# a06037c594a749bc8818a8dee70f30ab
 msgid "Series: Berserkers Series Index: 4 Title: Berserker Throne Output: Bers-kers [04] Berserker Throne"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:383
-# 10ae549ce1b34d0eb4bc1372dab1426e
+# 622f3cbd5a1149709e9d54cf79b132e4
 msgid "Series: Meg Langslow Mysteries Series Index: 3 Title: Revenge of the Wrought-Iron Flamingos Output: MLM [03] Revenge of the Wrought-Iron Flamingos"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:388
-# 7f14103c76fc4b3f9e1a657d99b054d9
+# 2b7b160459b946d3ae9246a434009cc9
 msgid "The following program produces the same results as the original recipe, using only one custom column to hold the results of a program that computes the special title value::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:425
-# 30416b76ee5d4eac941946aab2f50785
+# c324e34b94f44934b9aca71667e04b90
 msgid "It would be possible to do the above with no custom columns by putting the program into the template box of the plugboard. However, to do so, all comments must be removed because the plugboard text box does not support multi-line editing. It is debatable whether the gain of not having the custom column is worth the vast increase in difficulty caused by the program being one giant line."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:429
-# a52d2c1ba2ca4009b84325ce5f8355c4
+# 06609f47d7fd425aa99000754abc0e2c
 msgid "User-defined Template Functions"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:431
-# 60d602c270de4b1abe64211ce4c8a584
+# 3f4f8a7b19fe42f7a4a113272f2e7904
 msgid "You can add your own functions to the template processor. Such functions are written in python, and can be used in any of the three template programming modes. The functions are added by going to Preferences -> Advanced -> Template Functions. Instructions are shown in that dialog."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:434
-# 5d0fa8db43964edfa3952fa2fa0a1265
+# 5abb0f8a5ebc467791dc3232ceb41904
 msgid "Special notes for save/send templates"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:436
-# 728d91b0f2ad413793553ce07f4cf511
+# 90f324d45096470c961ff95850fe4c99
 msgid "Special processing is applied when a template is used in a `save to disk` or `send to device` template. The values of the fields are cleaned, replacing characters that are special to file systems with underscores, including slashes. This means that field text cannot be used to create folders. However, slashes are not changed in prefix or suffix strings, so slashes in these strings will cause folders to be created. Because of this, you can create variable-depth folder structure."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:438
-# 2d0d1f0de50d418ca82d21125a365d5e
+# 04af1b85a5bb46d2a5b67f8c13c273b1
 msgid "For example, assume we want the folder structure `series/series_index - title`, with the caveat that if series does not exist, then the title should be in the top folder. The template to do this is::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:442
-# 754c874b224c4e868fa038b50fc138f0
+# e70d93ae11944c7fa53965f63ec8bd2b
 msgid "The slash and the hyphen appear only if series is not empty."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:444
-# bf4b3711e88d48f5ab126360c0651edc
+# 7b525a6aacf54082b3697090cbe52b46
 msgid "The lookup function lets us do even fancier processing. For example, assume that if a book has a series, then we want the folder structure `series/series index - title.fmt`. If the book does not have a series, then we want the folder structure `genre/author_sort/title.fmt`. If the book has no genre, we want to use 'Unknown'. We want two completely different paths, depending on the value of series."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:449
-# c30fc7a839a34f69adc927e4d329c007
+# b91c22bda03a42eb9946802dd0c391b5
 msgid "To accomplish this, we:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:447
-# db06feffa66142cea49f65e2c4fa7442
+# 68c93d30aee14baabd1a330b0c018bb3
 msgid "Create a composite field (call it AA) containing ``{series}/{series_index} - {title'}``. If the series is not empty, then this template will produce `series/series_index - title`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:448
-# db9bc903617c4ab886980bcbfaa1acd9
+# 8e403a3f7aa44cf3bf1905d682f84e1f
 msgid "Create a composite field (call it BB) containing ``{#genre:ifempty(Unknown)}/{author_sort}/{title}``. This template produces `genre/author_sort/title`, where an empty genre is replaced wuth `Unknown`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:449
-# e64dacd1747f4395a2c96d7a530b3491
+# ff39c547d73f40c99cd0ed5c41401ac2
 msgid "Set the save template to ``{series:lookup(.,AA,BB)}``. This template chooses composite field AA if series is not empty, and composite field BB if series is empty. We therefore have two completely different save paths, depending on whether or not `series` is empty."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:452
-# 3cfd9d7f3136444fa4fcc03ef09d9db6
+# 284c02d219044da99af3195a214e4ea6
 msgid "Templates and Plugboards"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:454
-# 50a42dc5e0c74a0e9a0d72b51c575921
+# ce34c89d1278456c9507e1432cab9945
 msgid "Plugboards are used for changing the metadata written into books during send-to-device and save-to-disk operations. A plugboard permits you to specify a template to provide the data to write into the book's metadata. You can use plugboards to modify the following fields: authors, author_sort, language, publisher, tags, title, title_sort. This feature helps people who want to use different metadata in books on devices to solve sorting or display issues."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:456
-# be656ab9c78b462cb81025f21528aadb
+# ca8fe58513dd473fbb3000e8b5fd9fa8
 msgid "When you create a plugboard, you specify the format and device for which the plugboard is to be used. A special device is provided, save_to_disk, that is used when saving formats (as opposed to sending them to a device). Once you have chosen the format and device, you choose the metadata fields to change, providing templates to supply the new values. These templates are `connected` to their destination fields, hence the name `plugboards`. You can, of course, use composite columns in these templates."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:458
-# ebeed9419c334439bdeafaf45290054c
+# 74aa10be4dd44f90b7d84024884e828b
 msgid "When a plugboard might apply (content server, save to disk, or send to device), calibre searches the defined plugboards to choose the correct one for the given format and device. For example, to find the appropriate plugboard for an EPUB book being sent to an ANDROID device, calibre searches the plugboards using the following search order:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:460
-# 74c4f34d427c4b0abff29c06caed4618
+# baf127603acf4dfcb01b1d3dd8b496f0
 msgid "a plugboard with an exact match on format and device, e.g., ``EPUB`` and ``ANDROID``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:461
-# 2fcb76af70254ab09246ea6b699d3658
+# 7513c17746a947fdb2a191aa264d96eb
 msgid "a plugboard with an exact match on format and the special ``any device`` choice, e.g., ``EPUB`` and ``any device``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:462
-# 3c815cc1060444eb8098f390cf37f30e
+# 92722033bf8c4164a6b27a4be14979eb
 msgid "a plugboard with the special ``any format`` choice and an exact match on device, e.g., ``any format`` and ``ANDROID``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:463
-# 06dd1bc268b14dfba527b8e854d86c3f
+# e28194a01876478f85461f554652b2fe
 msgid "a plugboard with ``any format`` and ``any device``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:465
-# 10755af6681f4ccdab3dc999b6b5396a
+# a2f049dbfc5b41af87005b4e40960310
 msgid "The tags and authors fields have special treatment, because both of these fields can hold more than one item. A book can have many tags and many authors. When you specify that one of these two fields is to be changed, the template's result is examined to see if more than one item is there. For tags, the result is cut apart wherever calibre finds a comma. For example, if the template produces the value ``Thriller, Horror``, then the result will be two tags, ``Thriller`` and ``Horror``. There is no way to put a comma in the middle of a tag."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:467
-# 07f5992d863748d2b3a946e36f2c4a12
+# e9af5da3c5fa40038dacb98c3cab50a1
 msgid "The same thing happens for authors, but using a different character for the cut, a `&` (ampersand) instead of a comma. For example, if the template produces the value ``Blogs, Joe&Posts, Susan``, then the book will end up with two authors, ``Blogs, Joe`` and ``Posts, Susan``. If the template produces the value ``Blogs, Joe;Posts, Susan``, then the book will have one author with a rather strange name."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:469
-# d2e411263c574d8d9ef9a5bb70e9f0ec
+# a20d078a729741b7a9065f2bf3309e5a
 msgid "Plugboards affect the metadata written into the book when it is saved to disk or written to the device. Plugboards do not affect the metadata used by ``save to disk`` and ``send to device`` to create the file names. Instead, file names are constructed using the templates entered on the appropriate preferences window."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:472
-# 452e8f8c04954665832d8c3d8039526a
+# 0cbd2ce8b3d04be5b0bd57c7acce2382
 msgid "Helpful Tips"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:474
-# 4e63c295a4034811816a77f6a680565c
+# 40de635f21ce4b52b75ed0a5edd4b0d5
 msgid "You might find the following tips useful."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:476
-# 35e2e84dfca5430eaf1b184fa1482ae3
+# e9efd54b8f2e49e9bc080d168df0ef89
 msgid "Create a custom composite column to test templates. Once you have the column, you can change its template simply by double-clicking on the column. Hide the column when you are not testing."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:477
-# a768b954103f43afbe6444601bd8d8a8
+# 5c0f2b67971a4538937eb28b9a65c717
 msgid "Templates can use other templates by referencing a composite custom column."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:478
-# 3619cfdad355474b96ade2786c6d1598
+# 04d34070035c49b38908f53978ec89ea
 msgid "In a plugboard, you can set a field to empty (or whatever is equivalent to empty) by using the special template ``{}``. This template will always evaluate to an empty string."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:479
-# c226eabfda2c446597297014e50747f6
+# 5db7cd0a90704b66a8fc9182a6db34ae
 msgid "The technique described above to show numbers even if they have a zero value works with the standard field series_index."
 msgstr ""
 
