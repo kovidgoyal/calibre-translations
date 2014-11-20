@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-17 18:11+0530\n"
-"PO-Revision-Date: 2014-06-18 03:43+0000\n"
+"POT-Creation-Date: 2014-11-14 08:53+0530\n"
+"PO-Revision-Date: 2014-11-14 03:24+0000\n"
 "Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/calibre/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-# 89d8b40978334bcbb3b7e11937a8b827
-#: ../../regexp.rst:6
+# adb65656f4b04ff582c5747077ba54b0
+#: ../../home/kovid/work/calibre/manual/regexp.rst:4
 msgid "All about using regular expressions in calibre"
 msgstr ""
 
-# 22dcd7b194794ddfa83fffd350891c0b
-#: ../../regexp.rst:8
+# f018baa510ea4b539f8acc7384204879
+#: ../../home/kovid/work/calibre/manual/regexp.rst:6
 msgid ""
 "Regular expressions are features used in many places in calibre to perform "
 "sophisticated manipulation of ebook content and metadata. This tutorial is a"
@@ -31,18 +31,18 @@ msgid ""
 "in calibre."
 msgstr ""
 
-# 80635d086d2e4dcb9cac3c2b95a18107
-#: ../../regexp.rst:0
+# ae2848cdc66446899b6de1adbbdc8804
+#: ../../home/kovid/work/calibre/manual/regexp.rst:0
 msgid "Contents"
 msgstr ""
 
-# 6f785bdec9f74c53b1ec106c41ed8a7b
-#: ../../regexp.rst:16
+# 91b28426ba474dbdb08d5850d8a03675
+#: ../../home/kovid/work/calibre/manual/regexp.rst:14
 msgid "First, a word of warning and a word of courage"
 msgstr ""
 
-# 3d278afd27004ecaa065b475888e8732
-#: ../../regexp.rst:18
+# a13e045e28ef4348b21c0cb864dd00b2
+#: ../../home/kovid/work/calibre/manual/regexp.rst:16
 msgid ""
 "This is, inevitably, going to be somewhat technical- after all, regular "
 "expressions are a technical tool for doing technical stuff. I'm going to "
@@ -58,27 +58,27 @@ msgid ""
 "step. So, take a step and follow me into the rabbit hole."
 msgstr ""
 
-# 34b5377a8943487b91fdf5ca51835206
-#: ../../regexp.rst:21
+# 22fcb5037d254154a9b6dc267fdd92ff
+#: ../../home/kovid/work/calibre/manual/regexp.rst:19
 msgid "Where in calibre can you use regular expressions?"
 msgstr ""
 
-# 13523c0d2c2942a08e9e9afcec419699
-#: ../../regexp.rst:23
+# ec36e48c84ab45ce87c0411c1c060da6
+#: ../../home/kovid/work/calibre/manual/regexp.rst:21
 msgid ""
-"There are a few places calibre uses regular expressions. There's the Search & "
-"Replace in conversion options, metadata detection from filenames in the "
+"There are a few places calibre uses regular expressions. There's the Search "
+"& Replace in conversion options, metadata detection from filenames in the "
 "import settings and Search & Replace when editing the metadata of books in "
 "bulk."
 msgstr ""
 
-# 49345bdcf8b04bec9b83e794a88a2b06
-#: ../../regexp.rst:26
+# 3373d22541824872942114dbf554f7eb
+#: ../../home/kovid/work/calibre/manual/regexp.rst:24
 msgid "What on earth *is* a regular expression?"
 msgstr ""
 
-# 93eb4d906e694186b2996cc828e91484
-#: ../../regexp.rst:28
+# f77f6114f578472d87f169e565fb3a3b
+#: ../../home/kovid/work/calibre/manual/regexp.rst:26
 msgid ""
 "A regular expression is a way to describe sets of strings. A single regular "
 "expression can *match* a number of different strings. This is what makes "
@@ -86,29 +86,29 @@ msgid ""
 "potentially large number of variations."
 msgstr ""
 
-# a0efe9d13359414e9dc4beae421d401d
-#: ../../regexp.rst:30
+# 4ac6051da71f488cad7fc98cf92a037b
+#: ../../home/kovid/work/calibre/manual/regexp.rst:28
 msgid ""
 "I'm using string here in the sense it is used in programming languages: a "
 "string of one or more characters, characters including actual characters, "
 "numbers, punctuation and so-called whitespace (linebreaks, tabulators etc.)."
 " Please note that generally, uppercase and lowercase characters are not "
 "considered the same, thus \"a\" being a different character from \"A\" and "
-"so forth. In calibre, regular expressions are case insensitive in the search "
-"bar, but not in the conversion options. There's a way to make every regular "
-"expression case insensitive, but we'll discuss that later. It gets "
+"so forth. In calibre, regular expressions are case insensitive in the search"
+" bar, but not in the conversion options. There's a way to make every regular"
+" expression case insensitive, but we'll discuss that later. It gets "
 "complicated because regular expressions allow for variations in the strings "
 "it matches, so one expression can match multiple strings, which is why "
 "people bother using them at all. More on that in a bit."
 msgstr ""
 
-# e484a2f2ec0d4c059658234e1572c5c9
-#: ../../regexp.rst:33
+# 00b6cf61df694856ac0e02d72a12ba54
+#: ../../home/kovid/work/calibre/manual/regexp.rst:31
 msgid "Care to explain?"
 msgstr ""
 
-# 78e560d6815942888ddd27ecac3f9dd4
-#: ../../regexp.rst:35
+# aa91d2c6ec6841f9966ac514c3b9ee1b
+#: ../../home/kovid/work/calibre/manual/regexp.rst:33
 msgid ""
 "Well, that's why we're here. First, this is the most important concept in "
 "regular expressions: *A string by itself is a regular expression that "
@@ -120,13 +120,13 @@ msgid ""
 "variation."
 msgstr ""
 
-# d08747a95a714d288301543fe81e429b
-#: ../../regexp.rst:38
+# be99bfce764c41f5977ff0da4d9c07a1
+#: ../../home/kovid/work/calibre/manual/regexp.rst:36
 msgid "That doesn't sound too bad. What's next?"
 msgstr ""
 
-# ae9a338be5884b6294307f01cadcc9fa
-#: ../../regexp.rst:40
+# 322e8cacb0994384a4d9c34a0a673d4c
+#: ../../home/kovid/work/calibre/manual/regexp.rst:38
 msgid ""
 "Next is the beginning of the really good stuff. Remember where I said that "
 "regular expressions can match multiple strings? This is were it gets a "
@@ -148,13 +148,13 @@ msgid ""
 "expression would look like. Yes, go ahead. Write it down."
 msgstr ""
 
-# 5bb6473dee0948f4b24dc1e672ff84e4
-#: ../../regexp.rst:43
+# e7d2d55250f94a13b3c49fe9fdd064e4
+#: ../../home/kovid/work/calibre/manual/regexp.rst:41
 msgid "Hey, neat! This is starting to make sense!"
 msgstr ""
 
-# ef5cdaae4b2d4c46b5a0a27f86cd08e9
-#: ../../regexp.rst:45
+# f03e722539564042b1c15c63120a482e
+#: ../../home/kovid/work/calibre/manual/regexp.rst:43
 msgid ""
 "I was hoping you'd say that. But brace yourself, now it gets even better! We"
 " just saw that using sets, we could match one of several characters at once."
@@ -180,8 +180,8 @@ msgid ""
 " every page number in that book!"
 msgstr ""
 
-# 7df1649a499a407d8b5d896eb0c3b588
-#: ../../regexp.rst:48
+# eb2feb9324ce4ef7a99e3f8e16cfae57
+#: ../../home/kovid/work/calibre/manual/regexp.rst:46
 msgid ""
 "A note on these quantifiers: They generally try to match as much text as "
 "possible, so be careful when using them. This is called \"greedy "
@@ -201,15 +201,15 @@ msgid ""
 "write a regular expression."
 msgstr ""
 
-# 53fb928131ff480ba3678b8019727db7
-#: ../../regexp.rst:52
+# 508daeeb57454be1b4607d0802f3e07d
+#: ../../home/kovid/work/calibre/manual/regexp.rst:50
 msgid ""
 "Well, these special characters are very neat and all, but what if I wanted "
 "to match a dot or a question mark?"
 msgstr ""
 
-# a0a88e046d5d4bdb8c6601050361f631
-#: ../../regexp.rst:54
+# 0113545b7ea6403ab5307bae68b937f7
+#: ../../home/kovid/work/calibre/manual/regexp.rst:52
 msgid ""
 "You can of course do that: Just put a backslash in front of any special "
 "character and it is interpreted as the literal character, without any "
@@ -224,13 +224,13 @@ msgid ""
 "needing to be escaped if you want the literal character."
 msgstr ""
 
-# b70e83718967455fb37fa3a37f1f1ca9
-#: ../../regexp.rst:57
+# 724cedf849bb430892a9c5e562df834f
+#: ../../home/kovid/work/calibre/manual/regexp.rst:55
 msgid "So, what are the most useful sets?"
 msgstr ""
 
-# ca2c7d596fc6482094ebeb2b2a00ed53
-#: ../../regexp.rst:59
+# b520594da745478d8b9df96ddef086ac
+#: ../../home/kovid/work/calibre/manual/regexp.rst:57
 msgid ""
 "Knew you'd ask. Some useful sets are ``[0-9]`` matching a single number, "
 "``[a-z]`` matching a single lowercase letter, ``[A-Z]`` matching a single "
@@ -239,16 +239,16 @@ msgid ""
 "shorthand::"
 msgstr ""
 
-# 5750859b7fcd43a3b8f6d226fb604399
-#: ../../regexp.rst:66
+# b727d391bd2b4286be75e93b0bc8d99f
+#: ../../home/kovid/work/calibre/manual/regexp.rst:64
 msgid ""
 "\"Whitespace\" is a term for anything that won't be printed. These "
 "characters include space, tabulator, line feed, form feed and carriage "
 "return."
 msgstr ""
 
-# ef437631ab674f11ab0069ccfb5c9eb1
-#: ../../regexp.rst:68
+# 41aba0f4af534c409826cb9421790d74
+#: ../../home/kovid/work/calibre/manual/regexp.rst:66
 msgid ""
 "As a last note on sets, you can also define a set as any character *but* "
 "those in the set. You do that by including the character ``\"^\"`` as the "
@@ -263,15 +263,15 @@ msgid ""
 "bracket."
 msgstr ""
 
-# 6594cdd49e95497ea5933f0e49cc6b21
-#: ../../regexp.rst:71
+# c3f2b7024e2a480eabba0c07e05597f3
+#: ../../home/kovid/work/calibre/manual/regexp.rst:69
 msgid ""
 "But if I had a few varying strings I wanted to match, things get "
 "complicated?"
 msgstr ""
 
-# 62072c5b0de941c28ec80b0f86182302
-#: ../../regexp.rst:73
+# e17d9e1902c24a3b826c825beac2c6c9
+#: ../../home/kovid/work/calibre/manual/regexp.rst:71
 msgid ""
 "Fear not, life still is good and easy. Consider this example: The book "
 "you're converting has \"Title\" written on every odd page and \"Author\" "
@@ -287,8 +287,8 @@ msgid ""
 "the even pages). Well, wasn't that easy?"
 msgstr ""
 
-# 49e1418ee4324b89afe8e09d4331fa10
-#: ../../regexp.rst:75
+# acdebfc250ed4cb786cb2d758e2c47a4
+#: ../../home/kovid/work/calibre/manual/regexp.rst:73
 msgid ""
 "You can, of course, use the vertical bar without using grouping parentheses,"
 " as well. Remember when I said that quantifiers repeat the element preceding"
@@ -304,13 +304,13 @@ msgid ""
 "short: If in doubt, use grouping together with the vertical bar."
 msgstr ""
 
-# 3a5a34040ce9426d887634cf78c7b2ef
-#: ../../regexp.rst:78
+# babe0e0b87a9452e8864782158462628
+#: ../../home/kovid/work/calibre/manual/regexp.rst:76
 msgid "You missed..."
 msgstr ""
 
-# e92299470d3e4d849c5385ac04bd3958
-#: ../../regexp.rst:80
+# d48bcff30142438795cd9e2e85aec745
+#: ../../home/kovid/work/calibre/manual/regexp.rst:78
 msgid ""
 "... wait just a minute, there's one last, really neat thing you can do with "
 "groups. If you have a group that you previously matched, you can use "
@@ -321,27 +321,27 @@ msgid ""
 "match the whole string!"
 msgstr ""
 
-# 8ed05617d7bb48308b60f6f645f19d2c
-#: ../../regexp.rst:84
+# d9ef7908d1cf4a71bc73f0c4b240b919
+#: ../../home/kovid/work/calibre/manual/regexp.rst:82
 msgid ""
 "In the beginning, you said there was a way to make a regular expression case"
 " insensitive?"
 msgstr ""
 
-# c374b2b6545b4027872b63be62b6bdc1
-#: ../../regexp.rst:86
+# 0092a907a4ac44c38d440d71c7e95bdf
+#: ../../home/kovid/work/calibre/manual/regexp.rst:84
 msgid ""
-"Yes, I did, thanks for paying attention and reminding me. You can tell calibre"
-" how you want certain things handled by using something called flags. You "
-"include flags in your expression by using the special construct ``(?flags go"
-" here)`` where, obviously, you'd replace \"flags go here\" with the specific"
-" flags you want. For ignoring case, the flag is ``i``, thus you include "
-"``(?i)`` in your expression. Thus, ``test(?i)`` would match \"Test\", "
-"\"tEst\", \"TEst\" and any case variation you could think of."
+"Yes, I did, thanks for paying attention and reminding me. You can tell "
+"calibre how you want certain things handled by using something called flags."
+" You include flags in your expression by using the special construct "
+"``(?flags go here)`` where, obviously, you'd replace \"flags go here\" with "
+"the specific flags you want. For ignoring case, the flag is ``i``, thus you "
+"include ``(?i)`` in your expression. Thus, ``test(?i)`` would match "
+"\"Test\", \"tEst\", \"TEst\" and any case variation you could think of."
 msgstr ""
 
-# f734ddc9def04ecdae21b367ca4994c7
-#: ../../regexp.rst:88
+# 10f8abcbd6ec4bc0992b1d1c263e28a3
+#: ../../home/kovid/work/calibre/manual/regexp.rst:86
 msgid ""
 "Another useful flag lets the dot match any character at all, *including* the"
 " newline, the flag ``s``. If you want to use multiple flags in an "
@@ -352,37 +352,37 @@ msgid ""
 "very end. That way, they don't get mixed up with anything else."
 msgstr ""
 
-# b5e3edff342747bda941bf75f1e0c468
-#: ../../regexp.rst:91
+# 0d5d464915ac4172954d10cbc54cb5d9
+#: ../../home/kovid/work/calibre/manual/regexp.rst:89
 msgid ""
 "I think I'm beginning to understand these regular expressions now... how do "
 "I use them in calibre?"
 msgstr ""
 
-# 19100ded0e9b40e9b59f85e0ed23d73f
-#: ../../regexp.rst:94
+# 72376c0fe45746bbb60f1c84737d4567
+#: ../../home/kovid/work/calibre/manual/regexp.rst:92
 msgid "Conversions"
 msgstr ""
 
-# 2d6b62f28c2942eab84b48dab37b5a38
-#: ../../regexp.rst:96
+# e288508a98684ed7885c85e3b1930b36
+#: ../../home/kovid/work/calibre/manual/regexp.rst:94
 msgid ""
 "Let's begin with the conversion settings, which is really neat. In the "
 "Search and Replace part, you can input a regexp (short for regular "
 "expression) that describes the string that will be replaced during the "
 "conversion. The neat part is the wizard. Click on the wizard staff and you "
-"get a preview of what calibre \"sees\" during the conversion process. Scroll "
-"down to the string you want to remove, select and copy it, paste it into the"
-" regexp field on top of the window. If there are variable parts, like page "
-"numbers or so, use sets and quantifiers to cover those, and while you're at "
-"it, remember to escape special characters, if there are some. Hit the button"
-" labeled :guilabel:`Test` and calibre highlights the parts it would replace "
-"were you to use the regexp. Once you're satisfied, hit OK and convert. Be "
-"careful if your conversion source has tags like this example::"
+"get a preview of what calibre \"sees\" during the conversion process. Scroll"
+" down to the string you want to remove, select and copy it, paste it into "
+"the regexp field on top of the window. If there are variable parts, like "
+"page numbers or so, use sets and quantifiers to cover those, and while "
+"you're at it, remember to escape special characters, if there are some. Hit "
+"the button labeled :guilabel:`Test` and calibre highlights the parts it "
+"would replace were you to use the regexp. Once you're satisfied, hit OK and "
+"convert. Be careful if your conversion source has tags like this example::"
 msgstr ""
 
-# 68300645342249e39d6ef98925120506
-#: ../../regexp.rst:106
+# 9c49c5ce674c4190a93d30f406af670e
+#: ../../home/kovid/work/calibre/manual/regexp.rst:104
 msgid ""
 "(shamelessly ripped out of `this thread "
 "<http://www.mobileread.com/forums/showthread.php?t=75594\">`_). You'd have "
@@ -401,21 +401,21 @@ msgid ""
 "``<b.*?>\\s*Generated\\s+by\\s+ABC\\s+Amber\\s+LIT.*?</b>`` The ``\\s`` with"
 " quantifiers are included here instead of explicitly using the spaces as "
 "seen in the string to catch any variations of the string that might occur. "
-"Remember to check what calibre will remove to make sure you don't remove any "
-"portions you want to keep if you test a new expression. If you only check "
+"Remember to check what calibre will remove to make sure you don't remove any"
+" portions you want to keep if you test a new expression. If you only check "
 "one occurrence, you might miss a mismatch somewhere else in the text. Also "
 "note that should you accidentally remove more or fewer tags than you "
-"actually wanted to, calibre tries to repair the damaged code after doing the "
-"removal."
+"actually wanted to, calibre tries to repair the damaged code after doing the"
+" removal."
 msgstr ""
 
-# d1ab3050bdbe49c3b52e934d01ec28a7
-#: ../../regexp.rst:109
+# d8774e3b0de04973bf18f065c9c9c205
+#: ../../home/kovid/work/calibre/manual/regexp.rst:107
 msgid "Adding books"
 msgstr "Додавање књига"
 
-# b77342d9248840cb9fc5c62f0d03a8f7
-#: ../../regexp.rst:111
+# ec1d99c809c54535bfdafd6d9febfbda
+#: ../../home/kovid/work/calibre/manual/regexp.rst:109
 msgid ""
 "Another thing you can use regular expressions for is to extract metadata "
 "from filenames. You can find this feature in the \"Adding books\" part of "
@@ -427,24 +427,24 @@ msgid ""
 "The Divine Comedy by Dante Alighieri.mobi``. (Obviously, this is already in "
 "your library, since we all love classical italian poetry) or ``Science "
 "Fiction epics: The Foundation Trilogy by Isaac Asimov.epub``. This is "
-"obviously a naming scheme that calibre won't extract any meaningful data out "
-"of - its standard expression for extracting metadata is ``(?P<title>.+) - "
+"obviously a naming scheme that calibre won't extract any meaningful data out"
+" of - its standard expression for extracting metadata is ``(?P<title>.+) - "
 "(?P<author>[^_]+)``. A regular expression that works here would be "
 "``[a-zA-Z]+: (?P<title>.+) by (?P<author>.+)``. Please note that, inside the"
 " group for the metadata field, you need to use expressions to describe what "
 "the field actually matches. And also note that, when using the test field "
-"calibre provides, you need to add the file extension to your testing filename,"
-" otherwise you won't get any matches at all, despite using a working "
-"expression."
+"calibre provides, you need to add the file extension to your testing "
+"filename, otherwise you won't get any matches at all, despite using a "
+"working expression."
 msgstr ""
 
-# 4715e3c964be4835865070f8c03bd97f
-#: ../../regexp.rst:115
+# 42a6bce23c444a1a885c151782ee4a08
+#: ../../home/kovid/work/calibre/manual/regexp.rst:113
 msgid "Bulk editing metadata"
 msgstr ""
 
-# 2b85339af756450a87380e8984645563
-#: ../../regexp.rst:117
+# 2ddc4a068137459ca5bedd6d99e03b34
+#: ../../home/kovid/work/calibre/manual/regexp.rst:115
 msgid ""
 "The last part is regular expression search and replace in metadata fields. "
 "You can access this by selecting multiple books in the library and using "
@@ -470,70 +470,70 @@ msgid ""
 "behaviour here."
 msgstr ""
 
-# e85e67aa0d564ee898a56ecb1890bf70
-#: ../../regexp.rst:119
+# 15cd7e6a69df4e96b6d3e5d2f68ee47d
+#: ../../home/kovid/work/calibre/manual/regexp.rst:117
 msgid ""
 "Well, that just about concludes the very short introduction to regular "
 "expressions. Hopefully I'll have shown you enough to at least get you "
 "started and to enable you to continue learning by yourself- a good starting "
 "point would be the `Python documentation for regexps "
-"<http://docs.python.org/library/re.html>`_."
+"<https://docs.python.org/2/library/re.html>`_."
 msgstr ""
 
-# 3c2860b6c899435196ebc01d7e26a151
-#: ../../regexp.rst:121
+# 1b12d6d3a75c452881f52ac4a160fe0d
+#: ../../home/kovid/work/calibre/manual/regexp.rst:119
 msgid ""
 "One last word of warning, though: Regexps are powerful, but also really easy"
-" to get wrong. calibre provides really great testing possibilities to see if "
-"your expressions behave as you expect them to. Use them. Try not to shoot "
+" to get wrong. calibre provides really great testing possibilities to see if"
+" your expressions behave as you expect them to. Use them. Try not to shoot "
 "yourself in the foot. (God, I love that expression...) But should you, "
 "despite the warning, injure your foot (or any other body parts), try to "
 "learn from it."
 msgstr ""
 
-# 301ed88afc9e49efb3904c2c3f87585a
-#: ../../regexp.rst:124
+# 4558dd3c43b046dd9f2960e14dd0e0f9
+#: ../../home/kovid/work/calibre/manual/regexp.rst:122
 msgid "Credits"
 msgstr ""
 
-# 542971599a454895b24c3d8163b825e1
-#: ../../regexp.rst:126
+# c0ec0562e9894b64aa50e045433cc7ad
+#: ../../home/kovid/work/calibre/manual/regexp.rst:124
 msgid "Thanks for helping with tips, corrections and such:"
 msgstr ""
 
-# 6c076983699646e28555a4b4ef08b952
-#: ../../regexp.rst:128
+# 0ce18669ac5641e8bf8611464335dbc3
+#: ../../home/kovid/work/calibre/manual/regexp.rst:126
 msgid "ldolse"
 msgstr ""
 
-# 82440464573a41c083ea262a4e7ab168
-#: ../../regexp.rst:129
+# a43a0d0804bd44648bbda9b6a57503f7
+#: ../../home/kovid/work/calibre/manual/regexp.rst:127
 msgid "kovidgoyal"
 msgstr ""
 
-# b93db3f986314eb79070ff61d3c8cc97
-#: ../../regexp.rst:130
+# a31ef5f0bc9c499f849d6ae7b979d424
+#: ../../home/kovid/work/calibre/manual/regexp.rst:128
 msgid "chaley"
 msgstr ""
 
-# 6e5a0ed09d8049a6be8199f9b1b49e3c
-#: ../../regexp.rst:131
+# 95e190652b904d1c9a861264d1d250d0
+#: ../../home/kovid/work/calibre/manual/regexp.rst:129
 msgid "dwanthny"
 msgstr ""
 
-# 4b5210267d614743a4f09e8ebcb43ec4
-#: ../../regexp.rst:132
+# b8abad56ab034760afdf108656d0d6a0
+#: ../../home/kovid/work/calibre/manual/regexp.rst:130
 msgid "kacir"
 msgstr ""
 
-# 7663b08b126d4608b85c66066899a118
-#: ../../regexp.rst:133
+# 63c3b1d0a440438c86e70bf10dc2c090
+#: ../../home/kovid/work/calibre/manual/regexp.rst:131
 msgid "Starson17"
 msgstr ""
 
-# 5f42e26bce9946af872f146152eef09d
-#: ../../regexp.rst:135
+# 734af353b6b14d71a0da073d1b6acd2c
+#: ../../home/kovid/work/calibre/manual/regexp.rst:133
 msgid ""
 "For more about regexps see `The Python User Manual "
-"<http://docs.python.org/library/re.html>`_."
+"<https://docs.python.org/2/library/re.html>`_."
 msgstr ""
