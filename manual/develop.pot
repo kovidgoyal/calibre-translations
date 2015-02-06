@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: calibre 2.18.0\n"
+"Project-Id-Version: calibre 2.19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-30 09:28+0530\n"
+"POT-Creation-Date: 2015-02-06 09:49+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,522 +17,522 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:4
-# 0d757764675741bdbec073473dcc0d30
+# bcde04923cb849b0a763691e9f6bf7da
 msgid "Setting up a calibre development environment"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:6
-# b1b2816eadb647f2abac68f1eb0299d0
+# 7f4cb26d568a463eb002593f934f409e
 msgid "calibre is completely open source, licensed under the `GNU GPL v3 <http://www.gnu.org/copyleft/gpl.html>`_. This means that you are free to download and modify the program to your heart's content. In this section, you will learn how to get a calibre development environment set up on the operating system of your choice. calibre is written primarily in `Python <https://www.python.org>`_ with some C/C++ code for speed and system interfacing. Note that calibre is not compatible with Python 3 and requires at least Python 2.7."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:0
-# a5979b17983140c8a3044ad61340803e
+# 54cd6e10cead4fc59dacd96eb561bd81
 msgid "Contents"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:17
-# 696916b361b34bda87ca5f242c2ce517
+# 2e9e83b4284a4d5f8150b8f79c9285d2
 msgid "Design philosophy"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:19
-# fc38a050964941c78ffd35b832f7fb37
+# bb8db2e3101643db8714c013538dadf5
 msgid "calibre has its roots in the Unix world, which means that its design is highly modular. The modules interact with each other via well defined interfaces. This makes adding new features and fixing bugs in calibre very easy, resulting in a frenetic pace of development. Because of its roots, calibre has a comprehensive command line interface for all its functions, documented in :doc:`generated/en/cli-index`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:24
-# 63e06fbce31b41d68c26a702359ac141
+# 13ecd34ce0404d9dab9d1f6d13b1cc8f
 msgid "The modular design of calibre is expressed via ``Plugins``. There is a :ref:`tutorial <customize>` on writing calibre plugins. For example, adding support for a new device to calibre typically involves writing less than a 100 lines of code in the form of a device driver plugin. You can browse the `built-in drivers <https://github.com/kovidgoyal/calibre/tree/master/src/calibre/devices>`_. Similarly, adding support for new conversion formats involves writing input/output format plugins. Another example of the modular design is the :ref:`recipe system <news>` for fetching news. For more examples of plugins designed to add features to calibre, see the `plugin index <http://www.mobileread.com/forums/showthread.php?p=1362767#post1362767>`_."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:34
-# e0d4b5a20c904bc8ae46542eb71d06d2
+# 4c86217d63bb464dbf71fed4079047a4
 msgid "Code layout"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:36
-# cbfc4a43c15c48b9a2b799de9effefa6
+# 9ea71cf6fcff405ca7434682091eaa15
 msgid "All the calibre python code is in the ``calibre`` package. This package contains the following main sub-packages"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:38
-# fdce6860e0c244bda962c34af6847169
+# c7ff2ee4459347608a6160d2d11500c0
 msgid "devices - All the device drivers. Just look through some of the built-in drivers to get an idea for how they work."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:40
-# 590102f40ce94f448c85f52f1e55611a
+# aa2e4beaf1f04b3a97f4bd2bf9955cf6
 msgid "For details, see: ``devices.interface`` which defines the interface supported by device drivers and ``devices.usbms`` which defines a generic driver that connects to a USBMS device. All USBMS based drivers in calibre inherit from it."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:43
-# 987158b504db45b18b938afeb64fb5fd
+# 2124af7f99d942bba333c0fb1e3bc8ab
 msgid "ebooks  - All the ebook conversion/metadata code. A good starting point is ``calibre.ebooks.conversion.cli`` which is the module powering the :command:`ebook-convert` command. The conversion process is controlled via ``conversion.plumber``. The format independent code is all in ``ebooks.oeb`` and the format dependent code is in ``ebooks.format_name``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:47
-# 4dc07bf872e3476385a54b04daecc67d
+# 78f9b4bb1fd74eb6b03c4b88b5f4e3d2
 msgid "Metadata reading, writing, and downloading is all in ``ebooks.metadata``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:48
-# 23fdc2052b9241d2864241815eb464b1
+# 77b52acbd3ff4b798b880fa24b529317
 msgid "Conversion happens in a pipeline, for the structure of the pipeline, see :ref:`conversion-introduction`. The pipeline consists of an input plugin, various transforms and an output plugin. The code that constructs and drives the pipeline is in :file:`plumber.py`. The pipeline works on a representation of an ebook that is like an unzipped epub, with manifest, spine, toc, guide, html content, etc. The class that manages this representation is OEBBook in ``ebooks.oeb.base``. The various transformations that are applied to the book during conversions live in :file:`oeb/transforms/*.py`. And the input and output plugins live in :file:`conversion/plugins/*.py`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:58
-# 1e6f0553beb04b97bf7d4cfbeb07dd6b
+# 252ef99807b64dd1ba89eea362f7c45d
 msgid "Ebook editing happens using a different container object. It is documented in :ref:`polish_api`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:61
-# fc3264758832472ca1e07b45f02bea8b
+# 615ab27497cb4cd0954b4bb8ef81deeb
 msgid "db - The database back-end. See :ref:`db_api` for the interface to the calibre library."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:63
-# b05d937d807143008c7318aa2b2a20eb
+# ee6e9f1781494f41b23ef850b7abba90
 msgid "content server: ``library.server`` is the calibre Content Server."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:65
-# db555219d9d6493aa9ed36b52d68e6de
+# 6fc7cfcf626b4868b6f33cc936463b82
 msgid "gui2 - The Graphical User Interface. GUI initialization happens in ``gui2.main`` and ``gui2.ui``. The ebook-viewer is in ``gui2.viewer``. The ebook editor is in ``gui2.tweak_book``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:67
-# 823140ba3a894160b52efec1fb62f066
+# a5e20e08987a4904b912a95fe3ed50b3
 msgid "If you want to locate the entry points for all the various calibre executables, look at the ``entry_points`` structure in `linux.py <https://github.com/kovidgoyal/calibre/blob/master/src/calibre/linux.py>`_."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:71
-# 4c9a1df676074f80957457b297805dad
+# fd89e6fe5def4fa49a4129bac97d4798
 msgid "If you need help understanding the code, post in the `development forum <http://www.mobileread.com/forums/forumdisplay.php?f=240>`_ and you will most likely get help from one of calibre's many developers."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:75
-# 6376f6f103984b37939421a017097a0c
+# 344ffa31934f4046a8dbdc970dd1ceac
 msgid "Getting the code"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:77
-# 7dc96daa648640db839e5dfca4d696aa
+# bc0c1fdc16f6439b8f5d61004103138d
 msgid "You can get the calibre source code in two ways, using a version control system or directly downloading a `tarball <http://code.calibre-ebook.com/dist/src>`_."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:80
-# f42a2e7e60ac45c2929019ceb150c88a
+# db15eb3b03b943928837084dedfec945
 msgid "calibre uses `Git <http://www.git-scm.com/>`_, a distributed version control system. Git is available on all the platforms calibre supports.  After installing Git, you can get the calibre source code with the command::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:86
-# b3c64ec7d07a4dc98b41c7e779593642
+# 222aac9e90c54c10af2f57dfd74fee26
 msgid "On Windows you will need the complete path name, that will be something like :file:`C:\\\\Program Files\\\\Git\\\\git.exe`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:88
-# 1b19380b2d1e434291d8d5d34973b415
+# ac7a4de70c7241d6b3b1efd0076912f6
 msgid "calibre is a very large project with a very long source control history, so the above can take a while (10 mins to an hour depending on your internet speed)."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:91
-# 9e862e1d676045ac80ce2180f1dc3f91
+# cb27d7f135964abea5b6633ac382c4d0
 msgid "If you want to get the code faster, the source code for the latest release is always available as an `archive <http://code.calibre-ebook.com/dist/src>`_."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:94
-# 0a50b449433a406db8fe156da8d2a64c
+# 3cc86537cbcf4873a4d0fa1a49ad1b77
 msgid "To update a branch to the latest code, use the command::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:99
-# 377956847f7f412a997c77e0522df656
+# 8b4d2eb1d8a8457b8c213a90521382cb
 msgid "Submitting your changes to be included"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:101
-# 0e204f1b0dd04586a25f7ff771950798
+# 84ef100d2c0640a4bf2aece67f3e17c7
 msgid "If you only plan to make a few small changes, you can make your changes and create a \"merge directive\" which you can then attach to a ticket in the calibre `bug tracker <https://bugs.launchpad.net/calibre>`_. To do this, make your changes, then run::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:109
-# 1ed5e6a2c7d14b769787339ce65388e5
+# b28975b3466547629d3c76c66f1e6480
 msgid "This will create a :file:`my-changes` file in the current directory, simply attach that to a ticket on the calibre `bug tracker <https://bugs.launchpad.net/calibre>`_. Note that this will include *all* the commits you have made. If you only want to send some commits, you have to change ``origin/master`` above. To send only the last commit, use::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:117
-# f70d92e3130840b6af5d8bfae99e8552
+# 5da3996c3efb4ee2941617bfb1d70384
 msgid "To send the last *n* commits, replace *1* with *n*, for example, for the last 3 commits::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:122
-# 634848ac9af7463a94669af002973a57
+# 9c0c7df10dd340deb1e3b20d1b77f3cc
 msgid "Be careful to not include merges when using ``HEAD~n``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:124
-# ecf743ae23c94eb981ecca14ca608e13
+# 32a95a01dbff4a4185d3766f5e89454e
 msgid "If you plan to do a lot of development on calibre, then the best method is to create a `GitHub <https://github.com>`_ account. Below is a basic guide to setting up your own fork of calibre in a way that will allow you to submit pull requests for inclusion into the main calibre repository:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:129
-# a1d584785f934ff9982e99860ea69b6e
+# d2a3398730b0485bbf237933f420b2fe
 msgid "Setup git on your machine as described in this article: `Setup Git <https://help.github.com/articles/set-up-git>`_"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:130
-# 56d12df726e943e8906cc59049dbc675
+# 427e296d9fbc4789b569c18472cf879e
 msgid "Setup ssh keys for authentication to GitHub, as described here: `Generating SSH keys <https://help.github.com/articles/generating-ssh-keys>`_"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:131
-# b21b1fb3d8c747bc9802cf9255346f0b
+# 45a066606a3749d5857c40ccc217df2c
 msgid "Go to https://github.com/kovidgoyal/calibre and click the :guilabel:`Fork` button."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:132
-# 3d6fa681d04f47d1be089efb1f82161a
+# 9ffef66f1d924007ab7d4b3a17bd780c
 msgid "In a Terminal do::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:137
-# ea260bc498304933956b2c5623b7734f
+# b8218c1b9c464f91aba3fdfa80f685bf
 msgid "Replace <username> above with your github username. That will get your fork checked out locally."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:138
-# d46ea0470d4f4453afc3f4adb845a7a2
+# c9472392f0a545278f55b15444fb7eef
 msgid "You can make changes and commit them whenever you like. When you are ready to have your work merged, do a::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:142
-# 5a15fa28ca2643ac9ce5696e7b82ed8f
+# 3729eaf36e1841a48c08173332dfdbef
 msgid "and go to ``https://github.com/<username>/calibre`` and click the :guilabel:`Pull Request` button to generate a pull request that can be merged."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:143
-# f84a44681bda490c9ac598e85d588e1d
+# 215c9b02054d41d4b41b25c4489d0da6
 msgid "You can update your local copy with code from the main repo at any time by doing::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:148
-# 5d64b4eac30344d0938965b9c30184e4
+# ad509c2de2c24f0b9b342eb9019d4b62
 msgid "You should also keep an eye on the calibre `development forum <http://www.mobileread.com/forums/forumdisplay.php?f=240>`_. Before making major changes, you should discuss them in the forum or contact Kovid directly (his email address is all over the source code)."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:154
-# a44ee2a6e3ec4695b68ac7c4bcc69686
+# 4158c75f0b444319bdbdfa98bc90b1a1
 msgid "Windows development environment"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:156
 #: ../../home/kovid/work/calibre/manual/develop.rst:190
 #: ../../home/kovid/work/calibre/manual/develop.rst:222
-# 12dae1c02234424687d04fbf37aa9fb8
-# 8200c1b88027469e8a88ab783fdefc0e
-# 57759670fbc34983836c67cc827377e0
+# 0234de708bb346eea72f1e215dfb8c04
+# b48ee0d13a64474d853a721a843cdeab
+# 7bd6b85db18149b58cbdcb65180232ec
 msgid "You must also get the calibre source code separately as described above."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:158
-# bf34f26dcf3d491898abf10cd9496d8c
+# c7b0a0999aed4b13a5a95c826ad50cdd
 msgid "Install calibre normally, using the Windows installer. Then open a Command Prompt and change to the previously checked out calibre code directory. For example::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:163
 #: ../../home/kovid/work/calibre/manual/develop.rst:234
-# 1e02ad5893fb4791b7b0a3098b57f260
-# 92d1d96e52b8457cae7b19e79e63eb30
+# 69b60932e9314d5da6ad18c33bca3008
+# 680419ca584e4b709bf6d5b8665945e1
 msgid "calibre is the directory that contains the src and resources sub-directories."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:165
-# 4a37f639f9f5416384de6d85b1b947c4
+# b2a1e42547f64bd1b8b238601c373b09
 msgid "The next step is to set the environment variable ``CALIBRE_DEVELOP_FROM`` to the absolute path of the src directory. So, following the example above, it would be ``C:\\Users\\kovid\\work\\calibre\\src``. `Here is a short guide <https://docs.python.org/2/using/windows.html#excursus-setting-environment-variables>`_ to setting environment variables on Windows."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:170
-# 7d2e6fac28f7416fb2e4caf021972723
+# 4dcb01a08a484987a1abefea7344c3f3
 msgid "Once you have set the environment variable, open a new command prompt and check that it was correctly set by using the command::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:175
 #: ../../home/kovid/work/calibre/manual/develop.rst:245
-# 4493532149b54e16b88522cb7729dfcd
-# 0fefe70fca044beaae4239ee21d18b36
+# d3a625db63394e55a033d40b6143a3d4
+# e0e30376496f4e6ba5ab3c42a7ad898d
 msgid "Setting this environment variable means that calibre will now load all its Python code from the specified location."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:177
-# dfc1eaad4b7b49e4a5836e132e0fa3a4
+# 126de9e53c8046d0a364d0e3aa636065
 msgid "That's it! You are now ready to start hacking on the calibre code. For example, open the file :file:`src\\\\calibre\\\\__init__.py` in your favorite editor and add the line::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:182
 #: ../../home/kovid/work/calibre/manual/develop.rst:252
-# 2d599ae802594c6ba00f7be6a6617828
-# 12f61e54abbf440ba9874376e23a2a03
+# 1297bbe9fba544e593fe047b50fb45bf
+# 0fce8ca4d78845a9bbcaf2b416b0fb7d
 msgid "near the top of the file. Now run the command :command:`calibredb`. The very first line of output should be ``Hello, world!``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:184
-# 46217b41f04444af9f10b9e8e1a4ff24
+# 6fca8fd2834149de9e492c99e0abe705
 msgid "You can also setup a calibre development environment inside the free Microsoft Visual Studio, if you like, following the instructions `here <http://www.mobileread.com/forums/showthread.php?t=251201>`_."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:188
-# e977c1c5c02f4152807038ba8efc59f7
+# ecf73d7597654b498a43b966989d765c
 msgid "OS X development environment"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:192
-# 4778662e97a1430ab0e01ae5bf5086f2
+# 20ba0419ae41432593743c90e99b62af
 msgid "Install calibre normally using the provided .dmg. Then open a Terminal and change to the previously checked out calibre code directory, for example::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:197
-# 9897d2e490494aa293dc432ef42d3867
+# df4a2f28682244dca58c5b7cad256d3e
 msgid "calibre is the directory that contains the src and resources sub-directories. Ensure you have installed the calibre commandline tools via :guilabel:`Preferences->Advanced->Miscellaneous` in the calibre GUI."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:199
-# 640948b4711e4819aa473f0139235eee
+# 89291ff446eb466cbf186872bb2bab7a
 msgid "The next step is to create a bash script that will set the environment variable ``CALIBRE_DEVELOP_FROM`` to the absolute path of the src directory when running calibre in debug mode."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:201
-# 5cefa3a38386438ba193b3410eae6e02
+# 34e92c32987a47458e573e4b8613888c
 msgid "Create a plain text file::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:207
-# 7816ce5c4be542aeaa6276a139de98f2
+# eb396f15d4c9451f80ce3dc795e92b69
 msgid "Save this file as ``/usr/bin/calibre-develop``, then set its permissions so that it can be executed::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:211
-# 8e94f60f59a44d459aca6e2bdb278bf0
+# ecae989eb38247958606ce3c67b6de66
 msgid "Once you have done this, run::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:215
-# ff1270ededad4f55bd125fb103ae2ccf
+# 8279a0ca53bd4279a4a9db8e314d15c2
 msgid "You should see some diagnostic information in the Terminal window as calibre starts up, and you should see an asterisk after the version number in the GUI window, indicating that you are running from source."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:220
-# 15b8754631a94fa2b362dce55a6a0992
+# d2b0c2a1f5384c4aba709e5413def4d6
 msgid "Linux development environment"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:224
-# 5a486d05ac5e43b99ec7d89e425563c3
+# 1b3151a78c604373a8a730a6621244a2
 msgid "calibre is primarily developed on Linux. You have two choices in setting up the development environment. You can install the calibre binary as normal and use that as a runtime environment to do your development. This approach is similar to that used in Windows and OS X. Alternatively, you can install calibre from source. Instructions for setting up a development environment from source are in the INSTALL file in the source tree. Here we will address using the binary at runtime, which is the recommended method."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:230
-# 37786b1c88a1491d9a9b3b17498766e4
+# 4701fa7f6df945fd9de18e070a105a25
 msgid "Install calibre using the binary installer. Then open a terminal and change to the previously checked out calibre code directory, for example::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:236
-# 1a9b2d5b4bc54a688196c1c2dbe56369
+# fea506ac22334b61a194a03019fd5a17
 msgid "The next step is to set the environment variable ``CALIBRE_DEVELOP_FROM`` to the absolute path of the src directory. So, following the example above, it would be ``/home/kovid/work/calibre/src``. How to set environment variables depends on your Linux distribution and what shell you are using."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:240
-# 16218b8439b44073bdd06b18dfcd5ae5
+# 60a0f090c751406d9173ccf3744495d5
 msgid "Once you have set the environment variable, open a new terminal and check that it was correctly set by using the command::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:247
-# fbca17c954194ecd86b960e946071d98
+# 1dd025205c7246aeb0545c367a9f6191
 msgid "That's it! You are now ready to start hacking on the calibre code. For example, open the file :file:`src/calibre/__init__.py` in your favorite editor and add the line::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:255
-# 5b9cb25d3d1e44ccb954bf37649c9e93
+# 32fbe7bc27d646baabf81cb5e6114fe9
 msgid "Having separate \"normal\" and \"development\" calibre installs on the same computer"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:257
-# dac79955131d45fb94df164abe2490ae
+# 1fbaf0c9d3b74c0593f2b995c79e6e67
 msgid "The calibre source tree is very stable and rarely breaks, but if you feel the need to run from source on a separate test library and run the released calibre version with your everyday library, you can achieve this easily using .bat files or shell scripts to launch calibre. The example below shows how to do this on Windows using .bat files (the instructions for other platforms are the same, just use a shell script instead of a .bat file)"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:262
-# 544eadbd6ea4496ebd35415ec922fcf3
+# 3190df3fe996412999ee57461b6d92bc
 msgid "To launch the release version of calibre with your everyday library:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:264
-# 067808b85ac3470381e3ea4a80285131
+# 17d1a10e2b26425496e18658abf5c0b4
 msgid "calibre-normal.bat::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:268
-# 370dc7a13c5f4f6195d9442eedea89d9
+# 706814b63e774e0d82418e16bb724d5a
 msgid "calibre-dev.bat::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:275
-# 676e83c77bd742458a3828b8ea467564
+# 4b0be030b0d44b988ab484978454001d
 msgid "Debugging tips"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:277
-# ce49157ac27b40ebb4530486f001514a
+# 6ced7c8b813f4a3f9fd0dbbafa7805d2
 msgid "Python is a dynamically typed language with excellent facilities for introspection. Kovid wrote the core calibre code without once using a debugger. There are many strategies to debug calibre code:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:282
-# c848f67ad9ce419ebbf00ddb4fb01d04
+# 013f2bfcdb6847369de3e4c62bca592e
 msgid "Using print statements"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:284
-# 3accb0c5ac9b49f893ef0859fea30f3f
+# 08ab5d196bf54c078fca7bc2135d7213
 msgid "This is Kovid's favorite way to debug. Simply insert print statements at points of interest and run your program in the terminal. For example, you can start the GUI from the terminal as::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:289
-# 4fd3a5e3e0b548eeadc445ea719d5736
+# c76ea903117c405ab908bf9fa9085d73
 msgid "Similarly, you can start the ebook-viewer as::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:293
-# cfdda6f669644c19a5da1807b72e4c9d
+# 9bd4e3f97fec4ca8983d1f28eb79d64e
 msgid "The ebook-editor can be started as::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:298
-# 417601c3ffc04e6da88f5e3411a48d8e
+# 5f1041bce7454b46b3da8f34d77f5ea0
 msgid "Using an interactive python interpreter"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:300
-# ef6db6d723224689aaccebf5bd92d9ed
+# ff706d51ca154f469969e7d2b2cdb518
 msgid "You can insert the following two lines of code to start an interactive python session at that point::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:305
-# d613232dafcd4315829731a93d93f45a
+# 0f75bcde8a11485998ed77af32167343
 msgid "When running from the command line, this will start an interactive Python interpreter with access to all locally defined variables (variables in the local scope). The interactive prompt even has TAB completion for object properties and you can use the various Python facilities for introspection, such as :func:`dir`, :func:`type`, :func:`repr`, etc."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:311
-# c041adb859cc4efd96787f150ec39223
+# c6e4d751784142bd9cc69dec62b8af8f
 msgid "Using the python debugger as a remote debugger"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:313
-# 79f2f40398d844339883773e1a64ab8b
+# 0b35085a6bd4498e9d09b894e538faf3
 msgid "You can use the builtin python debugger (pdb) as a remote debugger from the command line. First, start the remote debugger at the point in the calibre code you are interested in, like this::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:320
-# 9a7f37e4970f4a8c936433ccd64eec5a
+# 0357526bf322447bb414db36e2bcebdd
 msgid "Then run calibre, either as normal, or using one of the calibre-debug commands described in the previous section. Once the above point in the code is reached, calibre will freeze, waiting for the debugger to connect."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:324
-# e1bdfd8222344f3aa142e6a7749f376d
+# fc6e59d128dc45b89135deb5f1fab61e
 msgid "Now open a terminal or command prompt and use the following command to start the debugging session::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:329
-# a975bfa8f830498cb62cea3dd4f86c8c
+# c56a227b970e4fc397319b0c2d8450c6
 msgid "You can read about how to use the python debugger in the `python stdlib docs for the pdb module <https://docs.python.org/2/library/pdb.html#debugger-commands>`_."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:333
-# d1ad720c624146f790dbb6b4ed8350c4
+# db9d23752e6a4fbdbdb07df4e56c962a
 msgid "By default, the remote debugger will try to connect on port 4444. You can change it, by passing the port parameter to both the set_trace() and the cli() functions above, like this: ``set_trace(port=1234)`` and ``cli(port=1234)``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:339
-# 47fad28075404474b1b6c4e195699b2c
+# 604576d249ef4ae685e7ab9b7fb063c0
 msgid "The python debugger cannot handle multiple threads, so you have to call set_trace once per thread, each time with a different port number."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:343
-# 58eb730a810f4b29b28640b46645484a
+# edfe7f317ebd4e24810c5281c0ff367d
 msgid "Using the debugger in your favorite python IDE"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:345
-# 7bb90400e6e44983a7b624707541dc51
+# 2a68b214ea0d4d0d9f46f7afa1884ac8
 msgid "It is possible to use the builtin debugger in your favorite python IDE, if it supports remote debugging. The first step is to add the calibre src checkout to the ``PYTHONPATH`` in your IDE. In other words, the directory you set as ``CALIBRE_DEVELOP_FROM`` above, must also be in the ``PYTHONPATH`` of your IDE."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:350
-# 306dfed80aa34aeda73eead08c1950d1
+# 02a2164b691042099366eaacb8ae5df5
 msgid "Then place the IDE's remote debugger module into the :file:`src` subdirectory of the calibre source code checkout. Add whatever code is needed to launch the remote debugger to calibre at the point of interest, for example in the main function. Then run calibre as normal. Your IDE should now be able to connect to the remote debugger running inside calibre."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:357
-# 6711fef844f64fa7941cf5da76a9b6c3
+# 34dac4bd61e945f9ac83fbb8621438f3
 msgid "Executing arbitrary scripts in the calibre python environment"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:359
-# 6d66e5a13db64608baea0c4df2205b26
+# c1f149843343401f811391aa1ebe6c9a
 msgid "The :command:`calibre-debug` command provides a couple of handy switches to execute your own code, with access to the calibre modules::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:364
-# 38eb5d73702f45b28e9c91fdcb2597fd
+# f9c54c4bc89c4be1821a521b5c529984
 msgid "is great for testing a little snippet of code on the command line. It works in the same way as the -c switch to the python interpreter::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:368
-# 6cf78725b1cb4a1c90efecc0eed60c01
+# cb636b5268ab434999af81a3ccd3edb3
 msgid "can be used to execute your own Python script. It works in the same way as passing the script to the Python interpreter, except that the calibre environment is fully initialized, so you can use all the calibre code in your script. To use command line arguments with your script, use the form::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:373
-# 2301df9e6636488db588f66410c1434b
+# b5c1205250464ad1ad266df11ce5953c
 msgid "The ``--`` causes all subsequent arguments to be passed to your script."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:377
-# a1766491fb38451790485454b8d0e284
+# 837ac2cee4704d079865dd61a8006a61
 msgid "Using calibre in your projects"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:379
-# 6c02f6de9e8742128104ada8051ee79e
+# e58604216d6d4c13b4b2f7e1c4681a93
 msgid "It is possible to directly use calibre functions/code in your Python project. Two ways exist to do this:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:382
-# d1a9cfdb63ce4580befdaa027f70bc49
+# 04f79c68602a441eb5f702e7047e4e73
 msgid "Binary install of calibre"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:384
-# 77a665e7ad1e49b1a1271122ea290743
+# 31cb0564f3a144618f2f73ef64eb8837
 msgid "If you have a binary install of calibre, you can use the Python interpreter bundled with calibre, like this::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:389
-# 91ac17932f7b4d04a2fed88ddd1bfeb7
+# c0f2590fe2e04102ad64611eaec98426
 msgid "Source install on Linux"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:391
-# 2f7353dd66994aad8d8a1fc480e4a0f5
+# 1321bdfd7f4b43b592be6e586aa6c456
 msgid "In addition to using the above technique, if you do a source install on Linux, you can also directly import calibre, as follows::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:399
-# cd8170b4e0d24d6286a1548fa604e52e
+# 7cba835de4254ca4804d34673c42ad4e
 msgid "It is essential that you import the init_calibre module before any other calibre modules/packages as it sets up the interpreter to run calibre code."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/develop.rst:403
-# bdf4bdfcb99b4ea6becca506d5f480ae
+# 94ae9908b3be498e94027ee78ba115f7
 msgid "API documentation for various parts of calibre"
 msgstr ""
 
