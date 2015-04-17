@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: calibre 2.24.0\n"
+"Project-Id-Version: calibre 2.25.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 14:37+0530\n"
+"POT-Creation-Date: 2015-04-17 09:41+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,777 +17,777 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:4
-# ab6fe57de5bd4067acd8d0a5d2930eec
+# 00e9f19905154e76b66a292206cdfea7
 msgid "API Documentation for the ebook editing tools"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:6
-# c76c8f1fa5a74c788307e74542564134
+# 80a8d1f55571492da1d6337988c48b5a
 msgid "The ebook editing tools consist of a :class:`calibre.ebooks.oeb.polish.container.Container` object that represents a book as a collection of HTML + resource files, and various tools that can be used to perform operations on the container. All the tools are in the form of module level functions in the various ``calibre.ebooks.oeb.polish.*`` modules."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:15
-# 435ca35de54d47f8a8e31bda8223a957
+# 314e2552b6c142f389ac725ad27534e4
 msgid "You obtain a container object for a book at a path like this::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:20
-# 3e33b11053a14bc49733cc2d3601b142
+# 6caef9439cf442b89ebea1cc723a6003
 msgid "If you are writing a plugin for the ebook editor, you get the current container for the book being edited like this::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:30
-# 866d1ac3db2b48c9a83d6adf2f45c2c4
+# aaac51dffbdb46d295bb93f022596fb3
 msgid "The Container object"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container:1
-# 4c2db68b7bc147088778a7434f4e0ce9
+# 19d43532f3604e2da408d4f7aca2a922
 msgid "A container represents an Open EBook as a directory full of files and an opf file. There are two important concepts:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container:4
-# 11da77b3066347879c09b27104d0845c
+# f38271190f72489383cfc310bac21f27
 msgid "The root directory. This is the base of the ebook. All the ebooks files are inside this directory or in its sub-directories."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container:7
-# b62339632a5c442892f7ebabf5e7fbe1
+# 1da05c5ac59e4c64943e8139fd857aba
 msgid "Names: These are paths to the books' files relative to the root directory. They always contain POSIX separators and are unquoted. They can be thought of as canonical identifiers for files in the book. Most methods on the container object work with names. Names are always in the NFC unicode normal form."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container:13
-# cde7771b87554618b4230a298ffcb81a
+# bcc8230a532a4eeab034458216764a3d
 msgid "Clones: the container object supports efficient on-disk cloning, which is used to implement checkpoints in the ebook editor. In order to make this work, you should never access files on the filesystem directly. Instead, use :meth:`raw_data` or :meth:`open` to read/write to component files in the book."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container:18
-# a65d472f070b4d7bbc71013fc7d1ad2c
+# 024f06c9c7cf46c7b830b6dc057a92e2
 msgid "When converting between hrefs and names use the methods provided by this class, they assume all hrefs are quoted."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.abspath_to_name:1
-# ca46becb74084b12b16df2b42092a459
+# 98bf73d179b748e9a7b7736dd98fa201
 msgid "Convert an absolute path to a canonical name relative to :attr:`root`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.abspath_to_name:3
-# c264747a1af5459cb929535566951d5b
+# e21a694d7ba44571b8d06cf3a77f924c
 msgid "The base directory. By default the root for this container object is used."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.add_file:1
-# 81cba12974034a7ebafc5d2ff49cefcf
+# 13333b8fa8eb44d7b18ece4d3b2fafc4
 msgid "Add a file to this container. Entries for the file are automatically created in the OPF manifest and spine (if the file is a text document)"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.add_name_to_manifest:1
-# ac23a76af2494e12a002a6d81aa71e5f
+# 2e1b41cde9f8471fb079f7e38fd7109b
 msgid "Add an entry to the manifest for a file with the specified name. Returns the manifest id."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.book_type:1
-# a87fb5243a4040d2908c4f4bb4d54e2a
+# d3026a27ab3b4c22963b8fa670fd0861
 msgid "The type of book (epub for EPUB files and azw3 for AZW3 files)"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.commit:1
-# 07f82cc67eb0485799ea8ec6cba3b7b0
+# 6b0faa4949494909a04b902233d99044
 msgid "Commit all dirtied parsed objects to the filesystem and write out the ebook file at outpath. :param output: The path to write the saved ebook file to. If None, the path of the original book file is used. :param keep_parsed: If True the parsed representations of committed items are kept in the cache."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.commit_item:1
-# 66af89e80bf34869a0a6117516ff51ca
+# 43fe878bba214f42b7898bec86aa59f9
 msgid "Commit a parsed object to disk (it is serialized and written to the underlying file). If ``keep_parsed`` is True the parsed representation is retained in the cache. See also: :meth:`parsed`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.decode:1
-# 900457f97c574457804ae9b8e2c38187
+# 4769125f2ac047ada40f62c4f19dd4d2
 msgid "Automatically decode ``data`` into a ``unicode`` object."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.decode:3
-# ed797a02cd6945c1a7fcaa1b8904b0ac
+# b54c91c0a07b46c1adab435a9806113c
 msgid "Normalize returned unicode to the NFC normal form as is required by both the EPUB and AZW3 formats."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.dirty:1
-# 7d6b30b3c26f46d080fefb8bb89da99c
+# 928d6425511f46f0a01fa8931a4fddf9
 msgid "Mark the parsed object corresponding to name as dirty. See also: :meth:`parsed`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.exists:1
-# aa128e4af87a4701b899de2e6924d751
+# add524909e80400188370f9c7c68579a
 msgid "True iff a file corresponding to the canonical name exists. Note that this function suffers from the limitations of the underlying OS filesystem, in particular case (in)sensitivity. So on a case insensitive filesystem this will return True even if the case of name is different from the case of the underlying filesystem file. See also :meth:`has_name`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.filesize:1
-# 1b9c8b35fa224684a32a2e44d694f4b5
+# 69883203c0ec4ad3af9537649c98d231
 msgid "Return the size in bytes of the file represented by the specified canonical name. Automatically handles dirtied parsed objects. See also: :meth:`parsed`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.generate_item:1
-# f17570408e0349fa88726ee559ff66da
+# 291309df27594c02a6c1a4c3e84a4113
 msgid "Add an item to the manifest with href derived from the given name. Ensures uniqueness of href and id automatically. Returns generated item."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.guess_type:1
-# 011b928e70184cbbb66988417542c078
+# 5572c855c5984ee9ae75aaa5dfb3b471
 msgid "Return the expected mimetype for the specified file name based on its extension."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.guide_type_map:1
-# 9816193a4bc547cdb50cb09cac4e8f0d
+# f48e3d08adae4c729b6f913473e38bb9
 msgid "Mapping of guide type to canonical name"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.has_name:1
-# 8bd8a3d4c20142e299a24abb966dcf22
+# f39145d72cc44a7eb06eb4504dc78625
 msgid "Return True iff a file with the same canonical name as that specified exists. Unlike :meth:`exists` this method is always case-sensitive."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.href_to_name:1
-# 8a6f174ea45f422390ed420dfd1b4c8b
+# d8a1fd872a884584aa021fe44033e729
 msgid "Convert an href (relative to base) to a name. base must be a name or None, in which case self.root is used."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.insert_into_xml:1
-# df1181b77d13441cbd6b852cdccd9ad6
+# 1724365d89704aaa97738b13214877b9
 msgid "Insert item into parent (or append if index is None), fixing indentation. Only works with self closing items."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.iterlinks:1
-# f679b1f59f28442090fa2fe89709ae3d
+# cec422b4da46480dab3b1f5c93d30637
 msgid "Iterate over all links in name. If get_line_numbers is True the yields results of the form (link, line_number, offset). Where line_number is the line_number at which the link occurs and offset is the number of characters from the start of the line. Note that offset could actually encompass several lines if not zero."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.manifest_has_name:1
-# 0d772fef178044a6af50a70f82112b8d
+# b15e05aeaf1840dfa50c0e2524f3793e
 msgid "Return True if the manifest has an entry corresponding to name"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.manifest_id_map:1
-# a79c6cff518c4316843015b46a8e5cd6
+# b6cfc7a80d77414d915d00e30de27de1
 msgid "Mapping of manifest id to canonical names"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.manifest_type_map:1
-# 44ad53cfbdd4476995699b3ee2ed028f
+# 70245a932b2c4f50a93aaf1e303a9177
 msgid "Mapping of manifest media-type to list of canonical names of that media-type"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.mi:1
-# 58c5181b6bdc4353808537af11b7ad83
+# d6e5f12c0de14fc9b706ede3145ab6c0
 msgid "The metadata of this book as a Metadata object. Note that this object is constructed on the fly every time this property is requested, so use it sparingly."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.name_to_abspath:1
-# 6ccd8fc665e04d06aee4faf2be9a375a
+# 61ad291066604751a361710e100e1dad
 msgid "Convert a canonical name to an absolute OS dependant path"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.name_to_href:1
-# 4f06cafbbd134bb09108fb47ab27ad09
+# bcd3c20f0f284a86a3c51f440055ad77
 msgid "Convert a name to a href relative to base, which must be a name or None in which case self.root is used as the base"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.names_that_must_not_be_changed:1
-# 74ffe1156f594ae9aaa015435d1ec0c2
+# 25f0159eddcb4649b03cab043a7a328e
 msgid "Set of names that must never be renamed. Depends on the ebook file format."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.names_that_must_not_be_removed:1
-# fc73811d1b924e28bb43475a73b2d750
+# 1becfef84432454abf55ba77796c10be
 msgid "Set of names that must never be deleted from the container. Depends on the ebook file format."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.names_that_need_not_be_manifested:1
-# c9a5cd0100fd4bdebad65745db6fee51
+# 6cd38421371b44f8bce89b206b2442ac
 msgid "Set of names that are allowed to be missing from the manifest. Depends on the ebook file format."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.open:1
-# 5e0f5fbfcc194550b7aa89da581f5990
+# 8a372d0f97384a2c8ce928615033abc5
 msgid "Open the file pointed to by name for direct read/write. Note that this will commit the file if it is dirtied and remove it from the parse cache. You must finish with this file before accessing the parsed version of it again, or bad things will happen."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.opf:1
-# 38b0aa09dcec4f11bf9333f60dd69f95
+# 4700f1f2cefb4d6992a6111c5a4c19f0
 msgid "The parsed OPF file"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.opf_get_or_create:1
-# dc7cc5f5d99148cc98fdddf76aa59d1b
+# d7c8f68a92d24b5ba3af51876dc36afe
 msgid "Convenience method to either return the first XML element with the specified name or create it under the opf:package element and then return it, if it does not already exist."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.opf_version:1
-# e737c59338904c40bac5f5c24a180416
+# 8eb83b84ffb043109c91f8d44298072f
 msgid "The version set on the OPF's <package> element"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.opf_xpath:1
-# a9e1057cd1234e6dae4ce114ac1fa04e
+# 177f7ab2c0cb42a5a7eafe5557190742
 msgid "Convenience method to evaluate an XPath expression on the OPF file, has the opf: and dc: namespace prefixes pre-defined."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.parsed:1
-# 49052afc72494852b5ce6a5eb0971490
+# a5e0615163d3452592cded8f605e65e8
 msgid "Return a parsed representation of the file specified by name. For HTML and XML files an lxml tree is returned. For CSS files a cssutils stylesheet is returned. Note that parsed objects are cached for performance. If you make any changes to the parsed object, you must call :meth:`dirty` so that the container knows to update the cache. See also :meth:`replace`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.raw_data:1
-# fa75f963775d42f5863c21ff1509a2f4
+# c395b63e0850451c8259cc96ed4fa603
 msgid "Return the raw data corresponding to the file specified by name"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.raw_data:3
-# 57819f357f1f4a51913b9a8ca16621fb
+# b6f73dec75db471b99e4e1d70477a225
 msgid "If True and the file has a text based mimetype, decode it and return a unicode object instead of raw bytes."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.raw_data:4
-# 20d56a90dd2c4960ba17a9077dc1b595
+# c030ea16dc2647ca95b486fa866c990c
 msgid "If True the returned unicode object is normalized to the NFC normal form as is required for the EPUB and AZW3 file formats."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.relpath:1
-# b61130420a344037a5681ceb684ceae8
+# 98f29b43bbcd477cbccd751808d334c9
 msgid "Convert an absolute path (with os separators) to a path relative to base (defaults to self.root). The relative path is *not* a name. Use :meth:`abspath_to_name` for that."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.remove_from_spine:1
-# 9989b609b4f54f97b82709ad8d925ed9
+# 61a80f1ca08a451789b007a167e27e44
 msgid "Remove the specified items (by canonical name) from the spine. If ``remove_if_no_longer_in_spine`` is True, the items are also deleted from the book, not just from the spine."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.remove_from_xml:1
-# b48fc8c5388c47e987f5b4ca84d0fc99
+# 11a79f16864946d9be66c3d5ad1728cb
 msgid "Removes item from parent, fixing indentation (works only with self closing items)"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.remove_item:1
-# c3d6f22fe4f14695a99c9e31af14d569
+# 27a6c82cf7044fb99f1cd09651021223
 msgid "Remove the item identified by name from this container. This removes all references to the item in the OPF manifest, guide and spine as well as from any internal caches."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.rename:1
-# 8cf1db8b10e447c1a961152cd9aaa436
+# 9ef3a285a8f640838335c370a5f3e62e
 msgid "Renames a file from current_name to new_name. It automatically rebases all links inside the file if the directory the file is in changes. Note however, that links are not updated in the other files that could reference this file. This is for performance, such updates should be done once, in bulk."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.replace:1
-# 8a396e948450461a87c56b1e1a8d7982
+# 82258c5e52b64707b8ef402648edaad8
 msgid "Replace the parsed object corresponding to name with obj, which must be a similar object, i.e. an lxml tree for HTML/XML or a cssutils stylesheet for a CSS file."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.replace_links:1
-# 5be6840d2307461185a26b08219bb638
+# 02d857370e384a18ba9dc30f91f73085
 msgid "Replace all links in name using replace_func, which must be a callable that accepts a URL and returns the replaced URL. It must also have a 'replaced' attribute that is set to True if any actual replacement is done. Convenient ways of creating such callables are using the :class:`LinkReplacer` and :class:`LinkRebaser` classes."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.serialize_item:1
-# 0394b3b989364298b4268e9771b7c6ef
+# 3a09aeabfec34c1f9b9040f8f5cfada0
 msgid "Convert a parsed object (identified by canonical name) into a bytestring. See :meth:`parsed`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.set_spine:1
-# d4733825488542278247c5752668b497
+# 1df0241ddf3e461d8182c5f49969a114
 msgid "Set the spine to be spine_items where spine_items is an iterable of the form (name, linear). Will raise an error if one of the names is not present in the manifest."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.spine_items:1
-# 0f92ab8a531b45c186f43ae028f40c55
+# c7f16e314e4841c68f35d3955bc3b82a
 msgid "An iterator yielding canonical name for every item in the books' spine. See also: :attr:`spine_iter` and :attr:`spine_items`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.spine_iter:1
-# 5735612d0628490da70eb743e0c57b30
+# 2d3354f69ca34084ae786068148f8c35
 msgid "An iterator that yields item, name is_linear for every item in the books' spine. item is the lxml element, name is the canonical file name and is_linear is True if the item is linear. See also: :attr:`spine_names` and :attr:`spine_items`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:docstring of calibre.ebooks.oeb.polish.container.Container.spine_names:1
-# 81c89fc4c8244f7db92b682b1fbd21fd
+# 9d2bee946d874473a0fefd42a4e38ce8
 msgid "An iterator yielding name and is_linear for every item in the books' spine. See also: :attr:`spine_iter` and :attr:`spine_items`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:36
-# e52f08caa4b3497e88e5f0e5991c51c4
+# e14b286928fd4e42a7250f03aa7a64a8
 msgid "Managing component files in a container"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/replace.py:docstring of calibre.ebooks.oeb.polish.replace.replace_links:1
-# 1c84bd53f28442539c8c83f7907ff3c6
+# a4627065d06d4f559a788b7dff71c093
 msgid "Replace links to files in the container. Will iterate over all files in the container and change the specified links in them."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/replace.py:docstring of calibre.ebooks.oeb.polish.replace.replace_links:3
-# a09f3f39d3e04366a693d20ea1c329cf
+# 8b6c216eb6e640cb914b648b9f899313
 msgid "A mapping of old canonical name to new canonical name. For example: :code:`{'images/old.png': 'images/new.png'}`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/replace.py:docstring of calibre.ebooks.oeb.polish.replace.replace_links:4
-# d38ba32620a64d78992c2ce411b83704
+# e44e9f7870284fd2aaf41c4a479225fa
 msgid "A callable that takes two arguments ``(name, anchor)`` and returns a new anchor. This is useful if you need to change the anchors in HTML files. By default, it does nothing."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/replace.py:docstring of calibre.ebooks.oeb.polish.replace.replace_links:7
-# cfb1057c45a74bdd93a581d8c58797e3
+# 085c4d2ce2c34ed8a79a7165b7f81b69
 msgid "If False, links are not replaced in the OPF file."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/replace.py:docstring of calibre.ebooks.oeb.polish.replace.rename_files:1
-# 394746e56b674b999c249ab9121a80ad
+# bec7fafb7212425bb05f15f6091a9fed
 msgid "Rename files in the container, automatically updating all links to them."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/replace.py:docstring of calibre.ebooks.oeb.polish.replace.rename_files:3
-# da77f5b733904db6b13f4a0cb21fb7c1
+# 9ab898168bba4357b674f74673b84112
 msgid "A mapping of old canonical name to new canonical name, for example: :code:`{'text/chapter1.html': 'chapter1.html'}`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/replace.py:docstring of calibre.ebooks.oeb.polish.replace.get_recommended_folders:1
-# 0476625c4d764644b1c9c1fc2598206c
+# aca89f9e6a4f440da6f94db5a49ad0fd
 msgid "Return the folders that are recommended for the given filenames. The recommendation is based on where the majority of files of the same type are located in the container. If no files of a particular type are present, the recommended folder is assumed to be the folder containing the OPF file."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:47
-# ab208f1d8ca846dfbf2c9d8c1fdce06c
+# 6d8870281c2742f3a774d85b89381fb8
 msgid "Pretty printing and auto fixing parse errors"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/pretty.py:docstring of calibre.ebooks.oeb.polish.pretty.fix_html:1
-# d0d6f5daa9b24ac2a984f34fef586f84
+# cf38424db56a4d57b91be2a85d91c82e
 msgid "Fix any parsing errors in the HTML represented as a string in raw. Fixing is done using the HTML5 parsing algorithm."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/pretty.py:docstring of calibre.ebooks.oeb.polish.pretty.fix_all_html:1
-# 4e26addfcedc4248b4e69006ff98b9c2
+# 04f09972103c4fef92c1ff104f58f22a
 msgid "Fix any parsing errors in all HTML files in the container. Fixing is done using the HTML5 parsing algorithm."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/pretty.py:docstring of calibre.ebooks.oeb.polish.pretty.pretty_html:1
-# 92706bfc819d4cd4a394ae11acbf9a09
+# be830249a5794ab581f084b5ab927623
 msgid "Pretty print the HTML represented as a string in raw"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/pretty.py:docstring of calibre.ebooks.oeb.polish.pretty.pretty_css:1
-# 1f0523b7eded46c7812340b793edba3e
+# 54c88a2a8a064220a5912e0cae7aa08e
 msgid "Pretty print the CSS represented as a string in raw"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/pretty.py:docstring of calibre.ebooks.oeb.polish.pretty.pretty_xml:1
-# 6be53e80c1d146ddbf6c81e02236d5b0
+# b2473a741f1b4610afe6f9ee01cd45aa
 msgid "Pretty print the XML represented as a string in raw. If ``name`` is the name of the OPF, extra OPF-specific prettying is performed."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/pretty.py:docstring of calibre.ebooks.oeb.polish.pretty.pretty_all:1
-# e5569af79e534246b5a69d4c5da843d2
+# 3bbbb3f2e6d34f4f87c19c08748ff6d3
 msgid "Pretty print all HTML/CSS/XML files in the container"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:65
-# 0b4dc8fce81f4886b1771e5d0cd9a6ee
+# 622ba6d46fa146c5ae7e04452e97043c
 msgid "Managing book jackets"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/jacket.py:docstring of calibre.ebooks.oeb.polish.jacket.remove_jacket:1
-# 4ec3eaa43e5646f1b0f6acc2d08e5bc4
+# eb752a872f0f4d13b9a8bdd38b2477c0
 msgid "Remove an existing jacket, if any. Returns False if no existing jacket was found."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/jacket.py:docstring of calibre.ebooks.oeb.polish.jacket.add_or_replace_jacket:1
-# f1479217cea24091af6a33698eb6fb55
+# 3caa14ff946840d689d02dcff8f9aa4c
 msgid "Either create a new jacket from the book's metadata or replace an existing jacket. Returns True if an existing jacket was replaced."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:74
-# 0f6ac54a73f84e1bab2a2b25bae3fa2a
+# ee9b7afcffdf4946938926f053ff0665
 msgid "Splitting and merging of files"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.split:1
-# 9f68d4b4e34341e7ad8fa365001928cb
+# 638680e141354d0ca05090850e6bebc7
 msgid "Split the file specified by name at the position specified by loc_or_xpath. Splitting automatically migrates all links and references to the affected files."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.split:5
-# d526d833b3994801ac576eb888b2d89f
+# 49111ecea4e24313bb69e2117f22379d
 msgid "Should be an XPath expression such as //h:div[@id=\"split_here\"]. Can also be a *loc* which is used internally to implement splitting in the preview panel."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.split:8
-# 3f0547e2b35a4e898a554f5f7760addb
+# 94d661a189724b04bc91c0eaf5b01d0b
 msgid "If True the split occurs before the identified element otherwise after it."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.split:9
-# 55f73999721d4df7bbaf869aaa8d957b
+# 7ed4c93afe754e8f987d34b1f835182f
 msgid "Used internally"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.multisplit:1
-# 827e57a2e96c4a938e7d6e5fb7fc5387
+# 4c2885d4db8c41ed98a96b1618b6dd9b
 msgid "Split the specified file at multiple locations (all tags that match the specified XPath expression. See also: :func:`split`. Splitting automatically migrates all links and references to the affected files."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.multisplit:5
-# 0e1ae34800bc47c3ab2b49996c80f201
+# b3d123cb480d4a54b0171eba3cf39386
 msgid "If True the splits occur before the identified element otherwise after it."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.merge:1
-# 57e6abb9b5434b62aadce29ae10f265e
+# d899f03ea095401ea5be60b5221384b1
 msgid "Merge the specified files into a single file, automatically migrating all links and references to the affected files. The file must all either be HTML or CSS files."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.merge:4
-# f1d929d0239f4013813f5572511225d1
+# ea4664b650c84459ad52b199b2ea115a
 msgid "Must be either ``'text'`` for HTML files or ``'styles'`` for CSS files"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.merge:5
-# 5a907833eea54d5980eed1e7f58eddc9
+# 6d016bc9754f4781b306b14ab1230779
 msgid "The list of files to be merged"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/split.py:docstring of calibre.ebooks.oeb.polish.split.merge:6
-# cfc079f8e9864321998fa1e12fa8439d
+# 70b1bf404b3b40e6bb6bc5da3da81b89
 msgid "Which of the merged files is the *master* file, that is, the file that will remain after merging."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:85
-# 862e2f9235624a7686d596ffc2dc492b
+# 8ee816cfe7164f118dfba487790088e0
 msgid "Managing covers"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/cover.py:docstring of calibre.ebooks.oeb.polish.cover.set_cover:1
-# c2a31bf9bd0e47df9f11021d33a6ac2e
+# 5b6e5daddac24c89a094531e41f13723
 msgid "Set the cover of the book to the image pointed to by cover_path."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/cover.py:docstring of calibre.ebooks.oeb.polish.cover.set_cover:3
-# eec6797a74844b148a5c90cb382d4800
+# fde146caf06743779418961764674ab6
 msgid "Either the absolute path to an image file or the canonical name of an image in the book. When using an image in the book, you must also set options, see below."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/cover.py:docstring of calibre.ebooks.oeb.polish.cover.set_cover:6
-# a04999efdff64ee7b8a09a44bb82db2f
+# 38174a61b44240c8b69024f2f9632f83
 msgid "An optional callable that takes a single argument. It will be called with information about the tasks being processed."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/cover.py:docstring of calibre.ebooks.oeb.polish.cover.set_cover:8
-# 2aa726bb2b134da59b12c4dad4e55b4d
+# ddfbb0601db74bf3b7c724795f09f33e
 msgid "None or a dictionary that controls how the cover is set. The dictionary can have entries: **keep_aspect**: True or False  (Preserve aspect ratio of covers in EPUB) **no_svg**: True or False  (Use an SVG cover wrapper in the EPUB titlepage) **existing**: True or False  (``cover_path`` refers to an existing image in the book)"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/cover.py:docstring of calibre.ebooks.oeb.polish.cover.mark_as_cover:1
-# fbd641fdcce246fdb4055bf6dc243864
+# 38671a8cc5694736afbd9e6bbfa79801
 msgid "Mark the specified image as the cover image."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/cover.py:docstring of calibre.ebooks.oeb.polish.cover.mark_as_titlepage:1
-# be4114bf51034c7f85d791cf22005968
+# 22823bdcedc749349b9326285eb97d06
 msgid "Mark the specified HTML file as the titlepage of the EPUB."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/cover.py:docstring of calibre.ebooks.oeb.polish.cover.mark_as_titlepage:3
-# b0a5c85d1a7b4f3a90826816fb824820
+# ca84b9fb58704d44ace441c4c63e69f2
 msgid "If True the HTML file is moved to the start of the spine"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:96
-# a2d8041dedc6413997e59cb329627ff7
+# bc843ccb38ed4095a5cd4150b87640ef
 msgid "Working with CSS"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/fonts.py:docstring of calibre.ebooks.oeb.polish.fonts.change_font:1
-# 5f8c256277c64534a124ddb8a52202ff
+# 68398e31ae044bc1910b1b3c051ecee2
 msgid "Change a font family from old_name to new_name. Changes all occurrences of the font family in stylesheets, style tags and style attributes. If the old_name refers to an embedded font, it is removed. You can set new_name to None to remove the font family instead of changing it."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/css.py:docstring of calibre.ebooks.oeb.polish.css.remove_unused_css:1
-# dfff3a735b3e402f9beea33f606858cd
+# 1c74094bdb254da19c436afd5e0734b6
 msgid "Remove all unused CSS rules from the book. An unused CSS rule is one that does not match any actual content."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/css.py:docstring of calibre.ebooks.oeb.polish.css.remove_unused_css:3
-# bab47fef07f7497d92ef35aaabe03720
+# 59efd8e3de6b446b9b83640770428ae6
 msgid "An optional callable that takes a single argument. It is called with information about the operations being performed."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/css.py:docstring of calibre.ebooks.oeb.polish.css.remove_unused_css:4
-# 1e5203e546a64baf846a7ddee79700a7
+# 5a6f7028fb474b63a34f74cdec9ce992
 msgid "If True, class attributes in the HTML that do not match any CSS rules are also removed."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/css.py:docstring of calibre.ebooks.oeb.polish.css.filter_css:1
-# 460b02f3bdde49aba76df6129bb548ac
+# 0311115b758d4b32829065d22cda63da
 msgid "Remove the specified CSS properties from all CSS rules in the book."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/css.py:docstring of calibre.ebooks.oeb.polish.css.filter_css:3
-# 290c020769db4e6a86bbb85018704d82
+# 5404347cb0704655a34f250c903c04a6
 msgid "Set of properties to remove. For example: :code:`{'font-family', 'color'}`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/css.py:docstring of calibre.ebooks.oeb.polish.css.filter_css:4
-# dd5a5900aae24266bd64ff6d11553395
+# 3c54dcd884544210816af58742674175
 msgid "The files from which to remove the properties. Defaults to all HTML and CSS files in the book."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:108
-# d8e82506d6fd4056af0d523d368fe845
+# 2785a7a5a92b41e8a08f6e093c52957d
 msgid "Working with the Table of Contents"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/toc.py:docstring of calibre.ebooks.oeb.polish.toc.from_xpaths:1
-# 21103e79dd9c4a4cb63a6b4b5b7ad385
+# dadbd5387b2349ca96b836f9a71da937
 msgid "Generate a Table of Contents from a list of XPath expressions. Each expression in the list corresponds to a level of the generate ToC. For example: :code:`['//h:h1', '//h:h2', '//h:h3']` will generate a three level table of contents from the ``<h1>``, ``<h2>`` and ``<h3>`` tags."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/toc.py:docstring of calibre.ebooks.oeb.polish.toc.from_links:1
-# 1cbaa97efb824a1e87037f2308bf9b5e
+# 8e5398e0e02a42549281fa39903cea5d
 msgid "Generate a Table of Contents from links in the book."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/toc.py:docstring of calibre.ebooks.oeb.polish.toc.from_files:1
-# be6c60928c8c439e9c22948e4625c5ba
+# 1a38d1e367eb4cec978a127487230a67
 msgid "Generate a Table of Contents from files in the book."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/toc.py:docstring of calibre.ebooks.oeb.polish.toc.create_inline_toc:1
-# 02928f08823c4c669b91d4f3f4efdd26
+# ab936daeddef4fc1a030328794c35dd3
 msgid "Create an inline (HTML) Table of Contents from an existing NCX table of contents."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/toc.py:docstring of calibre.ebooks.oeb.polish.toc.create_inline_toc:3
-# bbae257dbee64ece960a2cf71db81151
+# 9560d6cbc2424da29f900a9c49779fbc
 msgid "The title for this table of contents."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:122
-# 62d4c6138fea4917985544ac186629ce
+# 23d56ff1ffdd49dab752db1648ea1c5f
 msgid "Edit Book Tool"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/<autodoc>:1
-# 46fca4258c3441f5a7ab64e69e74843a
+# bdce4c5af1d044eba36abbbf08bb9fe1
 msgid "Bases: :class:`object`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool:3
-# c8f525b92feb4e768c80880abbc1d677
+# 67bcd0fef91b4d71ab31ea61347079d4
 msgid "The base class for individual tools in an Edit Book plugin. Useful members include:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool:5
-# 8c3f9e2ff72e42bfb92a53d75f4081b8
+# c6325958bba84014881314b3b1d6f332
 msgid "``self.plugin``: A reference to the :class:`calibre.customize.Plugin` object to which this tool belongs."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool:6
-# 113ac5c4a4784274b50556120b5c7c96
+# d07ce7f41621428eb3cd629feb2e400b
 msgid "self. :attr:`boss`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool:7
-# 28dae5ad1ddb4f769468322728c7ae35
+# 2ef79a452fdf45a5b09e6a7cdb5aa496
 msgid "self. :attr:`gui`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool:9
-# eacbe17df96f4c4b8481d1f308e3dd29
+# 9b78404289d14ac39262b21d44a8288f
 msgid "Methods that must be overridden in sub classes:"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool:11
-# 7ec37fcc7a154b3d97387ce584619b1e
+# 0b927e798e8c4aca9d6dd8bde5d887c9
 msgid ":meth:`create_action`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool:12
-# 19d3e9ffbc3648d5bfc9d63c7d569f28
+# 7422cb52bb3f44358518d212e6e0696a
 msgid ":meth:`register_shortcut`"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.name:1
-# ccd8e098c3f044f3bb60371043285c32
+# 1a33b3822aaf450eb5f776477e7a1615
 msgid "Set this to a unique name it will be used as a key"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.allowed_in_toolbar:1
-# 0b1af0a68c4147309b763287abbc1510
+# bc55dc20531a4c7abd076c91c54c9b39
 msgid "If True the user can choose to place this tool in the plugins toolbar"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.allowed_in_menu:1
-# 493ef02b77864c4f8fae1fecaa20f664
+# 5b4ed44cfb3d4b34878fa92f079a9d6d
 msgid "If True the user can choose to place this tool in the plugins menu"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.toolbar_button_popup_mode:1
-# b6b3ba88b7a7471caccbc44450fcf51b
+# ec93683e07b14eb38893c8316c196c7c
 msgid "The popup mode for the menu (if any) of the toolbar button. Possible values are 'delayed', 'instant', 'button'"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.boss:1
-# 6b5110e8d3644e7e922039b4da616dc8
+# 6d519189b1fe4223a0ccd95fd27f0e2a
 msgid "The :class:`calibre.gui2.tweak_book.boss.Boss` object. Used to control the user interface."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.gui:1
-# d763a951f3834122b53a13199f1d4344
+# 8aa5162f543e4f7eacf95fbfbc3692a6
 msgid "The main window of the user interface"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.current_container:1
-# e6c45868bab94b22a6c78295f732a436
+# 4c4b0410478b4266953485420ed0f0f3
 msgid "Return the current :class:`calibre.ebooks.oeb.polish.container.Container` object that represents the book being edited."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.register_shortcut:1
-# df553900156d4bc683e4da578b106c54
+# 884bf1be9231410a83dd33493fa9d88c
 msgid "Register a keyboard shortcut that will trigger the specified ``qaction``. This keyboard shortcut will become automatically customizable by the user in the Keyboard section of the editor preferences."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.register_shortcut:4
-# b67b2f4d260f41ea80a3b59b58a19bab
+# cb4bc062804749249d8b4f6ef3d5095c
 msgid "A QAction object, it will be triggered when the configured key combination is pressed by the user."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.register_shortcut:6
-# 57763d71a26c499ba2d777b92df49db3
+# fb99ac1f00d74071b16431681a1ca322
 msgid "A unique name for this shortcut/action. It will be used internally, it must not be shared by any other actions in this plugin."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.register_shortcut:9
-# 7fbba82ce428495fb891f656bcc730d4
+# af9fb3595a4b42608e974f6248327933
 msgid "A list of the default keyboard shortcuts. If not specified no default shortcuts will be set. If the shortcuts specified here conflict with either builtin shortcuts or shortcuts from user configuration/other plugins, they will be ignored. In that case, users will have to configure the shortcuts manually via Preferences. For example: ``default_keys=('Ctrl+J', 'F9')``."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.register_shortcut:15
-# 3eaec72b147f4d499ac35c9267b7ef28
+# c6c75474da354d88b21e981aee7a19ec
 msgid "An optional short description of this action. If not specified the text from the QAction will be used."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.register_shortcut:17
-# dbc07f44dd024af8b8859676759b847c
+# ad3a347dafba49bf9ba28a26b1170884
 msgid "An optional longer description of this action, it will be used in the preferences entry for this shortcut."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.create_action:1
-# 774005029367437194a928fd060611d8
+# c6b8270b3e0f406e8f8da520fd8d59b8
 msgid "Create a QAction that will be added to either the plugins toolbar or the plugins menu depending on ``for_toolbar``. For example::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/plugin.py:docstring of calibre.gui2.tweak_book.plugin.Tool.create_action:19
-# 2546bc4bb9704816b5451a25733a2d0f
+# da0ec6fa922d48c6bd7092d13a08dec6
 msgid "Method :meth:`register_shortcut`."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:131
-# db68f9e5dbd64a128f75b8a0284b8c41
+# 4210b7aae5e844ef8e7aa59d7ac17723
 msgid "Controlling the editor's user interface"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/polish.rst:133
-# 80170d4748c94332a4ed48bbc7500f44
+# e387345f4bc34a15b7aa87f61a3e072a
 msgid "The ebook editor's user interface is controlled by a single global *Boss* object. This has many useful methods that can be used in plugin code to perform common tasks."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.add_savepoint:1
-# 226e1fee68bc40d185fee44f191c0d52
+# 24860ed3bb5647a6b38cb0dcf7e69908
 msgid "Create a restore checkpoint with the name specified as ``msg``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.apply_container_update_to_gui:1
-# 23ded8335a674f4f8e051c6c1cb2b783
+# bcd242540f0e4048b20978d3d35294d7
 msgid "Update all the components of the user interface to reflect the latest data in the current book container."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.apply_container_update_to_gui:3
-# c59172be65f941f2b5b43b1ee2cab66d
+# 5006585eb0e14796b9298f26fc885676
 msgid "If True, the book will be marked as modified, so the user will be prompted to save it when quitting."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.close_editor:1
-# a264762439cf4c73abeece20581082c8
+# 2e070539c55742969329647a12c0a8c3
 msgid "Close the editor that is editing the file specified by ``name``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.commit_all_editors_to_container:1
-# 0c5cc2d4a94b43f490ec1221152c4a00
+# 6bba332ec9ed46de835d271dbbb4acc4
 msgid "Commit any changes that the user has made to files open in editors to the container. You should call this method before performing any actions on the current container"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.currently_editing:1
-# fe8c950d614240f3aee0e667652e0759
+# 0742647900be4e85a39bb287fd313b10
 msgid "Return the name of the file being edited currently or None if no file is being edited"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.edit_file:1
-# ef9b1720a9e94f7581fad1c62df05097
+# 60e9f94638db4b6faec54fce5cca3e31
 msgid "Open the file specified by name in an editor"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.edit_file:3
-# 200962a2707242439eac77e11d524081
+# 8379d078855f4cbd96ac878c28f9faaa
 msgid "The media type of the file, for example, ``'text/html'``. If not specified it is guessed from the file extension."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.edit_file:4
-# 6da2279dc86445b595b3972b191b3045
+# 0408f6432b9b45e28c4ba3c0d891d012
 msgid "A template to initialize the opened editor with"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.open_book:1
-# e4c333a2ff134585b1fe5929736e2c5b
+# b70b925072d94259a5c1fba01e16bcb9
 msgid "Open the ebook at ``path`` for editing. Will show an error if the ebook is not in a supported format or the current book has unsaved changes."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.open_book:3
-# f4aa79dd498f4383bea74ca161fc1b54
+# 6f61eb05f8694cf2a08b3be14b8d48c2
 msgid "The name of a file inside the newly opened book to start editing. Can also be a list of names."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.rewind_savepoint:1
-# eca5b5122255477abcef75df434117f3
+# 8d855a42fc3a4356a29277fdeadeb6d9
 msgid "Undo the previous creation of a restore checkpoint, useful if you create a checkpoint, then abort the operation with no changes"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.save_book:1
-# b43ada6eb51441738dfe867929e3e91d
+# 43e9c56ff87c406d81469390ce137159
 msgid "Save the book. Saving is performed in the background"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.set_modified:1
-# 7611b00b001e483581bef5bf0ee000a7
+# b47cda9ec84d444aa8e784d8f0b28264
 msgid "Mark the book as having been modified"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.show_current_diff:1
-# 4948c93944004509a6c87a35716e2df1
+# 576561d5271b440d8b6589f99a26f605
 msgid "Show the changes to the book from its last checkpointed state"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.show_current_diff:3
-# a444ad9950a84ee19984bddd98224994
+# ac587c6c212a45e79456a6d491080683
 msgid "If True the diff dialog will have a button to allow the user to revert all changes"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.show_current_diff:4
-# 1e188f1bcf22459aa93fd2fb7ef58416
+# c5f6876385ba4d5e9be0d4a17f6005ff
 msgid "A container object to compare the current container to. If None, the previously checkpointed container is used"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.show_editor:1
-# 2987bc4572f4412a9b44127e9ee39818
+# acc208ff6e8e4e5ab8feb720be95064c
 msgid "Show the editor that is editing the file specified by ``name``"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:docstring of calibre.gui2.tweak_book.boss.Boss.sync_preview_to_editor:1
-# 16176260e21b4ce6bd4fb1a6564e974f
+# eaa933cb941f477c91cda5e244be18eb
 msgid "Sync the position of the preview panel to the current cursor position in the current editor"
 msgstr ""
 
