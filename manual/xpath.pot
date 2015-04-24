@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: calibre 2.25.0\n"
+"Project-Id-Version: calibre 2.26.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-17 09:41+0530\n"
+"POT-Creation-Date: 2015-04-24 08:09+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,122 +17,122 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:4
-# 8a0528036b904c498b120d52a44e8b6f
+# 7c939508600641d09cb07e67c4001100
 msgid "XPath Tutorial"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:6
-# 61d93e34b4894985b47450c0c24a2266
+# 5dc16a2636494224bd4ba7cd849216d2
 msgid "In this tutorial, you will be given a gentle introduction to `XPath <http://en.wikipedia.org/wiki/XPath>`_, a query language that can be used to select arbitrary parts of `HTML <http://en.wikipedia.org/wiki/HTML>`_ documents in calibre. XPath is a widely used standard, and googling it will yield a ton of information. This tutorial, however, focuses on using XPath for ebook related tasks like finding chapter headings in an unstructured HTML document."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:0
-# c6ca66ea29b74f9bacada5191d28aad3
+# e822698dfcf1493fb75738a26ecbbafd
 msgid "Contents"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:19
-# b0d265fc04df4d58926cd6e0b333cb5a
+# eb492d5c4a38450a91baf728835a9671
 msgid "Selecting by tagname"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:21
-# 45bcc97784b246b3a1244a8fa64145b8
+# a7c8584f2c81466d8117468cc28c889d
 msgid "The simplest form of selection is to select tags by name. For example, suppose you want to select all the ``<h2>`` tags in a document. The XPath query for this is simply::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:27
-# fa68aa804a9a45afba72d150c2f12fba
+# b9b92286d65147e49223d3fb2330e34c
 msgid "The prefix `//` means *search at any level of the document*. Now suppose you want to search for ``<span>`` tags that are inside ``<a>`` tags. That can be achieved with::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:33
-# fdb5461516b64f5d919e487b8ac3c44b
+# b1a1470effcc4056be3e8a0a2ddbc911
 msgid "If you want to search for tags at a particular level in the document, change the prefix::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:39
-# f04209bdcaac42cea87203fd0da6a87c
+# b7e71c70c5ed45ecaa62a3ff4ad0f08d
 msgid "This will match only ``<p>A very short ebook to demonstrate the use of XPath.</p>`` in the :ref:`sample_ebook` but not any of the other ``<p>`` tags. The ``h:`` prefix in the above examples is needed to match XHTML tags. This is because internally, calibre represents all content as XHTML. In XHTML tags have a *namespace*, and ``h:`` is the namespace prefix for HTML tags."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:45
-# 9252e3c805c047c2a415ccac7eadaf33
+# 74ba93d101974e2ca946f6a897a0104f
 msgid "Now suppose you want to select both ``<h1>`` and ``<h2>`` tags. To do that, we need a XPath construct called *predicate*. A :dfn:`predicate` is simply a test that is used to select tags. Tests can be arbitrarily powerful and as this tutorial progresses, you will see more powerful examples. A predicate is created by enclosing the test expression in square brackets::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:53
-# a9c858c0c75140dea390da8b518cbb80
+# 75dbfccb1c824099bd76baa27c45e4c0
 msgid "There are several new features in this XPath expression. The first is the use of the wildcard ``*``. It means *match any tag*. Now look at the test expression ``name()='h1' or name()='h2'``. :term:`name()` is an example of a *built-in function*. It simply evaluates to the name of the tag. So by using it, we can select tags whose names are either `h1` or `h2`. Note that the :term:`name()` function ignores namespaces so that there is no need for the ``h:`` prefix. XPath has several useful built-in functions. A few more will be introduced in this tutorial."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:62
-# 694345ecc7164b4487bba2ad9466e3e3
+# 1565c3f0dbbd46178c83c7f5b1bfc68d
 msgid "Selecting by attributes"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:64
-# 82a57469c7c1489493214dacb356eddc
+# 1c8c83966cd5472fad0002339e5c52b6
 msgid "To select tags based on their attributes, the use of predicates is required::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:70
-# de6f850f52c04ff89e218eb6d66d4ec4
+# e4c234551df743abb0a9271c95bc4730
 msgid "Here, the ``@`` operator refers to the attributes of the tag. You can use some of the `XPath built-in functions`_ to perform more sophisticated matching on attribute values."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:76
-# d91a049d686b4c8683d91e940188b02a
+# e1788a1b3f054360b854f44422d03f50
 msgid "Selecting by tag content"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:78
-# 8aa5331fd49948d791520d5797ac636c
+# 191e25d6761b46938a79092b5651178f
 msgid "Using XPath, you can even select tags based on the text they contain. The best way to do this is to use the power of *regular expressions* via the built-in function :term:`re:test()`::"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:84
-# b045d9ac0b0b47a5b9c53d7cc8397e1a
+# 0f218967707f4d26943719968fb767f8
 msgid "Here the ``.`` operator refers to the contents of the tag, just as the ``@`` operator referred to its attributes."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:90
-# 7d5c618824a94b8a8ae9303bc98c12dc
+# a1328569aabf4d5b9ee1ca0f6b98d62b
 msgid "Sample ebook"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:96
-# c460c5300a034bb8835f8a9ec8a26c2f
+# 2bf41a177bc2407db0253c2989e52367
 msgid "XPath built-in functions"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:99
-# b1daae79f34c4dd79cbabf1e600171a2
+# 1c62415505bb45bdae01ea32081de0bc
 msgid "name()"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:101
-# 49ddf5ac5d4e45dd91854700158cff70
+# bed602c9a01245e98ee33f38301b2409
 msgid "The name of the current tag."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:102
-# 04882c3fe6d244e799a35d0b3254efa3
+# 10e818b438ca44beb3859b90d67fcb76
 msgid "contains()"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:104
-# 6cfa6c881f444d18aa9ff925565dc086
+# 0f3615f4fb9947c78366f2d9d61cac56
 msgid "``contains(s1, s2)`` returns `true` if s1 contains s2."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:105
-# 3c148044ed8d48adb557c4bade3855d9
+# fed96cdf9049470e951606bdb7ed6db1
 msgid "re:test()"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/xpath.rst:107
-# aad0deea17b545fb8fa2b52a69bc2163
+# 5866acd749b74aa1bd90eb9d87e8e130
 msgid "``re:test(src, pattern, flags)`` returns `true` if the string `src` matches the regular expression `pattern`. A particularly useful flag is ``i``, it makes matching case insensitive. A good primer on the syntax for regular expressions can be found at `regexp syntax <https://docs.python.org/2.7/library/re.html>`_"
 msgstr ""
 
