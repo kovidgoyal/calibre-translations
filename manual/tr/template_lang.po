@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-04 12:48+0530\n"
-"PO-Revision-Date: 2015-09-04 03:30+0000\n"
+"POT-Creation-Date: 2015-10-30 09:16+0530\n"
+"PO-Revision-Date: 2015-10-30 03:48+0000\n"
 "Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Turkish (http://www.transifex.com/calibre/calibre/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -797,50 +797,59 @@ msgstr "``field(name)`` -- ``name`` ile isimlendirilen metadata alanını dönd�
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:252
 msgid ""
 "``first_matching_cmp(val, cmp1, result1, cmp2, r2, ..., else_result)`` -- "
-"compares \"val < cmpN\" in sequence, returning resultN for the first "
+"compares ``val < cmpN`` in sequence, returning resultN for the first "
 "comparison that succeeds. Returns else_result if no comparison succeeds. "
 "Example::"
-msgstr "``first_matching_cmp(val, cmp1, result1, cmp2, r2, ..., else_result)`` -- sırayla \"val < cmpN\" karşılaştırır, başarılı olan ilk karşılaştırma için resultN döndürür. Hiçbir karşılaştırma başarılı olmazsa else_result döndürür. Örneğin::"
+msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:256
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:257
 msgid ""
 "returns \"large\". The same example with a first value of 16 returns "
-"\"giant\". * ``first_non_empty(value, value, ...)`` -- returns the first "
-"value that is not empty. If all values are empty, then the empty value is "
-"returned. You can have as many values as you want. * ``format_date(x, "
-"date_format)`` -- format_date(val, format_string) -- format the value, which"
-" must be a date field, using the format_string, returning a string. The "
-"formatting codes are::"
-msgstr "\"large\" döndürür. İlk değeri 16 olan aynı örnek \"giant\" döndürür. * ``first_non_empty(value, value, ...)`` -- boş olmayan ilk değeri döndürür. Tüm değerler boşsa, boş değer döndürülür. İstediğiniz kadar değeriniz olabilir. * ``format_date(x, date_format)`` -- format_date(val, format_string) -- tarih alanı olması gereken değeri format_string kullanarak biçimler, karakter dizisi döndürür. Biçimleme kodları şu şekildedir::"
+"\"giant\"."
+msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:280
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:259
+msgid ""
+"``first_non_empty(value, value, ...)`` -- returns the first value that is "
+"not empty. If all values are empty, then the empty value is returned. You "
+"can have as many values as you want."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:261
+msgid ""
+"``format_date(x, date_format)`` -- format the value, which must be a date "
+"field, using the format_string, returning a string. The formatting codes "
+"are::"
+msgstr ""
+
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:286
 msgid ""
 "You might get unexpected results if the date you are formatting contains "
 "localized month names, which can happen if you changed the format tweaks to "
-"contain MMMM. In this case, instead of using something like "
+"contain ``MMMM``. In this case, instead of using something like "
 "``{pubdate:format_date(yyyy)}``, write the template using template program "
 "mode as in ``{:'format_date(raw_field('pubdate'),'yyyy')'}``."
-msgstr "Biçimlendirdiğiniz tarih yerelleşmiş ay isimleri içeriyorsa, ki bu biçimlendirme ayarlarını MMMM içerecek şekilde yaptıysanız olabilir, beklenmeye sonuçlar alabilirsiniz. Bu durumda ``{pubdate:format_date(yyyy)}`` gibi bir şey kullanmak yerine, şablonu şablon program kipinde ``{:'format_date(raw_field('pubdate'),'yyyy')'}`` gibi yazın."
+msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:282
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:288
 msgid ""
-"finish_formatting(val, fmt, prefix, suffix) -- apply the format, prefix, and"
-" suffix to a value in the same way as done in a template like "
+"``finish_formatting(val, fmt, prefix, suffix)`` -- apply the format, prefix,"
+" and suffix to a value in the same way as done in a template like "
 "``{series_index:05.2f| - |- }``. This function is provided to ease "
 "conversion of complex single-function- or template-program-mode templates to"
 " :ref:`general program mode <general_mode>` (see below) to take advantage of"
 " GPM template compilation. For example, the following program produces the "
 "same output as the above template::"
-msgstr "finish_formatting(val, fmt, prefix, suffix) -- biçimlemeyi, ön ek ve son eki bir değere ``{series_index:05.2f| - |- }`` gibi bir şablonda olduğu gibi uygula. Bu fonksiyon GPM şablon derlemesinden faydalanmak için karmaşık tekli-fonksiyon- veya şablon-program-kipi şablonlarının :ref:`genel program kipine <general_mode>` (aşağıya göz atın) dönüştürülmesini kolaylaştırmak için sağlanmıştır. Örneğin, aşağıdaki program yukardaki şablonla aynı çıktıyı üretir::"
+msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:286
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:299
 msgid ""
 "Another example: for the template "
 "``{series:re(([^\\s])[^\\s]+(\\s|$),\\1)}{series_index:0>2s| - | - "
 "}{title}`` use::"
 msgstr "Başka bir örnek: ``{series:re(([^\\s])[^\\s]+(\\s|$),\\1)}{series_index:0>2s| - | - }{title}`` şablonu için şunu kullanın::"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:295
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:308
 msgid ""
 "``formats_modtimes(date_format)`` -- return a comma-separated list of colon-"
 "separated items representing modification times for the formats of a book. "
@@ -850,7 +859,7 @@ msgid ""
 "uppercase, as in EPUB."
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:296
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:309
 msgid ""
 "``formats_paths()`` -- return a comma-separated list of colon-separated "
 "items representing full path to the formats of a book. You can use the "
@@ -858,7 +867,7 @@ msgid ""
 "names are always uppercase, as in EPUB."
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:297
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:310
 msgid ""
 "``formats_sizes()`` -- return a comma-separated list of colon-separated "
 "items representing sizes in bytes of the formats of a book. You can use the "
@@ -866,20 +875,20 @@ msgid ""
 "names are always uppercase, as in EPUB."
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:298
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:311
 msgid ""
 "``has_cover()`` -- return ``Yes`` if the book has a cover, otherwise return "
 "the empty string"
 msgstr "``has_cover()`` -- kitabın bir kapağı varsa ``Yes``, aksi durumda boş karakter dizisi döndürür"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:299
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:312
 msgid ""
 "``not(value)`` -- returns the string \"1\" if the value is empty, otherwise "
 "returns the empty string. This function works well with test or "
 "first_non_empty. You can have as many values as you want."
 msgstr "``not(value)`` -- değer boşsa \"1\" karakter dizisini döndürür, aksi halde boş karakter dizisi. Bu fonksiyon test veya first_non_empty ile iyi çalışır. İstediğiniz kadar değeriniz olabilir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:300
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:313
 msgid ""
 "``list_difference(list1, list2, separator)`` -- return a list made by "
 "removing from `list1` any item found in `list2`, using a case-insensitive "
@@ -887,7 +896,7 @@ msgid ""
 " the items in the returned list."
 msgstr "``list_difference(list1, list2, separator)`` -- Büyük küçük harf duyarlı olmayan bir karşılaştırma ile, `list2` de bulunan öğelerin `list1`den çıkarılmasıyla elde edilen listeyi döndürür. `list1` ve `list2`deki öğeler döndürülen listede olduğu gibi ayraçla ayrılmışlardır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:301
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:314
 msgid ""
 "``list_equals(list1, sep1, list2, sep2, yes_val, no_val)`` -- return "
 "`yes_val` if `list1` and `list2` contain the same items, otherwise return "
@@ -896,7 +905,7 @@ msgid ""
 "the lists is not relevant. The compare is case insensitive."
 msgstr "``list_equals(list1, sep1, list2, sep2, yes_val, no_val)`` -- `list1` ve `list2` aynı öğeleri içeriyorsa `yes_val`, aksi halde `no_val` döndür. Öğeler iki listenin de ilgili ayraç karakterle (`sep1` veya `sep2`) ayrılması ile belirlenir. Liste öğelerinin sırası önemli değildir. Karşılaştırma büyük küçük harf duyarlı değildir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:302
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:315
 msgid ""
 "``list_intersection(list1, list2, separator)`` -- return a list made by "
 "removing from `list1` any item not found in `list2`, using a case-"
@@ -904,7 +913,7 @@ msgid ""
 "separator, as are the items in the returned list."
 msgstr "``list_intersection(list1, list2, separator)`` -- büyük küçük harf duyarlı olmayan karşılaştırma ile `list1`den `list2`de bulunan öğelerin çıkarılması ile elde edilen listeyi döndür. Döndürülen listede olduğu gibi `list1` ve `list2`deki öğeler bir ayraçla ayrılmıştır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:303
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:316
 msgid ""
 "``list_re(src_list, separator, include_re, opt_replace)`` -- Construct a "
 "list by first separating `src_list` into items using the `separator` "
@@ -914,7 +923,7 @@ msgid ""
 "returned list."
 msgstr "``list_re(src_list, separator, include_re, opt_replace)`` -- Önce `separator` karakterini kullanarak `src_list`i öğelere ayırarak bir liste oluştur. Listedeki her öğenin `include_re` ile eşleşip eşleşmediğini kontrol et. Eşleşirse, döndürülecek listeye ekle. `opt_replace` boş karakter dizisi değilse, öğeyi döndürülen listeye eklemeden önce yer değiştirmeyi uygula."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:304
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:317
 msgid ""
 "``list_re_group(src_list, separator, include_re, search_re, "
 "template_for_group_1, for_group_2, ...)`` -- Like list_re except "
@@ -922,7 +931,7 @@ msgid ""
 "...) when doing the replacements."
 msgstr "``list_re_group(src_list, separator, include_re, search_re, template_for_group_1, for_group_2, ...)`` -- list_re except gibi yer değiştirmeler seçime bağlı değildir. Yer değiştirmeleri kullanırken re_group(item, search_re, template ...) kullanır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:305
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:318
 msgid ""
 "``list_sort(list, direction, separator)`` -- return list sorted using a "
 "case-insensitive sort. If `direction` is zero, the list is sorted ascending,"
@@ -930,7 +939,7 @@ msgid ""
 " items in the returned list."
 msgstr "``list_sort(list, direction, separator)`` -- büyük küçük harf bağımsız sıralanmış liste döndür. `direction` sıfır ise, liste artan şekilde sıralanır, aksi halde azalan şekilde. Liste öğeleri döndürülen liste gibi separator ile ayrılmıştır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:306
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:319
 msgid ""
 "``list_union(list1, list2, separator)`` -- return a list made by merging the"
 " items in list1 and list2, removing duplicate items using a case-insensitive"
@@ -939,68 +948,68 @@ msgid ""
 " list."
 msgstr "``list_union(list1, list2, separator)`` -- list1 ve list2 öğelerinin birleşiminden oluşan bir liste döndürür, aynı öğeler büyük küçük harf duyarlı olmayan karşılaştırma ile silinir. Öğelerin harfleri büyük küçük değişiyorsa, list1 deki kullanılır. list1 ve list2 deki öğeler döndürülen listede olduğu gibi separator ile ayrılır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:307
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:320
 msgid ""
 "``multiply(x, y)`` -- returns x * y. Throws an exception if either x or y "
 "are not numbers."
 msgstr "``multiply(x, y)`` -- x * y döndürür. x veya y sayı değilse bir istisna fırlatır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:308
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:321
 msgid ""
 "``ondevice()`` -- return the string \"Yes\" if ondevice is set, otherwise "
 "return the empty string"
 msgstr "``ondevice()`` -- ondevice ayarlanmışsa \"Yes\" karakter dizisini, aksi halde boş karakter dizisi döndürür"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:309
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:322
 msgid ""
 "``or(value, value, ...)`` -- returns the string \"1\" if any value is not "
 "empty, otherwise returns the empty string. This function works well with "
 "test or first_non_empty. You can have as many values as you want."
 msgstr "``or(value, value, ...)`` -- herhangi bir değer boş değilse \"1\" karakter dizisini, aksi halde boş karakter dizisi döndürür. Bu fonksiyon test veya first_non_empty ile iyi çalışır. İstediğiniz kadar değeriniz olabilir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:310
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:323
 msgid ""
 "``print(a, b, ...)`` -- prints the arguments to standard output. Unless you "
 "start calibre from the command line (``calibre-debug -g``), the output will "
 "go to a black hole."
 msgstr "``print(a, b, ...)`` -- bağımsız değişkenleri standart çıktıya yazdırır. Calibre'yi komut satırından başlatmadığınız takdirde (``calibre-debug -g``) çıktı bir kara deliğe gideceketir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:311
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:324
 msgid ""
 "``raw_field(name)`` -- returns the metadata field named by name without "
 "applying any formatting."
 msgstr "``raw_field(name)`` -- Herhangi biçimlendirme uygulamadan name ile isimlendirilmiş metadata alanını döndürür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:312
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:325
 msgid ""
 "``raw_list(name, separator)`` -- returns the metadata list named by name "
 "without applying any formatting or sorting and with items separated by "
 "separator."
 msgstr "``raw_list(name, separator)`` -- Herhangi biçimlendirme veya sıralama uygulamadan ve separator ile ayrılmış öğelerle, name ile isimlendirilmiş metadata listesini döndürür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:313
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:326
 msgid ""
 "``re_group(val, pattern, template_for_group_1, for_group_2, ...)`` --  "
-"return a string made by applying the reqular expression pattern to the val "
+"return a string made by applying the regular expression pattern to the val "
 "and replacing each matched instance with the string computed by replacing "
 "each matched group by the value returned by the corresponding template. The "
 "original matched value for the group is available as $. In template program "
 "mode, like for the template and the eval functions, you use [[ for { and ]] "
 "for }. The following example in template program mode looks for series with "
 "more than one word and uppercases the first word::"
-msgstr "``re_group(val, pattern, template_for_group_1, for_group_2, ...)`` --  pattern düzenli ifadesinin val değerine uygulanması ve her eşleşmenin her eşleşme grubunun ilişkili şablondan dönen değerle yer değiştirmesi ile elde edilen karakter dizisini döndürür. Grup için aslen işleşen değer $ olarak kullanılabilirdir. Şablon program kipinde, şablon ve eval fonksiyonlarında olduğu gibi { için [[ ve } için ]] kullanın. Şablon program kipindeki aşağıdaki örnek birden fazla kelimeli serilere bakar ve ilk kelimenin ilk harfini büyütür::"
+msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:317
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:330
 msgid "``series_sort()`` -- returns the series sort value."
 msgstr "``series_sort()`` -- seri sıralama değerini döndürür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:318
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:331
 msgid ""
 "``strcat(a, b, ...)`` -- can take any number of arguments. Returns a string "
 "formed by concatenating all the arguments."
 msgstr "``strcat(a, b, ...)`` --  istenilen sayıda değişken alabilir. Tüm değişkenlerin uç uca eklenmesiyle oluşturulmuş bir karakter dizisi döndürür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:319
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:332
 msgid ""
 "``strcat_max(max, string1, prefix2, string2, ...)`` -- Returns a string "
 "formed by concatenating the arguments. The returned value is initialized to "
@@ -1010,19 +1019,19 @@ msgid ""
 "you wish."
 msgstr "``strcat_max(max, string1, prefix2, string2, ...)`` -- Bağımsız değişkenlerin uç uca eklenmesiyle oluşturulmuş bir karakter dizisi döndürür. Döndürülen değer string1 olarak ilklendirilir. `Prefix, string` çiftleri elde edilen karakter dizisinin boyu `max`dan küçük olduğu sürece değerin sonuna eklenir. String1 max'dan büyük olsa da string1 döndürülür. İstediğiniz kadar `prefix, string` çifti geçirebilirsiniz."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:320
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:333
 msgid ""
 "``strcmp(x, y, lt, eq, gt)`` -- does a case-insensitive comparison x and y "
 "as strings. Returns ``lt`` if x < y. Returns ``eq`` if x == y. Otherwise "
 "returns ``gt``."
 msgstr "``strcmp(x, y, lt, eq, gt)`` -- x ve y karakter dizileri üzerinde büyük küçük harf bağımsız karşılaştırma gerçekleştirir. x < y ise ``lt`` döndürür. x == y ise ``eq`` döndürür. Aksi halde ``gt`` döndürür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:321
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:334
 msgid ""
 "``strlen(a)`` -- Returns the length of the string passed as the argument."
 msgstr "``strlen(a)`` -- Değişken olarak geçirilen karakter dizisinin uzunluğunu döndürür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:322
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:335
 msgid ""
 "``substr(str, start, end)`` -- returns the ``start``'th through the "
 "``end``'th characters of ``str``. The first character in ``str`` is the "
@@ -1032,20 +1041,20 @@ msgid ""
 "and ``substr('12345', 1, -1)`` returns ``'234'``."
 msgstr "``substr(str, start, end)`` -- ``str``nin ``start``dan ``end``e kadar olan karakterlerini döndürür. ``str``nin ilk karakteri sıfırıncı karakterdir. end negatif ise, sağdan sayıldığında kaç karakter olduğunu ifade eder. end sıfır ise, son karakteri ifade eder. Örneğin, ``substr('12345', 1, 0)`` ``'2345'`` döndürür, ve ``substr('12345', 1, -1)`` ``'234'`` döndürür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:323
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:336
 msgid ""
 "``subtract(x, y)`` -- returns x - y. Throws an exception if either x or y "
 "are not numbers."
 msgstr "``subtract(x, y)`` -- x - y döndürür. x veya y sayı değilse bir istisna fırlatır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:324
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:337
 msgid ""
 "``today()`` -- return a date string for today. This value is designed for "
 "use in format_date or days_between, but can be manipulated like any other "
 "string. The date is in ISO format."
 msgstr "``today()`` -- bugün için bir karakter dizisi döndürür. Bu değer format_date veyea days_between ile kullanılması için tasarlanmıştır, ama her karakter dizisi gibi değiştirilebilir. Tarih ISO biçimindedir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:325
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:338
 msgid ""
 "``template(x)`` -- evaluates x as a template. The evaluation is done in its "
 "own context, meaning that variables are not shared between the caller and "
@@ -1057,15 +1066,15 @@ msgid ""
 "argument to this function when using template program mode."
 msgstr "``template(x)`` -- x'i bir şablon olarak değerlendirir. Değerlendirme kendi bağlamında yapılır, anlamı değerlerin çağıran ve şablon değerlendirmesi arasında paylaştırılmıyor olduğudur. `{` ve `}` özel karakterler olduklarından `{` yerine `[[` ve '}' yerine `]]` kullanmalısınız; otomatik olarak dönüştürülürler. Örneğin ``template('[[title_sort]]') ``{title_sort}`` şablonunu değerlendirecek ve değerini döndürecektir. Ayrıca ön ek ve son eklerin (`|prefix|suffix` söz dizimi) şablon program kipi kullanılarak bu fonksiyona bağımsız değişken olarak verilemeyeceğini not edin."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:330
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:343
 msgid "Function classification"
 msgstr "Fonksiyon sınıflandırma"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:341
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:354
 msgid "Using general program mode"
 msgstr "Genel program kipi kullanma"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:343
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:356
 msgid ""
 "For more complicated template programs, it is sometimes easier to avoid "
 "template syntax (all the `{` and `}` characters), instead writing a more "
@@ -1075,7 +1084,7 @@ msgid ""
 "correct results."
 msgstr "Daha karmaşık şablon programları için, bazen şablon söz diziminden (tüm `{` ve `}` karakterleri) kaçınmak ve daha klasik görünümlü bir program yazmak daha kolaydır. Bunu calibre'de şablona `program:` ile başlayarak yapabilirsiniz. Bu durumda, hiçbir şablon işleme yapılmaz. Özel değişken `$` ayarlanmaz. Doğru sonucu üretmek programınıza kalmıştır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:345
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:358
 msgid ""
 "One advantage of `program:` mode is that the brackets are no longer special."
 " For example, it is not necessary to use `[[` and `]]` when using the "
@@ -1089,7 +1098,7 @@ msgid ""
 "report."
 msgstr "`program:` kipinin bir avantajı, parantezlerin artık özel olmamasıdır. Örneğin `template()` fonksiyonunu kullanırken `[[` ve `]]` kullanmak zorunlu değildir. Başka bir avantaj, program kipi şablonların Python'a derlenmesi ve diğer iki kipteki şablonlardan oldukça hızlı çalışmasıdır. Hızdaki artış şablonlardaki karmaşıklığa bağlıdır; şablon ne kadar karmaşıklaşırsa gelişme de o kadar fazla olur. Derleme ``compile_gpm_templates`` (Genel Program Kipi şablonlarını Python'a Derle) ile açılıp kapatılabilir. Derlemenin kapatılmasının ana sebebi derlenen şablonun çalışmıyor olması durumu olabilir, bu durumda lütfen bir hata raporlayın."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:347
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:360
 msgid ""
 "The following example is a `program:` mode implementation of a recipe on the"
 " MobileRead forum: \"Put series into the title, using either initials or a "
@@ -1100,73 +1109,23 @@ msgid ""
 "following:"
 msgstr "Takip eden örnek MobileRead forumunun bir `program:` kipi uygulaması reçetesi: \"Serileri ilk harflerini veya kısaltılmış hallerini kullanarak başlığa koy. Sonundaki makaleleri seri adından (varsa) çıkar.\" Örneğin, Lord of the Rings serisindeki The Two Towers kitabı için, reçete `LotR [02] The Two Towers` verir. Standart şablonlar kullanarak, aşağıda açıklandığı gibi, reçete üç özel sütun ve bir santrala ihtiyaç duyar:"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:349
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:362
 msgid ""
 "The solution requires creating three composite columns. The first column is "
 "used to remove the leading articles. The second is used to compute the "
 "'shorten' form. The third is to compute the 'initials' form. Once you have "
 "these columns, the plugboard selects between them. You can hide any or all "
-"of the three columns on the library view."
-msgstr "Çözüm üç özel sütun oluşturmaya ihtiyaç duyar. İlk sütun sondaki makaleyi silmek içindir. İkinci 'kısaltılmış' biçimi hesaplamak için. Üçüncü de 'ilk harfleri' hesaplamak için. Bu üç sütuna sahip olduğunuzda, santral aralarından seçim yapar. Kitaplık görünümünde üç sütundan herhangi birini veya tümünü gizleyebilirsiniz."
+"of the three columns on the library view::"
+msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:351
-msgid ""
-"First column: Name: #stripped_series. Template: "
-"{series:re(^(A|The|An)\\s+,)||}"
-msgstr "İlk sütun: İsim: #stripped_series. Şablon: {series:re(^(A|The|An)\\s+,)||}"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:355
-msgid ""
-"Second column (the shortened form): Name: #shortened. Template: "
-"{#stripped_series:shorten(4,-,4)}"
-msgstr "İkinci sütun (kısaltılmış biçim): İsim: #shortened. Şablon: {#stripped_series:shorten(4,-,4)}"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:359
-msgid ""
-"Third column (the initials form): Name: #initials. Template: "
-"{#stripped_series:re(([^\\s])[^\\s]+(\\s|$),\\1)}"
-msgstr "Üçüncü sütun (ilk harfler biçimi): İsim: #initials. Şablon: {#stripped_series:re(([^\\s])[^\\s]+(\\s|$),\\1)}"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:363
-msgid ""
-"Plugboard expression: "
-"Template:{#stripped_series:lookup(.\\s,#initials,.,#shortened,series)}{series_index:0>2.0f|"
-" [|] }{title} Destination field: title"
-msgstr "Santral ifadesi: Şablon:{#stripped_series:lookup(.\\s,#initials,.,#shortened,series)}{series_index:0>2.0f| [|] }{title} Hedef alan: başlık"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:367
-msgid ""
-"This set of fields and plugboard produces: Series: The Lord of the Rings "
-"Series index: 2 Title: The Two Towers Output: LotR [02] The Two Towers"
-msgstr "Bu alan kümesi ve santral şunu üretir: Seri: The Lord of the Rings Series indis: 2 Başlık: The Two Towers Çıktı: LotR [02] The Two Towers"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:373
-msgid ""
-"Series: Dahak Series index: 1 Title: Mutineers Moon Output: Dahak [01] "
-"Mutineers Moon"
-msgstr "Seri: Dahak Series indis: 1 Başlık: Mutineers Moon Çıktı: Dahak [01] Mutineers Moon"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:378
-msgid ""
-"Series: Berserkers Series Index: 4 Title: Berserker Throne Output: Bers-kers"
-" [04] Berserker Throne"
-msgstr "Seri: Berserkers Series İndis: 4 Başlık: Berserker Throne Çıkıt: Bers-kers [04] Berserker Throne"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:383
-msgid ""
-"Series: Meg Langslow Mysteries Series Index: 3 Title: Revenge of the "
-"Wrought-Iron Flamingos Output: MLM [03] Revenge of the Wrought-Iron "
-"Flamingos"
-msgstr "Seri: Meg Langslow Mysteries Series İndis: 3 Başlık: Revenge of the Wrought-Iron Flamingos Çıktı: MLM [03] Revenge of the Wrought-Iron Flamingos"
-
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:388
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:401
 msgid ""
 "The following program produces the same results as the original recipe, "
 "using only one custom column to hold the results of a program that computes "
 "the special title value::"
 msgstr "Aşağıdaki program özel başlık değerini hesaplayan bir programın sonuçlarını tutan sadece bir özel sütun kullanarak asıl reçeteyle aynı sonuçları üretir::"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:425
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:438
 msgid ""
 "It would be possible to do the above with no custom columns by putting the "
 "program into the template box of the plugboard. However, to do so, all "
@@ -1176,11 +1135,11 @@ msgid ""
 " being one giant line."
 msgstr "Programı santralin şablon kutusuna koyarak yukardaki özel sütunlar kullanmadan yapmak da mümkün olurdu. Ancak böyle yapmak için, santral metni birden çok satır düzenlemeye izin vermediğinden tüm yorum satırlarının kaldırılması gerekirdi. Özel sütuna sahip olmamanın programın koca tek bir satır olarak getirdiği zorluk artışına deyip deymeyeceği tartışılır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:429
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:442
 msgid "User-defined Template Functions"
 msgstr "Kullanıcı-tanımlı Şablon Fonksiyonları"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:431
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:444
 msgid ""
 "You can add your own functions to the template processor. Such functions are"
 " written in python, and can be used in any of the three template programming"
@@ -1188,11 +1147,11 @@ msgid ""
 "Template Functions. Instructions are shown in that dialog."
 msgstr "Şablon işlemcisine kendi fonksiyonlarınızı ekleyebilirsiniz. Bu fonksiyonlar python ile yazılır, ve her üç şablon programlama kipinde de kullanılabilir. Fonksiyonlar Seçenekler -> Gelişmiş -> Şablon Fonksiyonları ile eklenebilirler. Yönergeler bu iletişim penceresinde gösterilir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:434
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:447
 msgid "Special notes for save/send templates"
 msgstr "Kayıt et/gönder şablonları ile ilgili özel notlar"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:436
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:449
 msgid ""
 "Special processing is applied when a template is used in a `save to disk` or"
 " `send to device` template. The values of the fields are cleaned, replacing "
@@ -1203,18 +1162,18 @@ msgid ""
 "create variable-depth folder structure."
 msgstr "Bir şablon `diske kaydet` veya `aygıta gönder` şablonu ile kullanıldığında özel işlemler uygulanır. Alanların değerleri temizlenir, dosya sistemine özel karakterler alt çizgiler ile değiştirilir, yatık çizgiler dahil. Bunun anlamı alan metni kullanılarak klasör oluşturulamayacağıdır. Ancak yatık çizgiler ön ek veya son ek karakter dizilerinden değiştirilmezler, yani bu karakter dizilerindeki yatık çizgiler klasörlerin oluşturulmasına sebep olur. Bu sebepten, değişken derinlikli klasör yapıları oluşturabilirsiniz."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:438
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:451
 msgid ""
 "For example, assume we want the folder structure `series/series_index - "
 "title`, with the caveat that if series does not exist, then the title should"
 " be in the top folder. The template to do this is::"
 msgstr "Örneğin, `series/series_index - title` dizin yapısını istediğimizi varsayın, series'in olmama durumunda, başlık en üst klasörde olmalıdır. Bunu yapan şablon şu şekildedir::"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:442
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:455
 msgid "The slash and the hyphen appear only if series is not empty."
 msgstr "Yatık çizgi ve tire sadece seriler boş değilken görülür."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:444
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:457
 msgid ""
 "The lookup function lets us do even fancier processing. For example, assume "
 "that if a book has a series, then we want the folder structure "
@@ -1224,25 +1183,25 @@ msgid ""
 "depending on the value of series."
 msgstr "Arama fonksiyonu daha da ince işlemler yapmamıza olanak verir. Örneğin, bir kitabın serisi varsa, `series/series index - title.fmt` şeklinde bir dizin yapısı istediğimizi varsayalım. Kitabın serisi yoksa da `genre/author_sort/title.fmt`. Kitabın türü de yoksa, 'Unknown' kullanmak istiyoruz. Serinin değerine bağlı olarak, iki tane tamamen değişik yol istiyoruz."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:449
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:462
 msgid "To accomplish this, we:"
 msgstr "Bunu elde etmek için:"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:447
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:460
 msgid ""
 "Create a composite field (call it AA) containing ``{series}/{series_index} -"
 " {title'}``. If the series is not empty, then this template will produce "
 "`series/series_index - title`."
 msgstr "``{series}/{series_index} - {title'}`` içeren bir bileşik alan (AA diyelim) oluştururuz. Seri boş değilse, bu şablon `series/series_index - title` üretecektir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:448
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:461
 msgid ""
 "Create a composite field (call it BB) containing "
 "``{#genre:ifempty(Unknown)}/{author_sort}/{title}``. This template produces "
 "`genre/author_sort/title`, where an empty genre is replaced with `Unknown`."
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:449
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:462
 msgid ""
 "Set the save template to ``{series:lookup(.,AA,BB)}``. This template chooses"
 " composite field AA if series is not empty, and composite field BB if series"
@@ -1250,11 +1209,11 @@ msgid ""
 "on whether or not `series` is empty."
 msgstr "Kayıt şablonunu ``{series:lookup(.,AA,BB)}`` olarak ayarlayın. Bu şablon seri boş değilse bileşik alan AA'yı, boşsa BB'yi seçer. Yani serinin boş olup olmamasına bağlı iki tamamen değişik kayıt yolumuz olmuş oldu. "
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:452
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:465
 msgid "Templates and Plugboards"
 msgstr "Şablonlar ve Santrallar"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:454
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:467
 msgid ""
 "Plugboards are used for changing the metadata written into books during "
 "send-to-device and save-to-disk operations. A plugboard permits you to "
@@ -1265,7 +1224,7 @@ msgid ""
 "display issues."
 msgstr "Santraller kitaba yazılan metadata'yı diske kaydetme ve aygıta gönderme işlemlerinde değiştirmeye yarar. Bir santral size kitabın metadata'sına yazılacak veriyi sağlayan şablonu belirtme izni verir. Santraller kullanarak şu alanları değiştirebilirsiniz: authors, author_sort, language, publisher, tags, title, title_sort. Bu özellik sıralama ya da görüntüleme sorunlarını aygıttaki kitapta değişik metadata kullanarak çözmek isteyen insanlara yardımcı olur."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:456
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:469
 msgid ""
 "When you create a plugboard, you specify the format and device for which the"
 " plugboard is to be used. A special device is provided, save_to_disk, that "
@@ -1276,7 +1235,7 @@ msgid ""
 "can, of course, use composite columns in these templates."
 msgstr "Bir santral oluşturduğunuzda, santralin kullanılacağı biçim ve aygıtı belirtirsiniz. Biçimleri (bir aygıta göndermenin aksine) kaydederken kullanılan, save_to_disk adında özel bir aygıt sağlanır. Biçim ve aygıtı seçtiğinizde yeni değerleri sağlayacak şablonları sağlar ve değiştirilecek metadata alanlarını seçersiniz. Bu şablonlar hedef alanlarına `bağlıdırlar`, santral adı da burdan gelir. Tabi ki bu şablonlarda bileşik sütunlar kullanabilirsiniz."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:458
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:471
 msgid ""
 "When a plugboard might apply (content server, save to disk, or send to "
 "device), calibre searches the defined plugboards to choose the correct one "
@@ -1285,29 +1244,29 @@ msgid ""
 " the plugboards using the following search order:"
 msgstr "Bir santralin uygulanacağı durumda (içerik sunucusu, diske kaydet, veya aygıta gönder), calibre verilen biçim ve aygıt için doğru olanı tanımlı santraller içinden arar. Örneğin, ANDROID aygıta gönderilen bir EPUB kitap için uygun santrali ararken, calibre santralleri aşağıdaki arama sırasını kullanarak arar:"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:460
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:473
 msgid ""
 "a plugboard with an exact match on format and device, e.g., ``EPUB`` and "
 "``ANDROID``"
 msgstr "biçim ve aygıtla birebir eşleşen bir santral, örn., ``EPUB`` ve ``ANDROID``"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:461
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:474
 msgid ""
 "a plugboard with an exact match on format and the special ``any device`` "
 "choice, e.g., ``EPUB`` and ``any device``"
 msgstr "biçim ve özel ``any device`` seçimi ile birebir eşleşen bir santral, örn., ``EPUB`` ve ``any device``"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:462
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:475
 msgid ""
 "a plugboard with the special ``any format`` choice and an exact match on "
 "device, e.g., ``any format`` and ``ANDROID``"
 msgstr "özel ``any format`` seçimi ve aygıtla birebir eşleşmeli bir santral, örn., ``any format`` ve ``ANDROID``"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:463
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:476
 msgid "a plugboard with ``any format`` and ``any device``"
 msgstr "``any format`` ve ``any device`` olan bir santral"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:465
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:478
 msgid ""
 "The tags and authors fields have special treatment, because both of these "
 "fields can hold more than one item. A book can have many tags and many "
@@ -1319,7 +1278,7 @@ msgid ""
 "comma in the middle of a tag."
 msgstr "Etiket ve yazar alanları özel işlem gerektirir, çünkü her iki alan da birden fazla öğe tutabilir. Bir kitabın birden çok etiketi ve yazarı olabilir. Bu iki alandan birinin değişeceğini belirttiğinizde, şablonun sonucu birden fazla öğenin orada olup olmadığı hususunda incelenir. Etiketler için, sonuç, calibre'nin virgül bulduğu yerlerden kesilerek ayrılır.  Örneğin, şablon ``Thriller, Horror`` değerini üretiyorsa, sonuç iki etiket olur ``Thriller`` ve ``Horror``.  Etiketin ortasına virgül koymanın bir yolu yoktur."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:467
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:480
 msgid ""
 "The same thing happens for authors, but using a different character for the "
 "cut, a `&` (ampersand) instead of a comma. For example, if the template "
@@ -1329,7 +1288,7 @@ msgid ""
 "author with a rather strange name."
 msgstr "Aynı şey yazarlar için de geçerlidir, ama ayırma için virgül yerine `&` (ampersand) karakteri kullanılır. Örneğin, şablon ``Blogs, Joe&Posts, Susan`` değerini üretiyorsa, kitap iki yazarı var olarak sonlanacaktır, ``Blogs, Joe`` ve ``Posts, Susan``. Şablon ``Blogs, Joe;Posts, Susan`` üretiyorsa, kitabın biraz garip isimli tek bir yazarı olacaktır."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:469
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:482
 msgid ""
 "Plugboards affect the metadata written into the book when it is saved to "
 "disk or written to the device. Plugboards do not affect the metadata used by"
@@ -1338,34 +1297,34 @@ msgid ""
 "preferences window."
 msgstr "Santraller diske kaydedilirken ya da aygıta yazılırken kitaba yazılan metadata'yı etkilerler. Santraller ``diske kaydet`` ve ``aygıta gönder`` tarafından dosya isimlerini oluşturmakta kullanılan metadata'yı etkilemezler. Bunun yerine, dosya isimleri, uygun seçenekler penceresinde girilen şablonlar kullanılarak oluştururlur."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:472
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:485
 msgid "Helpful Tips"
 msgstr "Yardımcı İpuçları"
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:474
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:487
 msgid "You might find the following tips useful."
 msgstr "Şu ipuçlarını faydalı bulabilirsiniz."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:476
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:489
 msgid ""
 "Create a custom composite column to test templates. Once you have the "
 "column, you can change its template simply by double-clicking on the column."
 " Hide the column when you are not testing."
 msgstr "Şablonları test etmek için özel bir bileşik sütun oluşturun. Sütunu oluşturduğunuzda, sütuna çift tıklayarak şablonunu değiştirebilirsiniz. Test etmediğinizde sütunu gizleyin."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:477
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:490
 msgid ""
 "Templates can use other templates by referencing a composite custom column."
 msgstr "Şablonlar bir bileşik özel sütuna referans vererek diğer şablonları kullanabilirler."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:478
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:491
 msgid ""
 "In a plugboard, you can set a field to empty (or whatever is equivalent to "
 "empty) by using the special template ``{}``. This template will always "
 "evaluate to an empty string."
 msgstr "Bir santralde, özel şablon ``{}`` kullanarak bir alanı boş olarak ayarlayabilirsiniz (ya da boşla eş değer neyse). Bu şablon her zaman boş karakter dizisi olarak değerlenecektir."
 
-#: ../../home/kovid/work/calibre/manual/template_lang.rst:479
+#: ../../home/kovid/work/calibre/manual/template_lang.rst:492
 msgid ""
 "The technique described above to show numbers even if they have a zero value"
 " works with the standard field series_index."
