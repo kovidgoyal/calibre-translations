@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-06 09:14+0530\n"
-"PO-Revision-Date: 2015-11-12 01:11+0000\n"
+"POT-Creation-Date: 2015-11-15 09:48+0530\n"
+"PO-Revision-Date: 2015-11-12 18:15+0000\n"
 "Last-Translator: Tiago Heineck <tiagovda@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/calibre/calibre/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:4
 msgid "Integrating the calibre content server into other servers"
-msgstr ""
+msgstr "Integrando o servidor de conteúdo calibre com outros servidores"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:6
 msgid ""
@@ -69,13 +69,13 @@ msgid ""
 " server to serve all URLs prefixed by calibre. To see this in action, visit "
 "``http://localhost:8080/calibre`` in your browser. You should see the normal"
 " content server website, but now it will run under /calibre."
-msgstr ""
+msgstr "O parâmetro chave aqui é \"--url-prefix -calibre\". Neste caso o servidor de conteúdo serve todas as URLs com prefixo calibre. Veja isso é ação visitando \"http://localhost:8080/calibre\" no seu navegador. Você pode ver o conteúdo normal de seu website, mas estará rodando abaixo de /calibre"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:25
 msgid ""
 "Now suppose you are using Apache as your main server. First enable the proxy"
 " modules in apache, by adding the following to :file:`httpd.conf`::"
-msgstr ""
+msgstr "Supondo que você esteja utilizando Apache como servidor principal. Primeiro habilite o módulo de proxy do Apache. Adicionando o seguinte ao arquivo :filé:'httpd.conf'::"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:30
 msgid ""
@@ -83,7 +83,7 @@ msgid ""
 "your Apache installation. Once you have the proxy modules enabled, add the "
 "following rules to httpd.conf (or if you are using virtual hosts to the conf"
 " file for the virtual host in question)::"
-msgstr ""
+msgstr "A técnica exata para habilitar o módulo de proxy pode mudar conforme sua instalação do Apache. Você tem que habilitar o módulo proxy adicionando as regras em httpd.conf (ou se utilizar virtual hosts no arquivo da virtual host corresponde a esta questão)::"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:38
 msgid ""
@@ -91,21 +91,21 @@ msgid ""
 "the /calibre URL in your apache server. The above rules pass all requests "
 "under /calibre to the calibre server running on port 8080 and thanks to the "
 "--url-prefix option above, the calibre server handles them transparently."
-msgstr ""
+msgstr "Isto é tudo, agora você pode acessar o servidor d conteúdo calibre abaixo da URL /calibre no seu servidor Apache. As regras acima passam toda a requisição abaixo de /calibre para o servidor rodando na porta 8080 e obriga a opção acima --url-prefix, o servidor calibre trabalha transparentemente."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:40
 msgid ""
 "If you are willing to devote an entire VirtualHost to the content server, "
 "then there is no need to use --url-prefix and RewriteRule, instead just use "
 "the ProxyPass directive."
-msgstr ""
+msgstr "Se você utiliza um VirtualHost para servidor de conteúdo, não precisa utilizar --url-prefix and RewriteRule, invés disso simplesmente utilize a diretiva ProxyPass"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:42
 msgid ""
 "The server engine calibre uses, CherryPy, can have trouble with proxying and"
 " KeepAlive requests, so turn them off in Apache, with the SetEnv directives "
 "shown above."
-msgstr ""
+msgstr "O servidor do calibre utiliza CherryPy, pode ter problemas com proxying e requisições KeepAlive, desligue-o no Apache com as diretivas SetEnv apresentadas acima."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:45
 msgid "In process"
@@ -115,7 +115,7 @@ msgstr "Processando"
 msgid ""
 "The calibre content server can be run directly, in process, inside a host "
 "server like Apache using the WSGI framework."
-msgstr ""
+msgstr "O servidor de conteúdo do calibre é executado dentro de um servidor como Apache usando o framework WSGI."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:49
 msgid ""
@@ -123,26 +123,26 @@ msgid ""
 "on your system. Doing so is highly non-trivial and you are encouraged not to"
 " use in process servers. You will not get any assistance with debugging in "
 "process server problems."
-msgstr ""
+msgstr "Para isto funcionar, todas as dependências necessárias para o calibre devem ser instaladas no seu sistema. Isto não é trivial e encorajamos você a não usar um servidor de processo. Você não terá assistência com depuração em problemas de Servidor de processo."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:51
 msgid ""
 "First, we have to create a WSGI *adapter* for the calibre content server. "
 "Here is a template you can use for the purpose. Replace the paths as "
 "directed in the comments"
-msgstr ""
+msgstr "Primeiro, nós criamos um WSGI *adapter* para o servidor de conteúdo calibre. Aqui está um template que você pode utilizar. Altere os paths como indicado nos comentários."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:101
 msgid ""
 "Save this adapter as :file:`calibre-wsgi-adpater.py` somewhere your server "
 "will have access to it."
-msgstr ""
+msgstr "Salve o adaptador como :file:'calibre-wsgi-adapter.py' em alguma pasta que seu servidor tenha acesso."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:103
 msgid ""
 "Let's suppose that we want to use WSGI in Apache. First enable WSGI in "
 "Apache by adding the following to :file:`httpd.conf`::"
-msgstr ""
+msgstr "Suponha que esteja usando WSGI no Apache. Primeiro habilite o WSGI no Apache adicionando a linha a seguir em :file:'httpd.conf'::"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:107
 msgid ""
@@ -150,19 +150,19 @@ msgid ""
 " Apache installation. Once you have the proxy modules enabled, add the "
 "following rules to httpd.conf (or if you are using virtual hosts to the conf"
 " file for the virtual host in question::"
-msgstr ""
+msgstr "A técnica exata para habilitar o módulo wsgi pode mudar dependendo da instalação do Apache. Você tem que habilitar o módulo de proxy, adicionando as seguintes regras em httpd.conf (ou se você utiliza virtual hosts no arquivo correspondente a esta questão::"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:111
 msgid ""
 "Change the path to :file:`calibre-wsgi-adapter.py` to wherever you saved it "
 "previously (make sure Apache has access to it)."
-msgstr ""
+msgstr "Escolha o local para salvar o arquivo :file:'calibre-wsgi-adapter.py' (o Apache deve ter acesso a ele)"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:113
 msgid ""
 "That's all, you will now be able to access the calibre Content Server under "
 "the /calibre URL in your apache server."
-msgstr ""
+msgstr "Isto é tudo, agora você pode acessar o servidor de Conteúdo do calibre pela URL /calibre em seu servidor Apache. "
 
 #: ../../home/kovid/work/calibre/manual/server.rst:115
 msgid ""
