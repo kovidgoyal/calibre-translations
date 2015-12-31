@@ -35,9 +35,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/calibre\n"
-"POT-Creation-Date: 2015-12-11 08:24+IST\n"
-"PO-Revision-Date: 2015-12-11 08:58+0000\n"
-"Last-Translator: SKAL <sir_kalot@yahoo.it>\n"
+"POT-Creation-Date: 2015-12-21 09:29+IST\n"
+"PO-Revision-Date: 2015-12-21 03:59+0000\n"
+"Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Italian (http://www.transifex.com/calibre/calibre/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,11 +60,11 @@ msgstr "Non fa assolutamente niente"
 #: /home/kovid/work/calibre/src/calibre/db/cache.py:1072
 #: /home/kovid/work/calibre/src/calibre/db/cache.py:1074
 #: /home/kovid/work/calibre/src/calibre/db/cache.py:1241
-#: /home/kovid/work/calibre/src/calibre/db/cache.py:1360
-#: /home/kovid/work/calibre/src/calibre/db/cache.py:1362
-#: /home/kovid/work/calibre/src/calibre/db/cache.py:1364
-#: /home/kovid/work/calibre/src/calibre/db/cache.py:1496
-#: /home/kovid/work/calibre/src/calibre/db/cache.py:1498
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:1332
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:1334
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:1336
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:1500
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:1502
 #: /home/kovid/work/calibre/src/calibre/db/lazy.py:262
 #: /home/kovid/work/calibre/src/calibre/db/lazy.py:263
 #: /home/kovid/work/calibre/src/calibre/db/lazy.py:264
@@ -1108,12 +1108,13 @@ msgid "News"
 msgstr "Notizie"
 
 #: /home/kovid/work/calibre/src/calibre/db/backend.py:332
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:289
 #, python-brace-format
 msgid "Path to library ({0}) too long. Must be less than {1} characters."
 msgstr "Il percorso per la biblioteca ({0}) è troppo lungo. Deve essere meno di {1} caratteri."
 
 #: /home/kovid/work/calibre/src/calibre/db/backend.py:341
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:395
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:411
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/choose_library.py:121
 #: /home/kovid/work/calibre/src/calibre/gui2/wizard/__init__.py:667
 #: /home/kovid/work/calibre/src/calibre/library/cli.py:1526
@@ -1154,7 +1155,11 @@ msgstr "Dump del database in SQL"
 msgid "Restoring database from SQL"
 msgstr "Ripristino del database da SQL"
 
-#: /home/kovid/work/calibre/src/calibre/db/backend.py:1720
+#: /home/kovid/work/calibre/src/calibre/db/backend.py:1736
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:2140
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:2176
+#: /home/kovid/work/calibre/src/calibre/utils/exim.py:202
+#: /home/kovid/work/calibre/src/calibre/utils/exim.py:358
 msgid "Completed"
 msgstr "Completato"
 
@@ -1173,6 +1178,16 @@ msgstr "Ricerche"
 #: /home/kovid/work/calibre/src/calibre/utils/formatter_functions.py:1048
 msgid "Yes"
 msgstr "Sì"
+
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:2166
+#, python-format
+msgid "Cover for %s"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/db/cache.py:2170
+#, python-brace-format
+msgid "{0} format for {1}"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/db/fields.py:259
 #: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/base.py:139
@@ -4943,8 +4958,8 @@ msgstr "Valore: campo sconosciuto "
 #: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:109
 #: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:114
 #: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:190
-#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:227
-#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:238
+#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:234
+#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:245
 #, python-brace-format
 msgid "Click to see books with {0}: {1}"
 msgstr "Fai clic per vedere i libri con {0}: {1}"
@@ -4963,18 +4978,18 @@ msgstr "ID"
 msgid "Search the calibre library for books by %s"
 msgstr "Cerca libri nella biblioteca di calibre per %s"
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:208
+#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:215
 #, python-format
 msgid ""
 "%(sidx)s of <a href=\"%(href)s\" title=\"%(tt)s\" data-"
 "item=\"%(data)s\"><span class=\"%(cls)s\">%(series)s</span></a>"
 msgstr "%(sidx)s di <a href=\"%(href)s\" title=\"%(tt)s\" data-item=\"%(data)s\"><span class=\"%(cls)s\">%(series)s</span></a>"
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:213
+#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:220
 msgid "Click to see books in this series"
 msgstr "Fai clic per vedere i libri in questa serie"
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:247
+#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/book/render.py:254
 #: /home/kovid/work/calibre/src/calibre/gui2/library/models.py:1263
 msgid "Collections"
 msgstr "Raccolte"
@@ -5330,12 +5345,12 @@ msgid "This is an Amazon Topaz book. It cannot be processed."
 msgstr "Questo è un libro Amazon Topaz. Non può essere elaborato."
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/mobi/tweak.py:46
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1259
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1266
 msgid "This is not a MOBI file. It is a Topaz file."
 msgstr "Non è un file MOBI, ma un file Topaz."
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/mobi/tweak.py:51
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1264
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1271
 msgid "This is not a MOBI file."
 msgstr "Non è un file MOBI."
 
@@ -6072,14 +6087,14 @@ msgstr "Non si può avere testo libero all'interno del corpo del tag. Il testo d
 msgid "Bare text in body tag"
 msgstr "Testo libero all'interno del corpo di un tag"
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1272
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1279
 msgid ""
 "This MOBI file does not contain a KF8 format book. KF8 is the new format "
 "from Amazon. calibre can only edit MOBI files that contain KF8 books. Older "
 "MOBI files without KF8 are not editable."
 msgstr "Questo file MOBI non contiene libro in formato KF8. KF8 è il nuovo formato di Amazon. calibre può modificare solo i file MOBI che contengono libri KF8. I vecchi file MOBI senza KF8 non sono modificabili."
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1278
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/container.py:1285
 msgid ""
 "This MOBI file contains both KF8 and older Mobi6 data. calibre can only edit"
 " MOBI files that contain only KF8 data."
@@ -6137,22 +6152,22 @@ msgstr "Non ci sono caratteri integrabili"
 msgid "This file is locked with DRM. It cannot be edited."
 msgstr "Questo file è bloccato da DRM. Non può essere modificato."
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:91
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:92
 #, python-brace-format
 msgid "{0} compressed from {1} to {2} bytes [{3:.1%} reduction]"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:94
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:95
 #, python-brace-format
 msgid "Failed to process {0} with error:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:99
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:100
 #, python-brace-format
 msgid "Total image filesize reduced from {0} to {1} [{2:.1%} reduction]"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:102
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/images.py:103
 msgid "Images are already fully optimized"
 msgstr "Le immagini sono gia' completamente ottimizzate"
 
@@ -6469,7 +6484,7 @@ msgstr "Barra laterale"
 msgid "Page %d"
 msgstr "Pagina %d"
 
-#: /home/kovid/work/calibre/src/calibre/ebooks/pdf/pdftohtml.py:72
+#: /home/kovid/work/calibre/src/calibre/ebooks/pdf/pdftohtml.py:74
 msgid "Could not find pdftohtml, check it is in your PATH"
 msgstr "Impossibile trovare pdftohtml, verificare che sia nel proprio PATH"
 
@@ -7076,160 +7091,184 @@ msgstr "Permesso negato"
 msgid "Could not open %s. Is it being used by another program?"
 msgstr "Impossibile aprire %s. Potrebbe essere in uso da un altro programma."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:103
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:146
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:102
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:145
 msgid "No library found"
 msgstr "Nessuna biblioteca trovata"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:109
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:108
 #, python-format
 msgid ""
 "No existing calibre library was found at %s. If the library was moved, "
 "select its new location below. Otherwise calibre will forget this library."
 msgstr "Non è stata trovata una biblioteca esistente di calibre in %s. Se la biblioteca è stata spostata, seleziona in basso la nuova posizione. Altrimenti calibre scarterà questa biblioteca."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:115
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:114
 msgid "New location of this library:"
 msgstr "Nuova posizione di questa biblioteca:"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:124
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:123
 msgid "Library moved"
 msgstr "Biblioteca spostata"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:126
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:125
 msgid "Forget library"
 msgstr "Scarta la biblioteca"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:136
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:135
 msgid "New library location"
 msgstr "Nuova posizione della biblioteca"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:147
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:146
 #, python-format
 msgid "No existing calibre library found at %s"
 msgstr "Non è stata trovata una biblioteca esistente di calibre in %s"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:166
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:165
 msgid "Queue &all books for backup"
 msgstr "&Accoda tutti i libri per il backup"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:172
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:171
 msgid "Backup status"
 msgstr "Stato del backup"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:186
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:185
 msgid "none"
 msgstr "nessuno"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:188
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:187
 #, python-format
 msgid "Book metadata files remaining to be written: %s"
 msgstr "Metadati dei libri ancora da scrivere: %s"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:201
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:200
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/copy_to_library.py:272
 msgid "Choose Library"
 msgstr "Scegli la biblioteca"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:202
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:201
 msgid "Choose calibre library to work with"
 msgstr "Seleziona la biblioteca di calibre con cui lavorare"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:205
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:204
 msgid "Switch/create library..."
 msgstr "Cambia/crea biblioteca..."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:222
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:210
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:151
+msgid "Export/Import all calibre data"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:223
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/random.py:17
 msgid "Pick a random book"
 msgstr "Scegli un libro a caso"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:229
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:230
 #: /home/kovid/work/calibre/src/calibre/gui2/layout.py:96
 msgid "Quick switch"
 msgstr "Cambiamento rapido"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:231
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:232
 #: /home/kovid/work/calibre/src/calibre/gui2/layout.py:97
 msgid "Rename library"
 msgstr "Rinomina biblioteca"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:234
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:235
 msgid "Remove library"
 msgstr "Rimuovi la libreria"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:253
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:255
 msgid "Library Maintenance"
 msgstr "Manutenzione biblioteca"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:254
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:256
 msgid "Library metadata backup status"
 msgstr "Stato backup metadati della biblioteca"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:258
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:260
 msgid "Check library"
 msgstr "Controlla biblioteca"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:262
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:264
 msgid "Restore database"
 msgstr "Ripristina database"
 
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:288
+msgid "Cannot export/import"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:289
+msgid ""
+"You are running calibre portable, all calibre data is already in the calibre"
+" portable folder. Export/Import is unavailable."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:292
+msgid "Cannot Export/Import"
+msgstr ""
+
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:293
+msgid "Cannot export/import data while there are running jobs."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:309
 #, python-brace-format
 msgid "{0} [{1} book]"
 msgid_plural "{0} [{1} books]"
 msgstr[0] "{0} [{1} libri]"
 msgstr[1] "{0} [{1} libri]"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:336
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:356
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:352
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:372
 #, python-format
 msgid "Switch to: %s"
 msgstr "Passa a: %s"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:341
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:357
 #, python-format
 msgid "Rename: %s"
 msgstr "Rinomina: %s"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:345
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:361
 #, python-format
 msgid "Remove: %s"
 msgstr "Rimuovi: %s"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:380
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:396
 msgid "Rename"
 msgstr "Rinomina"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:381
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:397
 #, python-format
 msgid "Choose a new name for the library <b>%s</b>. "
 msgstr "Seleziona un nuovo nome per la biblioteca <b>%s</b>. "
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:382
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:398
 msgid "Note that the actual library folder will be renamed."
 msgstr "La cartella della biblioteca attuale verrà rinominata."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:389
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:405
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/plugin_updater.py:714
 #: /home/kovid/work/calibre/src/calibre/gui2/email.py:237
 #: /home/kovid/work/calibre/src/calibre/gui2/preferences/plugins.py:318
 msgid "Already exists"
 msgstr "Esiste già"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:390
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:406
 #, python-format
 msgid "The folder %s already exists. Delete it first."
 msgstr "La cartella %s esiste già. Eliminala prima."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:394
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:453
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:410
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:469
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/choose_library.py:120
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:288
 #: /home/kovid/work/calibre/src/calibre/gui2/wizard/__init__.py:666
 msgid "Too long"
 msgstr "Troppo lungo"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:399
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:415
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:927
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/boss.py:1108
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/manage_fonts.py:258
@@ -7237,36 +7276,36 @@ msgstr "Troppo lungo"
 msgid "Not found"
 msgstr "Non trovata"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:400
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:416
 #, python-format
 msgid ""
 "Cannot rename as no library was found at %s. Try switching to this library "
 "first, then switch back and retry the renaming."
 msgstr "Impossibile rinominare poiché nessuna biblioteca è stata trovata in %s. Prova a passare prima a questa biblioteca, poi torna indietro e prova a rinominare."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:410
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:426
 msgid "Rename failed"
 msgstr "Impossibile rinominare"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:411
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:427
 #, python-format
 msgid ""
 "Failed to rename the library at %s. The most common cause for this is if one"
 " of the files in the library is open in another program."
 msgstr "Impossibile rinominare la biblioteca in %s. La causa più comune a questo problema è quando un file della biblioteca è aperto da un altro programma."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:423
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:439
 msgid "Library removed"
 msgstr "Libreria rimossa"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:424
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:440
 #, python-format
 msgid ""
 "The library %s has been removed from calibre. The files remain on your "
 "computer, if you want to delete them, you will have to do so manually."
 msgstr "La biblioteca %s è stata rimossa da calibre. I file rimarranno sul computer. Se vuoi eliminarli, dovrai farlo manualmente."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:428
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:444
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/edit_authors_dialog.py:41
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/tag_list_editor.py:188
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/template_dialog.py:309
@@ -7274,24 +7313,24 @@ msgstr "La biblioteca %s è stata rimossa da calibre. I file rimarranno sul comp
 msgid "&OK"
 msgstr "&Ok"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:428
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:444
 #: /home/kovid/work/calibre/src/calibre/gui2/metadata/basic_widgets.py:162
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/ui.py:351
 #: /home/kovid/work/calibre/src/calibre/utils/localization.py:284
 msgid "&Undo"
 msgstr "Ann&ulla"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:443
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:459
 msgid "Backup metadata"
 msgstr "Backup metadati"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:444
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:460
 msgid ""
 "Metadata will be backed up while calibre is running, at the rate of "
 "approximately 1 book every three seconds."
 msgstr "Verrà fatto un backup dei metadati durante il funzionamento di calibre, alla velocità approssimativa di un libro ogni tre secondi"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:454
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:470
 #, python-format
 msgid ""
 "Path to library too long. Must be less than %d characters. Move your library"
@@ -7299,7 +7338,7 @@ msgid ""
 "calibre to the new location and try again."
 msgstr "Percorso della biblioteca troppo lungo. Deve essere minore di %d caratteri. Sposta la tua biblioteca in una posizione con un percorso più breve usando Windows Explorer, poi fai puntare calibre alla nuova posizione e prova di nuovo."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:489
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:505
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/plugin_updater.py:721
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/restore_library.py:82
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/restore_library.py:87
@@ -7308,15 +7347,16 @@ msgstr "Percorso della biblioteca troppo lungo. Deve essere minore di %d caratte
 msgid "Success"
 msgstr "Riuscito"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:490
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:506
 msgid ""
 "Found no errors in your calibre library database. Do you want calibre to "
 "check if the files in your  library match the information in the database?"
 msgstr "Non sono stati trovati errori nel database della biblioteca di calibre. Vuoi che calibre verifichi se i file nella biblioteca corrispondono alle informazioni nel database?"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:495
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:511
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/copy_to_library.py:483
 #: /home/kovid/work/calibre/src/calibre/gui2/device.py:1009
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:131
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/metadata_bulk.py:1025
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/restore_library.py:113
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/restore_library.py:127
@@ -7325,26 +7365,26 @@ msgstr "Non sono stati trovati errori nel database della biblioteca di calibre. 
 msgid "Failed"
 msgstr "Non riuscito"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:496
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:512
 msgid "Database integrity check failed, click Show details for details."
 msgstr "Verifica di integrità del database non riuscita. Fai clic su \"Mostra dettagli\" per ulteriori informazioni."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:500
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:516
 msgid "Starting library scan, this may take a while"
 msgstr "Avvio della scansione della biblioteca, potrebbe richiedere del tempo"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:506
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:522
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/check.py:109
 msgid "No problems found"
 msgstr "Nessun problema trovato"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:507
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:523
 msgid "The files in your library match the information in the database."
 msgstr "I file nella libreria corrispondono alle informazioni nel database."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:599
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:604
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:610
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:615
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:620
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:626
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/copy_to_library.py:512
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/save_to_disk.py:92
 #: /home/kovid/work/calibre/src/calibre/gui2/library/views.py:1172
@@ -7352,17 +7392,17 @@ msgstr "I file nella libreria corrispondono alle informazioni nel database."
 msgid "Not allowed"
 msgstr "Non permesso"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:600
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:616
 msgid ""
 "You cannot change libraries while using the environment variable "
 "CALIBRE_OVERRIDE_DATABASE_PATH."
 msgstr "Non è possibile cambiare biblioteca mentre si usa la variabile di ambiente CALIBRE_OVERRIDE_DATABASE_PATH."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:605
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:621
 msgid "You cannot change libraries while jobs are running."
 msgstr "Non è possibile cambiare biblioteca quando ci sono dei lavori in corso."
 
-#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:611
+#: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:627
 msgid ""
 "You cannot change libraries until all updates are accepted or rejected."
 msgstr "Impossibile cambiare librerie fino a quando tutti gli aggiornamenti vengano accettati o rifiutati."
@@ -11704,16 +11744,16 @@ msgid "Do not add &detected chapters to the Table of Contents"
 msgstr "N&on aggiungere all'indice i capitoli rilevati"
 
 #: /home/kovid/work/calibre/src/calibre/gui2/convert/toc_ui.py:77
-msgid "Number of &links to add to Table of Contents"
-msgstr "Numero di co&llegamenti da aggiungere all'indice"
+msgid "Number of &links to add to Table of Contents:"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/convert/toc_ui.py:78
 msgid "TOC &Filter:"
 msgstr "&Filtro dell'indice:"
 
 #: /home/kovid/work/calibre/src/calibre/gui2/convert/toc_ui.py:79
-msgid "Chapter &threshold"
-msgstr "I&nizio capitolo"
+msgid "Chapter &threshold:"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/convert/toc_ui.py:80
 msgid "Allow &duplicate links when creating the Table of Contents"
@@ -13846,6 +13886,176 @@ msgstr "Copia l'ordinamento autore in autore per ogni autore. Normalmente si uti
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/edit_authors_dialog_ui.py:94
 msgid "Copy all author sort values to author"
 msgstr "Copia tutti valori di ordinamento autore in autore"
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:48
+msgid "Previous location: "
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:53
+msgid "Location to import this library to"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:55
+msgid "Select &folder"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:61
+msgid "Choose a folder for this library"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:77
+msgid "Working please wait..."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:93
+msgid "Total:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:102
+msgid "Current:"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:131
+msgid "Click \"Show Details\" for more information."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:165
+msgid ""
+"You can export all calibre data, including your books, settings and plugins "
+"into a single directory. Then, you can use this tool to re-import all that "
+"data into a different calibre install, for example, on another computer."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:169
+msgid ""
+"This is a simple way to move your calibre installation with all its data to "
+"a new computer, or to replicate your current setup on a second computer."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:175
+msgid "&Export all your calibre data"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:178
+msgid "&Import previously exported data"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:187
+#, python-brace-format
+msgid ""
+"{0} [Size: {1}]\n"
+"in {2}"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:189
+msgid "Calculating..."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:195
+msgid "Select which libraries you want to export below"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:229
+msgid ""
+"Specify the folder containing the previously exported calibre data that you "
+"wish to import."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:233
+msgid "Choose &folder"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:243
+msgid ""
+"Specify locations for the libraries you want to import. A location must be "
+"an empty folder on your computer. If you leave any blank, those libraries "
+"will not be imported."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:249
+msgid "Select folder with exported data"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:256
+msgid "Not valid"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:257
+#, python-brace-format
+msgid "The folder {0} is not valid: {1}"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:277
+msgid "No folder selected"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:278
+msgid ""
+"You must select a folder containing the previously exported data that you "
+"wish to import"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:293
+#, python-format
+msgid "%s is not a folder"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:293
+msgid "Not a folder"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:296
+#, python-format
+msgid "%s is not an empty folder"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:296
+msgid "Folder not empty"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:300
+msgid "No libraries selected"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:301
+msgid "You must specify the location for at least one library"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:303
+msgid "Some libraries ignored"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:304
+msgid "You have chosen not to import some libraries. Proceed anyway?"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:326
+msgid "Choose a directory to export to"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:330
+msgid "Export dir not empty"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:331
+msgid "The directory you choose to export the data to must be empty."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:344
+msgid "Exporting all calibre data..."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:345
+msgid "Failed to export data."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:353
+msgid "Importing all calibre data..."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/dialogs/exim.py:354
+msgid "Failed to import data."
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/job_view_ui.py:40
 msgid "Details of job"
@@ -26413,47 +26623,51 @@ msgstr "Rimuove tutte le regole CSS che non corrispondono al contenuto attuale. 
 msgid "Remove unused &class attributes"
 msgstr "Rimuovi &classe attributi non utilizzata"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:71
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:65
+msgid "Action report"
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:73
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/search.py:1327
 msgid "See what &changed"
 msgstr "Vedi cosa è &cambiato"
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:115
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:117
 msgid "Compress Images"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:135
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:137
 msgid ""
 "You can compress the images in this book losslessly, reducing the file size "
 "of the book, without affecting image quality. Typically image size is "
 "reduced by 5 - 15%."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:141
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:143
 msgid "Enable &lossy compression of JPEG images"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:142
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:144
 msgid ""
 "This allows you to change the quality factor used for JPEG images.\n"
 "By lowering the quality you can greatly reduce file size, at the expense of the image looking blurred."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:149
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:151
 msgid ""
 "The compression quality, 1 is high compression, 100 is low compression.\n"
 "Image quality is inversely correlated with compression quality."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:152
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:154
 msgid "Compression &quality:"
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:177
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:179
 msgid "Compressing Images..."
 msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:203
+#: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/polish.py:205
 msgid "Compressing images, please wait..."
 msgstr ""
 
@@ -32692,6 +32906,11 @@ msgid ""
 "  English, searching for n will match %s and n, but if your language is "
 "Spanish it will only match n. Note that this is much slower than a simple "
 "search on very large libraries."
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/utils/exim.py:196
+#: /home/kovid/work/calibre/src/calibre/utils/exim.py:334
+msgid "Settings and plugins"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/utils/filenames.py:384
