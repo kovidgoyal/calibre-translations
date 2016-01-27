@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Xotes <alois.glibert@gmail.com>, 2014-2015
-# Ptitprince <leporello1791@gmail.com>, 2014-2015
+# Ptitprince <leporello1791@gmail.com>, 2014-2016
 # Ptitprince <leporello1791@gmail.com>, 2014
 # Xotes <alois.glibert@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-11 08:23+0530\n"
-"PO-Revision-Date: 2015-12-11 10:22+0000\n"
-"Last-Translator: Ptitprince <leporello1791@gmail.com>\n"
+"POT-Creation-Date: 2016-01-15 22:58+0530\n"
+"PO-Revision-Date: 2016-01-21 19:25+0000\n"
+"Last-Translator: Xotes <alois.glibert@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/calibre/calibre/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,8 +42,8 @@ msgstr "Une extension calibre. Les membres utiles incluent:"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:4
-msgid "self.plugin_path: Stores path to the zip file that contains"
-msgstr "self.plugin_path : Enregistre le chemin vers le fichier zip qui le contient"
+msgid "``self.plugin_path``: Stores path to the zip file that contains"
+msgstr "``self.plugin_path``: Enregistre le chemin vers le zip qui contient"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:4
@@ -52,8 +52,8 @@ msgstr "cette extension ou None si c'est une extension intégrée"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:7
-msgid "self.site_customization: Stores a customization string entered"
-msgstr "self.site_customization : Enregistre une chaîne de personnalisation introduite"
+msgid "``self.site_customization``: Stores a customization string entered"
+msgstr "``self.site_customization``: Enregistre une chaîne de personnalisation introduite"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:7
@@ -342,8 +342,10 @@ msgstr "Si True, cette extension est exécutée lorsque des livres sont ajoutés
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.on_postimport:1
-msgid "If True, this plugin is run after books are added to the database"
-msgstr "Si True, cette extension est exécutée après que des livres ai été ajoutés à la base de donnée"
+msgid ""
+"If True, this plugin is run after books are added to the database. In this "
+"case the postimport and postadd methods of the plugin are called."
+msgstr "Si réglé sur True, cette extension est exécutée après que des livres aient été ajoutés à la base de donnée. Dans ce cas, les méthodes postimport et postadd de l'extension sont appelées. "
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.on_preprocess:1
@@ -389,23 +391,53 @@ msgstr "Chemin absolu vers le livre numérique modifié."
 #: calibre.customize.FileTypePlugin.postimport:1
 msgid ""
 "Called post import, i.e., after the book file has been added to the "
-"database."
-msgstr "Appelé après importation, càd., après que le fichier du livre a été ajouté à la base de donnée."
+"database. Note that this is different from :meth:`postadd` which is called "
+"when the book record is created for the first time. This method is called "
+"whenever a new file is added to a book record. It is useful for modifying "
+"the book record based on the contents of the newly added file."
+msgstr "post import est appelée, c-à-d après que le fichier de livre ait été ajouté à la base de donnée. Notez que ceci est différent de :meth:`postadd` qui est appelée lorsque les données du livre sont créées pour la première fois. Cette méthode est appelée à chaque fois qu'un nouveau fichier est ajouté à un livre enregistré. Elle est utile pour modifier les données du livre se basant sur le contenu du fichier nouvellement ajouté."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:3
+#: calibre.customize.FileTypePlugin.postimport:6
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:8
 msgid "Database id of the added book."
 msgstr "L'id du livre ajouté dans la base de donnée."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:4
+#: calibre.customize.FileTypePlugin.postimport:7
 msgid "The file type of the book that was added."
 msgstr "Le type de fichier du livre qui a été ajouté."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:5
+#: calibre.customize.FileTypePlugin.postimport:8
 msgid "Library database."
 msgstr "Base de donnée de la bibliothèque."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:1
+msgid ""
+"Called post add, i.e. after a book has been added to the db. Note that this "
+"is different from :meth:`postimport`, which is called after a single book "
+"file has been added to a book. postadd() is called only when an entire book "
+"record with possibly more than one book file has been created for the first "
+"time. This is useful if you wish to modify the book record in the database "
+"when the book is first added to calibre."
+msgstr "post add est appelée, c-à-d après qu'un livre ait été ajouté à la base de donnée. Notez que ceci est différent de :meth:`postimport`, qui est appelée lorsque un fichier de livre est ajouté à un livre existant. postadd() est appelée uniquement lorsqu'un dossier entier de livre avec éventuellement plus d'un fichier de livre a été créé pour la première fois. Ceci est utile si vous souhaitez modifier les données d'un livre dans la base de donnée lorsque le livre est initialement ajouté à calibre. "
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:9
+msgid ""
+"Map of file format to path from which the file format was added. Note that "
+"this might or might not point to an actual existing file, as sometimes files"
+" are added as streams. In which case it might be a dummy value or an on-"
+"existent path."
+msgstr "Le chemin de l'emplacement du format du fichier à partir duquel le format a été ajouté. Notez que ceci pourrait ne pas indiquer un fichier existant, vu que parfois certains fichier sont ajoutés en tant que flux. Dans ce cas on pourrait avoir une valeur fausse ou un chemin inexistant."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:13
+msgid "Library database"
+msgstr "Base de donnée de la bibliothèque"
 
 #: ../../home/kovid/work/calibre/manual/plugins.rst:39
 msgid "Metadata plugins"

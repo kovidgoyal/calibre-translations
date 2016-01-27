@@ -5,19 +5,20 @@
 # Translators:
 # Adrián López Galera <adrian_201@hotmail.es>, 2015
 # dario hereñu <magallania@gmail.com>, 2014-2015
-# Jellby <jellby@yahoo.com>, 2014-2015
+# Jellby <jellby@yahoo.com>, 2014-2016
 # j <jcn363@ikasle.aeg.es>, 2015
 # jose manuel lucas hernandez <josemanuellh@gmail.com>, 2015
 # Juana Perez Yanez <juanaperezyanez@gmail.com>, 2016
 # Marta Aulet <mauletsdm@gmail.com>, 2015
 # Qualified Projects <drako.cjs@gmail.com>, 2015
+# Rocío Gutiérrez <rogutimtorre@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-01 09:27+0530\n"
-"PO-Revision-Date: 2016-01-05 03:38+0000\n"
-"Last-Translator: Juana Perez Yanez <juanaperezyanez@gmail.com>\n"
+"POT-Creation-Date: 2016-01-15 22:58+0530\n"
+"PO-Revision-Date: 2016-01-15 18:56+0000\n"
+"Last-Translator: Jellby <jellby@yahoo.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/calibre/calibre/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,8 +47,8 @@ msgstr "Un complemento calibre. Miembros útiles:"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:4
-msgid "self.plugin_path: Stores path to the zip file that contains"
-msgstr "self.plugin_path: Almacena la ubicación del archivo zip que contiene"
+msgid "``self.plugin_path``: Stores path to the zip file that contains"
+msgstr "``self.plugin_path``: Almacena la ubicación del archivo zip que contiene"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:4
@@ -56,8 +57,8 @@ msgstr "este complemento o None si es un complemento predefinido"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:7
-msgid "self.site_customization: Stores a customization string entered"
-msgstr "self.site_customization: Guarda un texto de personalización introducido"
+msgid "``self.site_customization``: Stores a customization string entered"
+msgstr "``self.site_customization``: Guarda un texto de personalización introducido"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:7
@@ -262,7 +263,7 @@ msgid ""
 "If you re-implement this method in your subclass, the user will be asked to "
 "enter a string as customization for this plugin. The customization string "
 "will be available as ``self.site_customization``."
-msgstr "Si re-implementa este método en su subclase, se le pedirá al usuario que ingrese una cadena como personalización para este complemento. La cadena de personalización estará disponible como ``self.site_customization``"
+msgstr "Si reimplementa este método en la subclase, se le pedirá al usuario que introduzca un texto como personalización para este complemento. El texto de personalización estará disponible como ``self.site_customization``."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin.customization_help:10
@@ -283,7 +284,7 @@ msgid ""
 "file will remain available even after being closed and will only be removed "
 "on interpreter shutdown. Use the ``name`` member of the returned object to "
 "access the full path to the created temporary file."
-msgstr "Devuelve un objeto que representa un archivo temporario dentro del sistema de archivos. Dicho archivo permanecerá disponible incluso luego de cerrarse y solo se eliminará al apagarse el intérprete. Utilice el miembro \"name\" del objeto devuelto para acceder a la ruta completa del archivo temporario creado."
+msgstr "Devuelve un objeto de tipo archivo que es un archivo temporal en el sistema de archivos. Este archivo permanecerá disponible incluso después de cerrarse y sólo se eliminará al terminar el intérprete. Utilice el miembro ``name`` del objeto devuelto para acceder a la ruta completa del archivo temporal creado."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin.temporary_file:6
@@ -296,7 +297,7 @@ msgid ""
 "This method is the main entry point for your plugins command line interface."
 " It is called when the user does: calibre-debug -r \"Plugin Name\". Any "
 "arguments passed are present in the args variable."
-msgstr "Este método es el principal punto de acceso para la interfaz de línea de comandos de sus complementos. Se la llama cuando un usuario ejecuta calibre-debug -r \"Nombre del Complemento\". Cualquier argumento pasado estará presente en la variable args. "
+msgstr "Este método es el principal punto de acceso para la interfaz de línea de órdenes de los complementos. Se ejecuta cuando el usuario teclea: calibre-debug -r \"Nombre del complemento\". Todos los argumentos que se pasen están presentes en la variable ``args``."
 
 #: ../../home/kovid/work/calibre/manual/plugins.rst:28
 msgid "FileTypePlugin"
@@ -346,8 +347,10 @@ msgstr "Si es True, este complemento se ejecuta cuando se añaden libros a la ba
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.on_postimport:1
-msgid "If True, this plugin is run after books are added to the database"
-msgstr "Si es Verdadero, este complemento se ejecuta despué que los libros son agregados a la base de datos"
+msgid ""
+"If True, this plugin is run after books are added to the database. In this "
+"case the postimport and postadd methods of the plugin are called."
+msgstr "Si es True, este complemento se ejecuta después de añadir libros a la base de datos. En tal caso, se ejecutarán los métodos de :meth:`postimport` y :meth:`postadd` del complemento."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.on_preprocess:1
@@ -393,23 +396,53 @@ msgstr "Ruta absoluta al libro electrónico modificado."
 #: calibre.customize.FileTypePlugin.postimport:1
 msgid ""
 "Called post import, i.e., after the book file has been added to the "
-"database."
-msgstr "Llamado post importación, o sea, luego de que se haya agregado el libro de archivos a la base de datos."
+"database. Note that this is different from :meth:`postadd` which is called "
+"when the book record is created for the first time. This method is called "
+"whenever a new file is added to a book record. It is useful for modifying "
+"the book record based on the contents of the newly added file."
+msgstr "Se ejecuta después de la importación, es decir, después de añadir el archivo del libro a la base de datos. Tenga en cuenta que se trata de un método diferente de :meth:`postadd`, que se ejecuta cuando se crea el registro del libro por primera vez. Este método se ejecuta siempre que se añade un archivo nuevo al registro del libro. Resulta útil para modificar el registro del libro según el contenido del archivo recién añadido."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:3
+#: calibre.customize.FileTypePlugin.postimport:6
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:8
 msgid "Database id of the added book."
 msgstr "Identificador de la base de datos del libro añadido."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:4
+#: calibre.customize.FileTypePlugin.postimport:7
 msgid "The file type of the book that was added."
 msgstr "El tipo de archivo del libro que se ha añadido."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:5
+#: calibre.customize.FileTypePlugin.postimport:8
 msgid "Library database."
 msgstr "Base de datos de biblioteca."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:1
+msgid ""
+"Called post add, i.e. after a book has been added to the db. Note that this "
+"is different from :meth:`postimport`, which is called after a single book "
+"file has been added to a book. postadd() is called only when an entire book "
+"record with possibly more than one book file has been created for the first "
+"time. This is useful if you wish to modify the book record in the database "
+"when the book is first added to calibre."
+msgstr "Se ejecuta después la creación, es decir, después de añadir un nuevo libro a la base de datos. Tenga en cuenta que se trata de un método diferente de :meth:`postimport`, que se ejecuta cuando se añade un archivo de libro a un registro. Este método se ejecuta sólo cuando se crea un nuevo registro de libro, que puede contener más de un archivo de libro. Resulta útil si desea modificar el registro del libro en la base de datos cuando se añade el libro por primera vez en calibre."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:9
+msgid ""
+"Map of file format to path from which the file format was added. Note that "
+"this might or might not point to an actual existing file, as sometimes files"
+" are added as streams. In which case it might be a dummy value or an on-"
+"existent path."
+msgstr "Correspondencia de formato de archivo con ruta desde la que se añadió el archivo. Tenga cuenta que esto puede apuntar a un archivo existente en realidad o no, pues a veces se añaden archivos como flujos, en cuyo caso puede ser un valor inútil o una ruta no existente."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:13
+msgid "Library database"
+msgstr "Base de datos de biblioteca"
 
 #: ../../home/kovid/work/calibre/manual/plugins.rst:39
 msgid "Metadata plugins"
@@ -465,7 +498,7 @@ msgstr "Un complemento que implementa un generador de catálogos."
 msgid ""
 "Output file type for which this plugin should be run For example: 'epub' or "
 "'xml'"
-msgstr "Tipo de archivo de salida por el cual se ejecute este complemento. Por ejemplo: 'epub' o 'xml'"
+msgstr "Tipo de archivo de salida para el que debe ejecutarse este complemento. Por ejemplo: «epub» o «xml»"
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.CatalogPlugin.cli_options:1

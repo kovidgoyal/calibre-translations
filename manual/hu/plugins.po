@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-11 08:23+0530\n"
-"PO-Revision-Date: 2015-12-11 02:53+0000\n"
+"POT-Creation-Date: 2016-01-15 22:58+0530\n"
+"PO-Revision-Date: 2016-01-15 02:50+0000\n"
 "Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Hungarian (http://www.transifex.com/calibre/calibre/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:4
-msgid "self.plugin_path: Stores path to the zip file that contains"
+msgid "``self.plugin_path``: Stores path to the zip file that contains"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin:7
-msgid "self.site_customization: Stores a customization string entered"
+msgid "``self.site_customization``: Stores a customization string entered"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
@@ -339,7 +339,9 @@ msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.on_postimport:1
-msgid "If True, this plugin is run after books are added to the database"
+msgid ""
+"If True, this plugin is run after books are added to the database. In this "
+"case the postimport and postadd methods of the plugin are called."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
@@ -386,22 +388,52 @@ msgstr ""
 #: calibre.customize.FileTypePlugin.postimport:1
 msgid ""
 "Called post import, i.e., after the book file has been added to the "
-"database."
+"database. Note that this is different from :meth:`postadd` which is called "
+"when the book record is created for the first time. This method is called "
+"whenever a new file is added to a book record. It is useful for modifying "
+"the book record based on the contents of the newly added file."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:3
+#: calibre.customize.FileTypePlugin.postimport:6
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:8
 msgid "Database id of the added book."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:4
+#: calibre.customize.FileTypePlugin.postimport:7
 msgid "The file type of the book that was added."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
-#: calibre.customize.FileTypePlugin.postimport:5
+#: calibre.customize.FileTypePlugin.postimport:8
 msgid "Library database."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:1
+msgid ""
+"Called post add, i.e. after a book has been added to the db. Note that this "
+"is different from :meth:`postimport`, which is called after a single book "
+"file has been added to a book. postadd() is called only when an entire book "
+"record with possibly more than one book file has been created for the first "
+"time. This is useful if you wish to modify the book record in the database "
+"when the book is first added to calibre."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:9
+msgid ""
+"Map of file format to path from which the file format was added. Note that "
+"this might or might not point to an actual existing file, as sometimes files"
+" are added as streams. In which case it might be a dummy value or an on-"
+"existent path."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.FileTypePlugin.postadd:13
+msgid "Library database"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/plugins.rst:39
