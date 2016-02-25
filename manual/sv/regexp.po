@@ -8,22 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-10 06:53+0530\n"
-"PO-Revision-Date: 2015-01-10 18:20+0000\n"
+"POT-Creation-Date: 2016-02-23 15:15+0530\n"
+"PO-Revision-Date: 2016-02-15 13:02+0000\n"
 "Last-Translator: Merarom <merarom@yahoo.es>\n"
-"Language-Team: Swedish (http://www.transifex.com/projects/p/calibre/language/sv/)\n"
+"Language-Team: Swedish (http://www.transifex.com/calibre/calibre/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# 05fce769da4744bc99e2621b084f81d5
 #: ../../home/kovid/work/calibre/manual/regexp.rst:4
 msgid "All about using regular expressions in calibre"
 msgstr "Allt om att använda reguljära uttryck i calibre"
 
-# 8cdacf633a23410687310608b9ec62fd
 #: ../../home/kovid/work/calibre/manual/regexp.rst:6
 msgid ""
 "Regular expressions are features used in many places in calibre to perform "
@@ -32,17 +30,14 @@ msgid ""
 "in calibre."
 msgstr "Reguljära uttryck är funktioner som används på många ställen i calibre för att utföra avancerad manipulation av e-bokens innehåll och metadata. Denna handledning är en mild introduktion till att få dig igång med att använda vanliga uttryck i calibre."
 
-# f28e438550c04f0d994cfd450c1abc5d
 #: ../../home/kovid/work/calibre/manual/regexp.rst:0
 msgid "Contents"
 msgstr "Innehåll"
 
-# babbf1423c2e43ab9dfd34b1c3d0429c
 #: ../../home/kovid/work/calibre/manual/regexp.rst:14
 msgid "First, a word of warning and a word of courage"
 msgstr "Först ett varningens ord och ett ord av mod"
 
-# 64bf645d583b415aa58cca935402db89
 #: ../../home/kovid/work/calibre/manual/regexp.rst:16
 msgid ""
 "This is, inevitably, going to be somewhat technical- after all, regular "
@@ -59,12 +54,10 @@ msgid ""
 "step. So, take a step and follow me into the rabbit hole."
 msgstr "Detta kommer, oundvikligen, att vara något teknisk- trots allt, reguljära uttryck är ett tekniskt verktyg för att göra tekniska saker. Jag kommer att behöva använda en del jargong och begrepp som kan verka komplicerat och invecklat. Jag ska försöka förklara dessa begrepp så tydligt som jag kan, men egentligen kan jag inte göra det utan att använda dem alla. Med detta sagt, förkasta inte detta på grund av all jargong, jag har försökt att förklara allt nytt. Och medan reguljära uttryck själva kan verka som en svårbegripliga, svart magi (eller för att vara mer prosaisk, en slumpmässig sträng av rappakalja bokstäver och tecken), jag lovar att det är inte så komplicerat. Även de som förstår vanliga uttryck riktigt bra kan ha problem med att läsa de mer komplexa, men att skriva dem är inte så svårt - du konstruerar uttrycket steg för steg. Så, ta ett steg och följa mig in i kaninhålet."
 
-# aa9c148c68a843b589e4fd2ce20d1878
 #: ../../home/kovid/work/calibre/manual/regexp.rst:19
 msgid "Where in calibre can you use regular expressions?"
 msgstr "Var i calibre kan du använda reguljära uttryck?"
 
-# b341d9b08c244ece81d4a5bf164c7a5c
 #: ../../home/kovid/work/calibre/manual/regexp.rst:21
 msgid ""
 "There are a few places calibre uses regular expressions. There's the Search "
@@ -74,12 +67,10 @@ msgid ""
 " and replace feature."
 msgstr "Det finns ett fåtal platser calibre använder reguljära uttryck. Det finns Sök & Ersätt i konverteringsalternativ, metadatadetektering från filnamn i importinställningar och Sök och ersätt när du redigerar metadata för böcker i grupp. Calibre editorn kan även använda reguljära uttryck i sin \"sök och ersätt\"-funktion."
 
-# 275ad9dd98eb4d56ad75b6163f201fbd
 #: ../../home/kovid/work/calibre/manual/regexp.rst:28
 msgid "What on earth *is* a regular expression?"
 msgstr "Vad i hela världen *är* ett reguljärt uttryck?"
 
-# 2b8273e01e3440bb99d1ba2c892d678d
 #: ../../home/kovid/work/calibre/manual/regexp.rst:30
 msgid ""
 "A regular expression is a way to describe sets of strings. A single regular "
@@ -88,7 +79,6 @@ msgid ""
 "potentially large number of variations."
 msgstr "Ett reguljärt uttryck är ett sätt att beskriva en uppsättningar strängar. En enda reguljära uttryck kan *passa* flera olika strängar. Det är det som gör reguljära uttryck så kraftfulla - de är ett kortfattad sätt att beskriva ett potentiellt stort antal varianter."
 
-# 4747b6c77c33427c936556531174ab8c
 #: ../../home/kovid/work/calibre/manual/regexp.rst:32
 msgid ""
 "I'm using string here in the sense it is used in programming languages: a "
@@ -104,12 +94,10 @@ msgid ""
 "people bother using them at all. More on that in a bit."
 msgstr "Jag använder sträng här i den mening den används i programspråk: en sträng av ett eller flera tecken, tecken inklusive faktiska tecken, siffror, skiljetecken och sk blanktecken (radbrytningar, tabulatorer etc.). Observera att i allmänhet anses inte stora och små bokstäver vara samma, alltså \"a\" som en annan karaktär från \"A\" och så vidare. I calibre, är reguljära uttryck skiftlägesokänslig i sökfältet, men inte i konverteringsalternativet. Det finns ett sätt att göra alla reguljära uttryck fall okänsligt, men vi kommer att diskutera det senare. Det blir komplicerat eftersom reguljära uttryck tillåter variationer i stråk det passar, så ett uttryck kan passa flera strängar, vilket är varför folk bryr sig att använda dem. Mer om det om ett tag."
 
-# adcead841491433b9fdf13abdd3ec075
 #: ../../home/kovid/work/calibre/manual/regexp.rst:35
 msgid "Care to explain?"
 msgstr "Vill du förklara?"
 
-# 476efd7ab6c54810804c158834ecad4c
 #: ../../home/kovid/work/calibre/manual/regexp.rst:37
 msgid ""
 "Well, that's why we're here. First, this is the most important concept in "
@@ -122,12 +110,10 @@ msgid ""
 "variation."
 msgstr "Tja, det är därför vi är här. För det första är detta det viktigaste konceptet i reguljära uttryck: *En sträng i sig är ett reguljärt uttryck som passar mot sig själv*. Det vill säga, om jag ville passa mot strängen `` \"Hej, värld!\" `` genom att använda ett reguljärt uttryck, skulle det reguljära uttrycket för att använda vara ``Hej, värld!``. Och ja, det är verkligen så enkelt. Du kommer att märka dock att detta *bara* passar den exakta strängen `` \"Hej, värld!\" ``, Inte t.ex. `` \"Hej världen!\" `` Eller `` \"Hej, vÄrlden!\" `` Eller någon annan sådan variation."
 
-# d959681dc89b4e8fb7d0677e6ede3722
 #: ../../home/kovid/work/calibre/manual/regexp.rst:40
 msgid "That doesn't sound too bad. What's next?"
 msgstr "Det låter inte så illa. Vad händer nu?"
 
-# 31bf7addbcb64e838b563e42e49973fb
 #: ../../home/kovid/work/calibre/manual/regexp.rst:42
 msgid ""
 "Next is the beginning of the really good stuff. Remember where I said that "
@@ -150,12 +136,10 @@ msgid ""
 "expression would look like. Yes, go ahead. Write it down."
 msgstr "Nästa är början på riktigt bra grejer. Kom ihåg var jag sa att reguljära uttryck kan passa mot flera strängar? Det är här det blir lite mer komplicerat. Säg, som en något mer praktisk övning, e-boken du ville konvertera hade en otäck sidfot som räknar sidor, \"Sida 5 av 423\". Uppenbarligen skulle sidnumret stiga 1-423, så du skulle behöva passa mot 423 olika strängar, eller hur? Fel, faktiskt: reguljära uttryck kan du definiera uppsättningar av tecken som passande: För att definiera en uppsättning, du lägger alla de tecken du vill vara i uppsättningen inom hakparenteser. Så, till exempel, uppsättningen `` [abc] `` skulle passa antingen tecknet \"a\", \"b\" eller \"c\". *uppsättningarna kommer alltid bara passa en av karaktärerna i uppsättningen*. De \"förstår\" teckenformattering, det vill säga om du ville passa mot alla små bokstäver, skulle du använda den inställda `` [az] `` för gemener och versaler som du skulle använda `` [a-zA Z] `` osv. förstår du principen? Så, självklart, med hjälp av uttrycket `` Sida [0-9] i 423`` du skulle kunna passa de första nio sidorna, vilket minskar uttrycken behövs för tre: Det andra uttrycket `` Sida [0-9] [0-9] av 423`` skulle passa alla tvåsiffriga sidnummer, och jag är säker på att du kan gissa vad den tredje uttryck skulle se ut. Ja, gå vidare. Skriv ner det."
 
-# 34f0d660bf2e4ddcb6a36d21eb9cc041
 #: ../../home/kovid/work/calibre/manual/regexp.rst:45
 msgid "Hey, neat! This is starting to make sense!"
 msgstr "Hej, snyggt! Detta börjar låta vettigt!"
 
-# c3ff87b57d1d46ee9c87971d46636654
 #: ../../home/kovid/work/calibre/manual/regexp.rst:47
 msgid ""
 "I was hoping you'd say that. But brace yourself, now it gets even better! We"
@@ -182,7 +166,6 @@ msgid ""
 " every page number in that book!"
 msgstr "Jag hoppades att du skulle säga det. Men förvänta dig själv, nu blir det ännu bättre! Vi såg precis att du använder apparater, kunde vi passa ett av flera tecken på en gång. Men du kan även upprepa ett tecken eller uppsättning, för att minska antalet uttryck som behövs för att hantera det ovan sidnummerexemplet till ett. Ja, ETT! Upphetsad? Du bör vara det! Det fungerar så här: En del så kallade specialtecken \"+\", \"?\" och \"*\", * upprepa enda element som föregår dem*. (Element antingen ett enda tecken, en teckenuppsättning, en escape-sekvens eller en grupp (vi ska lära oss om de två sista senare) -. Kort sagt, en enda enhet i ett reguljärt uttryck) är Dessa tecken kallas jokertecken eller kvantifikatorer. För att vara mer exakt, \"?\" passar *0 eller 1* förekomster av det föregående elementet, \"*\" passar *0 eller flera* för det föregående elementet och \"+\" passar *1 eller flera* av det föregående elementet. Några exempel:? Uttrycket `` a `` skulle passa antingen \"\" (som är den tomma strängen, inte strikt användbar i detta fall) eller \"a\", uttrycket ``a*`` skulle passa mot \"\", \"a\",\"aa\" eller valfritt antal a: n i rad, och slutligen uttrycket` `a+` `skulle passa \"a\",\"aa\" eller valfritt antal a: n i rad (Obs: det skulle inte passa mot den tomma strängen!). Samma gäller för uppsättningar: Uttrycket `` [0-9]+ `` skulle passa *varje heltal finns det*! Jag vet vad du tänker, och du har rätt: Om du använder det i ovanstående fall passa mot sidnummer, skulle inte det vara det enda uttryck som passar alla sidnummer? Ja, uttrycket `` Page [0-9]+ av 423`` skulle passa mot varje sidnummer i boken!"
 
-# 67672f01ffbd4e7c953c755034502cb8
 #: ../../home/kovid/work/calibre/manual/regexp.rst:50
 msgid ""
 "A note on these quantifiers: They generally try to match as much text as "
@@ -203,14 +186,12 @@ msgid ""
 "write a regular expression."
 msgstr "En kommentar om dessa kvantifikatorer: De försöker i allmänhet att passa mot så mycket text som möjligt, så var försiktig när du använder dem. Detta kallas \"girigt beteende\" - Jag är säker på att du förstår varför. Det blir problematiskt när man, säg, försöker passa mot en etikett. Tänk till exempel, strängen ``\"<p class =\" calibre2\"> Titel här </p>\"`` och låt oss säga att du skulle vilja passa startmarkeringne (delen mellan det första paret vinkelfästen, lite mer om etiketter senare). Man skulle kunna tro att uttrycket `` <p.*> `` Skulle passa mot den markeringen, men faktiskt, passar det hela strängen! (Tecknet \".\" Är ett annat specialtecken. Den passar något *utom* radbrytningar, så i grund och botten, uttrycket ``.*`` Skulle passa vilken rad du än kan tänka dig.) Försök istället att använda ``<p.*?>`` som gör kvantifierare `` \"*\" `` icke-giriga. Detta uttryck skulle bara passa den första öppningsmarkeringen, som avsett. Det finns faktiskt ett annat sätt att åstadkomma detta: Uttrycket ``<p[^>]*>`` passar denna öppningsmarkering- du kommer se varför efter nästa avsnitt. Bara konstatera att det ganska ofta finns mer än ett sätt att skriva ett reguljärt uttryck."
 
-# 92745bb089f34d4b9ba9aa94866e7d86
 #: ../../home/kovid/work/calibre/manual/regexp.rst:54
 msgid ""
 "Well, these special characters are very neat and all, but what if I wanted "
 "to match a dot or a question mark?"
 msgstr "Tja, är dessa specialtecken är mycket snygga och allt, men vad händer om jag ville passa mot en punkt eller ett frågetecken?"
 
-# e396fea8ea6a445db8d5d5ba3e55804b
 #: ../../home/kovid/work/calibre/manual/regexp.rst:56
 msgid ""
 "You can of course do that: Just put a backslash in front of any special "
@@ -226,12 +207,10 @@ msgid ""
 "needing to be escaped if you want the literal character."
 msgstr "Du kan givetvis göra det: Bara sätt ett omvänt snedstreck (bakåtsnedstreck) framför någon speciell karaktär och det tolkas som bokstavskaraktär, utan någon speciell betydelse. Detta par av ett omvänt snedstreck följt av ett enda tecken kallas en escape-sekvens (flyktsekvensen), och handlingen att sätta ett omvänt snedstreck framför ett specialtecken kallas escape-tecknet (flykttecken). En flyktsekvensen tolkas som ett enda element. Det finns naturligtvis flyktsekvensener som gör mer än att bara flyr specialtecken, till exempel ``\"\\t\" ``: en tabulator. Vi kommer till en del av de kontrollsekvenser senare. Åh, och förresten, om dessa specialtecken: Tänk alla tecken som vi diskuterar i denna introduktion som har någon funktion att vara speciell och därför kan behöva flyktmarkeras om du vill ha bokstavskaraktären."
 
-# 9b8778e63c7f43f09d22a2590df69318
 #: ../../home/kovid/work/calibre/manual/regexp.rst:59
 msgid "So, what are the most useful sets?"
 msgstr "Så, vilka är de mest användbara uppsättningarna?"
 
-# 582d9a8947624c058c8cbdbdcfd6a6f8
 #: ../../home/kovid/work/calibre/manual/regexp.rst:61
 msgid ""
 "Knew you'd ask. Some useful sets are ``[0-9]`` matching a single number, "
@@ -241,7 +220,6 @@ msgid ""
 "shorthand::"
 msgstr "Visste att du skulle fråga. Några användbara uppsättningar är ``[0-9]`` passar ett enda nummer, ``[az]`` passar en enda liten bokstav, ``[AZ]`` passar en enda versal ``[a-zA Z]`` passar en enda bokstav och ``[a-zA-Z0-9]`` passar en enda bokstav eller siffra. Du kan också använda en flyktsekvens (escape-sekvens) som stenografer::"
 
-# a9f8d7e3c28342b0842df71861721ba4
 #: ../../home/kovid/work/calibre/manual/regexp.rst:68
 msgid ""
 "\"Whitespace\" is a term for anything that won't be printed. These "
@@ -249,7 +227,6 @@ msgid ""
 "return."
 msgstr "\"Blanktecken\" är en term för något som inte kommer att skrivas ut. Dessa tecken inkluderar utrymme, tabulator, radmatning, sidmatning och vagnretur."
 
-# b4d6ba9fc6e24126965adddd15829092
 #: ../../home/kovid/work/calibre/manual/regexp.rst:70
 msgid ""
 "As a last note on sets, you can also define a set as any character *but* "
@@ -265,14 +242,12 @@ msgid ""
 "bracket."
 msgstr "Som en sista anmärkning om grupper, du kan också definiera en uppsättning som alla tecken *men* de i uppsättningen. Du gör det genom att inkludera tecknet ``\"^\"`` som det *första tecknet i uppsättningen*. Således `` [^ a] `` skulle passa alla tecken utom \"a\". Det kallas att komplettera uppsättningen. Dessa flyktsekvens stenografier vi såg tidigare kan också kompletteras: ``\"\\D\"``: vilket betyder någon ickenummer-karaktär, vilket är ekvivalent med ``[^0-9]``. De andra stenografier kan kompletteras med, du gissade rätt, med hjälp av respektive versal i stället för det gemena tecknet. Så, går tillbaka till exemplet ``<p[^>]*`>` från föregående avsnitt, nu kan du se till att teckenuppsättning det använder försöker passa alla tecken med undantag för ett avslutande vinkelparentes."
 
-# f4f12c990edd4ed0834372dad17dd19c
 #: ../../home/kovid/work/calibre/manual/regexp.rst:73
 msgid ""
 "But if I had a few varying strings I wanted to match, things get "
 "complicated?"
 msgstr "Men om jag hade några olika strängar jag ville passa mot, blir inte saker komplicerade?"
 
-# 938dbb326bf5472ab87bb758c1513521
 #: ../../home/kovid/work/calibre/manual/regexp.rst:75
 msgid ""
 "Fear not, life still is good and easy. Consider this example: The book "
@@ -289,7 +264,6 @@ msgid ""
 "the even pages). Well, wasn't that easy?"
 msgstr "Frukta inte, ändå är livet bra och lätt. Tänk på detta exempel: Boken du konverterar har \"Titel\" skrivet på varje udda sida och \"författare\" skrivet på varje jämn sida. Ser bra i tryck, eller hur? Men i e-böcker, är det irriterande. Du kan gruppen hela uttryck i normala parenteser och tecknet ``\"|\"`` låter dig passa *antingen* uttrycket till höger *eller* det till vänster. Kombinera dessa och du är klar. För fort för dig? Okej, först ut, vi grupperar uttrycken för udda och jämna sidor och på så sätt få ``(titel) (författare)`` som våra två nödvändiga uttryck. Nu gör vi det enklare genom att använda det lodräta strecket (``\"|\"`` kallas lodrätt strecktecken): Om du använder uttrycket ` (Titel|Författare)`` kommer du antingen få en passning för \"Titel\"(på udda sidor) eller du skulle passa mot \"författare\" (på jämna sidor). Tja, var inte så lätt?"
 
-# 23f8886f16c24162807efacadffd662a
 #: ../../home/kovid/work/calibre/manual/regexp.rst:77
 msgid ""
 "You can, of course, use the vertical bar without using grouping parentheses,"
@@ -306,12 +280,10 @@ msgid ""
 "short: If in doubt, use grouping together with the vertical bar."
 msgstr "Du kan naturligtvis använda det lodräta strecket utan att använda grupperingsparenteser, lika så. Kommer du ihåg när jag sa att kvantifierare upprepar elementet som föregår dem? Tja, det vertikala strecket fungerar lite annorlunda: Uttrycket \"Titel|Författare\" kommer också att passa antingen strängen \"Titel\" eller strängen \"Författare\", precis som ovanstående exempel med hjälp av gruppering. *Det vertikala strecket väljer mellan hela uttrycket före och efter den*. Så, om du ville matcha strängarna \"Calibre\" och \"calibre\" och ville bara välja mellan det övre och små bokstäver \"c\", skulle du behöva använda uttrycket ``(c|C)alibre``, där grupperingen säkerställer att endast \"c\" kommer att väljas. Om du skulle använda ``c|Calibre``, du skulle få en match på strängen \"c\" eller på strängen \"Calibre\", vilket inte är vad vi ville ha. Kort sagt: Om du är osäker, använd gruppering tillsammans med det vertikala strecket."
 
-# 9c44ae5c951e4ecbb3a5038f4c8c7c81
 #: ../../home/kovid/work/calibre/manual/regexp.rst:80
 msgid "You missed..."
 msgstr "Du missade..."
 
-# de7e5a94535c40f3ab97669059d7924a
 #: ../../home/kovid/work/calibre/manual/regexp.rst:82
 msgid ""
 "... wait just a minute, there's one last, really neat thing you can do with "
@@ -323,14 +295,12 @@ msgid ""
 "match the whole string!"
 msgstr "... Vänta lite, det finns en sista, riktigt snygg sak du kan göra med uppsättningar. Om du har en uppsättning som du tidigare passade mot kan du använda referenser till uppsättningen senare i uttrycket: Uppsättningar är numrerade med början 1, och du refererar till dem genom att flyktnumret på den uppsättning som du vill referera till, alltså den femte gruppen skulle kallad ``\\5``. Så, om du sökte ``([^]+)\\1`` i strängen \"Test Test\", skulle du passa mot hela strängen!"
 
-# ed781515fb134d96bbfaa61234f8afb3
 #: ../../home/kovid/work/calibre/manual/regexp.rst:86
 msgid ""
 "In the beginning, you said there was a way to make a regular expression case"
 " insensitive?"
 msgstr "I början sa du att det var ett sätt att göra ett reguljärt uttryck teckenskiftsokänsligt?"
 
-# 3bc52d89b3e841368174f2d4fcbb6612
 #: ../../home/kovid/work/calibre/manual/regexp.rst:88
 msgid ""
 "Yes, I did, thanks for paying attention and reminding me. You can tell "
@@ -342,7 +312,6 @@ msgid ""
 "\"Test\", \"tEst\", \"TEst\" and any case variation you could think of."
 msgstr "Ja, det gjorde jag, tack för att uppmärksammade och påminde mig. Du kan berätta för calibre hur du vill vissa saker hanteras med hjälp av något som kallas flaggor. Du inkluderar flaggor i ditt uttryck med hjälp av speciella konstruktionen ``(? Flaggor finns här)`` där, naturligtvis, skulle du byta ut \"flaggor finns här\" med de specifika flaggor du vill ha. För att ignorera teckenskiftsläge finns flaggan ``i`` därmed inkluderar du ``(?i)`` i ditt uttryck. Således ``test(?i)`` skulle passa mot \"Test\", \"tEst\", \"TEst\", och varje fall variation du kan tänka dig."
 
-# 2714907f4ecf4c77a4c37484049908be
 #: ../../home/kovid/work/calibre/manual/regexp.rst:90
 msgid ""
 "Another useful flag lets the dot match any character at all, *including* the"
@@ -354,19 +323,16 @@ msgid ""
 "very end. That way, they don't get mixed up with anything else."
 msgstr "En annan användbar flagga tillåter att pricka in alla tecken, *inklusive* på ny rad, flaggan ``s``. Om du vill använda flera flaggor i ett uttryck, bara sätta dem i samma gruppering:  ``(?is)`` skulle ignorera teckenskiftsläge och göra passa alla. Det spelar ingen roll vilken flagga som du anger först, ``(?si)`` skulle motsvara den ovan. Förresten, skulle bra ställen för att sätta flaggor i ditt uttryck är antingen i början eller slutet. Då behöver de inte blandas ihop med något annat."
 
-# c25dbf37dabb47248db7027d33ede3f6
 #: ../../home/kovid/work/calibre/manual/regexp.rst:93
 msgid ""
 "I think I'm beginning to understand these regular expressions now... how do "
 "I use them in calibre?"
 msgstr "Jag tror jag börjar förstå dessa reguljära uttryck nu ... hur använder jag dem i calibre?"
 
-# 2d055b4d341344a49606043e0dc081b7
 #: ../../home/kovid/work/calibre/manual/regexp.rst:96
 msgid "Conversions"
 msgstr "Omvandlingar"
 
-# 850e8dc2f5714328b6d38010c2d0e7fe
 #: ../../home/kovid/work/calibre/manual/regexp.rst:98
 msgid ""
 "Let's begin with the conversion settings, which is really neat. In the "
@@ -383,7 +349,6 @@ msgid ""
 "convert. Be careful if your conversion source has tags like this example::"
 msgstr "Låt oss börja med konverteringsinställningarna, vilket är riktigt snyggt. I Sök- och ersättsdel, kan mata in en regexp (kort för reguljära uttryck) som beskriver den sträng som kommer att bytas ut under omvandlingen. Den nätta delen är guiden. Klicka på guiden och du får en förhandsvisning av vad calibre \"ser\" under konverteringen. Bläddra ner till den sträng som du vill ta bort, markera och kopiera den, klistra in den i regexp fältet högst upp i fönstret. Om det finns variabla delar, t.ex. sidnummer eller så använder uppsättningar och kvantifierare för att täcka dem, och medan du ändå håller på, kom ihåg att undkomma specialtecken, om det finns några. Klicka på knappen :guilabel:`Test` och calibre belyser delarna som skulle ersättas om du använder regexp. När du är nöjd, klicka på OK och konvertera. Var försiktig om din konverteringskällan har etiketter som detta exempel ::"
 
-# f6ed8427bbb34e1ab4ce3585702ab101
 #: ../../home/kovid/work/calibre/manual/regexp.rst:108
 msgid ""
 "(shamelessly ripped out of `this thread "
@@ -411,12 +376,10 @@ msgid ""
 " removal."
 msgstr "(skamlöst utsliten `denna tråd <http://www.mobileread.com/forums/showthread.php?t=75594\"> `_). Du skulle behöva ta bort en del av de etiketter också. I det här exemplet jag skulle rekommendera börjar med etiketten `` <b class = \"calibre2\"> ``, nu måste du sluta med motsvarande avslutande etikett (öppnande etikett är `` <tag> ``, avslutande etikett är `` </tag> ``), som helt enkelt är nästa `` </b> `` i detta fall. (Se en bra HTML-handboken eller fråga i forumet om du är osäker på denna punkt.) Öppnande etiketter kan vara beskrivna med ``<b.*?> ``, den avslutande etiketter med hjälp av `` </b> ``, vilket vi kunde ta bort allt mellan dessa etiketter med hjälp av ``<b.*?>.*?</b>.`` Men att använda detta uttryck skulle vara en dålig idé, eftersom det tar bort allt som omges av <b> - etiketter (som förresten, gör den medföljande text i fetstil), och det är en rimlig satsning som vi kommer att ta bort delar av boken på det här sättet. Istället, omfattar början av den medföljande strängen också, vilket gör det reguljära uttrycket ``<b.*?>\\s * Skapad \\ s + med \\ s + ABC \\ s + Amber \\ s + LIT. *?</b>`` det ``\\s`` med kvantifierare ingår här i stället för explicit använder utrymmena som sett i strängen för att fånga några varianter av den sträng som kan uppstå. Kom ihåg att kontrollera vad calibre kommer att ta bort för att se till att du inte bort några delar som du vill behålla, om du testar ett nytt uttryck. Om du bara kolla en förekomst, kanske du missar en obalans någon annanstans i texten. Observera också att om du av misstag tar bort fler eller färre etiketter än du faktiskt ville, calibre försöker reparera den skadade koden efter avlägsnandet gjorts."
 
-# ee65da6965b74d1499fe5d5d286dc50d
 #: ../../home/kovid/work/calibre/manual/regexp.rst:111
 msgid "Adding books"
 msgstr "Lägga till böcker"
 
-# 72d0fa9367e8446e8d5049e07446f4cb
 #: ../../home/kovid/work/calibre/manual/regexp.rst:113
 msgid ""
 "Another thing you can use regular expressions for is to extract metadata "
@@ -440,12 +403,10 @@ msgid ""
 "working expression."
 msgstr "En annan sak du kan använda reguljära uttryck för är att utvinna metadata från filnamn. Du hittar den här funktionen \"Lägga till böcker\" i en del av inställningarna. Det finns en speciell funktion här: Du kan använda fältnamn för metadatafält, till exempel `(?P<titel>)`` tyder på att Calibre använder denna del av strängen som boktiteln. De tillåtna fält namn upptas i fönstren, tillsammans med en annan trevlig testfält. Ett exempel: Säg att du vill importera en hel massa filer namnges som `` Klassiska texter: Den gudomliga komedin av Dante Alighieri.mobi``. (Uppenbarligen är detta redan i ditt bibliotek, eftersom vi alla älskar klassisk italiensk poesi) eller `` science epos: Stiftelsen Trilogy av Isaac Asimov.epub``. Detta är naturligtvis ett namngivningssystem som calibre inte kommer att packa några meningsfulla uppgifter ur sitt standarduttryck för att extrahera metadata är ``(?P<title>.+) - (?P<author>[^_]+)``. Ett reguljärt uttryck som fungerar här skulle vara ```[a-zA-Z]+: (?P<title>.+) by (?P<author>.+)``. Observera att inom gruppen för metadatafält, måste du använda uttryck för att beskriva vad fältet verkligen ska passa. Och också notera att, vid användning av testfältet calibre ger, måste du lägga till filändelsen till testning filnamn, annars kommer du inte få några passningar alls, trots användningen av ett fungerande uttryck."
 
-# e1411f7492fa442d95c5d96195eba8eb
 #: ../../home/kovid/work/calibre/manual/regexp.rst:117
 msgid "Bulk editing metadata"
 msgstr "Massredigera metadata"
 
-# 7df219cae52d4c7c905035db2d592828
 #: ../../home/kovid/work/calibre/manual/regexp.rst:119
 msgid ""
 "The last part is regular expression search and replace in metadata fields. "
@@ -472,7 +433,6 @@ msgid ""
 "behaviour here."
 msgstr "Den sista delen är reguljära uttryck sök och ersätt i metadatafält. Du kan komma åt detta genom att markera flera böcker i biblioteket och genom massmetadataredigering. Var mycket försiktig när du använder denna sista funktion, eftersom det kan göra **Mycket dåliga saker** till ditt bibliotek! Dubbelkolla att dina uttryck verkligen gör vad du vill att de ska med hjälp av testfält, och bara markera de böcker du verkligen vill förändra! I det reguljära uttrycket sökläget kan du söka i ett fält, byta ut texten med något och till och med skriva in resultatet i ett annat fält. Ett praktiskt exempel: Anta ditt bibliotek innehöll böcker av Frank Herberts Dune-serien, uppkallad efter stilen `` Dune 1 - Dune``, `` Dune 2 - Dune Messiah`` osv. Nu vill du få `` Dune`` in i serien fältet. Du kan göra det genom att söka efter ``\\d+(*.?) -.*`` I titelfältet och ersätta den med ``\\1`` i serien fältet. Se vad jag gjorde där? Det är en referens till den första gruppen som du byter ut seriefält med. Nu när du har serien allt klart, bara måste du göra en ny sökning efter ``.*? -``  I titelfältet och ersätta den med ``\"\"`` (en tom sträng), en gång i titelfältet, och ditt metadata är allt snyggt och prydligt. Är inte det bra? Förresten, i stället för att byta ut hela fältet, kan du också bifoga eller lägga till fältet, så, om du *ville* att bokens titel ska infogas med serier info, kan du göra det också. Som ni nu har utan tvivel märkt, det finns en kryssruta märkt :guilabel:`Skiftlägeskänslig`, så att du inte behöver använda flaggor för att välja beteende här."
 
-# 56339943aecb41e7961618efef075975
 #: ../../home/kovid/work/calibre/manual/regexp.rst:121
 msgid ""
 "Well, that just about concludes the very short introduction to regular "
@@ -482,7 +442,6 @@ msgid ""
 "<https://docs.python.org/2/library/re.html>`_."
 msgstr "Tja, det nästan avslutar en mycket kort introduktion till reguljära uttryck. Förhoppningsvis kommer jag ha visat dig tillräckligt för att åtminstone komma igång och så att du kan fortsätta lära dig själv - en bra utgångspunkt skulle vara  `Python dokumentationen för reguljära uttryck <https://docs.python.org/2/library/re.html>`_."
 
-# 22af259ceeb84f17b379c5939fecb7c2
 #: ../../home/kovid/work/calibre/manual/regexp.rst:123
 msgid ""
 "One last word of warning, though: Regexps are powerful, but also really easy"
@@ -493,47 +452,38 @@ msgid ""
 "learn from it."
 msgstr "Ett sista ord av varning, emellertid: Regexps är kraftfulla, men också riktigt lätt att göra fel. calibre ger riktigt bra testmöjligheter för att se om dina uttryck beter sig som du förväntar dig. Använd dem. Försök att inte skjuta dig själv i foten. (Gud, jag älskar det uttrycket ...) Men om du trots varningen, skada foten (eller andra kroppsdelar), försök att lära av det."
 
-# a61b10f49bbd4215ad4e8da2fe49f5ae
 #: ../../home/kovid/work/calibre/manual/regexp.rst:126
 msgid "Credits"
 msgstr "Erkännande"
 
-# 402ec8355bed4affbd733563ae3e386d
 #: ../../home/kovid/work/calibre/manual/regexp.rst:128
 msgid "Thanks for helping with tips, corrections and such:"
 msgstr "Tack för hjälp med tips, rättningar och liknande:"
 
-# e35cf794d1cd4e1882a82b54ce15c0af
 #: ../../home/kovid/work/calibre/manual/regexp.rst:130
 msgid "ldolse"
 msgstr "ldolse"
 
-# c446a365284d48aa8ecaa1ff5cd2a0b8
 #: ../../home/kovid/work/calibre/manual/regexp.rst:131
 msgid "kovidgoyal"
 msgstr "kovidgoyal"
 
-# 3021862f5b5c4076a652e93d0b445168
 #: ../../home/kovid/work/calibre/manual/regexp.rst:132
 msgid "chaley"
 msgstr "chaley"
 
-# 9303500025af4fcaba55f14aec59db5f
 #: ../../home/kovid/work/calibre/manual/regexp.rst:133
 msgid "dwanthny"
 msgstr "dwanthny"
 
-# c4d73d55a02b47cab7cc3c1055cb1fee
 #: ../../home/kovid/work/calibre/manual/regexp.rst:134
 msgid "kacir"
 msgstr "kacir"
 
-# 1e9fdda3f9394f05832ef77bd74af29d
 #: ../../home/kovid/work/calibre/manual/regexp.rst:135
 msgid "Starson17"
 msgstr "Starson17"
 
-# e75ba59692004de188b3baff781495d7
 #: ../../home/kovid/work/calibre/manual/regexp.rst:137
 msgid ""
 "For more about regexps see `The Python User Manual "
