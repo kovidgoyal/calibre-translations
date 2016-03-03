@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/calibre\n"
-"POT-Creation-Date: 2016-03-03 20:29+IST\n"
-"PO-Revision-Date: 2016-02-26 10:26+0000\n"
+"POT-Creation-Date: 2016-03-03 22:53+IST\n"
+"PO-Revision-Date: 2016-03-03 17:24+0000\n"
 "Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Dutch (http://www.transifex.com/calibre/calibre/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -1109,7 +1109,7 @@ msgstr "Pad naar bibliotheek ({0}) te lang. Moet minder dan {1} lettertekens zij
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:411
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/choose_library.py:121
 #: /home/kovid/work/calibre/src/calibre/gui2/wizard/__init__.py:667
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1555
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1561
 #: /home/kovid/work/calibre/src/calibre/library/database2.py:105
 #: /home/kovid/work/calibre/src/calibre/library/database2.py:114
 #, python-format
@@ -1358,6 +1358,10 @@ msgid ""
 "\n"
 "Everything after the -- is passed to the script.\n"
 msgstr "{0}\n\nVerscheidene commandoregel interfaces nuttig voor debugging calibre. Zonder opties start dit commando een geintegreerde python interpreter. Men kan ook de main\ncalibre GUI gebruiken, het calibre leesvenster en de calibre editor in de debug modus.\n\nHet bevat ook interfaces voor verschillende onderdelen van  calibre die geen specifieke\ncommandoregel tools hebben, zoals font subsetting, de E-boek diff tool enzovoort.\n\nMen kan ook %prog gebruiken om op zichzelf staande scripts te draaien. Om dat te doen moet dit zo gebruikt worden:\n\n    {1}\n\nAlles ná  -- wordt doorgegeven aan het script.\n"
+
+#: /home/kovid/work/calibre/src/calibre/debug.py:31
+msgid "%prog [options]"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/debug.py:32
 msgid "Run python code."
@@ -4982,6 +4986,11 @@ msgid "Collections"
 msgstr "Collecties"
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/metadata/cli.py:20
+#, python-format
+msgid "%%prog ebook_file ["
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/cli.py:20
 msgid "options"
 msgstr "Opties"
 
@@ -6319,6 +6328,12 @@ msgstr "## Bijschaven: %s"
 #, python-format
 msgid "Polishing took: %.1f seconds"
 msgstr "Bijschaven nam: %.1f seconden in beslag"
+
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/main.py:266
+msgid ""
+"%prog [options] input_file [output_file]\n"
+"\n"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/main.py:274
 msgid ""
@@ -9465,7 +9480,7 @@ msgid "The filename {0} will be {1}"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/add_filters.py:128
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1175
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1181
 msgid "added"
 msgstr "toegevoegd"
 
@@ -17670,11 +17685,11 @@ msgstr "E-boek openen"
 
 #: /home/kovid/work/calibre/src/calibre/gui2/main.py:29
 msgid ""
-"%prog [opts] [path_to_ebook]\n"
+"%prog [options] [path_to_ebook]\n"
 "\n"
 "Launch the main calibre Graphical User Interface and optionally add the ebook at\n"
 "path_to_ebook to the database.\n"
-msgstr "%prog [opts] [path_to_ebook]\n\nLancer de hoofd calibre grafische gebruikers interfance en voeg optioneel het ebook met locatie\npath_to_ebook toe aan de databank. \n"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/main.py:36
 msgid "Use the library located at the specified path."
@@ -26670,7 +26685,7 @@ msgid "Font faces for %s"
 msgstr "Letterbeeld voor %s"
 
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/manage_fonts.py:47
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1165
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1171
 msgid "Name:"
 msgstr "Naam:"
 
@@ -31631,7 +31646,7 @@ msgid ""
 msgstr "Filter de resultaten op de zoekoperatie. Voor het indeling van de zoekopdracht kunt u de zoek-gerelateerde documentatie in de gebruikershandleiding raadplegen. Standaard word er niet gefilterd."
 
 #: /home/kovid/work/calibre/src/calibre/library/cli.py:208
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1415
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1421
 msgid ""
 "The maximum width of a single line in the output. Defaults to detecting "
 "screen size."
@@ -32088,42 +32103,48 @@ msgstr "Fout: U moet een kolomlabel opgeven"
 #: /home/kovid/work/calibre/src/calibre/library/cli.py:1143
 msgid ""
 "\n"
-"    %prog saved_searches [options] list\n"
-"    %prog saved_searches add name search\n"
-"    %prog saved_searches remove name\n"
+"    %prog saved_searches [options] (list|add|remove)\n"
 "\n"
 "    Manage the saved searches stored in this database.\n"
 "    If you try to add a query with a name that already exists, it will be\n"
 "    replaced.\n"
+"\n"
+"    Syntax for adding:\n"
+"\n"
+"    %prog saved_searches add search_name search_expression\n"
+"\n"
+"    Syntax for removing:\n"
+"\n"
+"    %prog saved_searches remove search_name\n"
 "    "
-msgstr "\n    %prog saved_searches [opties] list\n    %prog saved_searches add naam_zoekactie\n    %prog saved_searches remove naam\n\n    Beheer de opgeslagen zoekacties opgeslagen in deze database.\n    Als een zoekopdracht met een bestaande naam wordt opgegeven\n    dan wordt de oude opdracht vervangen.\n    "
+msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1160
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1166
 msgid "Error: You must specify an action (add|remove|list)"
 msgstr "Fout: U moet een taak opgeven  (add|remove|list)"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1166
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1172
 msgid "Search string:"
 msgstr "Zoektekst:"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1172
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1178
 msgid "Error: You must specify a name and a search string"
 msgstr "Fout: U moet een naam en een zoektekst opgeven"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1180
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1186
 msgid "Error: You must specify a name"
 msgstr "Fout: U moet een naam opgeven"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1183
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1189
 msgid "removed"
 msgstr "verwijderd"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1187
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1193
 #, python-format
 msgid "Error: Action %s not recognized, must be one of: (add|remove|list)"
 msgstr "Fout: Taak %s wordt niet herkend, het moet een van deze zijn : (add|remove|list)"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1194
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1200
 msgid ""
 "%prog backup_metadata [options]\n"
 "\n"
@@ -32135,13 +32156,13 @@ msgid ""
 "automatically, every time metadata is changed.\n"
 msgstr "%prog backup_metadata [options]\n\nMaak van de metadata opgeslagen in de database individuele reserve OPF bestanden\nin de map van elk boek. Normaal gebeurt dit automatisch, maar u kunt dit\ncommando gebruiken om re-generatie van OPF files te forceren, met de --all optie.\n\nNote that there is normally no need to do this, as the OPF files are backed up\nautomatically, every time metadata is changed.\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1205
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1211
 msgid ""
 "Normally, this command only operates on books that have out of date OPF "
 "files. This option makes it operate on all books."
 msgstr "Normaal gesproken werkt dit commando enkel op boeken met verouderde OPF bestanden. Deze optie zorgt dat het op alle boeken werkt."
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1244
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1250
 #, python-brace-format
 msgid ""
 "%prog check_library [options]\n"
@@ -32149,34 +32170,34 @@ msgid ""
 "Perform some checks on the filesystem representing a library. Reports are {0}\n"
 msgstr "%prog check_library [opties]\n\nVoer controles uit op het bestandssysteem van de bibliotheek. Rapporten zijn {0}\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1251
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1407
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1257
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1413
 msgid "Output in CSV"
 msgstr "Uitvoer naar CSV"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1254
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1260
 msgid ""
 "Comma-separated list of reports.\n"
 "Default: all"
 msgstr "Kommagescheiden lijst van rapporten.\nStandaard: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1258
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1264
 msgid ""
 "Comma-separated list of extensions to ignore.\n"
 "Default: all"
 msgstr "Kommagescheiden lijst van te negeren extensies.\nStandaard: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1262
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1268
 msgid ""
 "Comma-separated list of names to ignore.\n"
 "Default: all"
 msgstr "Kommagescheiden lijst van te negeren namen.\nStandaard: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1292
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1298
 msgid "Unknown report check"
 msgstr "Onbekende rapportcontrole"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1330
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1336
 msgid ""
 "%prog restore_database [options]\n"
 "\n"
@@ -32191,18 +32212,18 @@ msgid ""
 "    "
 msgstr "%prog restore_database [opties]\n\nHerstel deze database met de metadata die opgeslagen zijn in de OPF-bestanden\nin elke map van de bibliotheek. Dit is nuttig als uw metadata.db-bestand corrupt is.\n\nWAARSCHUWING: Dit zal uw database compleet herbouwen. U raakt alle\nbewaarde zoektermen, gebruikerscategorieën, adapters, conversie-instellingen\nen recepten kwijt. Herstelde metadata zullen slechts zo accuraat zijn als wat er\ngevonden is in de OPF-bestanden.\n    "
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1344
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1350
 msgid ""
 "Really do the recovery. The command will not run unless this option is "
 "specified."
 msgstr "Het herstel echt uitvoeren. Het commando zal niet uitgevoerd worden tenzij deze optie ingesteld is."
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1356
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1362
 #, python-format
 msgid "You must provide the %s option to do a recovery"
 msgstr "U moet de %s-optie meegeven om herstel uit te voeren"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1396
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1402
 msgid ""
 "%prog list_categories [options]\n"
 "\n"
@@ -32210,33 +32231,33 @@ msgid ""
 "information is the equivalent of what is shown in the tags pane.\n"
 msgstr "%prog list_categories [opties]\n\nMaak een rapport van de categorie-informatie in de database. De\ninformatie is gelijk aan wat er in het labelpaneel staat.\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1404
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1410
 msgid ""
 "Output only the number of items in a category instead of the counts per item"
 " within the category"
 msgstr "Toon alleen het aantal items in een categorie in plaats van de aantallen per item binnen in de categorie"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1409
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1415
 msgid ""
 "The character to put around the category value in CSV mode. Default is "
 "quotes (\")."
 msgstr "Het teken om rondom de categorie waarde te plaatsen in CSV modus. Standaard is dubbele aanhalingstekens (\")."
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1412
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1418
 msgid ""
 "Comma-separated list of category lookup names.\n"
 "Default: all"
 msgstr "Kommagescheiden lijst van categorie-opzoeknamen.\nStandaard: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1418
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1424
 msgid "The string used to separate fields in CSV mode. Default is a comma."
 msgstr "Het teken dat gebruikt wordt om velden te scheiden in CSV-modus. Standaard is dit een komma."
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1456
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1462
 msgid "CATEGORY ITEMS"
 msgstr "Categorie-items"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1523
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1529
 msgid ""
 "%prog clone path/to/new/library\n"
 "\n"
@@ -32248,21 +32269,21 @@ msgid ""
 "    "
 msgstr "%prog clone path/to/new/library\n\nKloon de huidige bibliotheek. Dit maakt een nieuwe lege bibliotheek aan die dezelfde\naangepaste kolommen, virtuele bibliotheken en andere instellingen als de huidige bevat.\n\nDe gekloonde bibliotheek zal geen boeken bevatten. Als u een echt duplicaat, inclusief\nalle boeken wilt maken, kunt u eenvoudigweg uw de bibliotheek map kopiëren in uw bestandsbeheer applicatie.\n    "
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1539
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1545
 msgid "Error: You must specify the path to the cloned library"
 msgstr "Fout: u moet het pad aangeven naar de gekloonde bibliotheek"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1548
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1554
 msgid "The location for the new library is the same as the current library"
 msgstr "De locatie voor de nieuwe bibliotheek is dezelfde als voor de huidige."
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1552
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1558
 #, python-format
 msgid ""
 "%s is not empty. You must choose an empty directory for the new library."
 msgstr "%s is niet leeg. U moet een lege map kiezen voor de nieuwe bibliotheek."
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1564
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1570
 #, python-brace-format
 msgid ""
 "%prog search [options] search expression\n"
@@ -32275,19 +32296,19 @@ msgid ""
 "language, for example: {0}\n"
 msgstr "%prog search [opties] zoek uitdrukking\n\nZoek de bibliotheek voor de specifieke zoek term, geeft een komma gescheiden\nlijst van boek IDs terug die overeen komen met de zoek uitdrukking. het uitvoer formaat is nuttig\nom andere commando's uit te voeren die een lijst van IDs aanvaarden als invoer\n\nDe zoekn expresie kan uit eender welke query uit calibres zoek systeem bestaan\nbijvoorbeeld: {0}\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1575
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1581
 msgid "The maximum number of results to return. Default is all results."
 msgstr "Het maximum aantal resultaten om weer te geven. Standaard is alle resultaten"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1591
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1597
 msgid "Error: You must specify the search expression"
 msgstr "Fout: U moet een zoek term ingeven"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1597
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1603
 msgid "No books matching the search expression:"
 msgstr "Geen boeken gevonden die overeen komen met de zoek term "
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1604
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1610
 #, python-format
 msgid ""
 "%%prog command [options] [arguments]\n"
@@ -32881,11 +32902,11 @@ msgstr "U kan gebruk informatie van ongedocumenteerde commandos zien door ze uit
 msgid "Change Language"
 msgstr "Taal wisselen"
 
-#: /home/kovid/work/calibre/src/calibre/srv/code.py:60
+#: /home/kovid/work/calibre/src/calibre/srv/code.py:61
 msgid "Loading library, please wait"
 msgstr "Bibliotheek laden, even wachten"
 
-#: /home/kovid/work/calibre/src/calibre/srv/code.py:237
+#: /home/kovid/work/calibre/src/calibre/srv/code.py:255
 #, python-format
 msgid "No book with id: %d in library"
 msgstr ""

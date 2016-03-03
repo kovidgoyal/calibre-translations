@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/calibre\n"
-"POT-Creation-Date: 2016-03-03 20:29+IST\n"
-"PO-Revision-Date: 2016-02-26 10:26+0000\n"
+"POT-Creation-Date: 2016-03-03 22:53+IST\n"
+"PO-Revision-Date: 2016-03-03 17:24+0000\n"
 "Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Japanese (http://www.transifex.com/calibre/calibre/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1100,7 +1100,7 @@ msgstr "ライブラリのパス({0})が長すぎます。{1}文字以下にし�
 #: /home/kovid/work/calibre/src/calibre/gui2/actions/choose_library.py:411
 #: /home/kovid/work/calibre/src/calibre/gui2/dialogs/choose_library.py:121
 #: /home/kovid/work/calibre/src/calibre/gui2/wizard/__init__.py:667
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1555
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1561
 #: /home/kovid/work/calibre/src/calibre/library/database2.py:105
 #: /home/kovid/work/calibre/src/calibre/library/database2.py:114
 #, python-format
@@ -1349,6 +1349,10 @@ msgid ""
 "\n"
 "Everything after the -- is passed to the script.\n"
 msgstr "{0}\n\nCalibre デバッグ用に有用なコマンドラインインターフェイスです。オプションなしで\n実行すると内蔵の Python インタプリタを起動します。ここから Calibre GUI や\nビューアー、Calibre エディタをデバッグモードで起動できます。\n\nまた、フォントサブセット化、電子書籍差分ツールなど、コマンドラインツールにない\nちょっとしたインターフェイスが含まれています。\n\nスタンドアロンスクリプトを実行するには、%prog を使用します。使い方はこちら:\n\n{1}\n\n”--” の後に付けるとスクリプトに渡します。\n"
+
+#: /home/kovid/work/calibre/src/calibre/debug.py:31
+msgid "%prog [options]"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/debug.py:32
 msgid "Run python code."
@@ -4972,6 +4976,11 @@ msgid "Collections"
 msgstr "コレクション"
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/metadata/cli.py:20
+#, python-format
+msgid "%%prog ebook_file ["
+msgstr ""
+
+#: /home/kovid/work/calibre/src/calibre/ebooks/metadata/cli.py:20
 msgid "options"
 msgstr "オプション"
 
@@ -6307,6 +6316,12 @@ msgstr "## 最適化中: %s"
 #, python-format
 msgid "Polishing took: %.1f seconds"
 msgstr "本の最適化 経過時間: %.1f 秒"
+
+#: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/main.py:266
+msgid ""
+"%prog [options] input_file [output_file]\n"
+"\n"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/ebooks/oeb/polish/main.py:274
 msgid ""
@@ -9451,7 +9466,7 @@ msgid "The filename {0} will be {1}"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/add_filters.py:128
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1175
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1181
 msgid "added"
 msgstr "追加された"
 
@@ -17654,11 +17669,11 @@ msgstr "電子書籍を開く"
 
 #: /home/kovid/work/calibre/src/calibre/gui2/main.py:29
 msgid ""
-"%prog [opts] [path_to_ebook]\n"
+"%prog [options] [path_to_ebook]\n"
 "\n"
 "Launch the main calibre Graphical User Interface and optionally add the ebook at\n"
 "path_to_ebook to the database.\n"
-msgstr "%prog [opts] [path_to_ebook]\n\nCalibre Graphical User Interface を起動し、オプションの引数\npath_to_ebook にある電子書籍をデータベースに追加します。\n"
+msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/main.py:36
 msgid "Use the library located at the specified path."
@@ -26653,7 +26668,7 @@ msgid "Font faces for %s"
 msgstr ""
 
 #: /home/kovid/work/calibre/src/calibre/gui2/tweak_book/manage_fonts.py:47
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1165
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1171
 msgid "Name:"
 msgstr "名前:"
 
@@ -31613,7 +31628,7 @@ msgid ""
 msgstr "検索文字列で結果をフィルターする。検索文字列のフォーマットについては、ユーザーマニュアルの検索関連のドキュメントを参照してください。デフォルトは何もフィルターしません。"
 
 #: /home/kovid/work/calibre/src/calibre/library/cli.py:208
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1415
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1421
 msgid ""
 "The maximum width of a single line in the output. Defaults to detecting "
 "screen size."
@@ -32070,42 +32085,48 @@ msgstr "エラー：列ラベルを指定しなければなりません。"
 #: /home/kovid/work/calibre/src/calibre/library/cli.py:1143
 msgid ""
 "\n"
-"    %prog saved_searches [options] list\n"
-"    %prog saved_searches add name search\n"
-"    %prog saved_searches remove name\n"
+"    %prog saved_searches [options] (list|add|remove)\n"
 "\n"
 "    Manage the saved searches stored in this database.\n"
 "    If you try to add a query with a name that already exists, it will be\n"
 "    replaced.\n"
+"\n"
+"    Syntax for adding:\n"
+"\n"
+"    %prog saved_searches add search_name search_expression\n"
+"\n"
+"    Syntax for removing:\n"
+"\n"
+"    %prog saved_searches remove search_name\n"
 "    "
-msgstr "\n    %prog saved_searches [options] list\n    %prog saved_searches add name search\n    %prog saved_searches remove name\n\n    データベースに入れられた、保存された検索を管理します。\n    もしすでにある名前と同じ名前を追加しようとした場合、すでにある物は置き換えられます。\n    "
+msgstr ""
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1160
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1166
 msgid "Error: You must specify an action (add|remove|list)"
 msgstr "エラー：動作を指定しなければなりません。(add|remove|list)"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1166
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1172
 msgid "Search string:"
 msgstr "検索文字列:"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1172
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1178
 msgid "Error: You must specify a name and a search string"
 msgstr "エラー：名前と検索文字列を指定しなければなりません。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1180
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1186
 msgid "Error: You must specify a name"
 msgstr "エラー：名前を指定しなければなりません。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1183
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1189
 msgid "removed"
 msgstr "削除された"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1187
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1193
 #, python-format
 msgid "Error: Action %s not recognized, must be one of: (add|remove|list)"
 msgstr "Error: %sと言う動作がわかりません。次の中の物でなければなりません: (add|remove|list)"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1194
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1200
 msgid ""
 "%prog backup_metadata [options]\n"
 "\n"
@@ -32117,13 +32138,13 @@ msgid ""
 "automatically, every time metadata is changed.\n"
 msgstr "%prog backup_metadata [options]\n\nデータベースに保存された書誌情報のバックアップを、それぞれの本の\nディレクトリに個別のOPFファイルとして保存します。\n通常この処理は自動的に行われますが、--allオプションを\nつけて実行すると、強制的にOPFファイルの再生成が実行できます。\n\n通常は書誌情報を更新する毎にOPFファイルへのバックアップが自動的に\n行われるため、このコマンドを実行する必要はありません。\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1205
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1211
 msgid ""
 "Normally, this command only operates on books that have out of date OPF "
 "files. This option makes it operate on all books."
 msgstr "通常このコマンドは、古くなったOPFファイルに対してのみ実行されます。このオプションを指定すると、すべての本に対して実行されます。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1244
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1250
 #, python-brace-format
 msgid ""
 "%prog check_library [options]\n"
@@ -32131,34 +32152,34 @@ msgid ""
 "Perform some checks on the filesystem representing a library. Reports are {0}\n"
 msgstr "%prog check_library [options]\n\nライブラリのあるファイルシステムをチェックします。レポート：{0}\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1251
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1407
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1257
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1413
 msgid "Output in CSV"
 msgstr "CSVで出力"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1254
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1260
 msgid ""
 "Comma-separated list of reports.\n"
 "Default: all"
 msgstr "カンマ区切りのレポートのリスト\nデフォルト: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1258
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1264
 msgid ""
 "Comma-separated list of extensions to ignore.\n"
 "Default: all"
 msgstr "無視する拡張子(カンマ区切りのリスト)\nデフォルト: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1262
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1268
 msgid ""
 "Comma-separated list of names to ignore.\n"
 "Default: all"
 msgstr "無視する名前のカンマ区切りのリスト\nデフォルト: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1292
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1298
 msgid "Unknown report check"
 msgstr "不明なレポートチェック"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1330
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1336
 msgid ""
 "%prog restore_database [options]\n"
 "\n"
@@ -32173,18 +32194,18 @@ msgid ""
 "    "
 msgstr "%prog restore_database [options]\n\nCalibreライブラリの各フォルダーにあるOPFファイルから書誌情報を読み取り、データベースを再構築します。\nこれはmetadata.dbファイルが壊れてしまった時に有用です。\n\n注意: このコマンドは完全にデータベースを再生成します。すべての保存された検索、ユーザーカテゴリー、書誌情報変換ルール、書誌ごとの変換設定、カスタムレシピは失われます。再生された書誌情報は、OPFファイルの内容と同様になります。\n    "
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1344
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1350
 msgid ""
 "Really do the recovery. The command will not run unless this option is "
 "specified."
 msgstr "実際にリカバリーを行います。このコマンドはこのオプションを指定しなければ実行されません。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1356
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1362
 #, python-format
 msgid "You must provide the %s option to do a recovery"
 msgstr "実際にリカバリーを行うには%sオプションを指定しなければなりません。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1396
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1402
 msgid ""
 "%prog list_categories [options]\n"
 "\n"
@@ -32192,33 +32213,33 @@ msgid ""
 "information is the equivalent of what is shown in the tags pane.\n"
 msgstr "%prog list_categories [options]\n\nデータベース中のカテゴリー情報のレポートを作成します。情報はタグブラウザーに表示されるものと同等です。\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1404
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1410
 msgid ""
 "Output only the number of items in a category instead of the counts per item"
 " within the category"
 msgstr "カテゴリー内のアイテムのカウント番号ではなく、カテゴリー内のアイテム番号のみを出力します。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1409
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1415
 msgid ""
 "The character to put around the category value in CSV mode. Default is "
 "quotes (\")."
 msgstr "CSVモードでカテゴリーの値の周りを囲む文字。デフォルトはダブルクオート(\")。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1412
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1418
 msgid ""
 "Comma-separated list of category lookup names.\n"
 "Default: all"
 msgstr "カンマ区切りのカテゴリーの検索名リスト。\nデフォルト: all"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1418
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1424
 msgid "The string used to separate fields in CSV mode. Default is a comma."
 msgstr "CSVモードでのフィールド区切りに使われる文字列。デフォルトはカンマです。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1456
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1462
 msgid "CATEGORY ITEMS"
 msgstr "カテゴリー・アイテム"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1523
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1529
 msgid ""
 "%prog clone path/to/new/library\n"
 "\n"
@@ -32230,21 +32251,21 @@ msgid ""
 "    "
 msgstr "%prog clone path/to/new/library\n\n現在のライブラリの複製を作成します。現在のライブラリと\n列、仮想ライブラリ、その他の設定が同じである、新しい空の\nライブラリが作成されます。\n\n複製されたライブラリに本は含まれません。すべての本を含む複製を\n作成したい場合には、単にライブラリのフォルダーをコピーしてください。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1539
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1545
 msgid "Error: You must specify the path to the cloned library"
 msgstr "エラー: 複製するライブラリのパスを指定してください"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1548
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1554
 msgid "The location for the new library is the same as the current library"
 msgstr "新しいライブラーの場所が現在のライブラリの場所と同じです。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1552
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1558
 #, python-format
 msgid ""
 "%s is not empty. You must choose an empty directory for the new library."
 msgstr "%s は空ではありません。新しいライブラリには空のディレクトリを指定してください。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1564
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1570
 #, python-brace-format
 msgid ""
 "%prog search [options] search expression\n"
@@ -32257,19 +32278,19 @@ msgid ""
 "language, for example: {0}\n"
 msgstr "%prog search [options] search expression\n\n検索条件を指定してライブラリを検索し、結果を本のIDのカンマ区切りリストで返します。\n出力された結果は、本のIDを引数にとる他のコマンドの入力として\n使用するのに便利です。\n\n以下のようにCalibreの強力な検索用言語が使用できます。例: {0}\n"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1575
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1581
 msgid "The maximum number of results to return. Default is all results."
 msgstr "返却する最大結果数。デフォルトはすべての結果。"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1591
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1597
 msgid "Error: You must specify the search expression"
 msgstr "エラー: 検索条件を指定してください"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1597
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1603
 msgid "No books matching the search expression:"
 msgstr "検索条件にマッチする本がありません"
 
-#: /home/kovid/work/calibre/src/calibre/library/cli.py:1604
+#: /home/kovid/work/calibre/src/calibre/library/cli.py:1610
 #, python-format
 msgid ""
 "%%prog command [options] [arguments]\n"
@@ -32863,11 +32884,11 @@ msgstr "文書化されていないコマンドの使用方法を知るには、
 msgid "Change Language"
 msgstr "言語の変更"
 
-#: /home/kovid/work/calibre/src/calibre/srv/code.py:60
+#: /home/kovid/work/calibre/src/calibre/srv/code.py:61
 msgid "Loading library, please wait"
 msgstr "ライブラリの読み込み中。お待ちくさい..."
 
-#: /home/kovid/work/calibre/src/calibre/srv/code.py:237
+#: /home/kovid/work/calibre/src/calibre/srv/code.py:255
 #, python-format
 msgid "No book with id: %d in library"
 msgstr ""
