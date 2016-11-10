@@ -31,8 +31,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-14 09:27+0530\n"
-"PO-Revision-Date: 2016-10-29 15:43+0000\n"
+"POT-Creation-Date: 2016-10-31 09:36+0530\n"
+"PO-Revision-Date: 2016-11-03 18:03+0000\n"
 "Last-Translator: Jellby <jellby@yahoo.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/calibre/calibre/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -1202,13 +1202,10 @@ msgstr "Altura de las miniaturas en el dispositivo"
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.THUMBNAIL_COMPRESSION_QUALITY:1
 msgid ""
-"Width for thumbnails on the device. Setting this will force thumbnails to "
-"this size, not preserving aspect ratio. If it is not set, then the aspect "
-"ratio will be preserved and the thumbnail will be no higher than "
-"THUMBNAIL_HEIGHT Compression quality for thumbnails. Set this closer to 100 "
-"to have better quality thumbnails with fewer compression artifacts. Of "
-"course, the thumbnails get larger as well."
-msgstr "Anchura de las miniaturas en el disposivio. Si se establece, se obliga a que las miniaturas tengan este tamaño, sin mantener las proporciones. Si no se establece, se matienen las proporciones y la altura de la mininatura no será mayor que THUMBNAIL_HEIGHT Calidad de compresión para las miniaturas. Cuanto más próximo a 100 mejor calidad y menos defectos de compresión tendrán las miniaturas, aunque también ocuparán más."
+"Compression quality for thumbnails. Set this closer to 100 to have better "
+"quality thumbnails with fewer compression artifacts. Of course, the "
+"thumbnails get larger as well."
+msgstr "Calidad de compresión para las miniaturas. Cuanto más cercano a 100, mejor será la calidad de las miniaturas y menores los defectos de compresión. Por supuesto, también ocuparán más espacio las miniaturas."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.WANTS_UPDATED_THUMBNAILS:1
@@ -1403,7 +1400,7 @@ msgid ""
 " can do some relatively time intensive checks. The default implementation "
 "returns True. This method is called only on windows. See also "
 ":meth:`can_handle`."
-msgstr "Método opcional para desempeñar más comprobaciones en un dispositivo para ver si este conductor es capaz de manejarlo. Si no lo es debería devolver Falso. Este método sólo es llamado después del vendedor, IDs de producto y después de que el BCD se haya emparejado, entonces eso puede hacer algunas comprobaciones intensivas de tiempo relativamente. La implementación por defecto devuelve Verdadero. Este método es llamado sólo en Windows. Vea también :meth:`can_handle`."
+msgstr "Método opcional para comprobar si este controlador puede manejar un dispositivo mediante más pruebas. Si no puede, debe devolver False. Este método sólo se ejecuta una vez que los identificadores del fabricante y del producto, así como el BCD se han reconocido, por lo que puede realizar pruebas que requieran un tiempo relativamente prolongado. La implementación predeterminada devuelve True. Este método sólo se ejecuta en Windows. Véase también :meth:`can_handle`."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.can_handle_windows:8
@@ -1440,7 +1437,7 @@ msgid ""
 "method :meth:`calibre.devices.usbms.device.Device.open` has an "
 "implementation of this function that should serve as a good example for USB "
 "Mass storage devices."
-msgstr "Desempeña cualquier inicio específico de dispositivo. Llamado después de que el dispositivo sea detectado pero antes de cualquier otra función que comunique con el dispositivo. Por ejemplo: Para dispositivos que se presenten a sí mismos como dispositivos me almacenamiento USB Mass, este método debería ser responsable de montar el dispositivo o si el dispositivo ha sido automontado, descubriendo dónde se ha montado. El método :meth:`calibre.devices.usbms.device.Device.open` tiene una implementación de esta función que debería servir como un buen ejemplo de dispositivo de almacenamiento USB Mass."
+msgstr "Realiza cualquier inicio específico del dispositivo. Se ejecuta una vez que se ha detectado el dispositivo, pero antes de cualquier otra función que comunique con él. Por ejemplo, para dispositivos que se muestran como dispositivos de almacenamiento masivo USB, este método será el responsable de montar el dispositivo o, si se ha montado automáticamente, averiguar dónde. El método :meth:`calibre.devices.usbms.device.Device.open` tiene una implementación de esta función que puede ser un buen ejemplo para dispositivos de almacenamiento masivo USB."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.open:11
@@ -1456,7 +1453,7 @@ msgid ""
 "id, bcd, manufacturer name, product name, device serial number). However, "
 "some devices have no serial number and on windows only the first three "
 "fields are present, the rest are None."
-msgstr "El dispositivo que estamos intentando abrir. Es un tuple de (ID de vendedor, ID de producto, BCD, nombre de fabricante, nombre de producto, número de serie de dispositivo). No obstante, algunos dispositivos no tienen número de serie y en Windows sólo los primeros tres campos están presentes, el resto son Ninguno."
+msgstr "El dispositivo que se intenta abrir. Es una tupla de (identificador de fabricante, identificador de producto, bcd, nombre de fabricante, nombre de producto, número de serie del dispositivo). Sin embargo, algunos dispositivos no tienen número de serie y en Windows sólo aparecen los tres primeros campos, el resto son None."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.open:20
@@ -1470,7 +1467,7 @@ msgstr "El UUID de la biblioteca de calibre actual. Puede ser None si no existe 
 msgid ""
 "Un-mount / eject the device from the OS. This does not check if there are "
 "pending GUI jobs that need to communicate with the device."
-msgstr "Desmontar / expulsar el dispositivo del OS Esto no verifica si hay trabajos GUI pendientes que necesiten comunicarse con el dispositivo."
+msgstr "Desmontar o expulsar el dispositivo del sistema operativo. Esto no comprueba si hay tareas de interfaz gráfica pendientes que tengan que comunicar con el dispositivo."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.eject:4
@@ -1500,7 +1497,7 @@ msgid ""
 "(device name, device version, software version on device, mime type) The "
 "tuple can optionally have a fifth element, which is a drive information "
 "dictionary. See usbms.driver for an example."
-msgstr "(nombre de dispositivo, versión de dispositivo, versión de software del dispositivo, tipo de mimo) El tuple puede opcionalmente tener un quinto elemento, que es un diccionario de información del conductor. Vea usbms.driver para un ejemplo."
+msgstr "(nombre del dispositivo, versión del dispositivo, versión del software en el dispositivo, tipo mime) La tupla puede tener un quinto elemento opcional, que es un diccionario de información de unidad. Puede verse un ejemplo en `usbms.driver`."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.get_driveinfo:1
@@ -1511,7 +1508,7 @@ msgid ""
 " called by calibre after the book lists have been loaded. Note that it is "
 "not called on the device thread, so the driver should cache the drive info "
 "in the books() method and this function should return the cached data."
-msgstr "Devuelve el diccionario driveinfo. Normalmente llamado desde get_device_information(), pero si la carga del driveinfo es lenta para este conductor, entonces debería fijar SLOW_DRIVEINFO. En este caso, este método será llamado por Calibre después de que las listas de libros hayan sido cargadas. Note que isto no es llamado en el hilo del dispositivo, así que el conductor debería almacenar el drive info en el método de los libros() y esta función debería devolver la información almacenada."
+msgstr "Devuelve el diccionario de información de dispositivo. Normalmente se ejecuta desde :meth:`get_device_information()`, pero si la carga de la información del dispositivo es lenta para este controlador, debería establecer `SLOW_DRIVEINFO`. En este caso, calibre ejecutará este método después de cargar la lista de libros. Tenga en cuenta que no se ejecuta en el hilo del dispositivo, por lo que el controlador debería almacenar en caché la información del dispositivo en el método :meth:`books()` y esta función debería devolver los datos almacenados."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.card_prefix:1
@@ -1519,7 +1516,7 @@ msgid ""
 "Return a 2 element list of the prefix to paths on the cards. If no card is "
 "present None is set for the card's prefix. E.G. ('/place', '/place2') (None,"
 " 'place2') ('place', None) (None, None)"
-msgstr "Devuelve una lista de 2 elementos del prefijo a caminos de las tarjetas. Si no hay tarjeta presente Ninguno es fijado para el prefijo de la tarjeta. E.G. ('/place', '/place2') (None, 'place2') ('place', None) (None, None)"
+msgstr "Devuelve una lista de dos elementos con los prefijos para las rutas de acceso en las tarjetas. Si no hay tarjeta, el prefijo correspondiente será None. Por ejemplo: ('/lugar', '/lugar2') (None, 'lugar2') ('lugar', None) (None, None)"
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.total_space:4
@@ -1548,7 +1545,7 @@ msgstr "Tarjeta de almacenamiento B"
 msgid ""
 "A 3 element list with total space in bytes of (1, 2, 3). If a particular "
 "device doesn't have any of these locations it should return 0."
-msgstr "Una lista de 3 elementos con espacio total en bytes de (1, 2, 3). Si un dispositivo particular no tiene ninguna de estas ubicaciones debería devolver 0."
+msgstr "Una lista de tres elementos con el espacio total en bytes de (1, 2, 3). Si un dispositivo concreto no tiene alguna de estas ubicaciones, debe devolver 0."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.free_space:4
@@ -1570,7 +1567,7 @@ msgstr "Tarjeta B"
 msgid ""
 "A 3 element list with free space in bytes of (1, 2, 3). If a particular "
 "device doesn't have any of these locations it should return -1."
-msgstr "Una lista de 3 elementos con espacio libre en bytes de (1, 2, 3). Si un dispositivo particular no tiene ninguna de esas ubicaciones debería devolver -1."
+msgstr "Una lista de tres elementos con el espacio libre en bytes de (1, 2, 3). Si un dispositivo concreto no tiene alguna de estas ubicaciones, debe devolver -1."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.books:1
@@ -1583,7 +1580,7 @@ msgid ""
 "If 'carda' or 'cardb' return a list of ebooks on the specific storage card, "
 "otherwise return list of ebooks in main memory of device. If a card is "
 "specified and no books are on the card return empty list."
-msgstr "Si 'carda' o 'cardb' devuelve una lista de libros a la tarjeta de almacenamiento específica, si no, devuelve una lista de libros a la memoria principal del dispositivo. Si una tarjeta es especificada y no hay libros en la terjeta, devuelve una lista vacía."
+msgstr "Si es 'carda' o 'cardb', devuelve una lista de los libros en la tarjeta de almacenamiento especificada, en caso contrario devuelve una lista de los libros en la memoria principal del dispositivo. Si se especifica una tarjeta y no hay libros en ella, devuelva una lista vacía."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.books:8
