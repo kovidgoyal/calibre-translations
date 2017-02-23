@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-27 09:16+0530\n"
-"PO-Revision-Date: 2017-01-27 07:16+0000\n"
+"POT-Creation-Date: 2017-02-12 07:41+0530\n"
+"PO-Revision-Date: 2017-02-20 13:46+0000\n"
 "Last-Translator: Jonatan Nyberg <jonatan@autistici.org>\n"
 "Language-Team: Swedish (http://www.transifex.com/calibre/calibre/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -81,6 +81,17 @@ msgid ""
 msgstr "Återge en uppsättning kanoniska representationer av ``url``. Grundinställningen använder bara servervärdnamn och sökväg för URL, ignorerar eventuella frågeparametrar, fragment, o.s.v. kanoniska representationer måste vara unika för alla webbadresser till den här nyhetskällan. Om de inte är det, så interna länkar kan lösas felaktigt."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.canonicalize_internal_url:0
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.is_link_wanted:0
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.postprocess_book:0
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.postprocess_html:0
+msgid "Parameters"
+msgstr "Parametrar"
+
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.canonicalize_internal_url:7
 msgid ""
 "Is True if the URL is coming from an internal link in an HTML file. False if"
@@ -148,10 +159,10 @@ msgstr "Överrid i en underklass för att anpassa utvinning av :term:`URL` som h
 #: calibre.web.feeds.news.BasicNewsRecipe.get_browser:1
 msgid ""
 "Return a browser instance used to fetch documents from the web. By default "
-"it returns a `mechanize <https://wwwsearch.sourceforge.net/mechanize/>`_ "
-"browser instance that supports cookies, ignores robots.txt, handles "
-"refreshes and has a mozilla firefox user agent."
-msgstr "Återge en webbläsarinstans som används för att hämta dokument från webben. Som standard återges en `mechanize (mekanisera) <https://wwwsearch.sourceforge.net/mechanize/>`_ browser instans som stöder cookies, ignorerar robots.txt, hanterar fräschar och har ett Mozilla Firefox användaragent."
+"it returns a `mechanize <https://github.com/jjlee/mechanize>`_ browser "
+"instance that supports cookies, ignores robots.txt, handles refreshes and "
+"has a mozilla firefox user agent."
+msgstr "Återge en webbläsarinstans som används för att hämta dokument från webben. Som standard återges en `mechanize (mekanisera) <https://github.com/jjlee/mechanize>`_ webbläsarinstans som stöder kakor, ignorerar robots.txt, hanterar uppdateringar och har en Mozilla Firefox användaragent."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.get_browser:6
@@ -522,7 +533,7 @@ msgid ""
 "Recipe specific options to control the conversion of the downloaded content "
 "into an e-book. These will override any user or plugin specified values, so "
 "only use if absolutely necessary. For example::"
-msgstr "Receptspecifika alternativ för att anpassa konvertering av nedladdat innehåll in i en e-bok. Dessa kommer åsidosätta alla användare eller insticksmodul specifika värden, så använd bara om det är absolut nödvändigt. Till exempel::"
+msgstr "Receptspecifika alternativ för att anpassa konvertering av nedladdat innehåll in i en e-bok. Dessa kommer åsidosätta alla användare eller insticksprogram specifika värden, så använd bara om det är absolut nödvändigt. Till exempel::"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.cover_margins:1
@@ -535,7 +546,7 @@ msgid ""
 "15px on the top and bottom. Color names defined at "
 "https://www.imagemagick.org/script/color.php Note that for some reason, "
 "white does not always work on windows. Use #ffffff instead"
-msgstr "Som standard återges omslagsbild av get_cover_url () och kommer att användas som omslag för tidskriften. Överridning av detta i ditt recept instruerar calibre att anpassa det nedladdade omslaget i en ram vars bredd och höjd uttrycks som en procentandel av den nedladdade omslaget. cover_margins = (10, 15, \"#ffffff\") fyller omslaget med en vit marginal 10 pixlar på vänster och höger, 15 pixlar på toppen och botten. Färgnamn som fastställts på https://www.imagemagick.org/script/color.php Notera att av någon anledning, vitt fungerar inte alltid på fönster. Använd #ffffff istället"
+msgstr "Som standard återges omslagsbild av get_cover_url () och kommer att användas som omslag för tidskriften. Överridning av detta i ditt recept instruerar calibre att anpassa det nedladdade omslaget i en ram vars bredd och höjd uttrycks som en procentandel av den nedladdade omslaget. cover_margins = (10, 15, \"#ffffff\") fyller omslaget med en vit marginal 10 pixlar på vänster och höger, 15 pixlar på toppen och botten. Färgnamn som fastställts på https://www.imagemagick.org/script/color.php Observera att av någon anledning, vitt fungerar inte alltid på fönster. Använd #ffffff istället"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.delay:1
@@ -599,6 +610,13 @@ msgid ""
 "Only one of :attr:`BasicNewsRecipe.match_regexps` or "
 ":attr:`BasicNewsRecipe.filter_regexps` should be defined."
 msgstr "Bara en av :attr:`BasicNewsRecipe.match_regexps` eller :attr:`BasicNewsRecipe.filter_regexps` skulle bara definierad."
+
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.handle_gzip:1
+msgid ""
+"Set to True if you want to use gziped transfers. Note that some old servers "
+"flake out with this so it is off by default."
+msgstr "Ställ in till True om du vill använda gzippade överföringar. Observera att vissa gamla servrar fungerar dåligt med detta så den är avstängd som standard."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.ignore_duplicate_articles:1

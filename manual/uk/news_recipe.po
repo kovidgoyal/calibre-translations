@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-27 09:16+0530\n"
-"PO-Revision-Date: 2017-02-08 14:32+0000\n"
+"POT-Creation-Date: 2017-02-12 07:41+0530\n"
+"PO-Revision-Date: 2017-02-12 11:39+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/calibre/calibre/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgid ""
 "actually used is device dependent (currently only used by the Kindles). Note"
 " that the referenced image must be one that was successfully downloaded, "
 "otherwise it will be ignored."
-msgstr ""
+msgstr "Викликається з populate_article_metadata із атрибутом src теґу <img> зі статті, яку слід використовувати як мініатюру, що відповідає статті у таблиці вмісту. Мініатюра, яку насправді буде використано залежить від пристрою (у поточній версії використовується лише у пристроях Kindle). Зауважте, що еталонне зображення має бути серед тих, які було успішно отримано, інакше його буде проігноровано."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.adeify_images:1
@@ -79,6 +79,17 @@ msgid ""
 "unique across all URLs for this news source. If they are not, then internal "
 "links may be resolved incorrectly."
 msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.canonicalize_internal_url:0
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.is_link_wanted:0
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.postprocess_book:0
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.postprocess_html:0
+msgid "Parameters"
+msgstr "Параметри"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.canonicalize_internal_url:7
@@ -148,9 +159,9 @@ msgstr ""
 #: calibre.web.feeds.news.BasicNewsRecipe.get_browser:1
 msgid ""
 "Return a browser instance used to fetch documents from the web. By default "
-"it returns a `mechanize <https://wwwsearch.sourceforge.net/mechanize/>`_ "
-"browser instance that supports cookies, ignores robots.txt, handles "
-"refreshes and has a mozilla firefox user agent."
+"it returns a `mechanize <https://github.com/jjlee/mechanize>`_ browser "
+"instance that supports cookies, ignores robots.txt, handles refreshes and "
+"has a mozilla firefox user agent."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
@@ -601,6 +612,13 @@ msgid ""
 msgstr "Має бути визначено лише один з атрибутів, :attr:`BasicNewsRecipe.match_regexps` або :attr:`BasicNewsRecipe.filter_regexps`."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.handle_gzip:1
+msgid ""
+"Set to True if you want to use gziped transfers. Note that some old servers "
+"flake out with this so it is off by default."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.ignore_duplicate_articles:1
 msgid ""
 "Ignore duplicates of articles that are present in more than one section. A "
@@ -817,7 +835,7 @@ msgid ""
 "is True this is set to the device screen dimensions set by the output "
 "profile unless there is no profile set, in which case it is left at whatever"
 " value it has been assigned (default None)."
-msgstr ""
+msgstr "Максимальні розміри (w,h), до яких слід масштабувати зображення. Якщо scale_news_images_to_device має значення True, профілем виведення даних буде встановлено розмірності екрана пристрою, якщо такий профіль встановлено. Якщо профіль не встановлено, значення змінено не буде (типовим значенням є None)."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.scale_news_images_to_device:1
@@ -844,7 +862,7 @@ msgid ""
 "The CSS that is used to style the templates, i.e., the navigation bars and "
 "the Tables of Contents. Rather than overriding this variable, you should use"
 " `extra_css` in your recipe to customize look and feel."
-msgstr ""
+msgstr "Таблиця стилів CSS, яка використовується для шаблонів, тобто для панелей навігації та таблиці змісту. Замість перевизначення цієї змінної, вам слід скористатися у вашому рецепті `extra_css` для налаштовування вигляду та поведінки."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.timefmt:1
@@ -870,4 +888,4 @@ msgid ""
 " the length of the embedded content. If `None`, then the default guessing is"
 " used. If `True` then the we always assume the feeds has embedded content "
 "and if `False` we always assume the feed does not have embedded content."
-msgstr ""
+msgstr "Зазвичай, ми намагаємося встановити, чи містить подача повні тексти статей на основі об’єму вбудованих даних. Якщо має значення `None`, буде використано типовий спосіб визначення. Якщо має значення `True`, програма завжди вважатиме, що у подачу вбудовано дані. Якщо ж має значення `False`, програма завжди вважатиме, що у подачі не міститься вмісту статей."
