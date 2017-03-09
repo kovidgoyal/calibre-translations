@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 07:41+0530\n"
-"PO-Revision-Date: 2017-02-20 19:36+0000\n"
+"POT-Creation-Date: 2017-02-24 08:14+0530\n"
+"PO-Revision-Date: 2017-03-07 20:38+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/calibre/calibre/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -372,7 +372,7 @@ msgid ""
 "file will remain available even after being closed and will only be removed "
 "on interpreter shutdown. Use the ``name`` member of the returned object to "
 "access the full path to the created temporary file."
-msgstr ""
+msgstr "Повертає файлоподібний об’єкт, який є тимчасовим файлом у файловій системі. Цей файл залишатиметься доступним навіть після його закриття. Файл буде вилучено під час завершення роботи інтерпретатора коду. Скористайтеся учасником ``name`` повернутого об’єкта, щоб отримати доступу до повного шляху до створеного тимчасового файла."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.Plugin.temporary_file:6
@@ -462,7 +462,7 @@ msgid ""
 "an Exception. The default implementation simply return the path to the "
 "original ebook. Note that the path to the original file (before any file "
 "type plugins are run, is available as self.original_path_to_file)."
-msgstr ""
+msgstr "Запустити додаток. Має бути реалізовано у підкласах. Має вносити усі потрібні зміни до електронної книги і повертати абсолютний шлях до файла зміненої книги. Якщо вносити зміни не потрібно. Якщо станеться помилка, має повідомляти про виключення (Exception). Типова реалізація просто повертає шлях до початкового файла електронної книги. Зауважте, що шлях до початкового файла (до запуску будь-яких додатків), доступний як self.original_path_to_file."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.run:11
@@ -489,7 +489,7 @@ msgid ""
 "when the book record is created for the first time. This method is called "
 "whenever a new file is added to a book record. It is useful for modifying "
 "the book record based on the contents of the newly added file."
-msgstr ""
+msgstr "Викликається після імпортування, тобто після того, як файл книги було додано до бази даних. Зауважте, що цей метод відрізняється від :meth:`postadd`, який викликається, коли запис книги створюється вперше. Цей метод викликається кожного разу, коли до запису книги додається новий файл. Корисний для внесення змін до запису книги на основі вмісту нового доданого файла."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.postimport:6
@@ -517,7 +517,7 @@ msgid ""
 "record with possibly more than one book file has been created for the first "
 "time. This is useful if you wish to modify the book record in the database "
 "when the book is first added to calibre."
-msgstr ""
+msgstr "Викликається після додавання (add), тобто після того, як книгу буде додано до бази даних. Зауважте, що цей метод відрізняється від :meth:`postimport`, який викликається після додавання окремого файла до запису книги. postadd() викликається, лише якщо вперше створюється увесь запис книги, можливо з декількома файлами книги. Корисно, якщо вам потрібно внести зміни до запису книги у базі даних, якщо книгу вперше додано до calibre."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.postadd:9
@@ -526,7 +526,7 @@ msgid ""
 "this might or might not point to an actual existing file, as sometimes files"
 " are added as streams. In which case it might be a dummy value or a non-"
 "existent path."
-msgstr ""
+msgstr "Прив’язка формату файла до шляху, з якого було додано цей формат файла. Зауважте, що цей шлях може і не вказувати на наявний файл, оскільки іноді файли додаються як потоки даних. У такому випадку значення шляху може бути фіктивним або таким, якого не існує."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.postadd:13
@@ -561,7 +561,7 @@ msgid ""
 "data. :param type: The type of file. Guaranteed to be one of the entries in "
 ":attr:`file_types`. :return: A "
 ":class:`calibre.ebooks.metadata.book.Metadata` object"
-msgstr ""
+msgstr "Повертає метадані для файла, представленого потоком даних (файлоподібним об’єктом, для якого передбачено підтримку читання). Надсилає повідомлення щодо виключення, якщо сталася помилка із вхідними даними. :param type: тип файла. Гарантовано є одним із записів у :attr:`file_types`. :return: об’єкт класу :class:`calibre.ebooks.metadata.book.Metadata`."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.MetadataWriterPlugin.set_metadata:1
@@ -571,7 +571,7 @@ msgid ""
 "data. :param type: The type of file. Guaranteed to be one of the entries in "
 ":attr:`file_types`. :param mi: A "
 ":class:`calibre.ebooks.metadata.book.Metadata` object"
-msgstr ""
+msgstr "Встановлює метадані для файла, представленого потоком даних (файлоподібним об’єктом, для якого передбачено підтримку читання). Надсилає повідомлення щодо виключення, якщо сталася помилка із вхідними даними. :param type: тип файла. Гарантовано є одним із записів у :attr:`file_types`. :param mi: об’єкт класу :class:`calibre.ebooks.metadata.book.Metadata`."
 
 #: ../../home/kovid/work/calibre/manual/plugins.rst:54
 msgid "Catalog plugins"
@@ -761,7 +761,7 @@ msgid ""
 "to easily visit the books page at this source. If no URL is found, return "
 "None. This method must be quick, and consistent, so only implement it if it "
 "is possible to construct the URL from a known scheme given identifiers."
-msgstr ""
+msgstr "Повертає триелементний кортеж або `None`. Триелементний кортеж записується у такому форматі: (тип ідентифікатора, значення ідентифікатора, адреса). Адресою є адреса (URL) книги, що визначається за ідентифікаторами у цьому джерелі. Тип ідентифікатора та значення ідентифікатора визначають ідентифікатор, що відповідає адресі. Адреса має бути придатною для переходу за нею користувача за допомогою програми для перегляду сторінок інтернету. Її призначено для створення придатного до натискання посилання для відвідання користувачем сторінки книги у цьому джерелі. Якщо адреси не буде знайдено, буде повернуто `None`. Цей метод має працювати швидко і послідовно, отже, вам слід реалізовувати його, лише якщо можна побудувати адресу на основі відомих ідентифікаторів з бази даних."
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/metadata/sources/base.pydocstring
 #: of calibre.ebooks.metadata.sources.base.Source.get_book_url_name:1
@@ -842,7 +842,7 @@ msgid ""
 "which the results were returned by the metadata source for this query. This "
 "integer will be used by :meth:`compare_identify_results`. If the order is "
 "unimportant, set it to zero for every result."
-msgstr ""
+msgstr "Усі об’єкти Metadata, які додаються до result_queue за допомогою цього методу, повинні мати атрибут `source_relevance`, тобто ціле число, яке позначає порядок, у якому слід повертати результати з цього джерела метаданих для цього запиту. Це ціле число буде використано методом :meth:`compare_identify_results`. Якщо порядок не є важливим, встановіть нульове значення для усіх результатів."
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/metadata/sources/base.pydocstring
 #: of calibre.ebooks.metadata.sources.base.Source.identify:19
@@ -927,14 +927,14 @@ msgid ""
 "Generate a sort key for comparison of the relevance of Metadata objects, "
 "given a search query. This is used only to compare results from the same "
 "metadata source, not across different sources."
-msgstr ""
+msgstr "Створює ключ упорядковування для порівняння відповідності об’єктів Metadata за заданим запитом щодо пошуку. Використовується лише для порівняння результатів з одного джерела метаданих, а не з різних джерел."
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/metadata/sources/base.pydocstring
 #: of calibre.ebooks.metadata.sources.base.InternalMetadataCompareKeyGen:5
 msgid ""
 "The sort key ensures that an ascending order sort is a sort by order of "
 "decreasing relevance."
-msgstr ""
+msgstr "Ключ упорядковування забезпечує відповідність упорядковування за зростанням упорядковуванню за спаданням відповідності."
 
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/metadata/sources/base.pydocstring
 #: of calibre.ebooks.metadata.sources.base.InternalMetadataCompareKeyGen:8
@@ -1011,7 +1011,7 @@ msgid ""
 "can be both image collections and non-image collections. If you set this to "
 "True, you must implement the get_images() method that returns a list of "
 "images."
-msgstr ""
+msgstr "Якщо має значення True, цей додаток вхідних даних створює збірку зображень, по одному на файл HTML. Можна встановлювати під час роботи додатка, у методі convert, якщо файли вхідних даних можуть бути як збірками зображень, так і збірками без зображень. Якщо ви встановите значення True, вам слід реалізувати метод get_images(), який повертатиме список зображень."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/conversion.pydocstring
 #: of calibre.customize.conversion.InputFormatPlugin.core_usage:1
@@ -1042,7 +1042,7 @@ msgid ""
 "Options shared by all Input format plugins. Do not override in sub-classes. "
 "Use :attr:`options` instead. Every option must be an instance of "
 ":class:`OptionRecommendation`."
-msgstr ""
+msgstr "Параметри є спільними для усіх додатків вхідних форматів даних. Не перевизначайте їх у підкласах. Замість цього, скористайтеся :attr:`options`. Кожен параметр має бути екземпляром :class:`OptionRecommendation`."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/conversion.pydocstring
 #: of calibre.customize.conversion.InputFormatPlugin.options:1
@@ -1078,7 +1078,7 @@ msgid ""
 "contained in the current directory. If this plugin creates files outside the"
 " current directory they must be deleted/marked for deletion before this "
 "method returns."
-msgstr ""
+msgstr "Цей метод має бути реалізовано у підкласах. Має повертати шлях до створеного файла OPF або екземпляр :class:`OEBBook`. Усі виведені дані мають міститися у поточному каталозі. Якщо цей додаток створює файли поза поточним каталогом, їх має бути вилучено або позначено для вилучення до повернення керування цим методом."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/conversion.pydocstring
 #: of calibre.customize.conversion.InputFormatPlugin.convert:8
@@ -1094,7 +1094,7 @@ msgid ""
 "Higher numbers mean be more verbose. Another useful attribute is "
 "``input_profile`` that is an instance of "
 ":class:`calibre.customize.profiles.InputProfile`."
-msgstr ""
+msgstr "Параметри для налаштовування процесу перетворення. Гарантовано має атрибути, що відповідають усім параметрам, оголошеним цим додатком. Крім того, має атрибут ``verbose``, який приймає інтегральні дані від нуля. Більші значення атрибута означають докладніше виведення діагностичних даних. Іншим корисним атрибутом є ``input_profile``, який є екземпляром :class:`calibre.customize.profiles.InputProfile`."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/conversion.pydocstring
 #: of calibre.customize.conversion.InputFormatPlugin.convert:17
@@ -1175,7 +1175,7 @@ msgid ""
 " directory that may or may not exist. The output plugin should write its "
 "output into that directory. If it is a file like object, the output plugin "
 "should write its output into the file."
-msgstr ""
+msgstr "Файлоподібний об’єкт або рядок. Якщо це рядок, він вважається шляхом до каталогу, який може і не існувати. Додаток виведення даних має записати виведені дані до цього каталогу. Якщо це файлоподібний об’єкт, додаток виведення має записати свої дані до цього файла."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/conversion.pydocstring
 #: of calibre.customize.conversion.OutputFormatPlugin.convert:8
@@ -1350,7 +1350,7 @@ msgid ""
 "driver must maintain its own blacklist of failed devices. Similarly, when "
 "ejecting, calibre will call eject() and then assuming the next call to "
 "detect_managed_devices() returns None, it will call post_yank_cleanup()."
-msgstr ""
+msgstr "Якщо має значення True, позначає, що цей драйвер повністю керує виявленням пристроїв, вилученням пристроїв тощо. Якщо ви встановите значення True, вам *слід* реалізувати методи detect_managed_devices і debug_managed_device_detection. Драйвер зі встановленим значенням True є відповідальним за виявлення пристроїв, керування «чорним» списком пристроїв, списком вилучених пристроїв тощо. calibre періодично викликатиме метод detect_managed_devices() і, якщо він повертатиме виявлений пристрій, calibre викликатиме open(). open() буде викликано кожного разу після повернення пристрою, навіть якщо попередні виклики open() завершувалися помилками, тому драйвер має підтримувати актуальність власного «чорного» списку пристроїв із помилками. Так само, під час вилучення пристрою calibre викличе eject(), а потім, припускаючи, що наступний виклик detect_managed_devices() повертає None, програма викличе post_yank_cleanup()."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.SLOW_DRIVEINFO:1
@@ -1367,7 +1367,7 @@ msgid ""
 "must implement :meth:`get_device_uid()` and "
 ":meth:`ignore_connected_device()` and :meth:`get_user_blacklisted_devices` "
 "and :meth:`set_user_blacklisted_devices`"
-msgstr ""
+msgstr "Якщо встановлено значення True, calibre питатиме користувача про те, чи хоче він керувати пристроєм за допомогою calibre під час першого виявлення пристрою. Якщо ви встановите значення True, вам доведеться реалізувати :meth:`get_device_uid()`, :meth:`ignore_connected_device()`, :meth:`get_user_blacklisted_devices` та :meth:`set_user_blacklisted_devices`"
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.user_feedback_after_callback:1
@@ -1377,7 +1377,7 @@ msgid ""
 "some callbacks are run (currently only upload_books). Be careful to not spam"
 " the user with too many messages. This variable is checked after *every* "
 "callback, so only set it when you really need to."
-msgstr ""
+msgstr "Встановіть значення у форматі словника {'title':title, 'msg':msg, 'det_msg':detailed_msg}, щоб програма calibre показувала повідомлення користувачеві після певних зворотних викликів (у поточній версії лише upload_books). Спробуйте не набридати користувачеві повідомленнями. Значення цієї змінної перевірятиметься після *кожного* зворотного виклику, тому вам слід встановлювати його, лише якщо це справді потрібно."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.is_usb_connected:1
@@ -1405,7 +1405,7 @@ msgid ""
 "if a device is found. This object will be passed to the open() method as the"
 " connected_device. If no device is found, return None. The returned object "
 "can be anything, calibre does not use it, it is only passed to open()."
-msgstr ""
+msgstr "Шукати пристрої, з якими може працювати цей драйвер. Має повернути об’єкт пристрою, якщо пристрій буде знайдено. Цей об’єкт буде передано до методу open() як connected_device. Якщо пристрій знайдено не буде, повертає None. Повернутий об’єкт може бути будь-чим — calibre його не використовує, просто передає open()."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.detect_managed_devices:9
@@ -1458,7 +1458,7 @@ msgid ""
 "Function that is called with a % progress (number between 0 and 100) for "
 "various tasks If it is called with -1 that means that the task does not have"
 " any progress information"
-msgstr ""
+msgstr "Функція, яка викликається із відсотком виконання (числом від 0 до 100) для виконання різних завдань. Якщо викликано з -1, програма вважатиме, що завдання не має даних щодо поступу виконання."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.reset:7
@@ -1474,7 +1474,7 @@ msgid ""
 " can do some relatively time intensive checks. The default implementation "
 "returns True. This method is called only on windows. See also "
 ":meth:`can_handle`."
-msgstr ""
+msgstr "Необов’язковий метод для виконання подальших перевірок для пристрою з метою переконатися, що цей драйвер може з ним працювати. Якщо це не так, має повертати False. Цей метод викликається лише після встановлення відповідності виробника, ідентифікаторів продукту та bcd, отже він може виконувати доволі тривалі за часом перевірки. Типова реалізація завжди повертає True. Цей метод викликається лише у windows. Див. також :meth:`can_handle`."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.can_handle_windows:8
@@ -1482,7 +1482,7 @@ msgid ""
 "Note that for devices based on USBMS this method by default delegates to "
 ":meth:`can_handle`.  So you only need to override :meth:`can_handle` in your"
 " subclass of USBMS."
-msgstr ""
+msgstr "Зауважте, що для пристроїв на основі USBMS це метод типово делегується :meth:`can_handle`. Отже, вам слід лише перевизначити :meth:`can_handle` у вашому підкласі USBMS."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.can_handle_windows:12
@@ -1511,7 +1511,7 @@ msgid ""
 "method :meth:`calibre.devices.usbms.device.Device.open` has an "
 "implementation of this function that should serve as a good example for USB "
 "Mass storage devices."
-msgstr ""
+msgstr "Виконати усі специфічні для пристрою дії з ініціалізації. Викликається після виявлення пристрою, але перед усіма іншими функціями, які обмінюються даними з пристроєм. Приклад: для пристроїв, які представляються як сховища даних із інтерфейсом USB, цей метод має відповідати за монтування пристрою або, якщо пристрій змонтовано у автоматичному режимі, за пошук точки монтування. Метод :meth:`calibre.devices.usbms.device.Device.open` містить реалізацію цієї функції і має слугувати добрим прикладом для реалізації доступу до сховищ даних із інтерфейсом USB."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.open:11
@@ -1527,21 +1527,21 @@ msgid ""
 "id, bcd, manufacturer name, product name, device serial number). However, "
 "some devices have no serial number and on windows only the first three "
 "fields are present, the rest are None."
-msgstr ""
+msgstr "Пристрій, який ми намагаємося відкрити. Є кортежем (ідентифікатор виробника, ідентифікатор продукту, назва виробника, серійний номер пристрою). Втім, у деяких пристроїв немає серійного номера, а у windows доступні лише перші три поля, останнє подається як `None`."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.open:20
 msgid ""
 "The UUID of the current calibre library. Can be None if there is no library "
 "(for example when used from the command line)."
-msgstr ""
+msgstr "UUID поточної бібліотеки calibre. Може мати значення None, якщо бібліотеки немає (наприклад, якщо використано з командного рядка)."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.eject:1
 msgid ""
 "Un-mount / eject the device from the OS. This does not check if there are "
 "pending GUI jobs that need to communicate with the device."
-msgstr ""
+msgstr "Демонтувати і вилучити запис пристрою з операційної системи. Наявність завдань з графічним інтерфейсом, які продовжують виконувати завдання з пристроєм, при цьому не перевіряється."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.eject:4
@@ -1669,7 +1669,7 @@ msgid ""
 ":class:`FreeSpaceError` if there is not enough free space on the device. The"
 " text of the FreeSpaceError must contain the word \"card\" if ``on_card`` is"
 " not None otherwise it must contain the word \"memory\"."
-msgstr ""
+msgstr "Вивантажити список книг на пристрій. Якщо якийсь файл вже існує на пристрої, його буде замінено. Цей метод має повідомляти про :class:`FreeSpaceError`, якщо на пристрої недостатньо вільного місця. Текст FreeSpaceError має містити слово «card», якщо ``on_card`` має значення, відмінне від `None`. Інакше, він має містити слово «memory»."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.upload_books:7
@@ -1691,7 +1691,7 @@ msgid ""
 " == len(files). Apart from the regular cover (path to cover), there may also"
 " be a thumbnail attribute, which should be used in preference. The thumbnail"
 " attribute is of the form (width, height, cover_data as jpeg)."
-msgstr ""
+msgstr "Якщо має значення, яке є відмінним від `None`, є списком об’єктів :class:`Metadata`. Ідея полягає у використанні метаданих для визначення, куди на пристрої слід зберегти книгу. len(metadata) == len(files). Окрім типового зображення обкладинки (шляху до зображення), може також існувати атрибут мініатюри, який матиме вищий пріоритет. Атрибут мініатюри записується у форматі (ширина, висота, дані обкладинки у форматі jpeg)."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.upload_books:17
@@ -1840,7 +1840,7 @@ msgid ""
 "If there is an error preparing a book, then instead of a path, the position "
 "in the returned list for that book should be a three tuple: (original_path, "
 "the exception instance, traceback)"
-msgstr ""
+msgstr "Якщо під час приготування книги сталася помилка, замість шляху позиція книги у повернутому списку має бути триелементним кортежем: (початковий шлях, екземпляр виключення, трасування)"
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.startup:1
@@ -1850,7 +1850,7 @@ msgid ""
 " thus __init__ can be called multiple times, but only one instance will have"
 " this method called. This method is called on the device thread, not the GUI"
 " thread."
-msgstr ""
+msgstr "Викликається, коли calibre розпочинає роботу з пристроєм. Виконує усі потрібні дії з ініціалізації. Зауважте, що можна створити декілька екземплярів класу, отже __init__ можна викликати декілька разів, але викликатиме цей метод лише один екземпляр. Цей метод викликається у потоці виконання пристрою, а не у потоці графічного інтерфейсу."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.shutdown:1
@@ -1858,7 +1858,7 @@ msgid ""
 "Called when calibre is shutting down, either for good or in preparation to "
 "restart. Do any cleanup required. This method is called on the device "
 "thread, not the GUI thread."
-msgstr ""
+msgstr "Викликається, коли calibre завершує роботу за наказом користувача або під час приготувань до перезапуску. Виконує правильне завершення усіх завдань. Цей метод викликається у потоці обробки пристрою, а не у потоці роботи графічного інтерфейсу користувача."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.get_device_uid:1
@@ -1866,7 +1866,7 @@ msgid ""
 "Must return a unique id for the currently connected device (this is called "
 "immediately after a successful call to open()). You must implement this "
 "method if you set ASK_TO_ALLOW_CONNECT = True"
-msgstr ""
+msgstr "Має повертати унікальний ідентифікатор для поточного з’єднаного пристрою (викликається одразу після успішного виклику open()). Вам слід реалізувати цей метод, якщо ви встановили ASK_TO_ALLOW_CONNECT = True"
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.ignore_connected_device:1
@@ -1876,14 +1876,14 @@ msgid ""
 "ASK_TO_ALLOW_CONNECT = True. Note that this function is called immediately "
 "after open(), so if open() caches some state, the driver should reset that "
 "state."
-msgstr ""
+msgstr "Програма має у майбутньому ігнорувати пристрій, вказаний за uid (результат виклику get_device_uid()). Вам слід реалізувати цей метод, якщо ви встановлюєте ASK_TO_ALLOW_CONNECT = True. Зауважте, що ця функція викликається негайно після open(). Отже, якщо open() кешовано якийсь стан, драйвер має скинути систему до цього стану."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.get_user_blacklisted_devices:1
 msgid ""
 "Return map of device uid to friendly name for all devices that the user has "
 "asked to be ignored."
-msgstr ""
+msgstr "Повертає відображення uid пристрою на зручну для користування назву для усіх пристроїв, які користувач наказав ігнорувати."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.set_user_blacklisted_devices:1
@@ -1899,7 +1899,7 @@ msgid ""
 "prefs['something']. Your method should call "
 "device_prefs.set_overrides(pref=val, pref=val, ...). Currently used for: "
 "metadata management (prefs['manage_device_metadata'])"
-msgstr ""
+msgstr "Реалізуйте цей метод, якщо ваш пристрій має перевизначати певне налаштування. Вам слід переконатися, що усі виклики, яким потрібно налаштування, яке може бути перевизначено, використовують device_prefs['щось'], а не prefs['щось']. Ваш метод має викликати device_prefs.set_overrides(налаштування=значення, налаштування=значення, ...). У поточній версії використовується для керування метаданими (prefs['manage_device_metadata'])"
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.set_library_info:1
@@ -1915,7 +1915,7 @@ msgid ""
 "Called by the device manager when starting plugins. If this method returns a"
 " string, then a) it supports the device manager's dynamic control interface,"
 " and b) that name is to be used when talking to the plugin."
-msgstr ""
+msgstr "Викликається засобом керування пристроями під час запуску додатків. Якщо цей метод повертає рядок, то: а) у ньому передбачено підтримку інтерфейсу динамічного керування засобу керування пристроями; і б) цю назву слід використовувати під час обміну даними з додатком."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.is_dynamically_controllable:5
@@ -1940,7 +1940,7 @@ msgid ""
 "This method is called to start the plugin. The plugin should begin to accept"
 " device connections however it does that. If the plugin is already accepting"
 " connections, then do nothing."
-msgstr ""
+msgstr "Цей метод викликається для запуску додатка. Додаток має розпочати приймання з’єднань зі пристроєм, у який би спосіб він це не робив. Якщо додаток вже приймає з’єднання, ніяких додаткових дій не виконується."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.stop_plugin:1
@@ -1949,7 +1949,7 @@ msgid ""
 " connections, and should cleanup behind itself. It is likely that this "
 "method should call shutdown. If the plugin is already not accepting "
 "connections, then do nothing."
-msgstr ""
+msgstr "Цей метод викликається для завершення роботи додатка. Після цього додаток має припинити приймання з’єднань і почистити свої сліди у системі. Ймовірно, цей метод має викликати вимикання. Якщо додаток вже не приймає з’єднань, ніяких додаткових дій не виконується."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.get_option:1
@@ -1977,7 +1977,7 @@ msgid ""
 "Called during book matching when a book on the device is matched with a book"
 " in calibre's db. The method is responsible for syncronizing data from the "
 "device to calibre's db (if needed)."
-msgstr ""
+msgstr "Викликається під час встановлення відповідності книг, коли програма намагається пов’язати книгу на пристрої із книгою у базі даних calibre. Цей метод відповідальний за синхронізацію даних з пристрою із базою даних calibre (якщо це потрібно)."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.synchronize_with_db:5
@@ -1988,7 +1988,7 @@ msgid ""
 "metadata for the book on the device is updated with calibre's metadata and "
 "given back to the device, but no GUI refresh of that book is done. This is "
 "useful when the calibre data is correct but must be sent to the device."
-msgstr ""
+msgstr "Цей метод має повертати двоелементний кортеж. Першим значенням є набір ідентифікаторів книг calibre, які змінюються, якщо було внесено зміни до бази даних calibre, або `None`, якщо до бази даних не було внесено змін. Якщо першим значенням є порожня множина, метадані книги на пристрої оновлено на основі метаданих calibre і повернуто на пристрій, але оновлення даних у графічному інтерфейсі для цієї книги не відбулося. Корисно, якщо дані у calibre є правильними, але їх ще слід надіслати на пристрій для читання книг."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.synchronize_with_db:13
@@ -2005,14 +2005,14 @@ msgid ""
 " value in the returned tuple indicated whether the format is future-dated. "
 "Return True if it is, otherwise return False. Calibre will display a dialog "
 "to the user listing all future dated books."
-msgstr ""
+msgstr "Другим значенням є двоелементний кортеж. Перше значення у цьому кортежі визначає, чи слід надсилати формат книги на пристрій. Це значення призначено для перевірки того, що книга на пристрої збігається із книгою у calibre. Це значення має дорівнювати `None`, якщо немає книг для надсилання, інакше повертає базову назву файла на пристрої (рядок, подібний до щосьтам.epub). Переконайтеся, що до назви файла включено суфікс. Підсистема пристроїв побудує завдання send_books для усіх книг, для яких повернуто значення, що не дорівнюють `None`. Зауваження: окрім випадку неотримання суфікса назви, назву буде проігноровано тоді, коли на пристрої використовується шаблон для створення назв файлів (такий шаблон використовується на більшості пристроїв). Друге значення у повернутому кортежі позначає, чи є дата для формату майбутньою. Повертає True, якщо це так, інакше повертає False. Calibre показуватиме користувачеві діалогове вікно зі списком усіх книг із датами у майбутньому."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.synchronize_with_db:27
 msgid ""
 "Extremely important: this method is called on the GUI thread. It must be "
 "threadsafe with respect to the device manager's thread."
-msgstr ""
+msgstr "Надзвичайно важливо: цей метод викликається у потоці обробки графічного інтерфейсу. Він має бути безпечним до роботи у потоках щодо потоку засобу керування пристроями."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.synchronize_with_db:30
@@ -2020,7 +2020,7 @@ msgid ""
 "book_id: the calibre id for the book in the database. book_metadata: the "
 "Metadata object for the book coming from the device. first_call: True if "
 "this is the first call during a sync, False otherwise"
-msgstr ""
+msgstr "book_id: ідентифікатор книги у базі даних calibre. book_metadata: об’єкт Metadata для книги, що походить з пристрою. first_call: має значення True, якщо це перший виклик під час синхронізації; False, якщо цей виклик не є першим."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.BookList:1
@@ -2063,7 +2063,7 @@ msgid ""
 "thumbnail (can be None) thumbnail is either a str/bytes object with the "
 "image data or it should have an attribute image_path that stores an absolute"
 " (platform native) path to the image"
-msgstr ""
+msgstr "thumbnail: (може мати значення None) — мініатюра: або рядковий/байтовий об’єкт із даними зображення, або повинен містити атрибут image_path, у якому зберігається абсолютний шлях (у форматі програмної платформи) до зображення."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.BookList:11
@@ -2118,7 +2118,7 @@ msgid ""
 ":class:`calibre.devices.usbms.driver.USBMS`. This class in turn inherits "
 "some of its functionality from its bases, documented below. A typical basic "
 "USBMS based driver looks like this:"
-msgstr ""
+msgstr "Базовим класом для таких пристроїв є :class:`calibre.devices.usbms.driver.USBMS`. Цей клас, своєю чергою, успадковує частину своїх функціональних можливостей від своєї основ, документованої нижче. Типовий базовий драйвер на основі USBMS має такий код:"
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/usbms/device.pydocstring
 #: of calibre.devices.usbms.device.Device:1
@@ -2133,7 +2133,7 @@ msgid ""
 "This class provides logic common to all drivers for devices that export "
 "themselves as USB Mass Storage devices. Provides implementations for "
 "mounting/ejecting of USBMS devices on all platforms."
-msgstr ""
+msgstr "Цей клас містить логіку, яка є загальною для усіх драйверів для пристроїв, які експортують себе як пристрої сховищ даних з інтерфейсом USB. Надає реалізації методів для монтування та вилучення пристроїв USBMS для усіх платформ."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/usbms/device.pydocstring
 #: of calibre.devices.usbms.device.Device.WINDOWS_MAIN_MEM:1
@@ -2162,7 +2162,7 @@ msgid ""
 "Used by the new driver detection to disambiguate main memory from storage "
 "cards. Should be a regular expression that matches the main memory mount "
 "point assigned by OS X"
-msgstr ""
+msgstr "Використовується засобом виявлення нових драйверів для розрізнення основної пам’яті і карток пам’яті пристрою. Має бути формальним виразом, який відповідає точні монтування основної пам’яті, яка призначається OS X."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/usbms/device.pydocstring
 #: of calibre.devices.usbms.device.Device.MAX_PATH_LEN:1
@@ -2180,7 +2180,7 @@ msgid ""
 "Called to disambiguate main memory and storage card for devices that do not "
 "distinguish between them on the basis of `WINDOWS_CARD_NAME`. For e.g.: The "
 "EB600"
-msgstr ""
+msgstr "Викликається для розрізнення основної пам’яті пристрою та карток пам’яті для пристроїв, які не розрізняють їх за `WINDOWS_CARD_NAME`. Приклад: EB600"
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/usbms/device.pydocstring
 #: of calibre.devices.usbms.device.Device.sanitize_callback:1
@@ -2265,7 +2265,7 @@ msgstr "Дії інтерфейсу користувача"
 msgid ""
 "If you are adding your own plugin in a zip file, you should subclass both "
 "InterfaceActionBase and InterfaceAction. The :meth:`load_actual_plugin` "
-"method of you InterfaceActionBase subclass must return an instantiated "
+"method of your InterfaceActionBase subclass must return an instantiated "
 "object of your InterfaceBase subclass."
 msgstr "Якщо ви додаєте власний додаток у файлі zip, вам слід створити підкласи для InterfaceActionBase і для InterfaceAction. Метод :meth:`load_actual_plugin` вашого підкласу InterfaceActionBase має повертати створений екземпляр об’єкта вашого підкласу InterfaceBase."
 
@@ -2289,7 +2289,7 @@ msgid ""
 "integrate the plugin with calibre's plugin system, you have to make a "
 "wrapper class that references the actual plugin. See the "
 ":mod:`calibre.customize.builtins` module for examples."
-msgstr ""
+msgstr "Зауважте, що цей клас є базовим класом для цих додатків. Втім, для інтегрування додатка до системи додатків calibre вам слід створити клас-обгортку, який посилатиметься на сам додаток. Див. приклад у модулі :mod:`calibre.customize.builtins`."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction:10
@@ -2363,7 +2363,7 @@ msgid ""
 "shortcuts. If None, a keyboard shortcut corresponding to the action is not "
 "registered. If you pass an empty tuple, then the shortcut is registered with"
 " no default key binding."
-msgstr ""
+msgstr "У такій формі: (текст, шлях до піктограми, підказка, клавіатурне скорочення). Піктограма, підказка і клавіатурне скорочення можуть мати значення `None`. Клавіатурне скорочення мєа бути рядком, `None` або кортежем скорочень. Якщо має значення `None`, клавіатурне скорочення для дії не реєструватиметься. Якщо передано порожній кортеж, буде зареєстровано скорочення без типової прив’язки до клавіш."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.action_add_menu:1
@@ -2427,7 +2427,7 @@ msgid ""
 "You should not perform blocking/long operations in this function. Instead "
 "emit a signal or use QTimer.singleShot and return quickly. See the builtin "
 "actions for examples."
-msgstr ""
+msgstr "Цей метод має виконати певну корисну дію і повернути True тоді і лише тоді, коли ця дія інтерфейсу здатна обробляти подію скидання. Не викликайте accept/ignore для події, про це подбає інтерфейс користувача calibre. Вам не слід виконувати блокування або тривалі дії у цій функції. Замість цього надішліть сигнал або скористайтеся QTimer.singleShot і швидко поверніть керування. Приклади можна знайти серед вбудованих до програми дій."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:1
@@ -2436,7 +2436,7 @@ msgid ""
 "QAction, This action has one extra attribute calibre_shortcut_unique_name "
 "which if not None refers to the unique name under which this action is "
 "registered with the keyboard manager."
-msgstr ""
+msgstr "Зручний метод для спрощення додавання пунктів дій до QMenu. Повертає створену QAction. Ця дія має лише один додатковий атрибут, calibre_shortcut_unique_name, який, якщо не має значення `None`, посилається на унікальну назву, під якою цю дію зареєстровано у засобі керування клавіатурними скороченнями."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:6
@@ -2448,7 +2448,7 @@ msgstr "QMenu, до якого буде додано пункт створено
 msgid ""
 "A unique name for this action, this must be globally unique, so make it as "
 "descriptive as possible. If in doubt add a uuid to it."
-msgstr ""
+msgstr "Унікальна назва для цієї дії. Має бути унікальною на загальному рівні, тому робіть її якомога описовішою. Якщо маєте сумніви, додайте до неї uuid."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:10
@@ -2460,7 +2460,7 @@ msgstr "Текст дії."
 msgid ""
 "Either a QIcon or a file name. The file name is passed to the I() builtin, "
 "so you do not need to pass the full path to the images directory."
-msgstr ""
+msgstr "QIcon або назва файла. Назву файла буде передано до вбудованої функції I(), отже вам не потрібно передавати повний шлях до каталогу images."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:14
@@ -2469,7 +2469,7 @@ msgid ""
 "is registered for this action. If None, a keyboard shortcut with no default "
 "keybinding is registered. String and list of strings register a shortcut "
 "with default keybinding as specified."
-msgstr ""
+msgstr "Рядок, список рядків, `None` або `False`. Якщо `False`, для цієї дії не буде зареєстровано клавіатурного скорочення. Якщо `None`, буде зареєстровано клавіатурне скорочення без типового значення. Рядок або список рядків реєструють клавіатурне скорочення із вказаними типовим значеннями."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:18
@@ -2487,7 +2487,7 @@ msgstr "Придатна до виклику функція, яка з’єдн�
 msgid ""
 "The test displayed to the user when customizing the keyboard shortcuts for "
 "this action. By default it is set to the value of ``text``."
-msgstr ""
+msgstr "Текстове повідомлення, яке буде показано користувачеві під час налаштовування клавіатурних скорочень для цієї дії. Типово встановлено значення ``text``."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.load_resources:12
@@ -2502,14 +2502,14 @@ msgid ""
 "Setup this plugin. Only called once during initialization. self.gui is "
 "available. The action specified by :attr:`action_spec` is available as "
 "``self.qaction``."
-msgstr ""
+msgstr "Налаштовує цей додаток. Викликається лише раз під час ініціалізації. Доступним є self.gui. Дія, вказана :attr:`action_spec` є доступною як ``self.qaction``."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.location_selected:1
 msgid ""
 "Called whenever the book list being displayed in calibre changes. Currently "
 "values for loc are: ``library, main, card and cardb``."
-msgstr ""
+msgstr "Викликається щоразу, коли змінюється список книг, що показується у calibre. У поточній версії можливими значенням loc є такі значення: ``library``, ``main``, ``card`` і ``cardb``."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.location_selected:4
@@ -2534,7 +2534,7 @@ msgid ""
 "Called once per action when the layout of the main GUI is completed. If your"
 " action needs to make changes to the layout, they should be done here, "
 "rather than in :meth:`initialization_complete`."
-msgstr ""
+msgstr "Викликається один раз для кожної дії після завершення компонування основного графічного інтерфейсу. Якщо вашій дії потрібно внести зміни до компонування, їх слід внести тут, а не у :meth:`initialization_complete`."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.initialization_complete:1
@@ -2703,7 +2703,7 @@ msgid ""
 "False otherwise. Raise an :class:`AbortCommit` exception to indicate that an"
 " error occurred. You are responsible for giving the user feedback about what"
 " the error is and how to correct it."
-msgstr ""
+msgstr "Зберігає усі змінені параметри. Повертає True, якщо зміни потребують перезапуску програми, і False, якщо ні. Надсилає виключення :class:`AbortCommit`, щоб повідомити про те, що сталася помилка. Ви маєте самі визначити, як слід повідомити користувачеві про помилку і про те, як її виправити."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/preferences/__init__.pydocstring
 #: of calibre.gui2.preferences.ConfigWidgetInterface.refresh_gui:1
@@ -2711,7 +2711,7 @@ msgid ""
 "Called once after this widget is committed. Responsible for causing the gui "
 "to reread any changed settings. Note that by default the GUI re-initializes "
 "various elements anyway, so most widgets won't need to use this method."
-msgstr ""
+msgstr "Викликається один раз після надсилання цього віджета. Відповідає за повторне читання графічним інтерфейсом усіх змінених параметрів. Зауважте, що типово графічний інтерфейс попри усе повторно ініціалізує різноманітні елементи, отже для більшості віджетів потреби у використанні цього методу немає."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/preferences/__init__.pydocstring
 #: of calibre.gui2.preferences.ConfigWidgetBase:1
@@ -2719,7 +2719,7 @@ msgid ""
 "Base class that contains code to easily add standard config widgets like "
 "checkboxes, combo boxes, text fields and so on. See the :meth:`register` "
 "method."
-msgstr ""
+msgstr "Базовий клас, який містить код для спрощення додавання стандартних віджетів налаштовування, зокрема пунктів позначок, спадних списків, текстових полів тощо. Див. метод :meth:`register`."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/preferences/__init__.pydocstring
 #: of calibre.gui2.preferences.ConfigWidgetBase:5
@@ -2727,7 +2727,7 @@ msgid ""
 "This class automatically handles change notification, resetting to default, "
 "translation between gui objects and config objects, etc. for registered "
 "settings."
-msgstr ""
+msgstr "Цей клас виконує автоматичну обробку сповіщення про зміни, повернення до типових значень, перенесення даних із об’єктів графічного інтерфейсу до об’єктів налаштувань тощо для зареєстрованих параметрів."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/preferences/__init__.pydocstring
 #: of calibre.gui2.preferences.ConfigWidgetBase:9
@@ -2735,7 +2735,7 @@ msgid ""
 "If your config widget inherits from this class but includes setting that are"
 " not registered, you should override the :class:`ConfigWidgetInterface` "
 "methods and call the base class methods inside the overrides."
-msgstr ""
+msgstr "Якщо ваш віджет налаштувань успадковується від цього класу, але включає параметр, який не зареєстровано, вам слід перевизначити методи :class:`ConfigWidgetInterface` і викликати методи базового класу всередині перевизначення."
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/preferences/__init__.pydocstring
 #: of calibre.gui2.preferences.ConfigWidgetBase.register:1
@@ -2765,7 +2765,7 @@ msgid ""
 "If this setting is a multiple choice (combobox) based setting, the list of "
 "choices. The list is a list of two element tuples of the form: ``[(gui name,"
 " value), ...]``"
-msgstr ""
+msgstr "Якщо цей параметр є параметром із декількома варіантами (визначається спадним списком), список варіантів. Форматом запису списку є двоелементний кортеж. Формат списку: ``[(назва у графічному інтерфейсі, значення), ...]``"
 
 #: ../../home/kovid/work/calibre/src/calibre/gui2/preferences/__init__.pydocstring
 #: of calibre.gui2.preferences.ConfigWidgetBase.register:11

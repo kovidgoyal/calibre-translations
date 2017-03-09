@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 07:41+0530\n"
-"PO-Revision-Date: 2017-02-12 11:39+0000\n"
+"POT-Creation-Date: 2017-02-24 08:14+0530\n"
+"PO-Revision-Date: 2017-03-05 12:29+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/calibre/calibre/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgid ""
 "any query parameters, fragments, etc. The canonical representations must be "
 "unique across all URLs for this news source. If they are not, then internal "
 "links may be resolved incorrectly."
-msgstr ""
+msgstr "Повертає набір канонічних представлень ``url``. У типовій реалізації використовується лише назва вузла сервера та шлях адреси, ігноруються усі параметри запиту, фрагменти тощо. Канонічні представлення мають бути унікальними щодо усіх адрес у джерелі новин. Якщо вони не є такими, внутрішні посилання можуть визначатися із помилками."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.canonicalize_internal_url:0
@@ -112,7 +112,7 @@ msgid ""
 " since mechanize is not thread safe. The default cloning routines should "
 "capture most browser customization, but if you do something exotic in your "
 "recipe, you should override this method in your recipe and clone manually."
-msgstr ""
+msgstr "Клонувати програму для перегляду інтернету br. Клоновані програми для перегляду інтернету використовуються для багатопотокового отримання даних, оскільки `mechanize` не є безпечним щодо виконання у потоках. Типові процедури клонування мають підхопити більшу частину з налаштувань програми для перегляду інтернету, але якщо ви робите у вашому рецепті щось екзотичне, вам слід перевизначити цей метод у вашому рецепті і клонувати програму вручну."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.clone_browser:7
@@ -133,7 +133,7 @@ msgid ""
 "method should be called only once on a particular Recipe instance. Calling "
 "it more than once will lead to undefined behavior. :return: Path to "
 "index.html"
-msgstr ""
+msgstr "Отримати і попередньо обробити усі статті з подачі у цьому рецепті. Цей метод слід викликати лише один раз у одному екземплярі рецепта. Повторне викликання методу призведе до невизначеної поведінки. Повертає шлях до index.html"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.extract_readable_article:1
@@ -153,7 +153,7 @@ msgid ""
 "for the original link (for feeds syndicated via a service like feedburner or"
 " pheedo) and if found, returns that or else returns `article.link "
 "<https://pythonhosted.org/feedparser/reference-entry-link.html>`_."
-msgstr ""
+msgstr "Перевизначте у підкласі для зміни поведінки видобування :term:`URL`, який вказує на вміст кожної статті. Повертає адресу статті. Викликається з параметром `article`, об’єктом, який відповідає обробленій статті з подачі. Див. `feedparser <https://pythonhosted.org/feedparser/>`_. Типово, шукає початкове посилання (для подач, що розповсюджуються за допомогою служб, зокрема feedburner або pheedo) і, якщо знайдено, повертає його. Інакше повертає `article.link <https://pythonhosted.org/feedparser/reference-entry-link.html>`_."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.get_browser:1
@@ -162,7 +162,7 @@ msgid ""
 "it returns a `mechanize <https://github.com/jjlee/mechanize>`_ browser "
 "instance that supports cookies, ignores robots.txt, handles refreshes and "
 "has a mozilla firefox user agent."
-msgstr ""
+msgstr "Повертає екземпляр програми для перегляду інтернету, що використовується для отримання документів з інтернету. Типово, повертає екземпляр програми `mechanize <https://github.com/jjlee/mechanize>`_, у якому передбачено підтримку кук, ігнорування robots.txt, обробку оновлень та агент користувача mozilla firefox."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.get_browser:6
@@ -180,7 +180,7 @@ msgid ""
 "`None`. If you want your recipe to download a cover for the e-book override "
 "this method in your subclass, or set the member variable `self.cover_url` "
 "before this method is called."
-msgstr ""
+msgstr "Повертає :term:`URL` зображення обкладинки для цього випуску або `None`. Типово, повертає значення member `self.cover_url`, яким є зазвичай `None`. Якщо ви хочете, щоб ваш рецепт отримував зображення обкладинки для електронної книги, перевизначте цей метод у вашому підкласі або встановіть змінну member `self.cover_url` до виклику цього методу."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.get_extra_css:1
@@ -197,7 +197,7 @@ msgid ""
 "None or an empty string, the title from the feed is used. This method is "
 "useful if your recipe needs to do some processing to figure out the list of "
 "feeds to download. If so, override in your subclass."
-msgstr ""
+msgstr "Повертає список подач :term:`RSS` для отримання для цього профілю. Кожен елемент списку має бути двоелементним кортежем у формі (назва, адреса). Якщо значенням назви є `None` або порожній рядок, буде використано назву з подачі. Цей метод є корисним, якщо ваш рецепт потребує певної обробки для визначення списку подач, дані яких слід отримувати. Якщо ви маєте справу з саме таким джерелом даних, перевизначте метод у вашому підкласі."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.get_masthead_title:1
@@ -213,7 +213,7 @@ msgid ""
 "e-book override this method in your subclass, or set the member variable "
 "`self.masthead_url` before this method is called. Masthead images are used "
 "in Kindle MOBI files."
-msgstr ""
+msgstr "Повертає :term:`URL` зображення титульних даних для цього випуску або `None`. Типово, повертає значення member `self.masthead_url`, яким типово є `None`. Якщо вам потрібно, щоб ваш рецепт отримував титульні дані для електронної книги, перевизначте цей метод у вашому підкласі або встановіть значення змінної member `self.masthead_url` до виклику цього методу. Зображення титульних даних використовуються у файлах MOBI Kindle."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.get_obfuscated_article:1
@@ -222,7 +222,7 @@ msgid ""
 "article URL. It should return the path to a file on the filesystem that "
 "contains the article HTML. That file is processed by the recursive HTML "
 "fetching engine, so it can contain links to pages/images on the web."
-msgstr ""
+msgstr "Якщо вами встановлено значення `articles_are_obfuscated`, цей метод буде викликано для кожної адреси статті. Він має повернути шлях до файла, де міститься код HTML статті, у файловій системі. Цей файл обробляється рушієм рекурсивного отримання HTML, отже може містити посилання на сторінки або зображення у інтернеті."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.get_obfuscated_article:6
@@ -284,7 +284,7 @@ msgid ""
 "that have a \"Print Edition\" webpage that lists all the articles in the "
 "current print edition. If this function is implemented, it will be used in "
 "preference to :meth:`BasicNewsRecipe.parse_feeds`."
-msgstr ""
+msgstr "Цей метод слід реалізовувати у рецептах, які обробляють дані сайта замість подач для створення списку статей. Типовим використанням є, обробка джерел новин, які мають вебсторінки «Друкованої версії» зі списками усіх статей у поточному друкованому виданні. Якщо цю функцію реалізовано, вона матиме вищий пріоритет використання за :meth:`BasicNewsRecipe.parse_feeds`."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.parse_index:7
@@ -323,7 +323,7 @@ msgid ""
 "also change the text_summary :param soup: Parsed HTML belonging to this "
 "article :param first: True iff the parsed HTML is the first page of the "
 "article."
-msgstr ""
+msgstr "Викликається під час отримання кожної зі сторінок HTML, що належать до статті. Призначено для отримання метаданих статті, зокрема даних щодо автора, резюме із обробленого HTML (soup).\n\n:param article: об’єкт класу :class:`calibre.web.feeds.Article`. Якщо ви змінюватимете, не забудьте також змінити text_summary\n\n:param soup: оброблений код HTML, що належить цій статті\n\n:param first: має значення True тоді і лише тоді, коли оброблений код HTML є першою сторінкою статті."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.postprocess_book:1
@@ -347,7 +347,7 @@ msgid ""
 "after it is parsed for links and images. It can be used to do arbitrarily "
 "powerful post-processing on the :term:`HTML`. It should return `soup` after "
 "processing it."
-msgstr ""
+msgstr "Цей метод викликається із джерелом кожного отриманого файла :term:`HTML` після його обробки для отримання посилань та зображень. Ним можна скористатися для виконання довільної потужної остаточної обробки коду :term:`HTML`. Має повертати `soup` після завершення обробки."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.postprocess_html:6
@@ -371,7 +371,7 @@ msgid ""
 "before it is parsed for links and images. It is called after the cleanup as "
 "specified by remove_tags etc. It can be used to do arbitrarily powerful pre-"
 "processing on the :term:`HTML`. It should return `soup` after processing it."
-msgstr ""
+msgstr "Цей метод викликається із джерелом кожного отриманого файла :term:`HTML` до його обробки для отримання посилань та зображень. Викликається після чищення коду, яке визначається методами remove_tags тощо. Ним можна скористатися для виконання довільної потужної попередньої обробки коду :term:`HTML`. Має повертати `soup` після завершення обробки."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.preprocess_html:7
@@ -390,7 +390,7 @@ msgid ""
 "before it is parsed into an object tree. raw_html is a unicode string "
 "representing the raw HTML downloaded from the web. url is the URL from which"
 " the HTML was downloaded."
-msgstr ""
+msgstr "Цей метод викликається для джерела кожного отриманого файла :term:`HTML` до того, як з нього буде створено дерево об’єктів. raw_html є рядком у кодуванні unicode, що відповідає необробленому коду HTML, який отримано з інтернету. `url` — адреса, з якої було отримано код HTML."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.preprocess_raw_html:6
@@ -408,7 +408,7 @@ msgid ""
 "Take a `url` pointing to the webpage with article content and return the "
 ":term:`URL` pointing to the print version of the article. By default does "
 "nothing. For example::"
-msgstr ""
+msgstr "Приймає `url`, адресу, яка вказує на сторінку із вмістом статті, і повертає :term:`URL`, адресу, що вказує на друковану версію статті. Типово не виконує ніяких дій. Приклад::"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.skip_ad_pages:1
@@ -418,7 +418,7 @@ msgid ""
 "applied. Note that preprocess_regexps will have already been applied. It is "
 "meant to allow the recipe to skip ad pages. If the soup represents an ad "
 "page, return the HTML of the real page. Otherwise return None."
-msgstr ""
+msgstr "Цей метод викликається для джерела кожного отриманого файла :term:`HTML` до застосування будь-яких атрибутів для чищення, зокрема remove_tags, keep_only_tags тощо. Зауважте, що preprocess_regexps буде застосовано до застосування цього методу. Метод призначено для того, щоб рецепт міг пропустити сторінки реклами. Якщо soup відповідає сторінці реклами, повертає HTML справжньої сторінки даних. Інакше повертає None."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.sort_index_by:1
@@ -477,7 +477,7 @@ msgid ""
 "algorithms from the readability project. Setting this to True, means that "
 "you do not have to worry about cleaning up the downloaded HTML manually "
 "(though manual cleanup will always be superior)."
-msgstr ""
+msgstr "Автоматично видобуває увесь текст із отриманих сторінок статей. Використовує алгоритми з проекту readability. Встановлення для цього параметра значення True, означає, що ви не хочете перейматися чищенням отриманого коду HTML вручну (хоча таке чищення завжди даватиме кращі результати)."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.auto_cleanup_keep:1
@@ -500,7 +500,7 @@ msgid ""
 "left at their default values, jpeg images will be scaled to fit in the "
 "screen dimensions set by the output profile and compressed to size at most "
 "(w * h)/16 where w x h are the scaled image dimensions."
-msgstr ""
+msgstr "Встановіть для цього параметра значення False, якщо ви хочете, щоб усі параметри масштабування і стискання було проігноровано, отже усі зображення передано без змін. Якщо має значення True і для усіх інших параметрів стискання залишено типові значення, зображення jpeg буде масштабовано відповідно до розмірностей екрана, які встановлено профілем виведення даних і стиснуто до розміну, що не перевищує (ш * в)/16, де ш x в є шириною і висотою масштабованого зображення."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.compress_news_images_auto_size:1
@@ -516,7 +516,7 @@ msgid ""
 "will first be scaled and then its quality lowered until its size is less "
 "than (w * h)/factor where w and h are now the *scaled* image dimensions. In "
 "other words, this compression happens after scaling."
-msgstr ""
+msgstr "Коефіцієнт, що використовуватиметься для автоматичного стискання зображень jpeg. Якщо встановлено значення `None`, автоматичне стискання буде вимкнено. Якщо встановлено інше значення, зображення буде зменшено у розмірах до (ш * в)/compress_news_images_auto_size байтів, якщо це можливо, зменшенням рівня якості. Тут ш x в — ширина і висота зображення у пікселях. Мінімальним значенням якості jpeg є 5/100, отже, може так статися, що бажаних обмежень досягти не вдасться. Значення цього параметра можна перевизначити за допомогою параметра compress_news_images_max_size, який визначає фіксований максимальний розмір зображень. Зауважте, що якщо ви увімкнете scale_news_images_to_device, зображення буде спочатку масштабовано, а потім його якість буде знижено, аж доки розмір його даних стане меншим за (ш * в)/коефіцієнт, де ш — ширина, а в — висота *масштабованого* зображення. Іншими словами, стискання відбуватиметься після масштабування."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.compress_news_images_max_size:1
@@ -525,7 +525,7 @@ msgid ""
 " this parameter overrides auto compression via "
 "compress_news_images_auto_size. The minimum jpeg quality will be 5/100 so it"
 " is possible this constraint will not be met."
-msgstr ""
+msgstr "Встановити якість стискання jpeg так, щоб розмір файлів зображень не перевищував вказаний (у кілобайтах). Якщо встановлено, цей параметр перевизначає параметр автоматичного стискання, який задано compress_news_images_auto_size. Мінімальним значенням якості jpeg є 5/100, тому можуть бути випадки, коли задовольнити обмеження все ж не вдасться."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.conversion_options:1
@@ -533,7 +533,7 @@ msgid ""
 "Recipe specific options to control the conversion of the downloaded content "
 "into an e-book. These will override any user or plugin specified values, so "
 "only use if absolutely necessary. For example::"
-msgstr ""
+msgstr "Специфічні для рецепта параметри, які керують перетворенням отриманих даних книги. Перевизначають усі задані користувачем або додатком значення, тому їх слід використовувати лише за кончої потреби. Приклад::"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.cover_margins:1
@@ -546,7 +546,7 @@ msgid ""
 "15px on the top and bottom. Color names defined at "
 "https://www.imagemagick.org/script/color.php Note that for some reason, "
 "white does not always work on windows. Use #ffffff instead"
-msgstr ""
+msgstr "Типово, як зображення обкладинки періодичного видання буде використано зображення обкладинки, яке повертає get_cover_url(). Перевизначення цього у вашому рецепті накаже calibre обробити отримане зображення обкладинки так, щоб воно вклалося у прямокутник, ширина і висота якого визначаються у відсотках до ширини і висоти отриманого зображення обкладинки. Значення cover_margins = (10, 15, '#ffffff') додає до обкладинки поле у 10 пікселів ліворуч і праворуч і у 15 пікселів згори і знизу. Назви кольорів визначено у https://www.imagemagick.org/script/color.php Зауважте, що з певної причини значення `white` не завжди спрацьовує у windows. Використовуйте замість назви білого кольору його значення, #ffffff"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.delay:1
@@ -570,7 +570,7 @@ msgid ""
 "``cp1252``. If None, try to detect the encoding. If it is a callable, the "
 "callable is called with two arguments: The recipe object and the source to "
 "be decoded. It must return the decoded source."
-msgstr ""
+msgstr "Вказати кодування для сайтів із помилковою специфікацією кодування. Найпоширенішим варіантом для англомовних сайтів є набір символів ``latin1`` і кодування ``cp1252``. Якщо вказано значення `None`, програма спробує автоматично визначити кодування. Якщо вказано назву функції, її буде викликано із двома аргументами: об’єктом рецепта і початковими даними для декодування. Функція має повертати декодовані дані."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.extra_css:1
@@ -581,7 +581,7 @@ msgid ""
 "is declared using the style attribute on individual :term:`HTML` tags. Note "
 "that if you want to programmatically generate the extra_css override the "
 ":meth:`get_extra_css()` method instead. For example::"
-msgstr ""
+msgstr "Визначає будь-яку додаткову таблицю стилів :term:`CSS`, яку слід додати до отриманих файлів :term:`HTML`. Її буде вставлено до теґів `<style>`, одразу перед завершальним теґом `</head>`, і таким чином перевизначено усі :term:`CSS`, окрім тієї, яку оголошено за допомогою атрибута `style` для окремих теґів :term:`HTML`. Зауважте, що якщо ви хочете програмовим чином створити extra_css, вам слід перевизначити замість цього методу метод :meth:`get_extra_css()`. Приклад::"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.feeds:1
@@ -616,7 +616,7 @@ msgstr "Має бути визначено лише один з атрибуті
 msgid ""
 "Set to True if you want to use gziped transfers. Note that some old servers "
 "flake out with this so it is off by default."
-msgstr ""
+msgstr "Встановіть значення True, якщо ви хочете стискати передані дані за допомогою gzip. Зауважте, що деякі застарілі сервери не сприймають такі дані, отже стискання типово вимкнено."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.ignore_duplicate_articles:1
@@ -643,7 +643,7 @@ msgid ""
 "specifying a tag see :attr:`BasicNewsRecipe.remove_tags`. If this list is "
 "not empty, then the `<body>` tag will be emptied and re-filled with the tags"
 " that match the entries in this list. For example::"
-msgstr ""
+msgstr "Зберегти лише вказані теґи і їхні дочірні теґи. Формат визначення теґу описано у розділі щодо :attr:`BasicNewsRecipe.remove_tags`. Якщо цей список не є порожнім, теґ `<body>` буде спорожнено і повторно заповнено теґами, які відповідають записам у цьому списку. Приклад::"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.keep_only_tags:8
@@ -701,7 +701,7 @@ msgid ""
 "Convenient flag to disable loading of stylesheets for websites that have "
 "overly complex stylesheets unsuitable for conversion to ebooks formats. If "
 "True stylesheets are not downloaded and processed"
-msgstr ""
+msgstr "Зручний прапорець для вимикання завантаження таблиць стилів для сайтів, у яких використовуються надто складні таблиці стилів, які є непридатними для перетворень на формати електронних книг. Якщо має значення True, таблиці стилів не отримуються і не обробляються."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.oldest_article:1
@@ -716,7 +716,7 @@ msgid ""
 "first element of the tuple should be a compiled regular expression and the "
 "second a callable that takes a single match object and returns a string to "
 "replace the match. For example::"
-msgstr ""
+msgstr "Список правил підставляння :term:`regexp`, якими слід скористатися для отриманого коду :term:`HTML`. Кожен запис у списку має бути двоелементним кортежем. Першим елементом кортежу має бути скомпільований формальний вираз, а другим — функція, яка приймає одинарний об’єкт-відповідник і повертає рядок, яким слід замінити відповідник. Приклад::"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.preprocess_regexps:12
@@ -754,7 +754,7 @@ msgid ""
 "if parse_index is overridden in the sub class. It is meant only for recipes "
 "that return a list of feeds using `feeds` or :meth:`get_feeds`. It is also "
 "used if you use the ignore_duplicate_articles option."
-msgstr ""
+msgstr "Якщо має значення True, з виведення буде прибрано порожні подачі. Цей параметр не спрацює, якщо parse_index перевизначено у підкласі. Його призначено лише для рецептів, які повертають список подач за допомогою `feeds` або :meth:`get_feeds`. Також використовується, якщо використано параметр ignore_duplicate_articles."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.remove_javascript:1
@@ -821,7 +821,7 @@ msgid ""
 "article rather than its original web URL. If you set this to True, you might"
 " also need to implement :meth:`canonicalize_internal_url` to work with the "
 "URL scheme of your particular website."
-msgstr ""
+msgstr "Якщо встановлено значення True, посилання у отриманих статтях на інші отримані статті замінюються так, щоб вони вказували на отриману копію статті, а не на її оригінал у інтернеті. Якщо ви встановите значення True, вам також варто реалізувати метод :meth:`canonicalize_internal_url`, щоб мати змогу обробляти схему адрес відповідного сайта."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.reverse_article_order:1
