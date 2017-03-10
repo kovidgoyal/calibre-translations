@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-24 08:14+0530\n"
-"PO-Revision-Date: 2017-03-08 21:51+0000\n"
+"PO-Revision-Date: 2017-03-09 21:44+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/calibre/calibre/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgid ""
 "always an additional field named ``#seriesname_index`` that becomes the "
 "series index for that series. So if you have a custom series field named "
 "``#myseries``, there will also be a field named ``#myseries_index``."
-msgstr ""
+msgstr "У шаблоні ви можете використати усі різноманітні поля метаданих, які доступні у calibre, зокрема будь-які нетипові стовпчики, створені вами. Щоб визначити шаблонну назву для стовпчика, просто наведіть вказівник миші на заголовок стовпчика і зачекайте, доки з’явиться панель підказки. Назви для нетипових полів (стовпчиків, які було створено вами) завжди починаються з символу «#». Для нетипових полів типу циклу завжди передбачено додаткове поле із назвою ``#назвациклу_index``, яке містить номер книги у циклі. Отже, якщо у вас є нетипове поле циклу із назвою ``#myseries``, також існуватиме і поле ``#myseries_index``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:27
 msgid "In addition to the column based fields, you also can use::"
@@ -121,7 +121,7 @@ msgid ""
 "will be the empty string (nothing); the prefix and suffix are ignored. The "
 "prefix and suffix can contain blanks. **Do not use subtemplates (`{ ... }`) "
 "or functions (see below) as the prefix or the suffix.**"
-msgstr ""
+msgstr "Якщо книга не належить до циклу, відповіддю буде ``- - назва``. Багато хто б надав перевагу простому ``назва``, без дефісів. Щоб досягти цього, скористайтеся розширеним синтаксисом ``{поле:|текст_префікса|текст_суфікса}``. Якщо ви користуєтеся такою синтаксичною конструкцією, і у полі міститься значення «ЦИКЛ», результатом буде ``текст_префіксаЦИКЛтекст_суфікса``. Якщо у полі немає значення, результатом буде порожній рядок; префікс і суфікс буде проігноровано. Префікс і суфікс можуть містити пробіли. **Не використовуйте підшаблони (`{ ... }`) або функції (див. нижче) як значення префікса або суфікса.**"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:59
 msgid ""
@@ -141,7 +141,7 @@ msgid ""
 " in ``{field:| - }``, is not allowed. It is OK not to provide any text for "
 "one side or the other, such as in ``{series:|| - }``. Using ``{title:||}`` "
 "is the same as using ``{title}``."
-msgstr ""
+msgstr "Зауваження: вам слід включити символ «:», якщо ви хочете скористатися префіксом або суфіксом. Також слід взагалі не використовувати символи \\| або використовувати обидва; скористатися лише одним, ось так: ``{поле:| - }``, — не можна. Втім, можна використовувати порожнє значення для одного або іншого, ось так: ``{series:|| - }``. Використання ``{title:||}`` є рівнозначним до використання ``{title}``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:67
 msgid ""
@@ -164,7 +164,7 @@ msgid ""
 "ensure that the decimal points line up. For example, you might want the "
 "indices 1 and 2.5 to appear as 01.00 and 02.50 so that they will sort "
 "correctly. To do this, use::"
-msgstr ""
+msgstr "Якщо ви використовуєте додаткові значення для номерів книг у серіях (наприклад, 1.1), може виникнути потреба у вирівнюванні розташування десяткової крапки. Наприклад, можна зробити так, щоб номери 1 і 2.5 було показано як 01.00 і 02.50, щоб їх можна було належними чином упорядкувати. Щоб досягти такого вирівнювання, скористайтеся таким кодом::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:83
 msgid "If you want only the first two letters of the data, use::"
@@ -210,7 +210,7 @@ msgid ""
 "composite column by double-clicking on any item, you will open the template "
 "for editing, not the underlying data. Editing the template on the GUI is a "
 "quick way of testing and changing composite columns."
-msgstr ""
+msgstr "Змінювати дані у складеному стовпчику не можна. Якщо ви спробуєте почати редагування складеного стовпчика подвійним клацанням на будь-якому з пунктів, для редагування буде відкрито шаблон, а не дані, які є результатом застосування шаблона. Редагування шаблона у графічному інтерфейсі є швидким способом тестування і внесення змін до складених стовпчиків."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:102
 msgid "Using functions in templates - single-function mode"
@@ -223,7 +223,7 @@ msgid ""
 "using the functions available for templates. For example, to display the "
 "title in upper case, use ``{title:uppercase()}``. To display it in title "
 "case, use ``{title:titlecase()}``."
-msgstr ""
+msgstr "Припустімо, вам потрібно показати значення поля літерами верхнього регістру, хоча зазвичай вміст цього поля записується регістром символів як у заголовку. Досягти цього (як і багатьох інших речей) можна за допомогою функцій шаблонів. Наприклад, для переведення літер у верхній регістр можна скористатися ось таким шаблоном: ``{title:uppercase()}``. Для показу назви у форматі, типовому для заголовків, скористайтеся шаблоном ``{title:titlecase()}``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:106
 msgid ""
@@ -232,14 +232,14 @@ msgid ""
 " function reference, the function comes after another ``:``. Functions must "
 "always end with ``()``. Some functions take extra values (arguments), and "
 "these go inside the ``()``."
-msgstr ""
+msgstr "Посилання на функції мають з’являтися у частині форматування, після ``:`` і перед першим ``|`` або кінцевою ``}``. Якщо у шаблоні мають бути і форматування, і функція, функцію слід вказати після ще одного символу ``:``. Записи функцій мають завжди завершуватися символами ``()``. Деяким функціям передаються додаткові значення (аргументи), такі значення вказують у дужках, ``()``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:108
 msgid ""
 "Functions are always applied before format specifications. See further down "
 "for an example of using both a format and a function, where this order is "
 "demonstrated."
-msgstr ""
+msgstr "Функції завжди застосовуються до специфікацій форматів. Нижче наведено приклад одночасного використання форматування та функції, де продемонстровано потрібний порядок."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:110
 msgid ""
@@ -249,7 +249,7 @@ msgid ""
 " The last (or only) argument cannot contain a closing parenthesis ( ')' ). "
 "Functions return the value of the field used in the template, suitably "
 "modified."
-msgstr ""
+msgstr "Синтаксичною конструкцією для функцій є ``{поле:функція(аргументи)}`` або ``{поле:функція(аргументи)|префікс|суфікс}``. Аргументи відокремлюються один від одного комами. Коми у аргументах слід екранувати символом зворотної похилої риски ( «\\\\» ). Останній (або єдиний) аргумент функції не повинен містити кінцевої дужки ( «)» ). Функції повертають значення поля, використаного у шаблоні, із відповідними змінами."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:112
 msgid ""
@@ -272,7 +272,7 @@ msgid ""
 "The functions available are listed below. Note that the definitive "
 "documentation for functions is available in the section :ref:`Function "
 "classification <template_functions_reference>`:"
-msgstr ""
+msgstr "Нижче наведено список доступних функцій. Зауважте, що повну документацію щодо функцій наведено у розділі щодо :ref:`класифікації функцій <template_functions_reference>`:"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:118
 msgid "``lowercase()``   -- return value of the field in lower case."
@@ -385,7 +385,7 @@ msgid ""
 "equal to key, and return the corresponding value. This function is "
 "particularly useful for extracting a value such as an isbn from the set of "
 "identifiers for a book."
-msgstr ""
+msgstr "``select(ключ)`` — вважати вміст поля списком елементів, відокремлених один від одного комами, де елементи записано у формі \"ідентифікатор:значення\". Шукає пару із ідентифікатором, який відповідає значенню «ключ» і повертає відповідне ідентифікатору значення. Ця функція може стати у пригоді при видобуванні значення, подібного до isbn, з набору ідентифікаторів книги."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:134
 msgid ""
@@ -481,7 +481,7 @@ msgstr ""
 msgid ""
 "Note that you can use the prefix and suffix as well. If you want the number "
 "to appear as ``[003]`` or ``[000]``, then use the field::"
-msgstr ""
+msgstr "Зауважте, що ви також можете скористатися префіксом та суфіксом. Якщо вам потрібно, щоб число було записано як ``[003]`` або ``[000]``, скористайтеся таким полем::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:168
 msgid "Using functions in templates - template program mode"
@@ -499,7 +499,7 @@ msgstr ""
 msgid ""
 "You can use the functions documented above in template program mode. See "
 "below for details."
-msgstr ""
+msgstr "У програмному режимі шаблонів ви можете використовувати документовані вище функції. Докладніший опис використання наведено нижче."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:174
 msgid ""
@@ -643,7 +643,7 @@ msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:226
 msgid "For various values of series_index, the program returns:"
-msgstr ""
+msgstr "Для різних значень series_index програма повертає:"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:228
 msgid "series_index == undefined, result = ``prefix ->t123 suffix``"
@@ -821,7 +821,7 @@ msgid ""
 "``format_date(val, format_string)`` -- format the value, which must be a "
 "date field, using the format_string, returning a string. The formatting "
 "codes are::"
-msgstr ""
+msgstr "``format_date(значення, рядок_формату)`` — форматувати значення, яке має бути записом поля дати, на основі значення рядок_формату, повернути рядок. Коди форматування::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:286
 msgid ""
@@ -930,7 +930,7 @@ msgid ""
 "template_for_group_1, for_group_2, ...)`` -- Like list_re except "
 "replacements are not optional. It uses re_group(item, search_re, template "
 "...) when doing the replacements."
-msgstr ""
+msgstr "``list_re_group(список_джерел, роздільник, фв_включення, фв_пошуку, шаблон_групи_1, шаблон_групи_2, ...)`` — Подібне до list_re, але замінники є обов’язковими. Використовує re_group(пункт_списку, фв_пошуку, шаблон_групи_, ) під час виконання замін у остаточному списку."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:318
 msgid ""
@@ -1172,7 +1172,7 @@ msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:455
 msgid "The slash and the hyphen appear only if series is not empty."
-msgstr ""
+msgstr "Похила риска і дефіс мають з’являтися, лише якщо цикл не є порожнім."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:457
 msgid ""
@@ -1193,14 +1193,14 @@ msgid ""
 "Create a composite field (give it lookup name #AA) containing "
 "``{series}/{series_index} - {title}``. If the series is not empty, then this"
 " template will produce `series/series_index - title`."
-msgstr ""
+msgstr "Створимо складене поле (надавши йому назву #AA), що міститиме дані ``{series}/{series_index} - {title}``. Якщо значення циклу (series) є непорожнім, такий шаблон дасть нам `цикл/номер_у_циклі - назва`."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:461
 msgid ""
 "Create a composite field (give it lookup name #BB) containing "
 "``{#genre:ifempty(Unknown)}/{author_sort}/{title}``. This template produces "
 "`genre/author_sort/title`, where an empty genre is replaced with `Unknown`."
-msgstr ""
+msgstr "Створимо складене поле (надавши йому назву #BB) із вмістом ``{#genre:ifempty(Unknown)}/{author_sort}/{title}``. Цей шаблон дає `жанр/упорядковані_автори/назва`. Якщо немає даних щодо жанру, запис жанру буде замінено на `Unknown`."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:462
 msgid ""
@@ -1208,11 +1208,11 @@ msgid ""
 "chooses composite field #AA if series is not empty, and composite field #BB "
 "if series is empty. We therefore have two completely different save paths, "
 "depending on whether or not `series` is empty."
-msgstr ""
+msgstr "Встановимо шаблон збереження ``{series:lookup(.,#AA,#BB)}``. Цей шаблон вибирає складене поле #AA, якщо значення запису циклу є непорожнім, і складене поле #BB, якщо значення запису циклу є порожнім. Таким чином, ми матимемо повністю різні шляхи для збереження книг, залежно від того, чи є запис `series` порожнім."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:465
 msgid "Templates and Plugboards"
-msgstr ""
+msgstr "Шаблони і набори метаданих"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:467
 msgid ""
@@ -1249,23 +1249,23 @@ msgstr ""
 msgid ""
 "a plugboard with an exact match on format and device, e.g., ``EPUB`` and "
 "``ANDROID``"
-msgstr ""
+msgstr "набір метаданих із точною відповідністю за форматом і пристроєм, наприклад ``EPUB`` і ``ANDROID``"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:474
 msgid ""
 "a plugboard with an exact match on format and the special ``any device`` "
 "choice, e.g., ``EPUB`` and ``any device``"
-msgstr ""
+msgstr "набір метаданих із точним відповідником за форматом і спеціальним варіантом ``any device``, наприклад ``EPUB`` і ``any device``"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:475
 msgid ""
 "a plugboard with the special ``any format`` choice and an exact match on "
 "device, e.g., ``any format`` and ``ANDROID``"
-msgstr ""
+msgstr "набір метаданих із спеціальним варіантом ``any format`` і точною відповідністю за пристроєм, наприклад ``any format`` і ``ANDROID``"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:476
 msgid "a plugboard with ``any format`` and ``any device``"
-msgstr ""
+msgstr "набір метаданих ``any format`` і ``any device``"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:478
 msgid ""
@@ -1311,22 +1311,22 @@ msgid ""
 "Create a custom composite column to test templates. Once you have the "
 "column, you can change its template simply by double-clicking on the column."
 " Hide the column when you are not testing."
-msgstr ""
+msgstr "Створіть нетиповий складений стовпчик для тестування шаблонів. Після створення такого стовпчика для внесення змін до його вмісту достатньо буде двічі клацнути на ньому лівою кнопкою миші. Приховайте цей стовпчик, якщо ви нічого не тестуєте."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:490
 msgid ""
 "Templates can use other templates by referencing a composite custom column."
-msgstr ""
+msgstr "Шаблони можуть використовувати інші шаблони, посилаючись на них як на нетипові складені стовпчики."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:491
 msgid ""
 "In a plugboard, you can set a field to empty (or whatever is equivalent to "
 "empty) by using the special template ``{}``. This template will always "
 "evaluate to an empty string."
-msgstr ""
+msgstr "У наборі метаданих ви можете вказати порожні значення поля (або вказати будь-який еквівалент порожнього поля) за допомогою спеціального шаблона ``{}``. Цей шаблон завжди обробляється як порожній рядок."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:492
 msgid ""
 "The technique described above to show numbers even if they have a zero value"
 " works with the standard field series_index."
-msgstr ""
+msgstr "Описана вище методика для показу чисел працює зі стандартним полем series_index, навіть якщо вміст відповідного поля є порожнім."
