@@ -31,9 +31,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-24 08:14+0530\n"
-"PO-Revision-Date: 2017-02-24 18:58+0000\n"
-"Last-Translator: Jellby <jellby@yahoo.com>\n"
+"POT-Creation-Date: 2017-03-18 09:50+0530\n"
+"PO-Revision-Date: 2017-03-18 04:20+0000\n"
+"Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Spanish (http://www.transifex.com/calibre/calibre/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -236,6 +236,10 @@ msgstr "Guardar las configuraciones especificadas por el usuario con config_widg
 #: calibre.customize.FileTypePlugin.postimport:0
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.postadd:0
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataReaderPlugin.get_metadata:0
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataWriterPlugin.set_metadata:0
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.CatalogPlugin.run:0
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/metadata/sources/base.pydocstring
@@ -578,20 +582,37 @@ msgstr "Conjunto de tipos de archivo para los que este complemento debe ejecutar
 msgid ""
 "Return metadata for the file represented by stream (a file like object that "
 "supports reading). Raise an exception when there is an error with the input "
-"data. :param type: The type of file. Guaranteed to be one of the entries in "
-":attr:`file_types`. :return: A "
+"data."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataReaderPlugin.get_metadata:5
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataWriterPlugin.set_metadata:5
+msgid "The type of file. Guaranteed to be one of the entries"
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataReaderPlugin.get_metadata:6
+msgid ""
+"in :attr:`file_types`. :return: A "
 ":class:`calibre.ebooks.metadata.book.Metadata` object"
-msgstr "Devuelve metadatos del archivo representado por `stream` (un objeto de tipo archivo que admite lectura). Genera una excepción si hay un error con los datos de entrada.\n\n:param type: El tipo del archivo. Es con seguridad una de las entradas en :attr:`file_types`.\n\n:return: Un objeto :class:`calibre.ebooks.metadata.book.Metadata`."
+msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.MetadataWriterPlugin.set_metadata:1
 msgid ""
 "Set metadata for the file represented by stream (a file like object that "
 "supports reading). Raise an exception when there is an error with the input "
-"data. :param type: The type of file. Guaranteed to be one of the entries in "
-":attr:`file_types`. :param mi: A "
+"data."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataWriterPlugin.set_metadata:6
+msgid ""
+"in :attr:`file_types`. :param mi: A "
 ":class:`calibre.ebooks.metadata.book.Metadata` object"
-msgstr "Establece los metadatos del archivo representado por `stream` (un objeto de tipo archivo que admite lectura). Genera una excepción si hay un error con los datos de entrada.\n\n:param type: El tipo del archivo. Es con seguridad una de las entradas en :attr:`file_types`.\n:param mi: Un objeto :class:`calibre.ebooks.metadata.book.Metadata`."
+msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/plugins.rst:54
 msgid "Catalog plugins"
@@ -1366,11 +1387,11 @@ msgid ""
 "blacklist of devices, a list of ejected devices and so forth. calibre will "
 "periodically call the detect_managed_devices() method and if it returns a "
 "detected device, calibre will call open(). open() will be called every time "
-"a device is returned even is previous calls to open() failed, therefore the "
+"a device is returned even if previous calls to open() failed, therefore the "
 "driver must maintain its own blacklist of failed devices. Similarly, when "
 "ejecting, calibre will call eject() and then assuming the next call to "
 "detect_managed_devices() returns None, it will call post_yank_cleanup()."
-msgstr "Si es True, indica que este controlador gestiona completamente la detección de dispositivos, la desconexión, etc. Si la establece a True, *debe* implementar los métodos detect_managed_devices y debug_managed_device_detection. Un controlador con esta variable como True tiene la responsabilidad de detectar dispositivos, gestionar una lista negra de dispositivos, una lista de dispositivos desconectados, etc. calibre ejecutará periódicamente el método detect_managed_devices() y si devuleve un dispositivo detectado, calibre ejecutará call open(). open() se ejecutará cada vez que se devuelva un dispositivo, incluso si previamente open() falló, por lo tanto el controlador debe mantener su propia lista negra de dispositivos fallidos. Análogamente, al desconectar, calibre ejecutará eject() y, suponiendo que que la siguiente ejecución de detect_managed_devices() devuelva None, ejecutará post_yank_cleanup()."
+msgstr "Si es True, indica que este controlador gestiona completamente la detección de dispositivos, la desconexión, etc. Si la establece a True, *debe* implementar los métodos detect_managed_devices y debug_managed_device_detection. Un controlador con esta variable como True tiene la responsabilidad de detectar dispositivos, gestionar una lista negra de dispositivos, una lista de dispositivos desconectados, etc. calibre ejecutará periódicamente el método meth:`detect_managed_devices()` y si devuleve un dispositivo detectado, calibre ejecutará :meth:`open()`. :meth:`open()` se ejecutará cada vez que se devuelva un dispositivo, incluso si previamente :meth:`open()` falló, por lo tanto el controlador debe mantener su propia lista negra de dispositivos fallidos. Análogamente, al desconectar, calibre ejecutará :meth:`eject()` y, suponiendo que que la siguiente ejecución de :meth:`detect_managed_devices()` devuelva None, ejecutará :meth:`post_yank_cleanup()`."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.SLOW_DRIVEINFO:1
@@ -1865,11 +1886,11 @@ msgstr "Si ocurre un error al preparar un libro, en lugar de una ruta de acceso,
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.startup:1
 msgid ""
-"Called when calibre is is starting the device. Do any initialization "
-"required. Note that multiple instances of the class can be instantiated, and"
-" thus __init__ can be called multiple times, but only one instance will have"
-" this method called. This method is called on the device thread, not the GUI"
-" thread."
+"Called when calibre is starting the device. Do any initialization required. "
+"Note that multiple instances of the class can be instantiated, and thus "
+"__init__ can be called multiple times, but only one instance will have this "
+"method called. This method is called on the device thread, not the GUI "
+"thread."
 msgstr "Se ejecuta cuando calibre inicia el dispositivo. Realiza cualquier inicialización necesaria. Tenga en cuenta que pueden generarse varios especímenes de la clase, y por lo tanto :meth:`__init__` puede ejecutarse varias veces, pero sólo un espécimen ejecutará este método. Este método se ejecuta en el hilo del dispositivo, no en el de la interfaz gráfica."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
@@ -2453,7 +2474,7 @@ msgstr "Este método debe realizar algunas acciones útiles y devolver True si y
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:1
 msgid ""
 "Convenience method to easily add actions to a QMenu. Returns the created "
-"QAction, This action has one extra attribute calibre_shortcut_unique_name "
+"QAction. This action has one extra attribute calibre_shortcut_unique_name "
 "which if not None refers to the unique name under which this action is "
 "registered with the keyboard manager."
 msgstr "Método práctico para añadir acciones a un QMenu. Devuelve la QAction creada. Esta acción tiene un atributo adicional ``calibre_shortcut_unique_name`` que, si no es None, se refiere al nombre único con el que esta acción se registra en el gestor de teclado."
@@ -2505,7 +2526,7 @@ msgstr "Un objeto ejecutable conectado con la señal desencadenada de la acción
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:22
 msgid ""
-"The test displayed to the user when customizing the keyboard shortcuts for "
+"The text displayed to the user when customizing the keyboard shortcuts for "
 "this action. By default it is set to the value of ``text``."
 msgstr "El texto que se muestra al usuario al personalizar los atajos de teclado para esta acción. De manera predeterminada toma el valor de ``text``."
 

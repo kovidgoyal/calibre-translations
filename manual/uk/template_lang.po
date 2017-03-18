@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-24 08:14+0530\n"
-"PO-Revision-Date: 2017-03-09 21:44+0000\n"
+"POT-Creation-Date: 2017-03-18 09:50+0530\n"
+"PO-Revision-Date: 2017-03-11 20:07+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/calibre/calibre/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -198,7 +198,7 @@ msgid ""
 "the ISBN, create the column and enter ``{identifiers:select(isbn)}`` into "
 "the template box. To display a column containing the values of two series "
 "custom columns separated by a comma, use ``{#series1:||,}{#series2}``."
-msgstr ""
+msgstr "Іноді потрібно зробити так, щоб метадані було видно, які calibre зазвичай не показує, або показати набір даних, який відрізняється від звичного набору даних calibre. Наприклад, у вас може виникнути потреба бачити ISBN, поле, вміст якого calibre не показує. Для показу таких даних ви можете скористатися нетиповими стовпчиками. Створіть стовпчик із типом «Стовпчик, створений на основі інших стовпчиків» (надалі ми такі стовпчики називатимемо складеними) і введіть до нього шаблон. Результат: calibre показуватиме у стовпчику результат обчислення шаблона. Для показу ISBN створіть стовпчик і введіть ``{identifiers:select(isbn)}`` у поле шаблона. Щоб створити стовпчик, який міститиме значення двох нетипових стовпчиків циклів, скористайтеся шаблоном ``{#series1:||,}{#series2}``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:97
 msgid "Composite columns can use any template option, including formatting."
@@ -259,7 +259,7 @@ msgid ""
 "no sub-evaluation. **Do not use subtemplates (`{ ... }`) as function "
 "arguments.** Instead, use :ref:`template program mode <template_mode>` and "
 ":ref:`general program mode <general_mode>`."
-msgstr ""
+msgstr "Важливе зауваження: якщо у вас є досвід програміста, будь ласка, майте на увазі, що синтаксис у цьому режимі (єдиної функції) може бути трохи неочікуваним. Рядки не беруться у лапки. Пробіли є значимими. Усі аргументи мають бути сталими. Не передбачено підлеглого обчислення. **Не використовуйте підшаблонів (`{ ... }`) у аргументах функцій.** Замість них використовуйте :ref:`шаблонний режим програмування <template_mode>` та :ref:`загальний режим програмування <general_mode>`."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:114
 msgid ""
@@ -422,7 +422,7 @@ msgid ""
 "of zero. If an index is negative, then it counts from the end of the list. "
 "As a special case, an end_index of zero is assumed to be the length of the "
 "list. Examples::"
-msgstr ""
+msgstr "``subitems(значення, початковий_номер, кінцевий_номер)`` — цією функцією користуються для розбиття списків пунктів, зокрема списків жанрів. Функція обробляє значення як відокремлений комами список записів, у якому кожен з записів є відокремленим крапками списком. Повертає новий список, створений таким чином: спочатку буде знайдено всі відокремлені крапками запис, потім для кожного такого запису буде видобуто компоненти від номера `початковий_номер` до `кінцевий_номер`, а потім всі видобуті записи знову буде поєднано для отримання результату. Перший компонент у відокремленому крапками списку матиме номер нуль. Якщо номер буде від’ємним, його буде відраховано від кінця списку. Якщо буде вказано `кінцевий_номер` рівний нулеві, номер вважатиметься кінцевим у списку. Приклади::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:146
 msgid ""
@@ -433,7 +433,7 @@ msgid ""
 "special case, an end_index of zero is assumed to be the length of the list. "
 "Examples assuming that the tags column (which is comma-separated) contains "
 "\"A, B ,C\"::"
-msgstr ""
+msgstr "``sublist(значення, початковий_номер, кінцевий_номер, роздільник)`` — обробляє значення як список пунктів, відокремлених роздільником `роздільник`, повертає новий список, створений з пунктів з номера `початковий_номер` до номера `кінцевий_номер`. Перший пункт має нульовий номер. Якщо вказано від’ємний номер, його буде відраховано від кінця списку. Якщо буде вказано `кінцевий_номер` рівний нулеві, номер вважатиметься кінцевим у списку. Приклади у основному режимі шаблонів зі стовпчиком міток (значення у якому відокремлено комами), що містить значення \"A, B, C\"::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:152
 msgid ""
@@ -475,7 +475,7 @@ msgid ""
 "nothing, not ``000``. If you really want to see ``000`` values, then you use"
 " both the format string and the ``ifempty`` function to change the empty "
 "value back to a zero. The field reference would be::"
-msgstr ""
+msgstr "Тепер, як щодо використання функцій і форматування у одному полі? Припустімо, у нас є нетиповий стовпчик із назвою ``#myint``, у якому містяться цілі числа. Вам потрібно представити їх у форматі із початковими нулями, ось так: ``003``. Для цього можна було б скористатися форматуванням ``0>3s``. Втім, типово, якщо число (ціле або дійсне) дорівнює нулеві, у поле буде записано порожнє значення. Отже, нульові значення початкові значення призводитимуть до порожніх записів, а не до записів ``000``. Якщо вам потрібні саме значення ``000``, вам слід скористатися одразу і рядком форматування, і функцією ``ifempty`` для заміни порожнього значення на нульове. Еталонний код міг би бути таким::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:161
 msgid ""
@@ -493,7 +493,7 @@ msgid ""
 " it permits you to write template expressions that refer to other metadata "
 "fields, modify values, and do arithmetic. It is a reasonably complete "
 "programming language."
-msgstr ""
+msgstr "Режим програмування мовою шаблонів відрізняється від режиму єдиної функції тим, що надає вам змогу писати вирази шаблонів, які посилаються на інші поля метаданих, змінюють значення і виконують арифметичні дії. Це достатньо повна мова програмування."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:172
 msgid ""
@@ -508,7 +508,7 @@ msgid ""
 "#genre. You cannot do this in the basic language because you cannot make "
 "reference to another metadata field within a template expression. In program"
 " mode, you can. The following expression works::"
-msgstr ""
+msgstr "Почнімо з прикладу. Припустімо, що ви хочете, щоб ваш шаблон показував цикл для книги, яка належить до циклу, і значення нетипового поля #genre, якщо книга не належить до циклів. Зробити це за допомогою базової мови неможливо, оскільки ви не можете послатися на інше поле метаданих у виразі шаблона. Але у програмному режимі ви можете це зробити. Спрацює такий вираз::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:178
 msgid "The example shows several things:"
@@ -549,7 +549,7 @@ msgid ""
 "almost entirely from functions. A statement is a function. An expression is "
 "a function. Constants and identifiers can be thought of as functions "
 "returning the value indicated by the constant or stored in the identifier."
-msgstr ""
+msgstr "Мова програмування є подібною до ``функційних`` мов програмування тим, що її майже повністю побудовано з функцій. Інструкція є функцією. Вираз є функцією. Сталі і ідентифікатори можна вважати функціями, які повертають значення, що визначається сталою або зберігається у ідентифікаторі."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:188
 msgid "The syntax of the language is shown by the following grammar::"
@@ -565,7 +565,7 @@ msgid ""
 "value contained in the identifier, or the value returned by a function. The "
 "value of a ``statement`` is the value of the last expression in the sequence"
 " of statements. As such, the value of the program (statement)::"
-msgstr ""
+msgstr "``expression`` завжди має значення, це або значення сталої або значення, що міститься у ідентифікаторі, або значення, яке повертає функція. Значенням ``statement`` є значення останнього виразу у послідовності інструкцій. Отже, значенням такої програми (інструкції)::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:204
 msgid "is 3."
@@ -585,7 +585,7 @@ msgstr "Програма виконує такі дії:"
 msgid ""
 "specify that the field being looked at is series_index. This sets the value "
 "of the variable ``$``."
-msgstr ""
+msgstr "визначає, що полем, яке слід знайти, є поле series_index. Його вміст визначає значення змінної ``$``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:220
 msgid ""
@@ -596,7 +596,7 @@ msgid ""
 "start is 0, and the end is 6. In this case it will return the first 6 "
 "characters of the string returned by ``strcat``, which must be evaluated "
 "before substr can return."
-msgstr ""
+msgstr "викликає функцію ``substr``, яка приймає 3 параметри ``(рядок, початок, кінець)``. Функція повертає рядок, який сформовано видобуванням символів від символу з номером ``початок`` до символу з номером ``кінець`` з рядка ``str``. Нумерація символів починається з нуля (перший символ рядка має номер 0). У цьому прикладі рядок буде визначено функцією ``strcat``, початком є 0, а кінцем — 6. Отже, буде повернуто перші 6 символів рядка, який повертається ``strcat``, і який має бути визначено до того, як substr зможе повернути значення."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:221
 msgid ""
@@ -607,7 +607,7 @@ msgid ""
 " the constant string ``'->'``. The third parameter is the value returned by "
 "the ``cmp`` function, which must be fully evaluated before ``strcat`` can "
 "return."
-msgstr ""
+msgstr "викликає функцію ``strcat`` (об’єднання рядків). Strcat приймає 1 або декілька аргументів і повертає рядок, що складається з об’єднання всіх аргументів. У цьому випадку аргументів три. Першим є значення у змінній ``$``, яким є значення ``series_index``. Другим є сталий рядок ``'->'``. Третім аргументом є значення, яке повертає функція ``cmp``, тобто значення, яке має бути повністю обчислено до того, як ``strcat`` зможе повернути значення."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:222
 msgid ""
@@ -620,7 +620,7 @@ msgid ""
 "``lt`` is a statement (more later). The fourth parameter ``eq`` is the "
 "constant string ``'eq'``. The fifth parameter is the constant string "
 "``'gt'``."
-msgstr ""
+msgstr "функція ``cmp`` приймає 5 аргументів, ``(x, y, lt, eq, gt)``. Вона порівнює x та y і повертає третій аргумент, ``lt``, якщо x < y, четвертий аргумент, ``eq``, якщо x == y, і п’ятий аргумент, ``gt``, якщо x > y. Як в усіх функцій, усі аргументи функції можуть бути інструкціями. У нашому випадку перший аргумент (значення ``x``) є результатом ділення series_index на 2. Другий аргумент, ``y``, є сталою ``1``. Третій аргумент, ``lt``, інструкцією (докладніше про неї нижче). Четвертий аргумент, ``eq``, є сталим рядком ``'eq'``. А п’ятий аргумент є сталим рядком ``'gt'``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:223
 msgid ""
@@ -632,14 +632,14 @@ msgid ""
 " the c'th character to the end. Since c always contains the constant ``1``, "
 "the substring will return the second through end'th characters, or "
 "``'t123'``."
-msgstr ""
+msgstr "Третій аргумент (той, що стоїть на місці ``lt``) є інструкцією або послідовністю виразів. Слід пам’ятати, що інструкція (послідовність відокремлених символом крапки з комою виразів) також є виразом, що повертає значення останнього виразу у списку. У нашому випадку, програма спочатку надає локальній змінній ``c`` значення ``1``, потім повертає підрядок, утворений видобуванням рядка, що починається з символу із номером ``c`` і завершується кінцевим символом рядка. Оскільки ``c`` завжди містить сталу ``1``, завжди повертатиметься рядок, що починається з другого символу рядка і завершується його кінцевим символом, або ``'t123'``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:224
 msgid ""
 "Once the statement providing the value to the third parameter is executed, "
 "``cmp`` can return a value. At that point, ``strcat` can return a value, "
 "then ``substr`` can return a value. The program then terminates."
-msgstr ""
+msgstr "Щойно інструкцію, яка надає значення третього параметра, буде виконано, ``cmp`` зможе повернути значення. Після цього значення зможуть повернути ``strcat`, а потім і ``substr``. Програма завершить свою роботу."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:226
 msgid "For various values of series_index, the program returns:"
@@ -674,7 +674,7 @@ msgid ""
 "``test(x, text_if_not_empty, text_if_empty)``. The `x` parameter, which is "
 "the value to be tested, will almost always be a variable or a function call,"
 " often `field()`."
-msgstr ""
+msgstr "**У програмному режимі можна використовувати усі функції, які було описано у розділі щодо режиму єдиної функції**. Для цього вам слід надати значення, яке може бути оброблено функцією як перший параметр, окрім параметрів, які вказано вище. Наприклад, у програмному режимі параметрами функції `test` є ``test(x, текст для непорожнього, текст для порожнього)``. Параметр `x`, який є значенням, щодо якого слід виконати перевірку, майже завжди є змінною або результатом виклику функції, часто `field()`."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:236
 msgid ""
@@ -685,7 +685,7 @@ msgid ""
 "all parameters can be statements (sequences of expressions). Note that the "
 "definitive documentation for functions is available in the section "
 ":ref:`Function classification <template_functions_reference>`:"
-msgstr ""
+msgstr "Описані нижче функції розширюють набір функцій, описаний у розділі щодо режиму єдиної функції. Не забудьте, що, як можна побачити у наведеному вище прикладі, функції з режиму єдиної функції потребують додаткового першого параметра, який визначає поле, яке має обробляти функція. Окрім параметра ``ідентифікатор`` функції assign, усі параметри можуть бути інструкціями (послідовностями виразів). Зауважте, що із повною документацією щодо функцій можна ознайомитися у розділі щодо :ref:`класифікації функцій <template_functions_reference>`:"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:238
 msgid ""
@@ -830,7 +830,7 @@ msgid ""
 "contain ``MMMM``. In this case, instead of using something like "
 "``{pubdate:format_date(yyyy)}``, write the template using template program "
 "mode as in ``{:'format_date(raw_field('pubdate'),'yyyy')'}``."
-msgstr ""
+msgstr "Результати можуть бути не такими, на які ви сподівалися, якщо форматована дата містить локалізовані назви місяців, що може трапитися, якщо ви змінили коригування формату на такі, які містять ``MMMM``. У цьому випадку, замість використання шаблона, подібного до ``{pubdate:format_date(yyyy)}``, напишіть шаблон, що використовує програмний режим, ось так: ``{:'format_date(raw_field('pubdate'),'yyyy')'}``."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:288
 msgid ""
@@ -841,7 +841,7 @@ msgid ""
 " :ref:`general program mode <general_mode>` (see below) to take advantage of"
 " GPM template compilation. For example, the following program produces the "
 "same output as the above template::"
-msgstr ""
+msgstr "``finish_formatting(значення, формат, префікс, суфікс)`` — застосувати формат, префікс і суфікс до значення у спосіб, у який це виконується шаблоном, зокрема ``{series_index:05.2f| - |- }``. Цю функцію створено для спрощення перетворення складних шаблонів режиму єдиної функції і програмного режиму до :ref:`загального програмного режиму <general_mode>` (див. нижче) для використання переваг компіляції шаблонів загального програмного режиму. Наприклад, наведена нижче програма виводить ті самі дані, що і вказаний вище програма-шаблон::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:299
 msgid ""
@@ -1083,7 +1083,7 @@ msgid ""
 "template with `program:`. In this case, no template processing is done. The "
 "special variable `$` is not set. It is up to your program to produce the "
 "correct results."
-msgstr ""
+msgstr "У складніших шаблонних програмах іноді простіше уникати синтаксису шаблонів (усіх символів `{` і `}`) і писати програми у класичному стилі. Перейти до такого режиму у calibre можна розпочавши шаблон зі слова `program:`. Для таких програм не виконуватиметься звична обробка шаблонів. Значення для спеціальної змінної `$` не встановлюватиметься. Про те, щоб вивести коректні результати, має подбати сама програма."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:358
 msgid ""
@@ -1097,7 +1097,7 @@ msgid ""
 "Program Mode templates to Python). The main reason to turn off compilation "
 "is if a compiled template does not work, in which case please file a bug "
 "report."
-msgstr ""
+msgstr "Однією із переваг режиму `program:` є те, що у ньому дужки вже не мають спеціального значення. Наприклад, немає потреби використовувати `[[` і `]]`, коли ви користуєтеся функцією `template()`. Ще однією перевагою є те, що шаблони програмного режиму компілюються у код мовою Python і можуть працювати набагато швидше за шаблони у інших двох режимах. Рівень пришвидшення залежить від складності шаблонів: чим складнішим є шаблон, тим швидше він працюватиме у такому режимі. Компіляцію можна вимкнути або увімкнути за допомогою коригування ``compile_gpm_templates`` (компілювати шаблони загального режиму програмування у Python). Основною причиною вимикання такої компіляції є непрацездатність компільованого шаблона. Будь ласка, повідомте розробникам програми про ваду, якщо шаблон не компілюється."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:360
 msgid ""
@@ -1108,7 +1108,7 @@ msgid ""
 "recipe gives `LotR [02] The Two Towers`. Using standard templates, the "
 "recipe requires three custom columns and a plugboard, as explained in the "
 "following:"
-msgstr ""
+msgstr "Наведений нижче приклад є реалізацією у режимі `program:` рецепта на форумі MobileRead: «Записати цикл до назви, використовуючи або абревіатуру, або скорочену форму. Вилучити початкові артиклі із назви циклу (якщо такі є).» Наприклад, для книги «The Two Towers» з циклу «The Lord of the Rings» рецепт має дати `LotR [02] The Two Towers`. У стандартних шаблонах реалізація рецепта потребує трьох нетипових стовпчиків і набору метаданих, як це зроблено тут:"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:362
 msgid ""
@@ -1117,14 +1117,14 @@ msgid ""
 "'shorten' form. The third is to compute the 'initials' form. Once you have "
 "these columns, the plugboard selects between them. You can hide any or all "
 "of the three columns on the library view::"
-msgstr ""
+msgstr "Вирішення потребує створення трьох складених стовпчиків. Перший стовпчик використовується для вилучення початкових артиклів. Другий — для обчислення «скороченої» форми. Третій — для форми «абревіатури». Після створення цих стовпчиків набір метаданих вибирає між ними. Ви можете сховати будь-який або усі три стовпчики з вікна перегляду бібліотеки::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:401
 msgid ""
 "The following program produces the same results as the original recipe, "
 "using only one custom column to hold the results of a program that computes "
 "the special title value::"
-msgstr ""
+msgstr "Записана нижче програма дає той самий результат, що і початковий рецепт, використовуючи лише один нетиповий стовпчик для зберігання результатів виконання програми, яка обчислює спеціальне значення заголовка::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:438
 msgid ""
@@ -1134,7 +1134,7 @@ msgid ""
 "multi-line editing. It is debatable whether the gain of not having the "
 "custom column is worth the vast increase in difficulty caused by the program"
 " being one giant line."
-msgstr ""
+msgstr "Реалізувати описаний вище рецепт можна без нетиповий стовпчиків, вписавши програму до поля шаблона набору метаданих. Втім, для цього доведеться вилучити усі коментарі, оскільки у текстовому полі набору метаданих не передбачено багаторядкового редагування. Щодо того, чи варте заощадження нетипових стовпчиків втрати зрозумілості коду, можна подискутувати, оскільки тепер програма перетворюється на один гігантський рядок."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:442
 msgid "User-defined Template Functions"
@@ -1146,7 +1146,7 @@ msgid ""
 " written in python, and can be used in any of the three template programming"
 " modes. The functions are added by going to Preferences -> Advanced -> "
 "Template Functions. Instructions are shown in that dialog."
-msgstr ""
+msgstr "Ви можете додавати власні функції до обробника шаблонів. Такі функції пишуться мовою python. Ними можна скористатися у будь-якому з трьох режимі програмування шаблонів. Функції додаються за допомогою сторінки :guilabel:`Налаштування -> Додатково -> Шаблонні функції`. Відповідні настанови можна знайти у діалоговому вікні, яке відкриє програма."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:447
 msgid "Special notes for save/send templates"
@@ -1161,14 +1161,14 @@ msgid ""
 "However, slashes are not changed in prefix or suffix strings, so slashes in "
 "these strings will cause folders to be created. Because of this, you can "
 "create variable-depth folder structure."
-msgstr ""
+msgstr "До шаблонів, які використовуються для дій `зберегти на диск` і `надіслати на пристрій`, застосовується спеціальна обробка. Значення полів буде очищено із заміною символів, які мають спеціальне значення у файлових системах, зокрема символів похилих рисок, на символи підкреслювання. Це означає, що текст поля не можна використовувати для створення тек. Втім, похилі риски не замінюватимуться у рядках префікса і суфікса, отже похилі риски у цих рядках можна використати для створення тек. Таким чином, ви можете створити структуру тек довільного рівня вкладеності."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:451
 msgid ""
 "For example, assume we want the folder structure `series/series_index - "
 "title`, with the caveat that if series does not exist, then the title should"
 " be in the top folder. The template to do this is::"
-msgstr ""
+msgstr "Наприклад, припустімо ми хочемо створити структуру тек `цикл/номер_у_циклі - назва`, із умовою, що якщо циклу не існує, назву слід розташувати у верхній теці. Шаблон для виконання цього завдання::"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:455
 msgid "The slash and the hyphen appear only if series is not empty."
@@ -1182,7 +1182,7 @@ msgid ""
 "we want the folder structure `genre/author_sort/title.fmt`. If the book has "
 "no genre, we want to use 'Unknown'. We want two completely different paths, "
 "depending on the value of series."
-msgstr ""
+msgstr "Функція `lookup` надає вам змогу виконувати виконувати навіть ще вишуканішу обробку. Наприклад, припустімо, що якщо книга належить до циклу, ми хочемо мати структуру тек `цикл/номер у циклі - назва.формат`. Якщо книга не належить до циклу, нам потрібна структура тек `жанр/упорядковане ім’я автора/назва.формат`. Якщо ж книга не належить до певного жанру, слід скористатися текою 'Unknown'. Нам потрібно два повністю різних шляхи, залежно від значення параметра циклу."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:462
 msgid "To accomplish this, we:"
@@ -1223,7 +1223,7 @@ msgid ""
 " language, publisher, tags, title, title_sort. This feature helps people who"
 " want to use different metadata in books on devices to solve sorting or "
 "display issues."
-msgstr ""
+msgstr "Набори метаданих використовуються для внесення змін до метаданих, що записуються до книг під час дій із надсилання на пристрій і збереження на диск. Набір метаданих надає вам змогу вказати шаблон для надання даних, які слід записати до метаданих книги. Ви можете скористатися наборами метаданих для внесення змін до таких полів: authors, author_sort, language, publisher, tags, title, title_sort. Набори метаданих допомагають у використанні спеціалізованих метаданих для книг на пристрої з метою усування проблем із упорядковуванням книг або їхнім показом."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:469
 msgid ""
@@ -1234,7 +1234,7 @@ msgid ""
 "change, providing templates to supply the new values. These templates are "
 "`connected` to their destination fields, hence the name `plugboards`. You "
 "can, of course, use composite columns in these templates."
-msgstr ""
+msgstr "Під час створення набору метаданих ви визначаєте формат і пристрій, для яких використовуватиметься набір. Передбачено особливий пристрій, save_to_disk, який використовується для збереження книг у певних форматах (на відміну від надсилання книг на пристрій). Після вибору формату і пристрою вам слід вибрати поля метаданих для внесення змін і надати шаблони для визначення нових значень цих полів. Ці шаблони буде `з’єднано` з відповідними полями призначення. Ви, звичайно ж, можете використовувати у шаблонах наборів метаданих складені стовпчики."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:471
 msgid ""
@@ -1243,7 +1243,7 @@ msgid ""
 "for the given format and device. For example, to find the appropriate "
 "plugboard for an EPUB book being sent to an ANDROID device, calibre searches"
 " the plugboards using the following search order:"
-msgstr ""
+msgstr "Якщо до метаданих може бути застосовано набір (на сервері даних, для збереження на диск або надсилання на пристрій), calibre шукає визначені набори метаданих і вибирає належний для заданого формату і пристрою. Наприклад, для того, щоб знайти належний набір метаданих для книги EPUB, яку надсилають на пристрій під керуванням ANDROID, calibre шукає набори метаданих у такому порядку:"
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:473
 msgid ""
@@ -1277,7 +1277,7 @@ msgid ""
 "if the template produces the value ``Thriller, Horror``, then the result "
 "will be two tags, ``Thriller`` and ``Horror``. There is no way to put a "
 "comma in the middle of a tag."
-msgstr ""
+msgstr "Поля міток (`tags`) і авторів (`authors`) обробляються у особливий спосіб, оскільки у обох цих полях може міститися декілька записів. У книги може бути багато міток і багато авторів. Якщо ви визначаєте одне з цих двох полів як таке, вміст якого слід змінити, результати використання шаблона буде перевірено на наявність декількох записів. Для міток результат буде розділено на записи за знайденими calibre комами. Наприклад, якщо шаблон створює значення ``Трилер, Жахи``, результатом буде дві мітки, ``Трилер`` і ``Жахи``. Способів додавання коми у окрему мітку не передбачено."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:480
 msgid ""
@@ -1287,7 +1287,7 @@ msgid ""
 "with two authors, ``Blogs, Joe`` and ``Posts, Susan``. If the template "
 "produces the value ``Blogs, Joe;Posts, Susan``, then the book will have one "
 "author with a rather strange name."
-msgstr ""
+msgstr "Те саме стосується авторів, але для поділу на записи використовується інший символ, `&` (амперсанд), а не кома. Наприклад, якщо шаблоном створюється значення ``Blogs, Joe&Posts, Susan``, для книги буде визначено двоє авторів, ``Blogs, Joe`` і ``Posts, Susan``. Якщо ж шаблон створює значення ``Blogs, Joe;Posts, Susan``, книга матиме один запис автора із доволі чудернацьким іменем."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:482
 msgid ""
@@ -1296,7 +1296,7 @@ msgid ""
 " ``save to disk`` and ``send to device`` to create the file names. Instead, "
 "file names are constructed using the templates entered on the appropriate "
 "preferences window."
-msgstr ""
+msgstr "Набори метаданих впливають на метадані, які записуються до книги, коли її зберігають на диск або записують на пристрій для читання. Набори метаданих не змінюють метадані, які використовуються діями ``зберегти на диск`` та ``надіслати на пристрій`` для створення назв файлів. Назви файлів будуються за допомогою шаблонів, які вказано у відповідних місцях вікна налаштувань."
 
 #: ../../home/kovid/work/calibre/manual/template_lang.rst:485
 msgid "Helpful Tips"

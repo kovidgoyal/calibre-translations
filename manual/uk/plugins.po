@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-24 08:14+0530\n"
-"PO-Revision-Date: 2017-03-09 21:33+0000\n"
+"POT-Creation-Date: 2017-03-18 09:50+0530\n"
+"PO-Revision-Date: 2017-03-18 06:52+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/calibre/calibre/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -216,6 +216,10 @@ msgstr "Зберегти визначені користувачем за доп
 #: calibre.customize.FileTypePlugin.postimport:0
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.postadd:0
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataReaderPlugin.get_metadata:0
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataWriterPlugin.set_metadata:0
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.CatalogPlugin.run:0
 #: ../../home/kovid/work/calibre/src/calibre/ebooks/metadata/sources/base.pydocstring
@@ -558,20 +562,37 @@ msgstr "Набір типів файлів, для яких слід запус�
 msgid ""
 "Return metadata for the file represented by stream (a file like object that "
 "supports reading). Raise an exception when there is an error with the input "
-"data. :param type: The type of file. Guaranteed to be one of the entries in "
-":attr:`file_types`. :return: A "
+"data."
+msgstr "Повертає метадані для файла, представленого потоком даних (файлоподібним об’єктом, для якого передбачено підтримку читання). Надсилає повідомлення щодо виключення, якщо сталася помилка із вхідними даними."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataReaderPlugin.get_metadata:5
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataWriterPlugin.set_metadata:5
+msgid "The type of file. Guaranteed to be one of the entries"
+msgstr "тип файла. Гарантовано є одним із записів у :attr:`file_types`."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataReaderPlugin.get_metadata:6
+msgid ""
+"in :attr:`file_types`. :return: A "
 ":class:`calibre.ebooks.metadata.book.Metadata` object"
-msgstr "Повертає метадані для файла, представленого потоком даних (файлоподібним об’єктом, для якого передбачено підтримку читання). Надсилає повідомлення щодо виключення, якщо сталася помилка із вхідними даними. :param type: тип файла. Гарантовано є одним із записів у :attr:`file_types`. :return: об’єкт класу :class:`calibre.ebooks.metadata.book.Metadata`."
+msgstr ":return: об’єкт класу :class:`calibre.ebooks.metadata.book.Metadata`."
 
 #: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.MetadataWriterPlugin.set_metadata:1
 msgid ""
 "Set metadata for the file represented by stream (a file like object that "
 "supports reading). Raise an exception when there is an error with the input "
-"data. :param type: The type of file. Guaranteed to be one of the entries in "
-":attr:`file_types`. :param mi: A "
+"data."
+msgstr "Встановлює метадані для файла, представленого потоком даних (файлоподібним об’єктом, для якого передбачено підтримку читання). Надсилає повідомлення щодо виключення, якщо сталася помилка із вхідними даними."
+
+#: ../../home/kovid/work/calibre/src/calibre/customize/__init__.pydocstring of
+#: calibre.customize.MetadataWriterPlugin.set_metadata:6
+msgid ""
+"in :attr:`file_types`. :param mi: A "
 ":class:`calibre.ebooks.metadata.book.Metadata` object"
-msgstr "Встановлює метадані для файла, представленого потоком даних (файлоподібним об’єктом, для якого передбачено підтримку читання). Надсилає повідомлення щодо виключення, якщо сталася помилка із вхідними даними. :param type: тип файла. Гарантовано є одним із записів у :attr:`file_types`. :param mi: об’єкт класу :class:`calibre.ebooks.metadata.book.Metadata`."
+msgstr "у :attr:`file_types`. :param mi: об’єкт :class:`calibre.ebooks.metadata.book.Metadata`"
 
 #: ../../home/kovid/work/calibre/manual/plugins.rst:54
 msgid "Catalog plugins"
@@ -1346,7 +1367,7 @@ msgid ""
 "blacklist of devices, a list of ejected devices and so forth. calibre will "
 "periodically call the detect_managed_devices() method and if it returns a "
 "detected device, calibre will call open(). open() will be called every time "
-"a device is returned even is previous calls to open() failed, therefore the "
+"a device is returned even if previous calls to open() failed, therefore the "
 "driver must maintain its own blacklist of failed devices. Similarly, when "
 "ejecting, calibre will call eject() and then assuming the next call to "
 "detect_managed_devices() returns None, it will call post_yank_cleanup()."
@@ -1845,11 +1866,11 @@ msgstr "Якщо під час приготування книги сталас�
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.startup:1
 msgid ""
-"Called when calibre is is starting the device. Do any initialization "
-"required. Note that multiple instances of the class can be instantiated, and"
-" thus __init__ can be called multiple times, but only one instance will have"
-" this method called. This method is called on the device thread, not the GUI"
-" thread."
+"Called when calibre is starting the device. Do any initialization required. "
+"Note that multiple instances of the class can be instantiated, and thus "
+"__init__ can be called multiple times, but only one instance will have this "
+"method called. This method is called on the device thread, not the GUI "
+"thread."
 msgstr "Викликається, коли calibre розпочинає роботу з пристроєм. Виконує усі потрібні дії з ініціалізації. Зауважте, що можна створити декілька екземплярів класу, отже __init__ можна викликати декілька разів, але викликатиме цей метод лише один екземпляр. Цей метод викликається у потоці виконання пристрою, а не у потоці графічного інтерфейсу."
 
 #: ../../home/kovid/work/calibre/src/calibre/devices/interface.pydocstring of
@@ -2433,7 +2454,7 @@ msgstr "Цей метод має виконати певну корисну ді
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:1
 msgid ""
 "Convenience method to easily add actions to a QMenu. Returns the created "
-"QAction, This action has one extra attribute calibre_shortcut_unique_name "
+"QAction. This action has one extra attribute calibre_shortcut_unique_name "
 "which if not None refers to the unique name under which this action is "
 "registered with the keyboard manager."
 msgstr "Зручний метод для спрощення додавання пунктів дій до QMenu. Повертає створену QAction. Ця дія має лише один додатковий атрибут, calibre_shortcut_unique_name, який, якщо не має значення `None`, посилається на унікальну назву, під якою цю дію зареєстровано у засобі керування клавіатурними скороченнями."
@@ -2485,7 +2506,7 @@ msgstr "Придатна до виклику функція, яка з’єдн�
 #: ../../home/kovid/work/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:22
 msgid ""
-"The test displayed to the user when customizing the keyboard shortcuts for "
+"The text displayed to the user when customizing the keyboard shortcuts for "
 "this action. By default it is set to the value of ``text``."
 msgstr "Текстове повідомлення, яке буде показано користувачеві під час налаштовування клавіатурних скорочень для цієї дії. Типово встановлено значення ``text``."
 

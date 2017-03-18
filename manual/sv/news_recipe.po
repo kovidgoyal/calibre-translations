@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-24 08:14+0530\n"
-"PO-Revision-Date: 2017-02-23 10:51+0000\n"
-"Last-Translator: Jonatan Nyberg <jonatan@autistici.org>\n"
+"POT-Creation-Date: 2017-03-18 09:50+0530\n"
+"PO-Revision-Date: 2017-03-18 04:21+0000\n"
+"Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Swedish (http://www.transifex.com/calibre/calibre/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,6 +84,8 @@ msgstr "Återge en uppsättning kanoniska representationer av ``url``. Grundinst
 #: calibre.web.feeds.news.BasicNewsRecipe.canonicalize_internal_url:0
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.is_link_wanted:0
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.populate_article_metadata:0
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.postprocess_book:0
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
@@ -229,7 +231,7 @@ msgstr "Om du sätter `articles_are_obfuscated` anropas denna metod med varje ar
 msgid ""
 "This method is typically useful for sites that try to make it difficult to "
 "access article content automatically."
-msgstr "Denna metod är oftast användbart för webbsidor som försöker göra det svårt att komma åt artikelns innehåll automatiskt."
+msgstr "Denna metod är oftast användbart för webbplatser som försöker göra det svårt att komma åt artikelns innehåll automatiskt."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.image_url_processor:1
@@ -284,7 +286,7 @@ msgid ""
 "that have a \"Print Edition\" webpage that lists all the articles in the "
 "current print edition. If this function is implemented, it will be used in "
 "preference to :meth:`BasicNewsRecipe.parse_feeds`."
-msgstr "Denna metod bör implementeras på recept för att tolka en webbsida istället för flöden genererar en lista med artiklar. Typiska användningsområden är för nyhetskällor som har en \"tryckt upplaga\"-webbsida som listar alla artiklar i den aktuella tryckupplagan. Om denna funktion implementeras kommer den att användas istället för :meth:`BasicNewsRecipe.parse_feeds`."
+msgstr "Denna metod bör implementeras på recept för att tolka en webbplats istället för flöden genererar en lista med artiklar. Typiska användningsområden är för nyhetskällor som har en \"tryckt upplaga\"-webbplats som listar alla artiklar i den aktuella tryckupplagan. Om denna funktion implementeras kommer den att användas istället för :meth:`BasicNewsRecipe.parse_feeds`."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.parse_index:7
@@ -318,12 +320,21 @@ msgstr "Om du vill avbryta behandlingen av någon anledning och låta calibre vi
 msgid ""
 "Called when each HTML page belonging to article is downloaded. Intended to "
 "be used to get article metadata like author/summary/etc. from the parsed "
-"HTML (soup). :param article: A object of class "
-":class:`calibre.web.feeds.Article`. If you change the summary, remember to "
-"also change the text_summary :param soup: Parsed HTML belonging to this "
-"article :param first: True iff the parsed HTML is the first page of the "
-"article."
-msgstr "Anropas när varje HTML-sida som hör till artikeln hämtats. Avsedd att användas för att få artikelns metadata som författaren/sammandrag/o.s.v. från analyserad HTML (soppa). :param artikel: Ett objekt av klassen :class:`calibre.web.feeds.Article`. Om du ändrar sammanfattningen, kom ihåg att också ändra text_summary :param soup: Tolkad HTML tillhör denna artikel :param first: True om och endast om analyserad HTML är den första sidan av artikeln. "
+"HTML (soup)."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.populate_article_metadata:5
+msgid "A object of class :class:`calibre.web.feeds.Article`."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
+#: calibre.web.feeds.news.BasicNewsRecipe.populate_article_metadata:6
+msgid ""
+"If you change the summary, remember to also change the text_summary :param "
+"soup: Parsed HTML belonging to this article :param first: True iff the "
+"parsed HTML is the first page of the article."
+msgstr ""
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.postprocess_book:1
@@ -408,7 +419,7 @@ msgid ""
 "Take a `url` pointing to the webpage with article content and return the "
 ":term:`URL` pointing to the print version of the article. By default does "
 "nothing. For example::"
-msgstr "Ta en `url` som hänvisar till en webbsida med artikelinnehåll och återger :term:`URL` som hänvisar till en utskrivbar version av artikeln. Som standard gör ingenting. TIll exempel::"
+msgstr "Ta en `url` som hänvisar till en webbplats med artikelinnehåll och återger :term:`URL` som hänvisar till en utskrivbar version av artikeln. Som standard gör ingenting. TIll exempel::"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.skip_ad_pages:1
@@ -468,7 +479,7 @@ msgstr "`tag`: `BeautifulSoup <https://www.crummy.com/software/BeautifulSoup/bs3
 msgid ""
 "Set to True and implement :meth:`get_obfuscated_article` to handle websites "
 "that try to make it difficult to scrape content."
-msgstr "Ställ in till True och implementerar :meth:`get_obfuscated_article` för att hantera webbsidor som försöker göra det svårt att skrapa fram innehåll."
+msgstr "Ställ in till True och implementerar :meth:`get_obfuscated_article` för att hantera webbplatser som försöker göra det svårt att skrapa fram innehåll."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.auto_cleanup:1
@@ -516,7 +527,7 @@ msgid ""
 "will first be scaled and then its quality lowered until its size is less "
 "than (w * h)/factor where w and h are now the *scaled* image dimensions. In "
 "other words, this compression happens after scaling."
-msgstr "Den faktor som används när automatisk komprimera jpeg-bilder. Om värdet är None, är komprimering automatisk inaktiverad. Annars kommer bilderna att minskas i storlek till (b * h) / compress_news_images_auto_size byte om möjligt genom att minska kvalitetsnivån, där bxh är bildens dimensioner i pixlar. Den minsta jpeg-kvalitet kommer att vara 5/100 så det är möjligt denna begränsning inte kommer att uppfyllas. Denna parameter kan åsidosättas av parametern compress_news_images_max_size som ger en fast maximal storlek för bilder. Observera att om du aktiverar scale_news_images_to_device kommer sedan bilden först skalas och sedan dess kvalitet sänkas tills dess storlek är mindre än (b*h)/faktor där w och h är nu bildens *skalade* dimensioner. Med andra ord, denna kompression sker efter skalning."
+msgstr "Den faktor som används när automatisk komprimera jpeg-bilder. Om värdet är None, är komprimering automatisk avaktiverad. Annars kommer bilderna att minskas i storlek till (b * h) / compress_news_images_auto_size byte om möjligt genom att minska kvalitetsnivån, där bxh är bildens dimensioner i pixlar. Den minsta jpeg-kvalitet kommer att vara 5/100 så det är möjligt denna begränsning inte kommer att uppfyllas. Denna parameter kan åsidosättas av parametern compress_news_images_max_size som ger en fast maximal storlek för bilder. Observera att om du aktiverar scale_news_images_to_device kommer sedan bilden först skalas och sedan dess kvalitet sänkas tills dess storlek är mindre än (b*h)/faktor där w och h är nu bildens *skalade* dimensioner. Med andra ord, denna kompression sker efter skalning."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.compress_news_images_max_size:1
@@ -570,7 +581,7 @@ msgid ""
 "``cp1252``. If None, try to detect the encoding. If it is a callable, the "
 "callable is called with two arguments: The recipe object and the source to "
 "be decoded. It must return the decoded source."
-msgstr "Ange en kodningsöverridning för webbsidor som har en felaktig charset-specifikation. Det vanligaste är att ange ``latin1`` och använda ``cp1252``. Om None, försöka identifiera kodningen. Om det är en anropbar, anropas den anropbara med två argument: Receptobjektet och den källa som ska avkodas. Det måste återge den avkodade källan."
+msgstr "Ange en kodningsöverridning för webbplatser som har en felaktig charset-specifikation. Det vanligaste är att ange ``latin1`` och använda ``cp1252``. Om None, försöka identifiera kodningen. Om det är en anropbar, anropas den anropbara med två argument: Receptobjektet och den källa som ska avkodas. Det måste återge den avkodade källan."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.extra_css:1
@@ -701,7 +712,7 @@ msgid ""
 "Convenient flag to disable loading of stylesheets for websites that have "
 "overly complex stylesheets unsuitable for conversion to ebooks formats. If "
 "True stylesheets are not downloaded and processed"
-msgstr "Bekväm flagga för att inaktivera laddning av utformningsmallar för webbsidor som har alltför komplexa mallar som är olämpliga för konvertering till e-bokformat. Om True hämtas inte mallar och bearbetas"
+msgstr "Bekväm flagga för att avaktivera laddning av utformningsmallar för webbplatser som har alltför komplexa mallar som är olämpliga för konvertering till e-bokformat. Om True hämtas inte mallar och bearbetas"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.oldest_article:1
@@ -735,12 +746,12 @@ msgstr "Publikationstyp inställd till tidning, tidskrift eller blogg. Om instä
 msgid ""
 "Set to a non empty string to disable this recipe. The string will be used as"
 " the disabled message"
-msgstr "Ändra till en icke-tom sträng för att inaktivera detta recept. Strängen kommer att användas som inaktiverade meddelande"
+msgstr "Ändra till en icke-tom sträng för att avaktivera detta recept. Strängen kommer att användas som avaktiverade meddelande"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.recursions:1
 msgid "Number of levels of links to follow on article webpages"
-msgstr "Antal nivåer av länkar att följa på en artikelwebbsida"
+msgstr "Antal nivåer av länkar att följa på en artikelwebbplats"
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.remove_attributes:1
@@ -821,7 +832,7 @@ msgid ""
 "article rather than its original web URL. If you set this to True, you might"
 " also need to implement :meth:`canonicalize_internal_url` to work with the "
 "URL scheme of your particular website."
-msgstr "Om inställt till True så kommer länkar i hämtade artiklar som hänvisar till andra hämtade artiklar ändras till att peka på den hämtade kopian av artikeln snarare än dess ursprungliga webbadress . Om du ställer in detta till True, behöver du kanske du också införa  :meth:`canonicalize_internal_url` för att arbeta med URL-schemat för just din webbsida."
+msgstr "Om inställt till True så kommer länkar i hämtade artiklar som hänvisar till andra hämtade artiklar ändras till att peka på den hämtade kopian av artikeln snarare än dess ursprungliga webbadress . Om du ställer in detta till True, behöver du kanske du också införa  :meth:`canonicalize_internal_url` för att arbeta med URL-schemat för just din webbplats."
 
 #: ../../home/kovid/work/calibre/src/calibre/web/feeds/news.pydocstring of
 #: calibre.web.feeds.news.BasicNewsRecipe.reverse_article_order:1
