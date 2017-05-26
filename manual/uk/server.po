@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-21 09:38+0530\n"
-"PO-Revision-Date: 2017-03-19 17:50+0000\n"
+"POT-Creation-Date: 2017-05-26 00:09+0530\n"
+"PO-Revision-Date: 2017-05-25 21:07+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/calibre/calibre/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -22,61 +22,71 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:4
-msgid "Integrating the calibre content server into other servers"
+msgid "Integrating the calibre Content server into other servers"
 msgstr "Інтегрування сервера даних calibre в інші сервери"
 
 #: ../../home/kovid/work/calibre/manual/server.rst:6
 msgid ""
-"Here, we will show you how to integrate the calibre content server into "
+"Here, we will show you how to integrate the calibre Content server into "
 "another server. The most common reason for this is to make use of SSL or "
-"more sophisticated authentication. There are two main techniques: Running "
-"the calibre content server as a standalone process and using a reverse proxy"
-" to connect it with your main server or running the content server in "
-"process in your main server with WSGI. The examples below are all for Apache"
-" 2.x on linux, but should be easily adaptable to other platforms."
-msgstr "У цьому розділі ми наведемо пояснення щодо того, як інтегрувати сервер даних calibre до іншого сервера. Найпоширенішою причиною такої інтеграції є використання розпізнавання за SSL або складнішого розпізнавання. Передбачено дві основні методики: запуск сервера даних calibre як окремого процесу і використання зворотного проксі для встановлення з’єднання між ним і вашим основним сервером за допомогою WSGI. Наведені нижче приклади стосуються сервера Apache 2.x на платформі linux, але їх дуже просто адаптувати до інших платформ."
+"more sophisticated authentication. The basic technique is to run the calibre"
+" server and setup reverse proxying to it from the main server."
+msgstr "У цьому розділі ми наведемо пояснення щодо того, як інтегрувати сервер даних calibre до іншого сервера. Найпоширенішою причиною такої інтеграції є використання розпізнавання за SSL або складнішого розпізнавання. Основною є методика запуску сервера даних calibre і використання зворотного проксі для встановлення з’єднання між ним і вашим основним сервером."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:12
-msgid "This only applies to calibre releases >= 0.7.25"
-msgstr "Це актуально тільки для Calibre версії 0.7.25 та новіше."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:15
-msgid "Using a reverse proxy"
-msgstr "Використовуючи зворотний проксі"
-
-#: ../../home/kovid/work/calibre/manual/server.rst:17
 msgid ""
 "A reverse proxy is when your normal server accepts incoming requests and "
 "passes them onto the calibre server. It then reads the response from the "
 "calibre server and forwards it to the client. This means that you can simply"
 " run the calibre server as normal without trying to integrate it closely "
 "with your main server, and you can take advantage of whatever authentication"
-" systems your main server has in place. This is the simplest approach as it "
-"allows you to use the binary calibre install with no external "
-"dependencies/system integration requirements. Below, is an example of how to"
-" achieve this with Apache as your main server, but it will work with any "
-"server that supports Reverse Proxies."
-msgstr "Зворотною називається схема проксі-сервера, коли ваш звичайний сервер приймає вхідні запити і передає їх серверу calibre. Далі він читає відповідь від сервера calibre і переспрямовує її клієнту. Це означає, що ви можете просто запустити сервер calibre як звичайно, без спроб тісно інтегрувати його зі вашим основним сервером, і ви можете скористатися перевагами систем розпізнавання, налаштованих на вашому основному сервері. Цей підхід є найпростішим, оскільки ви можете скористатися встановленими бінарними пакунками calibre, не використовуючи зовнішніх залежностей та не налаштовуючи інтеграцію з системою. Нижче наведено приклад того, як цього досягти, використовуючи основний сервер Apache, але цим прикладом можна скористатися для будь-якого сервера, на якому передбачено підтримку зворотних проксі."
+" systems your main server has in place."
+msgstr "Зворотною називається схема проксі-сервера, коли ваш звичайний сервер приймає вхідні запити і передає їх серверу calibre. Далі він читає відповідь від сервера calibre і переспрямовує її клієнту. Це означає, що ви можете просто запустити сервер calibre як звичайно, без спроб тісно інтегрувати його зі вашим основним сервером, і ви можете скористатися перевагами систем розпізнавання, налаштованих на вашому основному сервері."
 
-#: ../../home/kovid/work/calibre/manual/server.rst:19
-msgid "First start the calibre content server as shown below::"
-msgstr "Спочатку запустіть сервер даних calibre, як це показано нижче::"
+#: ../../home/kovid/work/calibre/manual/server.rst:15
+msgid "Using a full virtual host"
+msgstr "Використання повного віртуального вузла"
 
-#: ../../home/kovid/work/calibre/manual/server.rst:23
+#: ../../home/kovid/work/calibre/manual/server.rst:17
 msgid ""
-"The key parameter here is ``--url-prefix /calibre``. This causes the content"
+"The simplest configuration is to dedicate a full virtual host to the calibre"
+" server. In this case, run the calibre server as::"
+msgstr "Найпростішою є конфігурація із використанням повного віртуального вузла для роботи сервера calibre. У цьому випадку сервер calibre запускається так::"
+
+#: ../../home/kovid/work/calibre/manual/server.rst:22
+msgid ""
+"Now setup the virtual host in your main server, for example, for nginx::"
+msgstr "Далі, слід налаштувати віртуальний вузол на вашому основному сервері. Приклад для nginx::"
+
+#: ../../home/kovid/work/calibre/manual/server.rst:33
+msgid "Or, for Apache::"
+msgstr "Або для Apache::"
+
+#: ../../home/kovid/work/calibre/manual/server.rst:47
+msgid "Using a URL prefix"
+msgstr "Використання префікса адреси"
+
+#: ../../home/kovid/work/calibre/manual/server.rst:49
+msgid ""
+"If you do not want to dedicate a full virtual host to calibre, you can have "
+"it use a URL prefix. Start the calibre server as::"
+msgstr "Якщо ви не хочете використовувати окремий віртуальний вузол для calibre, ви можете налаштувати систему з використанням префікса адреси. Запустіть сервер calibre так::"
+
+#: ../../home/kovid/work/calibre/manual/server.rst:54
+msgid ""
+"The key parameter here is ``--url-prefix /calibre``. This causes the Content"
 " server to serve all URLs prefixed by calibre. To see this in action, visit "
 "``http://localhost:8080/calibre`` in your browser. You should see the normal"
-" content server website, but now it will run under /calibre."
-msgstr "Ключовим параметром тут є ``--url-prefix /calibre``. Цей параметр наказує серверу даних обслуговувати усі адреси із префіксом calibre. Щоб побачити, як це працює, відкрийте адресу ``http://localhost:8080/calibre`` у вашій програмі для перегляду інтернету. Ви маєте побачити звичайний сайт сервера даних, але тепер він працюватиме з префіксом /calibre."
+" Content server website, but now it will run under /calibre."
+msgstr "Ключовим параметром тут є ``--url-prefix /calibre``. Цей параметр наказує серверу даних обслуговувати усі адреси із префіксом calibre. Щоб побачити як це праціює, відкрийте сторінку з адресою ``http://localhost:8080/calibre`` у вашій програмі для перегляду інтернету. Ви маєте побачити звичайний сайт сервера даних, але тепер він працюватиме у теці /calibre."
 
-#: ../../home/kovid/work/calibre/manual/server.rst:25
+#: ../../home/kovid/work/calibre/manual/server.rst:56
 msgid ""
 "Now suppose you are using Apache as your main server. First enable the proxy"
-" modules in apache, by adding the following to :file:`httpd.conf`::"
-msgstr "Тепер, припустімо, що ви використовуєте як основний сервер сервер Apache. Спочатку увімкніть проксі-модулі у apache, додаванням вказаного нижче фрагмента до :file:`httpd.conf`::"
+" modules in Apache, by adding the following to :file:`httpd.conf`::"
+msgstr "Тепер, припустімо, що ви використовуєте як основний сервер сервер Apache. Спочатку увімкніть проксі-модулі у Apache, додаванням вказаного нижче фрагмента до :file:`httpd.conf`::"
 
-#: ../../home/kovid/work/calibre/manual/server.rst:30
+#: ../../home/kovid/work/calibre/manual/server.rst:61
 msgid ""
 "The exact technique for enabling the proxy modules will vary depending on "
 "your Apache installation. Once you have the proxy modules enabled, add the "
@@ -84,87 +94,10 @@ msgid ""
 " file for the virtual host in question)::"
 msgstr "Точна методика вмикання модулів проксі залежить від встановленого варіанта Apache. Щойно модулі проксі буде увімкнено, додайте такі правила до httpd.conf (або якщо ви використовуєте віртуальні вузли, до файла налаштувань віртуального вузла)::"
 
-#: ../../home/kovid/work/calibre/manual/server.rst:38
+#: ../../home/kovid/work/calibre/manual/server.rst:67
 msgid ""
-"That's all, you will now be able to access the calibre Content Server under "
-"the /calibre URL in your apache server. The above rules pass all requests "
+"That's all, you will now be able to access the calibre Content server under "
+"the /calibre URL in your Apache server. The above rules pass all requests "
 "under /calibre to the calibre server running on port 8080 and thanks to the "
 "--url-prefix option above, the calibre server handles them transparently."
-msgstr "Ось і усе, тепер ви можете отримувати доступ до сервера даних calibre за префіксом /calibre на вашому сервері apache. Вказані вище правила передають усі запити до /calibre на сервер calibre, який запущено на порту 8080 і, завдяки вказаному параметру --url-prefix, сервер calibre прозоро їх обробляє."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:40
-msgid ""
-"If you are willing to devote an entire VirtualHost to the content server, "
-"then there is no need to use --url-prefix and RewriteRule, instead just use "
-"the ProxyPass directive."
-msgstr "Якщо ви хочете віддати серверу даних увесь віртуальний вузол, потреби у використанні --url-prefix і RewriteRule немає. Замість цього, достатньо просто директиви ProxyPass."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:42
-msgid ""
-"The server engine calibre uses, CherryPy, can have trouble with proxying and"
-" KeepAlive requests, so turn them off in Apache, with the SetEnv directives "
-"shown above."
-msgstr "Рушій сервера, яким користується calibre, CherryPy, може мати проблеми з проходженням запитів та запитами KeepAlive. Отже, вам слід вимкнути їх у Apache за допомогою директив SetEnv, наведених вище."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:45
-msgid "In process"
-msgstr "В ході"
-
-#: ../../home/kovid/work/calibre/manual/server.rst:47
-msgid ""
-"The calibre content server can be run directly, in process, inside a host "
-"server like Apache using the WSGI framework."
-msgstr "Сервер даних calibre можна запустити безпосередньо, у процесі, на основному сервері, зокрема Apache, за допомогою набору інструментів WSGI."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:49
-msgid ""
-"For this to work, all the dependencies needed by calibre must be installed "
-"on your system. Doing so is highly non-trivial and you are encouraged not to"
-" use in process servers. You will not get any assistance with debugging in "
-"process server problems."
-msgstr "Щоб це спрацювало, у вашій системі має бути встановлено усі залежності потрібні calibre. Виконання цього завдання є доволі нетривіальним, вам не варто цього робити на серверах обробки даних. Ніхто вам не допоможе, якщо під час діагностики із сервером обробки виникнуть проблеми."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:51
-msgid ""
-"First, we have to create a WSGI *adapter* for the calibre content server. "
-"Here is a template you can use for the purpose. Replace the paths as "
-"directed in the comments"
-msgstr "Спершу, нам слід створити *адаптер* WSGI для сервера даних calibre. Нижче наведено шаблон, яким ви можете скористатися для цього. Замініть шляхи так, як це вказано у коментарях:"
-
-#: ../../home/kovid/work/calibre/manual/server.rst:101
-msgid ""
-"Save this adapter as :file:`calibre-wsgi-adpater.py` somewhere your server "
-"will have access to it."
-msgstr "Збережіть цей адаптер як :file:`calibre-wsgi-adpater.py` десь, де до нього зможе отримати доступ ваш сервер."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:103
-msgid ""
-"Let's suppose that we want to use WSGI in Apache. First enable WSGI in "
-"Apache by adding the following to :file:`httpd.conf`::"
-msgstr "Припустімо, що ми хочемо скористатися WSGI у Apache. Спочатку, увімкніть WSGI у Apache додаванням такого фрагмента до :file:`httpd.conf`::"
-
-#: ../../home/kovid/work/calibre/manual/server.rst:107
-msgid ""
-"The exact technique for enabling the wsgi module will vary depending on your"
-" Apache installation. Once you have the proxy modules enabled, add the "
-"following rules to httpd.conf (or if you are using virtual hosts to the conf"
-" file for the virtual host in question::"
-msgstr "Точна методика вмикання модуля wsgi залежить від встановленого варіанта Apache. Щойно модулі проксі буде увімкнено, додайте такі правила до httpd.conf (або якщо ви використовуєте віртуальні вузли, до файла налаштувань віртуального вузла)::"
-
-#: ../../home/kovid/work/calibre/manual/server.rst:111
-msgid ""
-"Change the path to :file:`calibre-wsgi-adapter.py` to wherever you saved it "
-"previously (make sure Apache has access to it)."
-msgstr "Вкажіть шлях до файла :file:`calibre-wsgi-adapter.py`, який ви зберегли раніше (Переконайтесь, що Apache має до нього доступ)."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:113
-msgid ""
-"That's all, you will now be able to access the calibre Content Server under "
-"the /calibre URL in your apache server."
-msgstr "Ось і усе, тепер ви можете отримати доступ до сервера даних calibre за адресою із завершальним фрагментом /calibre на вашому сервері apache."
-
-#: ../../home/kovid/work/calibre/manual/server.rst:115
-msgid ""
-"For more help with using mod_wsgi in Apache, see `mod_wsgi "
-"<https://code.google.com/p/modwsgi/wiki/WhereToGetHelp>`_."
-msgstr "Щоб дізнатися більше про використання mod_wsgi у Apache, див. `mod_wsgi <https://code.google.com/p/modwsgi/wiki/WhereToGetHelp>`_."
+msgstr "Ось і усе, тепер ви можете отримувати доступ до сервера даних calibre за префіксом /calibre на вашому сервері Apache. Вказані вище правила передають усі запити до /calibre на сервер calibre, який запущено на порту 8080 і, завдяки вказаному параметру --url-prefix, сервер calibre прозоро їх обробляє."
