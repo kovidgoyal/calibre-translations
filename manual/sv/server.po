@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the calibre package.
 # 
 # Translators:
-# Jonatan Nyberg, 2016-2017
+# Jony, 2016-2017
 # Merarom <merarom@yahoo.es>, 2014,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-21 20:39+0530\n"
-"PO-Revision-Date: 2017-06-21 15:10+0000\n"
+"POT-Creation-Date: 2017-06-27 00:29+0530\n"
+"PO-Revision-Date: 2017-06-26 19:00+0000\n"
 "Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Swedish (http://www.transifex.com/calibre/calibre/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -216,8 +216,8 @@ msgid ""
 "You can either do so directly in the server by providing the path to the "
 "HTTPS certificate to use in the advanced configuration options for the "
 "server, or you can setup a reverse proxy as described below, to use an "
-"existing https setup."
-msgstr "För maximal säkerhet bör du också aktivera HTTPS på innehållsservern. Du kan antingen göra det direkt på servern genom att ge sökvägen till HTTPS-certifikatet att använda i avancerade konfigurationsalternativ för servern, eller du kan konfigurera en reverse proxy som beskrivs nedan för att använda en befintlig https-inställning."
+"existing HTTPS setup."
+msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:145
 msgid "The server interface"
@@ -418,12 +418,16 @@ msgid ""
 msgstr "Nyckelparametern här är ``--url-prefix /calibre``. Detta gör att Innehållsservern kan betjäna alla webbadresser som prefixas av calibre. För att se detta i åtgärd, besök ``http://localhost:8080/calibre`` i din webbläsare. Du borde se den normala innehållsserverwebbplatsen, men nu kör den under /calibre."
 
 #: ../../home/kovid/work/calibre/manual/server.rst:296
-msgid ""
-"Now suppose you are using Apache as your main server. First enable the proxy"
-" modules in Apache, by adding the following to :file:`httpd.conf`::"
-msgstr "Antag nu att du använder Apache som din huvudserver. Först aktivera proxy-modulerna i Apache, genom att lägga till följande till  :file:`httpd.conf`::"
+msgid "With nginx, the required configuration is::"
+msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:301
+#: ../../home/kovid/work/calibre/manual/server.rst:309
+msgid ""
+"For Apache, first enable the proxy modules in Apache, by adding the "
+"following to :file:`httpd.conf`::"
+msgstr ""
+
+#: ../../home/kovid/work/calibre/manual/server.rst:314
 msgid ""
 "The exact technique for enabling the proxy modules will vary depending on "
 "your Apache installation. Once you have the proxy modules enabled, add the "
@@ -431,10 +435,18 @@ msgid ""
 " file for the virtual host in question)::"
 msgstr "Den exakta tekniken för att möjliggöra proxymoduler varierar beroende på din Apache-installation. När du aktiverar proxymodulerna, lägg till följande regler till httpd.conf (eller om du använder virtuella värdar till conf-filen för den virtuella värden i fråga)::"
 
-#: ../../home/kovid/work/calibre/manual/server.rst:307
+#: ../../home/kovid/work/calibre/manual/server.rst:320
 msgid ""
 "That's all, you will now be able to access the calibre Content server under "
-"the /calibre URL in your Apache server. The above rules pass all requests "
+"the /calibre URL in your main server. The above rules pass all requests "
 "under /calibre to the calibre server running on port 8080 and thanks to the "
 "--url-prefix option above, the calibre server handles them transparently."
-msgstr "Det är allt, du kommer nu att kunna komma åt calibres Innehållsserver under /calibres URL på din Apache-server. Ovanstående regler skickar alla förfrågningar under /calibre till calibre-servern som körs på port 8080 och tack vare alternativet --url-prefix ovan hanterar calibre-servern dem transparent."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/manual/server.rst:325
+msgid ""
+"If you have setup SSL for your main server, you should tell the calibre "
+"server to use basic authentication instead of digest authentication, as it "
+"is faster. To do so, pass the ``--auth-mode=basic`` option to ``calibre-"
+"server``."
+msgstr ""
