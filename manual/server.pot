@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: calibre 3.1.1\n"
+"Project-Id-Version: calibre 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-27 00:29+0530\n"
+"POT-Creation-Date: 2017-06-30 10:48+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,58 +213,62 @@ msgid "Integrating the calibre Content server into other servers"
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:242
-msgid "Here, we will show you how to integrate the calibre Content server into another server. The most common reason for this is to make use of SSL. The basic technique is to run the calibre server and setup a reverse proxy to it from the main server."
+msgid "Here, we will show you how to integrate the calibre Content server into another server. The most common reason for this is to make use of SSL or to serve the calibre library as part of a larger site. The basic technique is to run the calibre server and setup a reverse proxy to it from the main server."
 msgstr ""
 
 #: ../../home/kovid/work/calibre/manual/server.rst:247
-msgid "A reverse proxy is when your normal server accepts incoming requests and passes them onto the calibre server. It then reads the response from the calibre server and forwards it to the client. This means that you can simply run the calibre server as normal without trying to integrate it closely with your main server, and you can take advantage of whatever authentication systems your main server has in place."
+msgid "A reverse proxy is when your normal server accepts incoming requests and passes them onto the calibre server. It then reads the response from the calibre server and forwards it to the client. This means that you can simply run the calibre server as normal without trying to integrate it closely with your main server."
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:255
+#: ../../home/kovid/work/calibre/manual/server.rst:254
 msgid "Using a full virtual host"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:257
+#: ../../home/kovid/work/calibre/manual/server.rst:256
 msgid "The simplest configuration is to dedicate a full virtual host to the calibre server. In this case, run the calibre server as::"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:262
+#: ../../home/kovid/work/calibre/manual/server.rst:261
 msgid "Now setup the virtual host in your main server, for example, for nginx::"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:273
+#: ../../home/kovid/work/calibre/manual/server.rst:272
 msgid "Or, for Apache::"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:287
+#: ../../home/kovid/work/calibre/manual/server.rst:286
 msgid "Using a URL prefix"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:289
+#: ../../home/kovid/work/calibre/manual/server.rst:288
 msgid "If you do not want to dedicate a full virtual host to calibre, you can have it use a URL prefix. Start the calibre server as::"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:294
-msgid "The key parameter here is ``--url-prefix /calibre``. This causes the Content server to serve all URLs prefixed by calibre. To see this in action, visit ``http://localhost:8080/calibre`` in your browser. You should see the normal Content server website, but now it will run under /calibre."
+#: ../../home/kovid/work/calibre/manual/server.rst:293
+msgid "The key parameter here is ``--url-prefix /calibre``. This causes the Content server to serve all URLs prefixed by ``/calibre``. To see this in action, visit ``http://localhost:8080/calibre`` in your browser. You should see the normal Content server website, but now it will run under ``/calibre``."
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:296
+#: ../../home/kovid/work/calibre/manual/server.rst:295
 msgid "With nginx, the required configuration is::"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:309
+#: ../../home/kovid/work/calibre/manual/server.rst:308
 msgid "For Apache, first enable the proxy modules in Apache, by adding the following to :file:`httpd.conf`::"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:314
-msgid "The exact technique for enabling the proxy modules will vary depending on your Apache installation. Once you have the proxy modules enabled, add the following rules to httpd.conf (or if you are using virtual hosts to the conf file for the virtual host in question)::"
+#: ../../home/kovid/work/calibre/manual/server.rst:313
+msgid "The exact technique for enabling the proxy modules will vary depending on your Apache installation. Once you have the proxy modules enabled, add the following rules to :file:`httpd.conf` (or if you are using virtual hosts to the conf file for the virtual host in question)::"
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:320
-msgid "That's all, you will now be able to access the calibre Content server under the /calibre URL in your main server. The above rules pass all requests under /calibre to the calibre server running on port 8080 and thanks to the --url-prefix option above, the calibre server handles them transparently."
+#: ../../home/kovid/work/calibre/manual/server.rst:319
+msgid "That's all, you will now be able to access the calibre Content server under the ``/calibre`` URL in your main server. The above rules pass all requests under ``/calibre`` to the calibre server running on port 8080 and thanks to the ``--url-prefix`` option above, the calibre server handles them transparently."
 msgstr ""
 
-#: ../../home/kovid/work/calibre/manual/server.rst:325
+#: ../../home/kovid/work/calibre/manual/server.rst:324
+msgid "When using a reverse proxy, you should tell the calibre Content server to only listen on localhost, by using ``--listen-on 127.0.0.1``. That way, the server will only listen for connections coming from the same computer, i.e. from the reverse proxy."
+msgstr ""
+
+#: ../../home/kovid/work/calibre/manual/server.rst:331
 msgid "If you have setup SSL for your main server, you should tell the calibre server to use basic authentication instead of digest authentication, as it is faster. To do so, pass the ``--auth-mode=basic`` option to ``calibre-server``."
 msgstr ""
 
