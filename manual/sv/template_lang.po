@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-19 17:02+0000\n"
-"PO-Revision-Date: 2020-09-14 02:11+0000\n"
+"POT-Creation-Date: 2020-09-20 03:52+0000\n"
+"PO-Revision-Date: 2020-09-20 03:53+0000\n"
 "Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
 "Language-Team: Swedish (http://www.transifex.com/calibre/calibre/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -1184,58 +1184,54 @@ msgid ""
 "<<expression_list>> ] ``fi``."
 msgstr "``if`` <<expression>> ``then`` <<expression_list>> [ ``else`` <<expression_list>> ] ``fi``."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:375
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:391
 msgid ""
 "The else part is optional. The words ``if``, ``then``, ``else``, and ``fi`` "
 "are reserved. You cannot use them as identifier names. You can put newlines "
-"and white space wherever they make sense."
+"and white space wherever they make sense. <<expression>> is one template "
+"language expression. Semicolons are not allowed. <<expression_list>> is a "
+"semicolon-separated sequence of template language expressions, including "
+"nested ifs. Examples:"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:393
-msgid ""
-"<<expression>> is one template language expression. Semicolons are not "
-"allowed. <<expression_list>> is a semicolon-separated sequence of template "
-"language expressions, including nested ifs. Examples:"
-msgstr "<<expression>> är ett mallspråkuttryck. Semikolon är inte tillåtna. <<expression_list>> är en semikolonseparerad sekvens av mallspråkuttryck, inklusive kapslade ifs. Exempel:"
-
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:378
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:376
 msgid "``program: if field('series') then 'yes' else 'no' fi``"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:379
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:377
 msgid ""
 "``program: if field('series') then a = 'yes'; b = 'no' else a = 'no'; "
 "b='yes' fi; strcat(a, '-', b)``"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:380
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:378
 msgid "Nested ``if`` example::"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:399
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:397
 msgid ""
-"An ``if` produces a value like any other language expression. This means "
+"An ``if`` produces a value like any other language expression. This means "
 "that all the following are valid:"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:396
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:394
 msgid "``program: if field('series') then 'foo' else 'bar' fi``"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:397
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:395
 msgid "``program: if field('series') then a = 'foo' else a = 'bar' fi; a``"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:398
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:396
 msgid "``program: a = if field('series') then 'foo' else 'bar' fi; a``"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:399
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:397
 msgid ""
 "``program: a = field(if field('series') then 'series' else 'title' fi); a``"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:404
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:403
 msgid ""
 "Program mode also supports the classic relational (comparison) operators: "
 "``==``, ``!=``, ``<``, ``<=``, ``>``, ``>=``. The operators return '1' if "
@@ -1243,40 +1239,36 @@ msgid ""
 "comparison using lexical order. Examples:"
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:402
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:400
 msgid ""
 "``program: field('series') == 'foo'`` returns '1' if the book's series is "
 "'foo'."
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:403
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:401
 msgid ""
 "``program: if field('series') != 'foo' then 'bar' else 'mumble' fi`` returns"
 " 'bar' if the book's series is not 'foo', else 'mumble'."
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:404
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:402
 msgid ""
 "``program: if or(field('series') == 'foo', field('series') == '1632') then "
 "'yes' else 'no' fi`` returns 'yes' if series is either 'foo' or '1632', "
 "otherwise 'no'."
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:405
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:403
 msgid ""
 "``program: if '11' > '2' then 'yes' else 'no' fi`` returns 'no' because it "
-"is doing a lexical comparison."
+"is doing a lexical comparison. If you want numeric comparison instead of "
+"lexical comparison, use the operators ``==#``, ``!=#``, ``<#``, ``<=#``, "
+"``>#``, ``>=#``. In this case the left and right values are set to zero if "
+"they are undefined or the empty string. If they are not numbers then an "
+"error is raised."
 msgstr ""
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:406
-msgid ""
-"If you want numeric comparison instead of lexical comparison, use the "
-"operators ``==#``, ``!=#``, ``<#``, ``<=#``, ``>#``, ``>=#``. In this case "
-"the left and right values are set to zero if they are undefined or the empty"
-" string. If they are not numbers then an error is raised."
-msgstr ""
-
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:408
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:405
 msgid ""
 "The following example is a `program:` mode implementation of a recipe on the"
 " MobileRead forum: \"Put series into the title, using either initials or a "
@@ -1287,7 +1279,7 @@ msgid ""
 "following:"
 msgstr "Följande exempel är ett 'program:` läge implementerande av ett recept på MobileRead forumet:\". Placera serier i titeln, antingen med initialer eller en förkortad form Strip ledande artiklar från serienamnet (någon). \"Till exempel för boken The Two Towers in the Lord of the Rings-serien, ger receptet `LotR [02] The Two Towers`. Genom att använda standardmallar, receptet kräver tre anpassade kolumner och en pluggbräda, såsom förklaras i följande:"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:410
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:407
 msgid ""
 "The solution requires creating three composite columns. The first column is "
 "used to remove the leading articles. The second is used to compute the "
@@ -1296,14 +1288,14 @@ msgid ""
 "of the three columns on the library view::"
 msgstr "Lösningen kräver att skapa tre sammansatta kolumner. Den första kolumnen används för att avlägsna de ledande artiklarna. Det andra används för att beräkna den \"korta\" formen. Den tredje är för att beräkna 'initials' formen. När du har dessa kolumner, väljer pluggbräda mellan dem. Du kan dölja någon eller alla av de tre kolumnerna på biblioteksvyn."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:449
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:446
 msgid ""
 "The following program produces the same results as the original recipe, "
 "using only one custom column to hold the results of a program that computes "
 "the special title value::"
 msgstr "Följande program ger samma resultat som det ursprungliga receptet, med endast en anpassad kolumn för att hålla resultatet av ett program som beräknar den speciella titelvärdet::"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:486
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:483
 msgid ""
 "It would be possible to do the above with no custom columns by putting the "
 "program into the template box of the plugboard. However, to do so, all "
@@ -1313,11 +1305,11 @@ msgid ""
 " being one giant line."
 msgstr "Det skulle vara möjligt att göra ovanstående utan extra kolumner genom att sätta programmet i mallrutan av pluggbrädan. Men för att göra det, måste alla kommentarer tas bort på grund av att pluggbrädans textrutan inte stöder redigering över flera rader. Det kan diskuteras om vinsten av att inte ha den anpassade kolumnen är värd den stora ökningen i svårigheter på grund av det program som en gigantisk rad."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:490
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:487
 msgid "User-defined template functions"
 msgstr "Användardefinierade mallfunktioner"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:492
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:489
 msgid ""
 "You can add your own functions to the template processor. Such functions are"
 " written in Python, and can be used in any of the three template programming"
@@ -1325,11 +1317,11 @@ msgid ""
 "Template functions. Instructions are shown in that dialog."
 msgstr "Du kan lägga till egna funktioner till mallprocessorn. Sådana funktioner är skrivna i Python, och kan användas i någon av de tre mallprogrammeringslägena. Funktionerna läggs till genom att gå till Inställningar->Avancerat->Mallfunktioner. Instruktioner visas i denna dialog."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:495
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:492
 msgid "Special notes for save/send templates"
 msgstr "Särskilda anvisningar för att spara/skicka mallar"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:497
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:494
 msgid ""
 "Special processing is applied when a template is used in a `save to disk` or"
 " `send to device` template. The values of the fields are cleaned, replacing "
@@ -1340,18 +1332,18 @@ msgid ""
 "create variable-depth folder structure."
 msgstr "Särskild bearbetning tillämpas när en mall används i en 'spara på disk` eller `skicka till enhet` mall. Värdena på fälten städas, ersätter tecken som är speciella till filsystem med understreck, inklusive snedstreck. Det innebär att textfältet inte kan användas för att skapa mappar. Snedstreck ändras dock inte i prefix eller suffixsträngar, så snedstreck i dessa strängar kommer att orsaka att mappar skapas. På grund av detta kan du skapa variabeldjup mappstruktur."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:499
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:496
 msgid ""
 "For example, assume we want the folder structure `series/series_index - "
 "title`, with the caveat that if series does not exist, then the title should"
 " be in the top folder. The template to do this is::"
 msgstr "Antag till exempel att vi vill ha mappstrukturen  `series/series_index - title`, med förbehållet att om serien inte existerar, så bör titeln vara i topp-mappen. Mallen för att göra detta är::"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:503
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:500
 msgid "The slash and the hyphen appear only if series is not empty."
 msgstr "Det snedstreck och bindestreck visas bara om serien inte är tom."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:505
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:502
 msgid ""
 "The lookup function lets us do even fancier processing. For example, assume "
 "that if a book has a series, then we want the folder structure "
@@ -1361,25 +1353,25 @@ msgid ""
 "depending on the value of series."
 msgstr "Uppslagsfunktionen låter oss göra ännu snyggare bearbetning. Antag till exempel att om en bok har en serie, så vi vill att mappstrukturen `series/series index - title.fmt`. Om boken inte har en serie, så vi vill att mappstrukturen `genre/author_sort/title.fmt`. Om boken inte har någon genre, vill vi använda 'Okänd'. Vi vill två helt olika vägar, beroende på värdet av serien."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:510
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:507
 msgid "To accomplish this, we:"
 msgstr "För att åstadkomma detta, vi:"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:508
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:505
 msgid ""
 "Create a composite field (give it lookup name #AA) containing "
 "``{series}/{series_index} - {title}``. If the series is not empty, then this"
 " template will produce `series/series_index - title`."
 msgstr "Skapa en sammansatt fält (ge det uppslagsnamn #AA) som innehåller ``{series}/{series_index} - {title'}``. Om serien inte är tom, så kommer den här mallen att producera `series/series_index - title`."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:509
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:506
 msgid ""
 "Create a composite field (give it lookup name #BB) containing "
 "``{#genre:ifempty(Unknown)}/{author_sort}/{title}``. This template produces "
 "`genre/author_sort/title`, where an empty genre is replaced with `Unknown`."
 msgstr "Skapa en sammansatt fält (ge det uppslagsnamn #BB) som innehåller``{#genre:ifempty(Unknown)}/{author_sort}/{title}``. Denna mall ger `genre/author_sort/title`, där en tom genre ersätts med `Okänd`."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:510
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:507
 msgid ""
 "Set the save template to ``{series:lookup(.,#AA,#BB)}``. This template "
 "chooses composite field #AA if series is not empty, and composite field #BB "
@@ -1387,11 +1379,11 @@ msgid ""
 "depending on whether or not `series` is empty."
 msgstr "Ändra spara mallen till  ``{series:lookup(.,#AA,#BB)}``.  Denna mall väljer sammansatta fält #AA om serien inte är tom, och sammansatta fält #BB om serien är tom. Vi har alltså två helt olika sparvägar, beroende på om eller inte `series` är tom."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:513
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:510
 msgid "Templates and plugboards"
 msgstr "Mallar och pluggbrädor"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:515
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:512
 msgid ""
 "Plugboards are used for changing the metadata written into books during "
 "send-to-device and save-to-disk operations. A plugboard permits you to "
@@ -1402,7 +1394,7 @@ msgid ""
 "display issues."
 msgstr "Pluggbrädor används för att ändra metadata som skrivs in böcker under \"skicka till enhet\" och \"spara till disk\" operationer. En pluggbräda tillåter dig att ange en mall för att tillhandahålla data som ska skrivas i bokens metadata. Du kan använda pluggbrädor för att ändra följande fält: författare, author_sort, språk, förläggare, taggar, titel, title_sort. Den här funktion hjälper personer som vill använda olika metadata i böcker på enheter för att lösa sortering- eller visningsproblem."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:517
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:514
 msgid ""
 "When you create a plugboard, you specify the format and device for which the"
 " plugboard is to be used. A special device is provided, save_to_disk, that "
@@ -1413,7 +1405,7 @@ msgid ""
 "can, of course, use composite columns in these templates."
 msgstr "När du skapar en pluggbräda anger du format och enheten för vilken pluggbrädan ska användas. En speciell anordning tillhandahålls, save_to_disk, som används när du sparar format (i motsats till att skicka dem till en enhet). När du har valt formatet och enheten, väljer du de metadatafälten att ändra, ger mallar för att leverera de nya värdena. Dessa mallar är `anslutna` till sina destinationsfält, därav namnet `pluggbräda`. Du kan naturligtvis använda sammansatta kolumner i dessa mallar."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:519
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:516
 msgid ""
 "When a plugboard might apply (Content server, save to disk, or send to "
 "device), calibre searches the defined plugboards to choose the correct one "
@@ -1422,29 +1414,29 @@ msgid ""
 " the plugboards using the following search order:"
 msgstr "När en pluggbräda kan gälla (Innehållsserver, spara till disk, eller skicka till enhet), söker calibre de definierade pluggbrädor att välja den rätta för givet format och enhet. Till exempel för att hitta rätt pluggbräda för en EPUB-bok som skickas till en Android-enhet, söker calibre dessa pluggbrädor enligt följande sökordning:"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:521
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:518
 msgid ""
 "a plugboard with an exact match on format and device, e.g., ``EPUB`` and "
 "``ANDROID``"
 msgstr "en pluggbräda med en exakt matchning på format och enhet, till exempel ``EPUB`` och ``ANDROID``"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:522
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:519
 msgid ""
 "a plugboard with an exact match on format and the special ``any device`` "
 "choice, e.g., ``EPUB`` and ``any device``"
 msgstr "en pluggbräda med en exakt matchning på format och den speciella ``any device`` val, till exempel `` EPUB`` och ``any device``"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:523
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:520
 msgid ""
 "a plugboard with the special ``any format`` choice and an exact match on "
 "device, e.g., ``any format`` and ``ANDROID``"
 msgstr "en pluggbräda med en exakt matchning på format och den speciella ``any device`` val, och ``ANDROID``"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:524
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:521
 msgid "a plugboard with ``any format`` and ``any device``"
 msgstr "en pluggbräda med ``något format`` och ``någon enhet``"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:526
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:523
 msgid ""
 "The tags and authors fields have special treatment, because both of these "
 "fields can hold more than one item. A book can have many tags and many "
@@ -1456,7 +1448,7 @@ msgid ""
 "comma in the middle of a tag."
 msgstr "Tagg och författar fält har särskild behandling, eftersom båda dessa fält kan ha mer än en post. En bok kan ha många taggar och många författare. När du anger att ett av dessa två fält ska ändras, är mallens resultat som undersöks för att se om mer än en post finns. För taggar, skärs resultatet bort varhelst calibre finner ett kommatecken. Till exempel om mallen producerar värdet ``Thriller, Horror``, då blir resultatet två taggar, ``Thriller`` och ``Horror``. Det finns inget sätt att sätta ett kommatecken i mitten av en tagg."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:528
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:525
 msgid ""
 "The same thing happens for authors, but using a different character for the "
 "cut, a `&` (ampersand) instead of a comma. For example, if the template "
@@ -1466,7 +1458,7 @@ msgid ""
 "author with a rather strange name."
 msgstr "Samma sak händer för författare, men med en annan karaktär för snittet, en `&` (et-tecken) istället för ett kommatecken. Till exempel om mallen producerar värdet  ``Blogs, Joe&Posts, Susan``,  då kommer boken att sluta med två författare, ``Blogs, Joe`` och ``Posts, Susan``. Om mallen producerar värdet ``Blogs, Joe;Posts, Susan``, då kommer boken att ha en författare med ett ganska konstigt namn."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:530
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:527
 msgid ""
 "Plugboards affect the metadata written into the book when it is saved to "
 "disk or written to the device. Plugboards do not affect the metadata used by"
@@ -1475,34 +1467,34 @@ msgid ""
 "preferences window."
 msgstr "Pluggbrädor påverkar metadata som skrivs in i boken när den sparas till disk eller skrivs till enheten. Pluggbrädor påverkar inte metadata som används av ``spara till disk`` och ``skicka till enhet`` för att skapa filnamnen. Istället konstrueras filnamn med hjälp av mallar som anges i lämpliga inställningsfönster."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:533
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:530
 msgid "Helpful tips"
 msgstr "Användbara tips"
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:535
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:532
 msgid "You might find the following tips useful."
 msgstr "Du kan hitta följande tips användbart."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:537
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:534
 msgid ""
 "Create a custom composite column to test templates. Once you have the "
 "column, you can change its template simply by double-clicking on the column."
 " Hide the column when you are not testing."
 msgstr "Skapa en anpassad sammansatt kolumn för att testa mallar. När du har kolumnen, kan du ändra dess mall genom att dubbelklicka på kolumnen. Dölj kolumnen när du inte testar."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:538
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:535
 msgid ""
 "Templates can use other templates by referencing a composite custom column."
 msgstr "Mallar kan använda andra mallar genom att referera en sammansatt anpassad kolumn."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:539
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:536
 msgid ""
 "In a plugboard, you can set a field to empty (or whatever is equivalent to "
 "empty) by using the special template ``{}``. This template will always "
 "evaluate to an empty string."
 msgstr "I en kontrolpanel, kan du ställa in ett fält för att vara tomt (eller vad som motsvarar tom) med hjälp av särskild mall ``{}``. Denna mall kommer alltid utvärderas till en tom sträng."
 
-#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:540
+#: ../../home/runner/work/calibre/calibre/manual/template_lang.rst:537
 msgid ""
 "The technique described above to show numbers even if they have a zero value"
 " works with the standard field series_index."
