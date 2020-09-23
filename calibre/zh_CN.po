@@ -90,9 +90,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/calibre\n"
-"POT-Creation-Date: 2020-09-20 03:53+UTC\n"
-"PO-Revision-Date: 2020-09-20 03:53+0000\n"
-"Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
+"POT-Creation-Date: 2020-09-23 07:13+UTC\n"
+"PO-Revision-Date: 2020-09-22 16:44+0000\n"
+"Last-Translator: tony shen <anthanny@hotmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/calibre/calibre/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -386,7 +386,7 @@ msgid ""
 ":option:`--with-library` option, see the documentation of that option for\n"
 "details and examples.\n"
 "    "
-msgstr ""
+msgstr ":command:`calibredb` 是calibre数据库的命令行接口。它有\n几个子命令，记录如下。\n\n:command:`calibredb` 可以用来操作一个calibre数据库\n由运行在上的calibre或calibre:guilabel:`内容服务器`指定\n本地机器或通过互联网。你可以运行一个calibre\n:guilabel:`内容服务器` 使用：命令：`calibre-server`\n程序或在主calibre程序中单击:guilabel:`连接/共享 ->\n启动内容服务器`. 因为:command:`calibredb` 可以更改\ncalibre书库，必须首先在服务器上设置身份验证。这里\n有两种方法：\n\n    * 如果您计划只连接到运行在同一台计算机上的服务器，\n      则只需使用内容服务器的 ``--enable-local-write`` 选项，\n      允许本地计算机上运行的任何程序，包括calibredb，\n      对calibre数据进行更改。从主calibre程序运行服务器时，\n      此选项位于：guilabel:`首选项->通过网络共享->高级`。\n\n    * 如果要启用权限通过Internet的访问，则应在服务器上\n      设置用户帐户，并使用：选项：`--用户名` 和：\n      选项：`--密码`，命令：`calibredb` 选项授予访问权限。\n      您可以为命令：`calibre-server`设置用户身份验证，\n      方法是使用 ``--enable-auth``选项并使用\n       ``--manage-users``创建用户帐户。\n       如果从主calibre程序运行服务器，请使用：\n      :guilabel:`首选项->通过网络共享->需要用户名/密码`。\n\n要连接到正在运行的内容服务器，请将服务器的URL传递给：\n选项：`--with-library` 选项，有关详细信息和示例，\n请参阅该选项的文档。\n    "
 
 #: /home/runner/work/calibre/calibre/manual/custom.py:222
 msgid "[options]"
@@ -559,8 +559,8 @@ msgstr "不做修改"
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/convert/metadata.py:148
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/convert/metadata.py:168
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/convert/metadata.py:170
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1504
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1507
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1509
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1512
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/device_drivers/tabbed_device_config.py:365
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/dialogs/add_empty_book.py:140
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/dialogs/add_empty_book.py:148
@@ -2200,7 +2200,7 @@ msgid ""
 "\n"
 "The search expression can be anything from calibre's powerful search query\n"
 "language, for example: %prog search {0}\n"
-msgstr ""
+msgstr "%prog搜索 [选项] 搜索表达式\n\n搜索书库中指定的搜索项，返回与搜索表达式匹配的以逗号分隔的图书ID列表。输出格式对于输入格式接受ID列表的其他命令非常有用。\n搜索表达式可以是来自calibre强大的搜索查询语言中的任何内容，例如：%prog 搜索{0}\n"
 
 #: /home/runner/work/calibre/calibre/src/calibre/db/cli/cmd_search.py:42
 msgid "The maximum number of results to return. Default is all results."
@@ -2595,7 +2595,7 @@ msgid ""
 "    {1}\n"
 "\n"
 "Everything after the -- is passed to the script.\n"
-msgstr ""
+msgstr "{0}\n\n多种命令行界面在排除 calibre 的故障时很有用。这个命令将无条件\n地开启内置的 python 编译器。你也可以在 debug 模式下运行主\n要的 cailbre GUI，calibre 阅读器和 calibre 编辑器。\n\n它同时也包含了部分没有命令行工具的 \ncalibre 界面，比如字体子集，电子书区分\n工具等等。\n\n你也能用 %prog 来运行独立的脚本。像这样来操作：\n\n    {1}\n\n在 -- 后的的所有东西都被传输到了脚本里。\n"
 
 #: /home/runner/work/calibre/calibre/src/calibre/debug.py:46
 msgid "%prog [options]"
@@ -3334,7 +3334,7 @@ msgid ""
 msgstr "当新书被加载时，Kobo固件将书的细节导入到内部数据库中。即使这本书取代了现有的书，Kobo也会从数据库中删除这本书，然后把它当作一本新书。这意味着图书的阅读状态、书签和收藏将丢失。这个选项重写固件行为，并试图阻止一本被认为是新书的书。如果你喜欢替换为新书，把这个选项关闭。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/devices/kobo/kobotouch_config.py:232
-#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:316
+#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:314
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/library/models.py:1335
 msgid "Collections"
 msgstr "书集"
@@ -4205,31 +4205,31 @@ msgstr "无法检测到 %s 设备上的任何磁盘，请尝试重启。"
 msgid "Unable to detect the %s mount point. Try rebooting."
 msgstr "无法检测 %s 挂载点。请尝试重启。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:480
+#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:482
 #, python-format
 msgid "Unable to detect the %s disk drive."
 msgstr "无检测测到 %s 磁盘。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:562
+#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:564
 #, python-format
 msgid ""
 "Unable to detect the %s disk drive. Either the device has already been "
 "ejected, or your kernel is exporting a deprecated version of SYSFS."
 msgstr "无法检测到 %s 磁盘。设备已弹出，或你的 kernel 使用旧版 SYSFS。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:573
+#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:575
 #, python-format
 msgid "Unable to mount main memory (Error code: %d)"
 msgstr "无法装载内部存储空间(错误代码：%d)"
 
-#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:629
+#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:631
 #, python-format
 msgid ""
 "The main memory of %s is read only. This usually happens because of file "
 "system errors."
 msgstr "%s 的内部存储空间为只读。可能是由于设备的文件系统出错引起。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:759
+#: /home/runner/work/calibre/calibre/src/calibre/devices/usbms/device.py:761
 msgid "Unable to mount the device"
 msgstr "无法挂载设备"
 
@@ -6723,9 +6723,9 @@ msgstr "为书籍 {1} 搜索{0}：通过作者 {2} "
 
 #: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:164
 #: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:169
-#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:253
-#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:296
-#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:308
+#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:251
+#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:294
+#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:306
 #, python-brace-format
 msgid "Click to see books with {0}: {1}"
 msgstr "点击以 {0}: {1} 查看图书"
@@ -6738,18 +6738,18 @@ msgstr "点击打开"
 msgid "Ids"
 msgstr "书号"
 
-#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:246
+#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:244
 msgid "Search calibre for books with the language: {}"
 msgstr "用于搜索 calibre 书籍的语言: {}"
 
-#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:278
+#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:276
 #, python-format
 msgid ""
 "%(sidx)s of <a href=\"%(href)s\" title=\"%(tt)s\"><span "
 "class=\"%(cls)s\">%(series)s</span></a>"
 msgstr "<a href=\"%(href)s\" title=\"%(tt)s\"><span class=\"%(cls)s\">%(series)s</span></a>中的%(sidx)s"
 
-#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:282
+#: /home/runner/work/calibre/calibre/src/calibre/ebooks/metadata/book/render.py:280
 msgid "Click to see books in this series"
 msgstr "点击查看这一系列的丛书"
 
@@ -8386,7 +8386,8 @@ msgid "The anchor %(a)s does not exist in file %(f)s"
 msgstr "文件 %(f)s 中的锚定 %(a)s 不存在"
 
 #: /home/runner/work/calibre/calibre/src/calibre/ebooks/oeb/polish/toc.py:377
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:255
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:166
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:302
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/main.py:837
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/main.py:852
 msgid "(Untitled)"
@@ -8864,7 +8865,6 @@ msgid ""
 msgstr "你确定要将相同的文件加入到全部 %d 本书籍？如果那本书已经有这种格式，原文件将会被覆盖。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/add.py:165
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/add.py:228
 #, python-brace-format
 msgid "The {0} format will be replaced in the book {1}. Are you sure?"
 msgid_plural "The {0} formats will be replaced in the book {1}. Are you sure?"
@@ -8880,6 +8880,11 @@ msgstr "你确定要将相同的空文件加入到全部 %d 本书籍？如果�
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/add.py:207
 msgid "Choose format of empty file"
 msgstr "选择空文件的格式"
+
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/add.py:228
+#, python-brace-format
+msgid "The {0} format will be replaced in the book: {1}. Are you sure?"
+msgstr "书籍: {1}中的 {0} 格式将被替换。确定吗？"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/add.py:256
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/add.py:265
@@ -10765,7 +10770,7 @@ msgstr "正在查询书籍 %(nums)s / %(tot)s (%(title)s)"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/polish.py:331
 msgid "Ignore remaining reports"
-msgstr ""
+msgstr "忽略其余的报告"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/actions/polish.py:337
 msgid "View full &log"
@@ -15141,7 +15146,7 @@ msgid "Detected the <b>%s</b>. Do you want calibre to manage it?"
 msgstr "检测 <b>%s</b>。你要 calibre 来管理它吗？"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:935
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1555
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1560
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/email.py:460
 msgid "No suitable formats"
 msgstr "无合适格式"
@@ -15187,98 +15192,98 @@ msgstr "设备： "
 msgid " detected."
 msgstr " 被检测到。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1226
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1231
 msgid "No books"
 msgstr "没有书籍"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1227
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1232
 msgid "selected to send"
 msgstr "选择传送"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1234
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1264
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1239
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1269
 msgid "No device"
 msgstr "无设备"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1235
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1240
 msgid "No device connected"
 msgstr "没有设备连接"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1251
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1256
 #, python-format
 msgid "%(num)i of %(total)i books"
 msgstr "%(num)i 本书，共 %(total)i 本"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1255
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1260
 #, python-format
 msgid "0 of %i books"
 msgstr "0 本书，共 %i 本"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1256
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1261
 msgid "Choose format to send to device"
 msgstr "选择传送到设备的格式"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1265
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1270
 msgid "Cannot send: No device is connected"
 msgstr "无法传送：无连接设备"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1268
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1272
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1273
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1277
 msgid "No card"
 msgstr "无卡"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1269
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1273
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1274
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1278
 msgid "Cannot send: Device has no storage card"
 msgstr "无法传送：设备中无储存卡"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1341
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1419
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1549
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1346
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1424
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1554
 msgid "Auto convert the following books before uploading to the device?"
 msgstr "上传到设备之前自动转换如下书籍？"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1368
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1373
 msgid "Sending catalogs to device."
 msgstr "正在发送书目到设备。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1462
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1467
 msgid "Sending news to device."
 msgstr "将新闻传送到设备."
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1515
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1520
 msgid "Sending books to device."
 msgstr "传送书籍到设备。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1556
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1561
 msgid ""
 "Could not upload the following books to the device, as no suitable formats "
 "were found. Convert the book(s) to a format supported by your device first."
 msgstr "无法上传下列书籍到设备，未找到合适格式。请先将书籍转换为设备支持的格式。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1634
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1639
 msgid "No space on device"
 msgstr "设备存储空间不足"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1635
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1640
 msgid ""
 "<p>Cannot upload books to device there is no more free space available "
 msgstr "<p>由于设备存储空间不足无法将书籍传送到设备上 "
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1640
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1645
 msgid "Incorrect destination"
 msgstr "不正确的目标"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1878
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1883
 #, python-format
 msgid "Analyzing books on the device: %d%% finished"
 msgstr "设备 %d%% 中的书籍读取完毕"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1998
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:2003
 msgid "Book format sync problem"
 msgstr "同步书籍格式出错"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:1999
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/device.py:2004
 msgid ""
 "Some book formats in your library cannot be synced because they have dates "
 "in the future"
@@ -20447,11 +20452,11 @@ msgstr "尚未选定批注"
 msgid "Are you sure you want to <b>permanently</b> delete this annotation?"
 msgid_plural ""
 "Are you sure you want to <b>permanently</b> delete these {} annotations?"
-msgstr[0] ""
+msgstr[0] "你确定要<b>永久</b>删除这些 {} 注释吗？"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/library/annotations.py:714
 msgid "Editing is only supported for the notes associated with highlights"
-msgstr ""
+msgstr "仅支持对与突出显示关联的注释进行编辑"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/library/delegates.py:135
 msgid "Set to undefined"
@@ -20628,11 +20633,11 @@ msgstr "显示栏目"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/library/views.py:478
 msgid "Remember On Device column width"
-msgstr ""
+msgstr "记住设备列宽"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/library/views.py:480
 msgid "Reset On Device column width to default"
-msgstr ""
+msgstr "将设备列宽重置为默认值"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/library/views.py:482
 msgid "Shrink column if it is too wide to fit"
@@ -23689,7 +23694,7 @@ msgid ""
 "\n"
 "<li><b>Off</b>: Do not adjust the user interface, regardless of Qt environment variables.</li>\n"
 "</ul>"
-msgstr ""
+msgstr "<p>是否自动调整高分辨率 (high DPI) 监视器的 calibre 用户接口。有三种可能的值：</p>\n\n<ul>\n<li><b>自动</b>: 如果检测到高分辨率监视器则调整用户界面。将会遵从QT环境变量控制高DPI行为。如果你使用环境变量QT_AUTO_SCREEN_SCALE_FACTOR 那么它将被用来代替此设置。</li>\n\n<li><b>开</b>: 与“自动”相同，但忽略QT环境变量控制高DPI行为。</li>\n\n<li><b>关</b>: 无论QT环境变量都不要调整用户界面。</li>\n</ul>"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/preferences/look_feel_ui.py:593
 msgid "Allow using &drag and drop to merge books"
@@ -26823,7 +26828,7 @@ msgstr "搜索首个/下一匹配项"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tag_browser/ui.py:498
 msgid "Find in the Tag browser"
-msgstr ""
+msgstr "在标记浏览器中查找 "
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tag_browser/ui.py:505
 msgid "Find"
@@ -27214,60 +27219,60 @@ msgstr "在这里，你可以选择目录“入口”指向的目的地。首先
 msgid "&Name of the ToC entry:"
 msgstr "目录项的名称(&N):"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:169
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:170
 msgid "Currently selected destination:"
 msgstr "当前选中的目标："
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:204
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:215
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:205
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:216
 msgid "No match found"
 msgstr "未找到匹配项"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:205
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:206
 #, python-format
 msgid "No match found for: %s"
 msgstr "未找到 %s 的匹配项"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:211
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:212
 #, python-format
 msgid ""
 "No matches for %(text)s found in the current file [%(current)s]. Do you want"
 " to search in the %(which)s file [%(next)s]?"
 msgstr "当前文件 [%(current)s]中找不到 %(text)s . 你要在文件 %(which)s [%(next)s]中搜索吗?"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:214
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:215
 msgid "next"
 msgstr "下一个"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:214
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:215
 msgid "previous"
 msgstr "上一个"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:241
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:242
 msgid "Bad markup"
 msgstr "坏标记"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:242
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:243
 msgid "This book has severely broken markup, its ToC cannot be edited."
 msgstr "此书的标记已经严重损坏，因此无法编辑目录。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:248
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:291
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:295
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:249
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:292
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:296
 msgid "File:"
 msgstr "文件:"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:249
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:281
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:250
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:282
 msgid "Top of the file"
 msgstr "文件顶层"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:283
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:284
 #, python-format
 msgid "Approximately %d%% from the top"
 msgstr "从顶部往下大约 %d%%"
 
-#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:288
+#: /home/runner/work/calibre/calibre/src/calibre/gui2/toc/location.py:289
 #, python-format
 msgid "Location: A &lt;%s&gt; tag inside the file"
 msgstr "位置: A &lt;%s&gt; 文件中的标签"
@@ -31491,27 +31496,27 @@ msgstr "背景色："
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/preferences.py:385
 msgid "Foreground color:"
-msgstr ""
+msgstr "前景色"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/preferences.py:386
 msgid "Link color:"
-msgstr ""
+msgstr "链接颜色："
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/preferences.py:400
 msgid "Use the colors from the book styles, defaulting to black-on-white"
-msgstr ""
+msgstr "使用书本样式中的颜色，默认为黑白"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/preferences.py:401
 msgid "Theme based"
-msgstr ""
+msgstr "基于主题的"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/preferences.py:401
 msgid "When using a dark theme force dark colors, otherwise same as \"No change\""
-msgstr ""
+msgstr "当使用深色主题时，强制使用深色，否则与“无变化”相同"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/preferences.py:402
 msgid "Choose a custom color"
-msgstr ""
+msgstr "选择一种自定义颜色"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/preferences.py:402
 #: /home/runner/work/calibre/calibre/src/calibre/web/feeds/recipes/model.py:74
@@ -33453,7 +33458,7 @@ msgstr "管理片段(&S)"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/ui.py:527
 msgid "Manage user created Snippets"
-msgstr ""
+msgstr "管理用户创建片段"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/tweak_book/ui.py:541
 msgid "&File"
@@ -34090,7 +34095,7 @@ msgstr "删除书签"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/bookmarks.py:90
 msgid "Double click to edit the bookmarks"
-msgstr ""
+msgstr "请双击编辑此书签"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/bookmarks.py:94
 msgid "&New"
@@ -34118,12 +34123,12 @@ msgstr "书内位置"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/bookmarks.py:118
 msgid "Change how the bookmarks are sorted"
-msgstr ""
+msgstr "更改书签排序的方式"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/bookmarks.py:241
 #, python-brace-format
 msgid "Are you sure you want to delete the bookmark: {0}?"
-msgstr ""
+msgstr "你确认要删除此书签: {0}？"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/bookmarks.py:268
 msgid "Export bookmarks"
@@ -34148,28 +34153,28 @@ msgstr "编辑书签标题："
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:125
 msgid "calibre highlights"
-msgstr ""
+msgstr "calibre突出显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:128
 msgid "highlights"
-msgstr ""
+msgstr "突出显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:172
 msgid "Modify this highlight"
-msgstr ""
+msgstr "编辑该突出显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:174
 msgid "Delete this highlight"
 msgid_plural "Delete selected highlights"
-msgstr[0] ""
+msgstr[0] "删除选定的高亮显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:177
 msgid "Edit notes for this highlight"
-msgstr ""
+msgstr "为此突出显示编辑注释"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:179
 msgid "Expand all"
-msgstr ""
+msgstr "全部展开"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:210
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/search.py:472
@@ -34180,7 +34185,7 @@ msgstr[0] "目录章节："
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:353
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:385
 msgid "Edit notes"
-msgstr ""
+msgstr "编辑注释"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:411
 msgid "Double click to jump to an entry"
@@ -34188,19 +34193,19 @@ msgstr "双击可跳转到一个条目"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:434
 msgid "Modify"
-msgstr ""
+msgstr "修改"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:434
 msgid "Modify the selected highlight"
-msgstr ""
+msgstr "编辑该选定的高亮显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:435
 msgid "Delete the selected highlights"
-msgstr ""
+msgstr "删除选定的高亮显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:436
 msgid "Export all highlights"
-msgstr ""
+msgstr "导出所有突出显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:466
 msgid "No highlights match the search: {}"
@@ -34217,15 +34222,15 @@ msgstr "当前未选择任何高亮显示"
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:500
 msgid "Are you sure you want to delete this highlight permanently?"
 msgid_plural "Are you sure you want to delete all {} highlights permanently?"
-msgstr[0] ""
+msgstr[0] "你确认要永久删除所有 {} 突出显示区域么？"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:511
 msgid "No highlights"
-msgstr ""
+msgstr "没有高亮显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/highlights.py:511
 msgid "This book has no highlights to export"
-msgstr ""
+msgstr "此书没有要导出的突出显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/lookup.py:57
 msgid "Edit lookup source"
@@ -34338,7 +34343,7 @@ msgstr "无法连接到查看器"
 msgid ""
 "Unable to connect to existing E-book viewer window, try restarting the "
 "viewer."
-msgstr ""
+msgstr "无法连接到现有的电子书阅读器窗口，请尝试重新启动阅读器。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/main.py:160
 msgid ""
@@ -34351,13 +34356,13 @@ msgstr "%prog [选项] 文件\n\n阅读一本电子书。\n"
 msgid ""
 "If specified, the E-book viewer window will try to come to the front when "
 "started."
-msgstr ""
+msgstr "如果指定了此选项，则“电子书查看器”窗口将在启动时尝试移到最前面。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/main.py:170
 msgid ""
 "If specified, the E-book viewer window will try to open full screen when "
 "started."
-msgstr ""
+msgstr "如果指定了此选项，则“电子书查看器”窗口将在启动时尝试全屏打开。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/main.py:173
 msgid "Force reload of all opened books"
@@ -34588,11 +34593,11 @@ msgstr "显示书籍元数据"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/toolbars.py:67
 msgid "Highlight text in the book"
-msgstr ""
+msgstr "图书中的突出显示文本"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/toolbars.py:68
 msgid "Browse highlights in book"
-msgstr ""
+msgstr "浏览图书中的突出显示"
 
 #: /home/runner/work/calibre/calibre/src/calibre/gui2/viewer/toolbars.py:120
 msgid "Customize this toolbar"
@@ -35434,9 +35439,9 @@ msgstr "包含要在描述标头中插入的注释文本的自定义域。\n默�
 #, python-format
 msgid ""
 "#<custom field>:[before|after]:[True|False] specifying:\n"
-" <custom field> Custom field containing notes to merge with Comments\n"
-" [before|after] Placement of notes with respect to Comments\n"
-" [True|False] - A horizontal rule is inserted between notes and Comments\n"
+" <custom field> Custom field containing notes to merge with comments\n"
+" [before|after] Placement of notes with respect to comments\n"
+" [True|False] - A horizontal rule is inserted between notes and comments\n"
 "Default: '%default'\n"
 "Applies to: AZW3, EPUB, MOBI output formats"
 msgstr "#<custom field>:[before|after]:[True|False] 指定:\n <custom field> 包含与注释合并的注释的自定义字段\n [before|after] 关于注释的注释放置位置\n [True|False] - 在注意和注释之间插入水平规则\n默认值: '%default'\n适用于: AZW3, EPUB, MOBI 输出格式"
@@ -35866,7 +35871,7 @@ msgid ""
 "Have calibre convert all non English characters into English equivalents for"
 " the file names. This is useful if saving to a legacy filesystem without "
 "full support for Unicode filenames."
-msgstr ""
+msgstr "让calibre将所有非英文字符转换成英文对应字符的文件名。如果保存到不完全支持Unicode文件名的旧文件系统中，这将非常有用。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/library/save_to_disk.py:114
 #: /home/runner/work/calibre/calibre/src/calibre/library/save_to_disk.py:118
@@ -35928,7 +35933,7 @@ msgstr "编辑电子书中的文本和样式"
 msgid ""
 "The calibre E-book editor allows you to edit the text and styles inside the "
 "book with a live preview of your changes."
-msgstr ""
+msgstr "calibre 电子书编辑器允许您编辑本书中的文本和样式, 并对所做的更改进行实时预览。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/linux.py:1155
 msgid ""
@@ -36826,7 +36831,7 @@ msgstr "文件已经被其它程序调用"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:118
 msgid " near"
-msgstr ""
+msgstr " 临近 "
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:124
 msgid "end of program"
@@ -36835,63 +36840,63 @@ msgstr "退出程序"
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:237
 #, python-brace-format
 msgid "Failed to scan program. Invalid input {0}"
-msgstr ""
+msgstr "未能扫描程序。无效输入 {0}"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:240
 msgid "Syntax error - program ends before EOF"
-msgstr ""
+msgstr "语法错误 - 程序在 EOF 之前结束"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:256
 msgid "Missing 'then' in if statement"
-msgstr ""
+msgstr "if语句中缺少“then”"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:265
 msgid "Missing 'fi' in if statement"
-msgstr ""
+msgstr "if语句中缺少“fi”"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:297
 #, python-brace-format
 msgid "Unknown function {0}"
-msgstr ""
+msgstr "未知函数 {0}"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:308
 msgid "Missing closing parenthesis"
-msgstr ""
+msgstr "缺少右括号"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:319
 #, python-brace-format
 msgid "Incorrect number of expression_list for function {0}"
-msgstr ""
+msgstr "函数{0}的'表达式_列表‘数目不正确"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:325
 msgid "Expression is not function or constant"
-msgstr ""
+msgstr "表达式不是函数或者常量"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:362
 #, python-brace-format
 msgid "Error during string comparison. Operator {0}"
-msgstr ""
+msgstr "字符串比较时出错。运算符 {0}"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:384
 #, python-brace-format
 msgid "Value used in comparison is not a number. Operator {0}"
-msgstr ""
+msgstr "比较中使用的值不是数字。运算符 {0}"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:398
 #, python-brace-format
 msgid "Unknown identifier {0}"
-msgstr ""
+msgstr "未知标识符 {0}"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:420
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:424
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:440
 #, python-brace-format
 msgid "Unknown field {0}"
-msgstr ""
+msgstr "未知字段 {0}"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:467
 msgid "Internal error evaluating an expression"
-msgstr ""
+msgstr "计算表达式时出现内部错误"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter.py:504
 #, python-brace-format
@@ -36988,32 +36993,32 @@ msgstr "divide(x, y) -- 返回 x / y. 如果x或y不是数字，则抛出异常�
 msgid ""
 "ceiling(x) -- returns the smallest integer greater than or equal to x. "
 "Throws an exception if x is not a number."
-msgstr ""
+msgstr "ceiling(x) -- 返回大于或等于x的最小整数。如果x不是数字，则引发异常。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:306
 msgid ""
 "floor(x) -- returns the largest integer less than or equal to x. Throws an "
 "exception if x is not a number."
-msgstr ""
+msgstr "floor(x) -- 返回小于或等于x的最大整数。如果x不是数字，则引发异常。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:319
 msgid ""
 "round(x) -- returns the nearest integer to x. Throws an exception if x is "
 "not a number."
-msgstr ""
+msgstr "round(x) -- 返回最接近x的整数即x圆整。如果x不是数字，则引发异常。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:331
 msgid ""
 "mod(x) -- returns the remainder of x / y, where x, y, and the result are "
 "integers. Throws an exception if either x or y is not a number."
-msgstr ""
+msgstr "mod(x) -- 返回x/y的余数，其中x、y和结果都是整数。如果x或y不是数字，则引发异常。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:345
 msgid ""
 "fractional_part(x) -- returns the value after the decimal point.  For "
 "example, fractional_part(3.14) returns 0.14. Throws an exception if x is not"
 " a number."
-msgstr ""
+msgstr "fractional_part(x) -- 返回小数点后的值。例如，fractional_part（3.14）返回0.14。如果x不是数字，则引发异常。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:359
 msgid ""
@@ -37270,6 +37275,7 @@ msgstr "approximate_formats() -- 返回一个逗号分隔的格式列表，其�
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1585
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1605
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1646
+#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1701
 msgid "This function can be used only in the GUI"
 msgstr "此函数只能在图形界面中使用"
 
@@ -37604,6 +37610,19 @@ msgstr "author_sorts(val_separator) -- 返回一个字符串，其中包含图�
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1675
 msgid ""
+"connected_device_name(storage_location) -- if a device is connected then "
+"return the device name, otherwise return the empty string. Each storage "
+"location on a device can have a different name. The location names are "
+"'main', 'carda' and 'cardb'. This function works only in the GUI."
+msgstr "connected_device_name(storage_location) -- 如果设备已连接，则返回设备名称，否则返回空字符串。设备上的每个存储位置可以有不同的名称。位置名称为'main'、'carda'和'cardb'。此函数仅在GUI中工作。"
+
+#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1692
+#, python-brace-format
+msgid "connected_device_name: invalid storage location \"{0}\""
+msgstr "已连接设备名称: 无效的存储位置 \"{0}\""
+
+#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1708
+msgid ""
 "check_yes_no(field_name, is_undefined, is_false, is_true) -- checks the "
 "value of the yes/no field named by the lookup key field_name for a value "
 "specified by the parameters, returning \"yes\" if a match is found, "
@@ -37615,11 +37634,11 @@ msgid ""
 "This function is usually used by the test() or is_empty() functions."
 msgstr "check_yes_no（field_name，is_undefined，is_false，is_true）--检查由查找关键字field_name命名的yes/no字段的值是否为参数指定的值，如果找到匹配项，则返回“yes”，否则返回空字符串。设置参数is_undefined，is_false，or is_true to 1（数字）检查该条件，否则设置为0。示例：如果“是/否”字段“#bool”未定义（既不为真也不为假）或为真，则check#yesúno（“#bool”，1，0，1）返回“是”。多个is_未定义、is_false或is_true可以设置为1。此函数通常由test（）或isu empty（）函数使用。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1695
+#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1728
 msgid "check_yes_no requires the field be a Yes/No custom column"
 msgstr "check_yes_no要求该字段为是/否自定义列"
 
-#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1707
+#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1740
 msgid ""
 "rating_to_stars(value, use_half_stars) -- Returns the rating as string of "
 "star characters. The value is a number between 0 and 5. Set use_half_stars "
@@ -37627,11 +37646,11 @@ msgid ""
 "support non-integer ratings, for example 2.5."
 msgstr "rating_to_stars(value, use_half_stars) -- 以星形字符字符串形式返回评级。该值是一个介于0和5之间的数字。如果希望支持非整数评级的自定义评级列使用半星字符，请将use_half_stars设置为1，例如2.5。"
 
-#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1716
+#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1749
 msgid "The rating must be a number between 0 and 5"
 msgstr "评级必须是介于0和5之间的数字"
 
-#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1731
+#: /home/runner/work/calibre/calibre/src/calibre/utils/formatter_functions.py:1764
 msgid ""
 "swap_around_articles(val, separator) -- returns the val with articles moved "
 "to the end. The value can be a list, in which case each member of the list "
@@ -38057,7 +38076,7 @@ msgstr "calibre 主程序，用来管理你收藏的电子书。"
 #: /home/runner/work/calibre/calibre/src/calibre/utils/winreg/default_programs.py:34
 msgid ""
 "The calibre E-book editor. It can be used to edit common e-book formats."
-msgstr ""
+msgstr " calibre电子书编辑器。它可以用来编辑常见的电子书格式。"
 
 #: /home/runner/work/calibre/calibre/src/calibre/utils/winreg/default_programs.py:42
 msgid "The calibre E-book viewer. It can view most known e-book formats."
@@ -38381,7 +38400,7 @@ msgid ""
 "author name cause the automatically generated author sort string to be\n"
 "identical to the author name. This means that the sort for a string like Acme\n"
 "Inc. will be Acme Inc. instead of Inc., Acme"
-msgstr ""
+msgstr "用于将作者复制到author_sort的算法。\n可能的值是：\ninvert: 使用 \"fn ln\" -> \"ln, fn\"\ncopy  : 无需修改将作者复制到author_sort\ncomma : 如果名称中有\",\"，则使用\"copy\"，否则使用\"invert\"。\nnocomma : \"fn ln\" -> \"ln fn\" (没有逗号)\n当更改此调整时，必须通过右键单击左侧标记窗格中的作者、选择“管理作者”并按“重新\n计算所有作者排序值”来重新计算与每个作者一起存储的author_sort值。\n作者名称后缀是在作者姓名结束时被忽略的词。在后缀被忽略的情况下，尾随句柄被自动处理。前缀也一样。\n作者名复制词是一组单词，如果它们出现在作者名中，则自动生成的作者排序字符串与作者名相同。\n这意味着，类似于Acme公司的排序将是 Acme Inc.，而不是Inc., Acme。"
 
 #: /home/runner/work/calibre/calibre/resources/default_tweaks.py:72
 msgid "Splitting multiple author names"
@@ -38414,7 +38433,7 @@ msgid ""
 "Examples:\n"
 "categories_use_field_for_author_name = 'author'\n"
 "categories_use_field_for_author_name = 'author_sort'"
-msgstr ""
+msgstr "设置哪个作者字段在标签窗格中显示（作者列表、丛书、\n出版商等）。可选择author和\nauthor_sort.。此调整效果只影响标签窗格和内容服务器中\n的作者类别下显示的内容。请注意，如果将其设置为author_sort，\n则很可能在列表中看到重复的名称，因为\n尽管保证了作者名称是唯一的，\n但对author_sort值没有这样的保证。显示重复不会破坏任何东西，但\n它可能会导致一些混乱。当使用“author_sort”时，工具提示\n将显示作者的姓名。\n实例：\ncategories_use_field_for_author_name = 'author'\ncategories_use_field_for_author_name = 'author_sort'"
 
 #: /home/runner/work/calibre/calibre/resources/default_tweaks.py:95
 msgid "Control partitioning of Tag browser"
