@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 15:55+0000\n"
-"PO-Revision-Date: 2021-04-06 15:14+0000\n"
-"Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
+"POT-Creation-Date: 2021-04-15 04:32+0000\n"
+"PO-Revision-Date: 2021-04-14 12:23+0000\n"
+"Last-Translator: Ptit Prince <leporello1791@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/calibre/calibre/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -442,7 +442,7 @@ msgstr "``human_readable()`` -- s'attend que la valeur soit un nombre et renvoie
 msgid ""
 "``ifempty(text if empty)`` -- if the value is not empty then return the "
 "value of the field, otherwise return `text if empty`."
-msgstr ""
+msgstr "``ifempty(text)`` -- si le champ n'est pas vide, renvoie la valeur du champ. Autrement renvoie `text if empty`."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:156
 msgid ""
@@ -453,7 +453,7 @@ msgid ""
 " ``pattern`` and ``found_value`` can be repeated as many times as desired, "
 "permitting returning different values depending on the item's value. The "
 "patterns are checked in order, and the first match is returned."
-msgstr ""
+msgstr "``in_list(separator, [ pattern, found_val, ]* not_found_val)`` -- interprète la valeur comme une liste d'éléments séparés par le ``separator``, en vérifiant le ``pattern`` pour chaque élément de la liste. Si le ``pattern`` correspond à un élément, il renvoie ``found_val``, sinon il renvoie ``not_found_val``. La paire ``pattern``et ``found_value`` peut être répétée autant de fois que souhaité, ce qui permet de renvoyer des valeurs différentes selon la valeur de l'élément. Les motifs sont vérifiés dans l'ordre, et la première correspondance est retournée."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:157
 msgid ""
@@ -464,7 +464,7 @@ msgid ""
 "`localize` is zero, return the strings in English. If ``localize`` is not "
 "zero, return the strings in the language of the current locale. "
 "``Lang_codes`` is a comma-separated list."
-msgstr ""
+msgstr "``language_strings(localize)`` -- retourne les `noms de langue <https://www.loc.gov/standards/iso639-2/php/code_list.php>`_ pour les `codes de langue <https://www.loc.gov/standards/iso639-2/php/code_list.php>`_ passés en tant que valeur. Exemple : ``{languages:language_strings()}``. Si `localize` est zéro, retourne les chaînes de caractères en anglais. Si ``localize`` est différent de zéro, retourne les chaînes de caractères dans la langue de la locale courante. ``Lang_codes`` est une liste séparée par des virgules."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:158
 msgid ""
@@ -473,7 +473,7 @@ msgid ""
 "number zero. The last item has the index ``-1`` as in "
 "``list_item(-1,separator)``. If the item is not in the list, then the empty "
 "string is returned."
-msgstr ""
+msgstr "``list_item(index, separator)`` -- interprète la valeur comme une liste d'éléments séparés par un ``separator``, en retournant ``index'``. Le premier élément est le numéro zéro. Le dernier élément a l'indice ``-1`` comme dans ``list_item(-1,separator)``. Si l'élément n'est pas dans la liste, alors la chaîne vide est retournée."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:159
 msgid ""
@@ -481,11 +481,11 @@ msgid ""
 "against the value in order. If a pattern matches then the value of the field"
 " named by ``key`` is returned. If no pattern matches then the value of the "
 "field named by ``else_key`` is returned. See``switch`` (below)."
-msgstr ""
+msgstr "``lookup([ pattern, key, ]* else_key)`` -- Les motifs seront comparés à la valeur dans l'ordre. Si un motif correspond, la valeur du champ nommé par ``key`` est retournée. Si aucun motif ne correspond, la valeur du champ nommé par ``else_key`` est retournée. Voir ``switch`` (ci-dessous)."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:160
 msgid "``lowercase()`` -- returns the value of the field in lower case."
-msgstr ""
+msgstr "``lowercase()`` -- renvoie la valeur du champ en minuscule."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:161
 msgid ""
@@ -493,7 +493,7 @@ msgid ""
 "(``★``) characters. The value must be a number between 0 and 5. Set "
 "use_half_stars to 1 if you want half star characters for fractional numbers "
 "available with custom ratings columns."
-msgstr ""
+msgstr "``rating_to_stars(use_half_stars)`` -- Renvoie la note sous forme de chaîne de caractères étoilés (``★``). La valeur doit être un nombre entre 0 et 5. Définissez use_half_stars à 1 si vous voulez des caractères de demi-étoile pour les nombres fractionnés disponibles avec les colonnes d'évaluation personnalisées."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:162
 msgid ""
@@ -501,7 +501,7 @@ msgid ""
 "expression. All instances of ``pattern`` in the value are replaced with "
 "``replacement``. The template language uses case insensitive `Python regular"
 " expressions <https://docs.python.org/3/library/re.html>`_."
-msgstr ""
+msgstr "``re(pattern, replacement)`` -- retourne la valeur après application de l'expression régulière. Toutes les instances de ``pattern`` dans la valeur sont remplacées par ``replacement``. Le langage des modèles utilise des `Expressions régulières Python <https://docs.python.org/3/library/re.html>`_ insensibles à la casse."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:163
 msgid ""
@@ -510,7 +510,7 @@ msgid ""
 "format). The function finds the first pair with the id equal to key and "
 "returns the corresponding value. If no id matches then the function returns "
 "the empty string."
-msgstr ""
+msgstr "``select(key)`` -- interprète la valeur comme une liste d'éléments séparés par des virgules, chaque élément ayant la forme ``id:value`` (le format ``identifiant`` de calibre). La fonction trouve la première paire dont l'id est égal à key et renvoie la valeur correspondante. Si aucun id ne correspond, la fonction renvoie la chaîne vide."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:164
 msgid ""
@@ -526,7 +526,7 @@ msgid ""
 "characters. If the value's length is less than ``left chars`` + ``right "
 "chars`` + the length of ``middle text`` then the value will be returned "
 "unchanged. For example, the title `The Dome` would not be changed."
-msgstr ""
+msgstr "``shorten(left chars, middle text, right chars)`` -- Renvoie une version raccourcie de la valeur, composée de ``left chars`` du début de la valeur, suivis de ``middle text``, suivis de ``right chars`` de la fin de la valeur. Les \"left chars\" et les \"right chars\" doivent être des entiers non négatifs. Exemple : supposons que vous vouliez afficher le titre avec une longueur maximale de 15 caractères. Un modèle qui fait cela est ``{titre:shorten(9,-,5)}``. Pour un livre dont le titre est `Ancient English Laws in the Times of Ivanhoe`, le résultat sera `Ancient E-nhoe` : les 9 premiers caractères du titre, un ``-``, puis les 5 derniers caractères. Si la longueur de la valeur est inférieure à ``left chars`` + ``right chars`` + la longueur du ``middle text`` alors la valeur sera retournée inchangée. Par exemple, le titre `Le Dôme` ne sera pas modifié."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:165
 msgid ""
@@ -540,7 +540,7 @@ msgid ""
 "times as desired, permitting returning different values depending on "
 "string's value. If none of the strings match then ``not_found_value`` is "
 "returned. The strings are checked in order. The first match is returned."
-msgstr ""
+msgstr "``str_in_list(separator, [ string, found_val, ]+ not_found_val)`` -- interprète la valeur comme une liste d'éléments séparés par le ``separator`` puis compare ``string`` à chaque valeur de la liste. ``string`` n'est pas une expression régulière. Si ``string`` est égal à n'importe quel élément (en ignorant la casse), alors il renvoie la ``found_val`` correspondante. Si ``string`` contient des ``separators``, elle est également traitée comme une liste et chaque sous-valeur est vérifiée. Les paires ``string`` et ``found_value`` peuvent être répétées autant de fois que souhaité, ce qui permet de renvoyer des valeurs différentes selon la valeur de la chaîne. Si aucune des chaînes de caractères ne correspond, le système renvoie ``not_found_value``. Les chaînes de caractères sont vérifiées dans l'ordre. La première correspondance est retournée."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:166
 msgid ""
@@ -553,7 +553,7 @@ msgid ""
 "separated list has an index of zero. If an index is negative then it counts "
 "from the end of the list. As a special case, an end_index of zero is assumed"
 " to be the length of the list."
-msgstr ""
+msgstr "``subitems(start_index, end_index)`` -- Cette fonction sépare les listes d'éléments hiérarchiques de type balise, comme les genres. Elle interprète la valeur comme une liste d'éléments de type balise séparés par des virgules, où chaque élément est une liste séparée par des points. Elle retourne une nouvelle liste faite en extrayant de chaque élément les composants de ``start_index`` à ``end_index``, puis en fusionnant les résultats ensemble. Les doublons sont supprimés. Le premier sous-élément d'une liste séparée par un point a un indice de zéro. Si un index est négatif, il est compté à partir de la fin de la liste. Dans un cas particulier, un end_index de zéro est supposé être la longueur de la liste."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:168
 #: ../../__w/calibre/calibre/manual/template_lang.rst:351
@@ -562,31 +562,31 @@ msgstr "Exemples : "
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:170
 msgid "Assuming a #genre column containing `A.B.C`:"
-msgstr ""
+msgstr "Supposons une colonne #genre contenant `A.B.C` :"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:172
 msgid "``{#genre:subitems(0,1)}`` returns \"A\""
-msgstr ""
+msgstr "``{#genre:subitems(0,1)}`` renvoie \"A\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:173
 msgid "``{#genre:subitems(0,2)}`` returns \"A.B\""
-msgstr ""
+msgstr "``{#genre:subitems(0,2)}`` renvoie \"A.B\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:174
 msgid "``{#genre:subitems(1,0)}`` returns \"B.C\""
-msgstr ""
+msgstr "``{#genre:subitems(1,0)}`` renvoie \"B.C\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:176
 msgid "Assuming a #genre column containing \"A.B.C, D.E\":"
-msgstr ""
+msgstr "Supposons une colonne #genre contenant \"A.B.C, D.E\" :"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:178
 msgid "``{#genre:subitems(0,1)}`` returns \"A, D\""
-msgstr ""
+msgstr "``{#genre:subitems(0,1)}`` renvoie \"A, D\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:179
 msgid "``{#genre:subitems(0,2)}`` returns \"A.B, D.E\""
-msgstr ""
+msgstr "``{#genre:subitems(0,2)}`` renvoie \"A.B, D.E\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:181
 msgid ""
@@ -595,25 +595,25 @@ msgid ""
 " items from ``start_index`` to ``end_index``. The first item is number zero."
 " If an index is negative, then it counts from the end of the list. As a "
 "special case, an end_index of zero is assumed to be the length of the list."
-msgstr ""
+msgstr "``sublist(start_index, end_index, separator)`` -- interprète la valeur comme une liste d'éléments séparés par le ``separator``, renvoyant une nouvelle liste composée des éléments de ``start_index`` à ``end_index``. Le premier élément est le numéro zéro. Si un index est négatif, alors il compte à partir de la fin de la liste. Dans un cas spécial, un end_index de zéro est supposé être la longueur de la liste."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:183
 msgid ""
 "Examples assuming that the tags column (which is comma-separated) contains "
 "\"A, B ,C\":"
-msgstr ""
+msgstr "Exemples en supposant que la colonne des étiquettes (qui est séparée par des virgules) contient \"A, B ,C\" :"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:185
 msgid "``{tags:sublist(0,1,\\,)}`` returns \"A\""
-msgstr ""
+msgstr "``{tags:sublist(0,1,\\,)}`` renvoie \"A\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:186
 msgid "``{tags:sublist(-1,0,\\,)}`` returns \"C\""
-msgstr ""
+msgstr "``{tags:sublist(-1,0,\\,)}`` renvoie \"C\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:187
 msgid "``{tags:sublist(0,-1,\\,)}`` returns \"A, B\""
-msgstr ""
+msgstr "``{tags:sublist(0,-1,\\,)}`` renvoie \"A, B\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:189
 msgid ""
@@ -623,7 +623,7 @@ msgid ""
 "If no ``separator`` is provided then the value is treated as being a single "
 "value, not a list. The `articles` are those used by calibre to generate the "
 "``title_sort``."
-msgstr ""
+msgstr "``swap_around_articles(separator)`` -- renvoie la valeur avec les articles déplacés à la fin. La valeur peut être une liste, dans ce cas chaque article de la liste est traité. Si la valeur est une liste, vous devez fournir le ``séparateur``. Si aucun ``séparateur`` n'est fourni, alors la valeur est traitée comme étant une valeur unique, et non une liste. Les `articles` sont ceux utilisés par calibre pour générer le ``title_sort``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:190
 msgid ""
@@ -631,7 +631,7 @@ msgid ""
 "B``. This is most useful for converting names in LN, FN format to FN LN. If "
 "there is no comma in the value then the function returns the value "
 "unchanged."
-msgstr ""
+msgstr "``swap_around_comma()`` -- étant donné une valeur de la forme ``B, A``, retourne ``A B``. Ceci est très utile pour convertir des noms au format LN, FN en FN LN. S'il n'y a pas de virgule dans la valeur, la fonction retourne la valeur inchangée."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:191
 msgid ""
@@ -640,17 +640,17 @@ msgid ""
 "so returns the associated ``value``. If no ``pattern`` matches, then "
 "``else_value`` is returned. You can have as many ``pattern, value`` pairs as"
 " you wish. The first match is returned."
-msgstr ""
+msgstr "``switch([pattern, value,]+ else_value)`` -- pour chaque paire ``pattern, value``, vérifie si la valeur correspond à l'expression régulière ``pattern`` et si oui, retourne la ``value`` associée. Si aucun ``pattern`` ne correspond, ``else_value`` est retourné. Vous pouvez avoir autant de couples ``pattern, value`` que vous le souhaitez. La première correspondance est retournée."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:192
 msgid ""
 "``test(text if not empty, text if empty)`` -- return ``text if not empty`` "
 "if the value is not empty, otherwise return ``text if empty``."
-msgstr ""
+msgstr "``test(text if not empty, text if empty)`` -- retourne ``text if not empty`` si la valeur n'est pas vide, sinon retourne ``text if empty``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:193
 msgid "``titlecase()`` -- returns the value of the field in title case."
-msgstr ""
+msgstr "``titlecase()`` -- renvoie la valeur du champ en casse titre."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:194
 msgid ""
@@ -658,15 +658,15 @@ msgid ""
 "approximating the sound of the words in the source field. For example, if "
 "the source field is ``Фёдор Миха́йлович Достоевский`` this function returns "
 "``Fiodor Mikhailovich Dostoievskii``."
-msgstr ""
+msgstr "``transliterate()`` - Restitue une chaîne en alphabet latin représentant approximativement le son des mots de la chaîne source. Par exemple,  si le champ source est ``Фёдор Миха́йлович Достоевский`` la fonction renverra ``Fiodor Mikhailovich Dostoievskii``.'"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:195
 msgid "``uppercase()`` -- returns the value of the field in upper case."
-msgstr ""
+msgstr "``uppercase()`` -- renvoie la valeur du champ en majuscule."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:197
 msgid "**Using functions and formatting in the same template**"
-msgstr ""
+msgstr "**Utilisation des fonctions et du formatage dans le même modèle**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:199
 msgid ""
@@ -677,106 +677,106 @@ msgid ""
 "the empty string, not ``000``. If you want to see ``000`` values then you "
 "use both the format string and the ``ifempty`` function to change the empty "
 "value back to a zero. The template would be::"
-msgstr ""
+msgstr "Supposons que vous ayez une colonne personnalisée de nombres entiers, ``##myint``, que vous voulez afficher avec des zéros en tête, comme dans ``003``. Une façon de le faire est d'utiliser le format ``0>3s``. Cependant, par défaut, si un nombre (entier ou flottant) est égal à zéro, la valeur est affichée sous la forme d'une chaîne vide, de sorte que les valeurs nulles produiront la chaîne vide, et non ``000``. Si vous voulez voir les valeurs ``000``, vous devez utiliser à la fois la chaîne de format et la fonction ``ifempty`` pour transformer la valeur vide en zéro. Le modèle serait ::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:203
 msgid ""
 "Note that you can use the prefix and suffix as well. If you want the number "
 "to appear as ``[003]`` or ``[000]``, then use the template::"
-msgstr ""
+msgstr "Notez que vous pouvez également utiliser le préfixe et le suffixe. Si vous voulez que le numéro apparaisse sous la forme ``[003]`` ou ``[000]``, utilisez alors le modèle ::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:210
 msgid "General Program Mode"
-msgstr ""
+msgstr "Mode Programme Général"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:212
 msgid ""
 "`General Program Mode` (`GPM`) replaces `template expressions` with a "
 "program written in the `template language`. The syntax of the language is "
 "defined by the following grammar::"
-msgstr ""
+msgstr "Le `Mode Programme Général` (`MPG`) remplace les `expressions modèles` par un programme écrit dans le `langage modèle`. La syntaxe de ce langage est définie par la grammaire suivante ::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:251
 msgid ""
 "a ``top_expression`` always has a value. The value of an ``expression_list``"
 " is the value of the last ``top_expression`` in the list. For example, the "
 "value of the expression list ``1;2;'foobar';3`` is ``3``."
-msgstr ""
+msgstr "une ``top_expression`` a toujours une valeur. La valeur d'une ``expression_list`` est la valeur de la dernière ``top_expression`` Par exemple, la valeur de la liste d'expressions ``1;2;'foobar';3`` est ``3``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:252
 msgid "In a logical context, any non-empty value is ``True``"
-msgstr ""
+msgstr "Dans un contexte logique, toute valeur non vide est ``True``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:253
 msgid "In a logical context, the empty value is ``False``"
-msgstr ""
+msgstr "Dans un contexte logique, la valeur vide est ``False``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:254
 msgid ""
 "Strings and numbers can be used interchangeably. For example, ``10`` and "
 "``'10'`` are the same thing."
-msgstr ""
+msgstr "Les chaînes de caractères et les nombres peuvent être utilisés indifféremment. Par exemple, ``10`` et ``'10'`` sont la même chose."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:255
 msgid ""
 "Comments are lines starting with a '#' character. Comments beginning later "
 "in a line are not supported."
-msgstr ""
+msgstr "Les commentaires sont des lignes commençant par le caractère \"#\". Les commentaires commençant plus loin dans une ligne ne sont pas pris en charge."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:257
 msgid "**Operator Precedence**"
-msgstr ""
+msgstr "**Préséance de l'Opérateur**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:259
 msgid ""
 "The operator precedence (order of evaluation) from highest (evaluated first)"
 " to lowest (evaluated last) is:"
-msgstr ""
+msgstr "L'ordre de préséance de l'opérateurs (ordre d'évaluation), du plus élevé (évalué en premier) au plus bas (évalué en dernier), est le suivant :"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:261
 msgid ""
 "Function calls, constants, parenthesized expressions, statement expressions,"
 " assignment expressions, field references."
-msgstr ""
+msgstr "Appels de fonctions, constantes, expressions entre parenthèses, expressions d'instructions, expressions d'affectation, références de champs."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:262
 msgid ""
 "Unary plus (``+``) and minus (``-``). These operators evaluate right to "
 "left."
-msgstr ""
+msgstr "Les opérateurs unaires plus (``+``) et moins (``-``). Ces opérateurs s'évaluent de droite à gauche."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:264
 msgid ""
 "These and all the other arithmetic operators return integers if the "
 "expression results in a fractional part equal to zero. For example, if an "
 "expression returns ``3.0`` it is changed to ``3``."
-msgstr ""
+msgstr "Ces opérateurs et tous les autres opérateurs arithmétiques renvoient des entiers si l'expression donne une partie fractionnaire égale à zéro. Par exemple, si une expression renvoie ``3.0``, elle est transformée en ``3``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:265
 msgid ""
 "Multiply (``*``) and divide (``/``). These operators are associative and "
 "evaluate left to right. Use parentheses if you want to change the order of "
 "evaluation."
-msgstr ""
+msgstr "Multiplier (``*``) et diviser (``/``). Ces opérateurs sont associatifs et s'évaluent de gauche à droite. Utilisez les parenthèses si vous souhaitez modifier l'ordre d'évaluation."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:266
 msgid ""
 "Add (``+``) and subtract (``-``). These operators are associative and "
 "evaluate left to right."
-msgstr ""
+msgstr "Additionner (``+``) et soustraire (``-``). Ces opérateurs sont associatifs et s'évaluent de gauche à droite."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:267
 msgid ""
 "Numeric and string comparisons. These operators return ``'1'`` if the "
 "comparison succeeds, otherwise the empty string (``''``). Comparisons are "
 "not associative: ``a < b < c`` is a syntax error."
-msgstr ""
+msgstr "Comparaisons de nombres et de chaînes de caractères. Ces opérateurs renvoient ``'1'`` si la comparaison réussit, sinon la chaîne vide (``''``). Les comparaisons ne sont pas associatives : ``a < b < c`` est une erreur de syntaxe."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:268
 msgid ""
 "Unary logical not (``!``). This operator returns ``'1'`` if the expression "
 "is False (evaluates to the empty string), otherwise ``''``."
-msgstr ""
+msgstr "Unaire non logique (``!``). Cet opérateur renvoie ``'1'`` si l'expression est fausse (évaluée à la chaîne vide), sinon ``''``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:269
 msgid ""
@@ -784,7 +784,7 @@ msgid ""
 "right-hand expressions are True, or the empty string ``''`` if either is "
 "False. It is associative, evaluates left to right, and does `short-"
 "circuiting <https://chortle.ccsu.edu/java5/Notes/chap40/ch40_2.html>`_."
-msgstr ""
+msgstr "L'opérateur logique et (``&&``). Cet opérateur renvoie '1' si les deux expressions de gauche et de droite sont vraies, ou la chaîne vide ``''`` si l'une ou l'autre est fausse. Il est associatif, s'évalue de gauche à droite, et fait du `court-circuitage <https://chortle.ccsu.edu/java5/Notes/chap40/ch40_2.html>`_."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:270
 msgid ""
@@ -794,11 +794,11 @@ msgid ""
 "<https://chortle.ccsu.edu/java5/Notes/chap40/ch40_2.html>`_. It is an "
 "`inclusive or`, returning ``'1'`` if both the left- and right-hand "
 "expressions are True."
-msgstr ""
+msgstr "Logique ou (``||``). Cet opérateur renvoie ``'1'`` si l'expression de gauche ou de droite est vraie, ou ``''`` si les deux sont fausses. Il est associatif, s'évalue de gauche à droite, et fait du `court-circuitage <https://chortle.ccsu.edu/java5/Notes/chap40/ch40_2.html>`_. C'est un `or inclusif`, qui renvoie \"1\" si les deux expressions de gauche et de droite sont vraies."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:272
 msgid "**Field References**"
-msgstr ""
+msgstr "**Références des champs**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:274
 msgid ""
@@ -806,11 +806,11 @@ msgid ""
 "lookup name that follows the ``$`` or ``$$``. Using ``$`` is equivalent to "
 "using the ``field()`` function. Using ``$$`` is equivalent to using the "
 "``raw_field`` function. Examples::"
-msgstr ""
+msgstr "Un \"field_reference\" est évalué à la valeur du champ de métadonnées nommé par le nom de la consultation qui suit le \"$\" ou le \"$$\". L'utilisation de ``$`` équivaut à l'utilisation de la fonction ``field()``. L'utilisation de ``$$`` équivaut à l'utilisation de la fonction ``raw_field``. Exemples ::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:281
 msgid "**If Expressions**"
-msgstr ""
+msgstr "**Expressions If**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:283
 msgid ""
@@ -826,11 +826,11 @@ msgid ""
 "``top_expressions``. An ``if`` expression returns the result of the last "
 "``top_expression`` in the evaluated ``expression_list``, or the empty string"
 " if no expression list was evaluated."
-msgstr ""
+msgstr "Les expressions ``If`` évaluent d'abord la ``condition``. Si la ``condition`` est True (une valeur non vide), alors ``expression_list`` de la clause ``then`` est évaluée. Si elle est False, ``expression_list`` de la clause ``elif`` ou ``else`` est évaluée si elle est présente. Les parties ``if`` et ``else`` sont facultatives. Les mots ``if ``, ``then``, ``elif ``, ``else`` et ``fi`` sont réservés ; vous ne pouvez pas les utiliser comme noms d'identifiants. Vous pouvez mettre des retours à la ligne et des espaces partout où cela a un sens. La ``condition`` est une ``top_expression`` et non une ``expression_list`` ; les points-virgules ne sont pas autorisés. Les ``expression_list`` sont des séquences de ``top_expressions`` séparées par des points-virgules. Une expression ``if`` renvoie le résultat de la dernière ``top_expressions`` de la ``top_expression`` évaluée, ou la chaîne vide si aucune liste d'expression n'a été évaluée."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:285
 msgid "Examples::"
-msgstr ""
+msgstr "Exemples::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:298
 msgid "Nested ``if`` example::"
@@ -840,17 +840,17 @@ msgstr "Exemple de ``if`` imbriqué::"
 msgid ""
 "As said above, an ``if`` produces a value. This means that all the following"
 " are equivalent::"
-msgstr ""
+msgstr "Comme dit plus haut, un ``if`` produit une valeur. Cela signifie que tous les cas suivants sont équivalents ::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:317
 msgid ""
 "As a last example, this program returns the value of the ``series`` column "
 "if the book has a series, otherwise the value of the ``title`` column::"
-msgstr ""
+msgstr "Comme dernier exemple, ce programme retourne la valeur de la colonne ``series`` si le livre a une série, sinon la valeur de la colonne ``title`` ::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:321
 msgid "**For Expressions**"
-msgstr ""
+msgstr "**Expressions For**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:323
 msgid ""
@@ -866,7 +866,7 @@ msgid ""
 "the specified variable then the ``expression_list`` is evaluated. You can "
 "use ``break`` to jump out of the loop, and ``continue`` to jump to the "
 "beginning of the loop for the next iteration."
-msgstr ""
+msgstr "L'expression ``for`` itère sur une liste de valeurs, en les traitant une par une. L'expression \"list_expression\" doit être évaluée soit par un nom de champ de métadonnées, par exemple ``tags`` ou ``#genre``, soit par une liste de valeurs. Si le résultat est un ``lookup name`` valide, alors la valeur du champ est récupérée et le séparateur spécifié pour ce type de champ est utilisé. Si le résultat n'est pas un nom de référence valide, il est supposé être une liste de valeurs. La liste est supposée être séparée par des virgules, sauf si le mot-clé optionnel ``separator`` est fourni, auquel cas les valeurs de la liste doivent être séparées par le résultat de l'évaluation de l'expression ``separator_expr``. Chaque valeur de la liste est assignée à la variable spécifiée puis la ``expression_list`` est évaluée. Vous pouvez utiliser ``break`` pour sortir de la boucle, et ``continue`` pour revenir au début de la boucle pour la prochaine itération."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:325
 msgid ""
@@ -882,7 +882,7 @@ msgid ""
 "in bulk -> Search & replace` with :guilabel:`Search for` set to ``template``"
 " to strip off the first level of the hierarchy and assign the resulting "
 "value to Genre."
-msgstr ""
+msgstr "Si le Genre original est `Histoire.Militaire, Science Fiction.Histoire alternative, Lisez-moi`, alors le modèle renvoie `Militaire, Histoire alternative, Lisez-moi`. Vous pouvez utiliser ce modèle dans le calibre :guilabel:`Modifier les métadonnées par lot -> Rechercher & remplacer` avec :guilabel:`Rechercher après` défini à ``modèe`` pour supprimer le premier niveau de la hiérarchie et attribuer la valeur résultante à Genre."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:338
 msgid ""
@@ -891,23 +891,23 @@ msgid ""
 " the expression list. The value of an assignment is the value of its "
 "expression, so the value of the ``for`` statement is what was assigned to "
 "``new_tags``."
-msgstr ""
+msgstr "Note : la dernière ligne du modèle, ``new_tags``, n'est pas strictement nécessaire dans ce cas car ``for`` renvoie la valeur de la dernière top_expression de la liste d'expressions. La valeur d'une affectation est la valeur de son expression, donc la valeur de l'instruction ``for`` est ce qui a été affecté à ``new_tags``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:340
 msgid "**Relational Operators**"
-msgstr ""
+msgstr "**Opérateurs Relationnels**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:342
 msgid ""
 "Relational operators return ``'1'`` if the comparison is true, otherwise the"
 " empty string ('')."
-msgstr ""
+msgstr "Les opérateurs relationnels renvoient ``'1'`` si la comparaison est vraie, sinon la chaîne vide ('')."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:344
 msgid ""
 "There are two forms of relational operators: string comparisons and numeric "
 "comparisons."
-msgstr ""
+msgstr "Il existe deux formes d'opérateurs relationnels : les comparaisons de chaînes de caractères et les comparaisons numériques."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:346
 msgid ""
@@ -918,7 +918,7 @@ msgid ""
 " ``in`` operator is True if the value of left-hand expression interpreted as"
 " a regular expression matches the value of the right hand expression. The "
 "match is case-insensitive."
-msgstr ""
+msgstr "Les comparaisons de chaînes de caractères effectuent une comparaison insensible à la casse en utilisant l'ordre lexical. Les opérateurs de comparaison de chaînes pris en charge sont ``==``, ``!=``, ``<``, ``<=``, ``>``, ``=`` et ``in``. Pour l'opérateur ``in``, le résultat de l'expression de gauche est interprété comme un motif d'expression régulière. L'opérateur ``in`` est True si la valeur de l'expression de gauche interprétée comme une expression régulière correspond à la valeur de l'expression de droite. La correspondance est insensible à la casse."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:349
 msgid ""
@@ -926,77 +926,77 @@ msgid ""
 "``>#``, ``>=#``. The left and right expressions must evaluate to numeric "
 "values with two exceptions: both the string value \"None\" (undefined field)"
 " and the empty string evaluate to the value zero."
-msgstr ""
+msgstr "Les opérateurs de comparaison numérique sont ``==#``, ``!=#``, ``<#``, ``<=#``, ``>#``, ``>=#``. Les expressions de gauche et de droite doivent être évaluées par des valeurs numériques, à deux exceptions près : la chaîne de caractères \"None\" (champ indéfini) et la chaîne de caractères vide sont évaluées par la valeur zéro."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:353
 msgid ""
 "``program: field('series') == 'foo'`` returns ``'1'`` if the book's series "
 "is 'foo', otherwise ``''``."
-msgstr ""
+msgstr "``program:field('series') == 'foo'`` renvoie ``'1'`` si la série du livre est 'foo', sinon ``''``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:354
 msgid ""
 "``program: 'f.o' in field('series')`` returns ``'1'`` if the book's series "
 "matches the regular expression ``f.o`` (e.g., `foo`, `Off Onyx`, etc.), "
 "otherwise ``''``."
-msgstr ""
+msgstr "``Program: 'f.o' in field('series')`` renvoie `'1'`` si la série du livre correspond à l'expression régulière ``f.o`` (par exemple, `foo`, `Off Onyx`, etc.), sinon ``''``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:355
 msgid ""
 "``program: if field('series') != 'foo' then 'bar' else 'mumble' fi`` returns"
 " ``'bar'`` if the book's series is not ``foo``. Otherwise it returns "
 "``'mumble'``."
-msgstr ""
+msgstr "``Program: if field('series') != 'foo' then 'bar' else 'mumble' fi`` renvoie ``'bar'`` si la série du livre n'est pas ``foo``. Sinon, renvoie ``mumble``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:356
 msgid ""
 "``program: if field('series') == 'foo' || field('series') == '1632' then "
 "'yes' else 'no' fi`` returns ``'yes'`` if series is either ``'foo'`` or "
 "``'1632'``, otherwise ``'no'``."
-msgstr ""
+msgstr "``Program: if field('series') == 'foo' || field('series') == '1632' then 'yes' else 'no' fi`` renvoie ``'yes'`` si séries existe soit ``'foo'`` soit ``'1632'``, sinon `'no'``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:357
 msgid ""
 "``program: if '^(foo|1632)$' in field('series') then 'yes' else 'no' fi`` "
 "returns ``'yes'`` if series is either ``'foo'`` or ``'1632'``, otherwise "
 "``'no'``."
-msgstr ""
+msgstr "``program: if '^(foo|1632)$' in field('series') then 'yes' else 'no' fi``  renvoie ``'yes'`` si la série existe soit ``'foo'`` ou ``'1632'``, sinon ``'no'``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:358
 msgid ""
 "``program: if 11 > 2 then 'yes' else 'no' fi`` returns ``'no'`` because the "
 "``>`` operator does a lexical comparison."
-msgstr ""
+msgstr "``program: if '11' > '2' then 'yes' else 'no' fi`` `renvoie ``'no'`` parce que l'opérateur ``>`` fait une comparaison lexicale."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:359
 msgid ""
 "``program: if 11 ># 2 then 'yes' else 'no' fi`` returns ``'yes'`` because "
 "the ``>#`` operator does a numeric comparison."
-msgstr ""
+msgstr "``Program: if 11 ># 2 then 'yes' else 'no' fi`` renvoie ``'yes'`` parce que l'opérateur ``>#`` effectue une comparaison numérique."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:361
 msgid "**Additional Available Functions**"
-msgstr ""
+msgstr "**Fonctions Supplémentaires Disponibles**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:363
 msgid ""
 "The following functions are available in addition to those described in "
 ":ref:`Single Function Mode <single_mode>`."
-msgstr ""
+msgstr "Les fonctions suivantes sont disponibles en plus de celles décrites dans :ref:`Mode fonction unique`."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:365
 msgid ""
 "In `GPM` the functions described in `Single Function Mode` all require an "
 "additional first parameter specifying the value to operate upon. All "
 "parameters are expression_lists (see the grammar above)."
-msgstr ""
+msgstr "Dans `MPG`, les fonctions décrites dans `Mode Fonction Simple` requièrent toutes un premier paramètre supplémentaire spécifiant la valeur sur laquelle opérer. Tous les paramètres sont des listes d'expressions (voir la grammaire ci-dessus)."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:367
 msgid ""
 "``add(x [, y]*)`` -- returns the sum of its arguments. Throws an exception "
 "if an argument is not a number. In most cases you can use the ``+`` operator"
 " instead of this function."
-msgstr ""
+msgstr "``add(x [, y]*)`` -- renvoie la somme de ses arguments. Lance une exception si un argument n'est pas un nombre. Dans la plupart des cas, vous pouvez utiliser l'opérateur ``+`` à la place de cette fonction."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:368
 msgid ""
