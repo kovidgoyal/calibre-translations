@@ -5,6 +5,7 @@
 # Translators:
 # Aleksandr P, 2019
 # ashed <craysy@gmail.com>, 2020-2021
+# Caarmi, 2021
 # Vladislav <yobabay23@gmail.com>, 2015
 # Родион Р., 2020
 # Родион Р., 2019
@@ -12,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-17 04:57+0000\n"
-"PO-Revision-Date: 2021-04-15 14:29+0000\n"
-"Last-Translator: Kovid Goyal <kovid@kovidgoyal.net>\n"
+"POT-Creation-Date: 2021-04-19 02:55+0000\n"
+"PO-Revision-Date: 2021-04-17 18:44+0000\n"
+"Last-Translator: ashed <craysy@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/calibre/calibre/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -250,15 +251,15 @@ msgstr "Предположим, вы хотите, чтобы ``series_index`` �
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:93
 msgid "``{series_index:0>3s}`` - Three digits with leading zeros"
-msgstr ""
+msgstr "``{series_index: 0>3s}`` - три цифры с ведущими нулями"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:95
 msgid "For trailing zeros, use:"
-msgstr ""
+msgstr "Для завершающих нулей используйте:"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:97
 msgid "``{series_index:0<3s}`` - Three digits with trailing zeros"
-msgstr ""
+msgstr "``{series_index: 0<3s}``- три цифры с завершающими нулями"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:99
 msgid ""
@@ -266,13 +267,13 @@ msgid ""
 "the decimal points to line up. For example, you might want the indices 1 and"
 " 2.5 to appear as 01.00 and 02.50 so that they will sort correctly on a "
 "device that does lexical sorting. To do this, use:"
-msgstr ""
+msgstr "Если вы используете индексы серий с дробными значениями, например 1.1, и нужно чтобы десятичные точки совпадали. Например, чтобы индексы 1 и 2.5 отображались как 01.00 и 02.50 и правильно сортировались на устройстве, которое выполняет лексическую сортировку. Для этого используйте:"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:101
 msgid ""
 "``{series_index:0>5.2f}`` - Five characters consisting of two digits with "
 "leading zeros, a decimal point, then 2 digits after the decimal point."
-msgstr ""
+msgstr "``{series_index: 05.2f}`` - пять символов, состоящих из двух цифр с ведущими нулями, десятичной точкой и двумя цифрами после десятичной точки."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:103
 msgid "If you want only the first two letters of the data, use:"
@@ -472,7 +473,7 @@ msgid ""
 "number zero. The last item has the index ``-1`` as in "
 "``list_item(-1,separator)``. If the item is not in the list, then the empty "
 "string is returned."
-msgstr ""
+msgstr "``list_item(индекс, разделитель)`` -- обрабатывает значение как список элементов, разделённых ``разделителем``, возвращая элемент с соответствующим индексом. Первый элемент имеет нулевой индекс. К последнему элементу можно обратиться по индексу ``-1``, напр. ``list_item(-1,разделитель)``. Если элемент отсутствует, возвращается пустая строка."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:159
 msgid ""
@@ -484,7 +485,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:160
 msgid "``lowercase()`` -- returns the value of the field in lower case."
-msgstr ""
+msgstr "``lowercase()`` -- возвращает значение поля в нижнем регистре."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:161
 msgid ""
@@ -509,7 +510,7 @@ msgid ""
 "format). The function finds the first pair with the id equal to key and "
 "returns the corresponding value. If no id matches then the function returns "
 "the empty string."
-msgstr ""
+msgstr "``select(ключ)`` -- обрабатывает значение как разделённый запятыми список элементов вида ``идентификатор:значение`` (формат ``идентификаторов`` calibre). Функция находит первую пару с совпадающим с ``ключом`` идентификатором, и возвращает соответствующее значение. При отсутствии совпадений возвращается пустая строка."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:164
 msgid ""
@@ -552,7 +553,7 @@ msgid ""
 "separated list has an index of zero. If an index is negative then it counts "
 "from the end of the list. As a special case, an end_index of zero is assumed"
 " to be the length of the list."
-msgstr ""
+msgstr "``subitems(нач_индекс, кон_индекс)`` -- Функция разбивает на части списки иерерхических тегов, например жанров. Значение обрабатывается как разделённый запятыми список тегов, каждый элемент в котором -- разделенный точками список. Она возвращает новый список, извлекая из каждого элемента компоненты от ``нач_индекса`` до ``кон_индекса``, объединяя полученные результаты без повторов. Первый компонент в разделённом точками списке имеет нулевой индекс. Если индекс отрицательный, то он отсчитыватеся от конца списка. Нулевое значение кон_индекса означает длину списка."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:168
 #: ../../__w/calibre/calibre/manual/template_lang.rst:351
@@ -561,31 +562,31 @@ msgstr "Примеры:"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:170
 msgid "Assuming a #genre column containing `A.B.C`:"
-msgstr ""
+msgstr "Если столбец #genre содержит `A.B.C`:"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:172
 msgid "``{#genre:subitems(0,1)}`` returns \"A\""
-msgstr ""
+msgstr "``{#genre:subitems(0,1)}`` вернет \"A\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:173
 msgid "``{#genre:subitems(0,2)}`` returns \"A.B\""
-msgstr ""
+msgstr "``{#genre:subitems(0,2)}`` вернет \"A.B\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:174
 msgid "``{#genre:subitems(1,0)}`` returns \"B.C\""
-msgstr ""
+msgstr "``{#genre:subitems(1,0)}`` вернет \"B.C\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:176
 msgid "Assuming a #genre column containing \"A.B.C, D.E\":"
-msgstr ""
+msgstr "Если столбец #genre содержит \"A.B.C, D.E\":"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:178
 msgid "``{#genre:subitems(0,1)}`` returns \"A, D\""
-msgstr ""
+msgstr "``{#genre:subitems(0,1)}`` вернет \"A, D\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:179
 msgid "``{#genre:subitems(0,2)}`` returns \"A.B, D.E\""
-msgstr ""
+msgstr "``{#genre:subitems(0,2)}`` вернет \"A.B, D.E\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:181
 msgid ""
@@ -604,15 +605,15 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:185
 msgid "``{tags:sublist(0,1,\\,)}`` returns \"A\""
-msgstr ""
+msgstr "``{tags:sublist(0,1,\\,)}`` вернет \"A\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:186
 msgid "``{tags:sublist(-1,0,\\,)}`` returns \"C\""
-msgstr ""
+msgstr "``{tags:sublist(-1,0,\\,)}`` вернет \"C\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:187
 msgid "``{tags:sublist(0,-1,\\,)}`` returns \"A, B\""
-msgstr ""
+msgstr "``{tags:sublist(0,-1,\\,)}`` вернет \"A, B\""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:189
 msgid ""
@@ -630,7 +631,7 @@ msgid ""
 "B``. This is most useful for converting names in LN, FN format to FN LN. If "
 "there is no comma in the value then the function returns the value "
 "unchanged."
-msgstr ""
+msgstr "``swap_around_comma()`` -- если значение имеет вид ``Б, А``, возвращает ``А Б``. Это наиболее полезно для преобразования имён вида «Ф, И О» к виду «И О Ф». Если значение не содержит запятой, то оно возвращается без изменений."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:191
 msgid ""
@@ -645,7 +646,7 @@ msgstr ""
 msgid ""
 "``test(text if not empty, text if empty)`` -- return ``text if not empty`` "
 "if the value is not empty, otherwise return ``text if empty``."
-msgstr ""
+msgstr "``test(если_не_пусто, если_пусто)`` -- возвращает ``если_не_пусто`` если значение не пусто, в противном случае возвращает ``если_пусто``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:193
 msgid "``titlecase()`` -- returns the value of the field in title case."
@@ -724,7 +725,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:257
 msgid "**Operator Precedence**"
-msgstr ""
+msgstr "**Приоритет операторов**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:259
 msgid ""
@@ -797,7 +798,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:272
 msgid "**Field References**"
-msgstr ""
+msgstr "**Ссылки на поля**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:274
 msgid ""
@@ -1271,7 +1272,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:429
 msgid "``yyyy :`` the year as four digit number."
-msgstr ""
+msgstr "``yyyy :`` четыре цифры года."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:430
 msgid ""
@@ -1500,7 +1501,7 @@ msgstr "Пример::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:473
 msgid "is equivalent to::"
-msgstr ""
+msgstr "эквивалентно::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:479
 msgid ""
@@ -1755,13 +1756,13 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:537
 msgid "``foo()`` -- call the template passing no arguments."
-msgstr ""
+msgstr "``foo()`` -- вызов шаблона без аргументов."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:538
 msgid ""
 "``foo(a, b)`` call the template passing the values of the two variables "
 "``a`` and ``b``."
-msgstr ""
+msgstr "``foo(a, b)`` вызывает шаблон, передавая значения переменных ``a`` и ``b``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:539
 msgid ""
@@ -1818,7 +1819,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:554
 msgid "Providing additional information to templates"
-msgstr ""
+msgstr "Передача шаблонам дополнительной информации"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:556
 msgid ""
@@ -1899,7 +1900,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:589
 msgid "Differences:"
-msgstr ""
+msgstr "Различия:"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:591
 msgid ""
@@ -1972,7 +1973,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:623
 msgid "User-defined Python template functions"
-msgstr ""
+msgstr "Пользовательские шаблонные функции Python"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:625
 msgid ""
@@ -2020,7 +2021,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:640
 msgid "To accomplish this, we:"
-msgstr ""
+msgstr "Чтобы этого добиться, мы:"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:642
 msgid ""
@@ -2134,7 +2135,7 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:670
 msgid "Tips:"
-msgstr ""
+msgstr "Советы:"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:672
 msgid ""
@@ -2163,4 +2164,4 @@ msgstr ""
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:680
 msgid "Function reference"
-msgstr ""
+msgstr "Справочник по функциям"
