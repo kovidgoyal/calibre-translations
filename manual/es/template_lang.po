@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-21 15:47+0000\n"
+"POT-Creation-Date: 2024-11-28 06:05+0000\n"
 "PO-Revision-Date: 2014-06-17 08:34+0000\n"
 "Last-Translator: Jellby <jellby@yahoo.com>, 2014-2018,2020-2024\n"
 "Language-Team: Spanish (http://app.transifex.com/calibre/calibre/language/es/)\n"
@@ -506,7 +506,7 @@ msgid ""
 "documentation tells you what arguments the functions require and what the "
 "functions do. For example, here is the documentation of the "
 ":ref:`ff_ifempty` function."
-msgstr ""
+msgstr "Las funciones están documentadas en :ref:`template_functions_reference`. La documentación indica qué argumentos requieren las funciones y qué hacen. Por ejemplo, aquí está la documentación de la función :ref:`ff_ifempty`."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:179
 msgid ""
@@ -514,19 +514,19 @@ msgid ""
 "``text_if_empty``. However, because we are using Single Function Mode, we "
 "omit the ``value`` argument, passing only ``text_if_empty``. For example, "
 "this template::"
-msgstr ""
+msgstr "La función requiere dos argumentos, ``valor`` y ``texto_si_vacío``. Sin embargo, debido a que estamos usando el modo de función única, omitimos el argumento ``valor``, pasando sólo ``texto_si_vacío``. Por ejemplo, esta plantilla::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:183
 msgid ""
 "shows the tags for a book, if any. If it has no tags then it show `No tags "
 "on this book`."
-msgstr ""
+msgstr "muestra las etiquetas de un libro, si tiene alguna. Si no tiene etiquetas, muestra `No tags on this book`."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:185
 msgid ""
 "The following functions are usable in Single Function Mode because their "
 "first parameter is ``value``."
-msgstr ""
+msgstr "Las siguientes funciones se pueden usar en el modo de función única porque su primer parámetro es ``valor``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:225
 msgid "**Using functions and formatting in the same template**"
@@ -678,7 +678,7 @@ msgid ""
 "lookup name that follows the ``$`` or ``$$``. Using ``$`` is equivalent to "
 "using the :ref:`ff_field` function. Using ``$$`` is equivalent to using the "
 ":ref:`ff_raw_field` function. Examples::"
-msgstr ""
+msgstr "Un elemento de tipo ``field_reference`` (referencia de campo) se evalúa como el valor del campo de metadatos nombrado por el nombre de búsqueda que sigue al ``$`` o ``$$``. Usar ``$`` es equivalente a usar la función :ref:`ff_field`. Usar ``$$`` es equivalente a usar la función :ref:`ff_raw_field`. Ejemplos::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:322
 msgid "**If expressions**"
@@ -718,7 +718,7 @@ msgstr "Como se ha mencionado, un ``if`` produce un valor. Esto significa que to
 msgid ""
 "For example, this program returns the value of the ``series`` column if the "
 "book has a series, otherwise the value of the ``title`` column::"
-msgstr ""
+msgstr "Por ejemplo, este programa devuelve el valor de la columna ``series`` si el libro tiene una serie, de lo contrario, el valor de la columna ``title``::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:362
 msgid "**For expressions**"
@@ -740,7 +740,7 @@ msgid ""
 " then the ``expression_list`` is evaluated. You can use ``break`` to jump "
 "out of the loop, and ``continue`` to jump to the beginning of the loop for "
 "the next iteration."
-msgstr ""
+msgstr "Una expresión de bucle (``for_expression``) itera sobre una lista de valores, procesando uno cada vez. La ``list_expression`` debe resultar en el ``nombre de búsqueda`` de un campo de metadatos, como ``tags`` o ``#genero``, o una lista de valores. La función :ref:`ff_range` genera una lista de números. Si el resultado es un ``nombre de búsqueda`` válido, se obtiene el valor del campo y se usa el separador especificado para ese tipo de campo. Si el resultado no es un ``nombre de búsqueda`` válido, se supone que es una lista de valores. La lista se supone separada por comas, a no ser que use la palabra clave opcional ``separator``, en ese caso los valores de la lista deben estar separados por el resultado de evaluar ``separator_expr``. No se puede usar un separador si la lista es generada por ``range()``. Cada valor de la lista se asigna a la variable especificada y luego se evalúa ``expression_list``. Puede usar ``break`` para salir del bucle y ``continue`` para comenzar con la siguiente iteración."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:366
 msgid ""
@@ -777,7 +777,7 @@ msgid ""
 "local function. The ``def`` keyword starts the definition. It is followed by"
 " the function name, the argument list, then the code in the function. The "
 "function definition ends with the ``fed`` keyword."
-msgstr ""
+msgstr "Si tiene código repetido en una plantilla, puede poner ese código en una función local. La palabra clave ``def`` comienza la definición. Le sigue el nombre de la función, la lista de argumentos y el código en la función. La definición de función termina con la palabra clave ``fed``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:385
 msgid ""
@@ -812,7 +812,7 @@ msgstr "**Operadores de relación**"
 msgid ""
 "Relational operators return ``'1'`` if the comparison is true, otherwise the"
 " empty string (``''``)."
-msgstr ""
+msgstr "Los operadores de relación devuelven ``'1'`` si la comparación es cierta, en caso contrario devuelven un texto vacío (``''``)."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:410
 msgid ""
@@ -861,7 +861,7 @@ msgstr "Ejemplos:"
 msgid ""
 "``program: field('series') == 'foo'`` returns ``'1'`` if the book's series "
 "is `foo`, otherwise ``''``."
-msgstr ""
+msgstr "``program: field('series') == 'lala'`` devuelve ``'1'`` si la serie del libro es `lala`, en caso contrario devuelve ``''``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:422
 msgid ""
@@ -913,20 +913,20 @@ msgid ""
 "``program: if field('series') != 'foo' then 'bar' else 'mumble' fi`` returns"
 " ``'bar'`` if the book's series is not `foo`. Otherwise it returns "
 "``'mumble'``."
-msgstr ""
+msgstr "``program: if field('series') != 'lala' then 'nana' else 'blabla' fi`` devuelve ``'nana'`` si la serie del libro no es `lala`, en caso contrario devuelve ``'blabla'``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:429
 msgid ""
 "``program: if field('series') == 'foo' || field('series') == '1632' then "
 "'yes' else 'no' fi`` returns ``'yes'`` if series is either `foo` or `1632`, "
 "otherwise ``'no'``."
-msgstr ""
+msgstr "``program: if field('series') == 'lala' || field('series') == '1632' then 'sí' else 'no' fi`` devuelve ``'sí'`` si la serie es `lala` o `1632`, en caso contrario devuelve ``'no'``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:430
 msgid ""
 "``program: if '^(foo|1632)$' in field('series') then 'yes' else 'no' fi`` "
 "returns ``'yes'`` if series is either `foo` or `1632`, otherwise ``'no'``."
-msgstr ""
+msgstr "``program: if '^(lala|1632)$' in field('series') then 'sí' else 'no' fi`` devuelve ``'sí'`` si la serie es `lala` o `1632`, en caso contrario devuelve ``'no'``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:431
 msgid ""
@@ -942,23 +942,23 @@ msgstr "``program: if 11 ># 2 then 'sí' else 'no' fi`` devuelve ``'sí'`` porqu
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:434
 msgid "**Functions in General Program Mode**"
-msgstr ""
+msgstr "**Funciones en modo de programación general**"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:436
 msgid ""
 "See :ref:`template_functions_reference` for the list of functions built into"
 " the template language."
-msgstr ""
+msgstr "Consulte :ref:`template_functions_reference` para ver la lista de funciones predefinidas en el lenguaje de plantillas."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:440
 msgid ""
 "As opposed to :ref:`Single Function Mode <single_mode>`, in General Program "
 "Mode you must specify the first parameter ``value``."
-msgstr ""
+msgstr "A diferencia del :ref:`modo de función única <single_mode>`, en el modo de programación general debe especificar el primer parámetro ``valor``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:441
 msgid "All parameters are expression_lists (see the grammar above)."
-msgstr ""
+msgstr "Todos los parámetros son elementos de tipo ``expression_list`` (ver la gramática más arriba)."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:446
 msgid "More complex programs in template expressions - Template Program Mode"
@@ -999,19 +999,19 @@ msgstr "El `MPP` se usa si la expresión empieza por ``:'`` y termina en ``'}``.
 msgid ""
 "If the template contains a prefix and suffix, the expression ends with "
 "``'|`` where the ``|`` is the delimiter for the prefix. Example::"
-msgstr ""
+msgstr "Si la plantilla contiene un prefijo y un sufijo, la expresión termina con ``'|`` donde ``|`` es el delimitador para el prefijo. Ejemplo::"
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:464
 msgid ""
 "Functions must be given all their arguments. For example, the standard "
 "built-in functions must be given the initial parameter ``value``."
-msgstr ""
+msgstr "Las funciones deben llevar todos sus argumentos. Por ejemplo, las funciones estándar predefinidas deben tener el parámetro inicial ``valor``."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:465
 msgid ""
 "The variable ``$`` is usable as the ``value`` argument and stands for the "
 "value of the field named in the template, ``series_index`` in this case."
-msgstr ""
+msgstr "La variable ``$`` se puede usar como el argumento ``valor`` y representa el valor del campo nombrado en la plantilla, ``series_index`` en este caso."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:466
 msgid "white space is ignored and can be used anywhere within the expression."
@@ -1044,7 +1044,7 @@ msgid ""
 "most use; further discussion is beyond the scope of this manual. PTM "
 "templates are faster and can do more complicated operations but you must "
 "know how to write code in Python using the calibre API."
-msgstr ""
+msgstr "El modo de plantilla de Python (MPPy) le permite escribir plantillas usando el lenguaje Python nativo y la `interfaz de programación de calibre <https://manual.calibre-ebook.com/develop.html#api-documentation-for-various-parts-of-calibre>`_. La interfaz de programación de base de datos será la más útil, pero en este manual no se discutirán más detalles. Las plantillas MPPy son más rápidas y pueden realizar operaciones más complicadas, pero debe saber escribir código Python usando la interfaz de programación de calibre."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:478
 msgid "A PTM template begins with:"
@@ -1349,7 +1349,7 @@ msgid ""
 "functions is faster than calling a Python template, user-defined functions "
 "might be more efficient depending on the complexity of what the function or "
 "template does."
-msgstr ""
+msgstr "Puede añadir funciones propias al procesador de plantillas. Dichas funciones pueden usarse en cualquiera de los tres modos de programación de plantillas. Las funciones se añaden en :guilabel:`Preferencias > Avanzado > Funciones de plantilla`. Las instrucciones se muestran en el correspondiente cuadro de diálogo. Tenga en cuenta que puede usar `plantillas de Python` para lo mismo. Dado que es más rápido ejecutar funciones definidas por el usuario que una plantilla de Python, las funciones definidas por el usuario pueden ser más eficientes, dependiendo de la complejidad de lo que haga la función o plantilla."
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:633
 msgid "Special notes for save/send templates"
@@ -1444,4 +1444,4 @@ msgstr "La técnica descrita anteriormente para mostrar los números incluso si 
 
 #: ../../__w/calibre/calibre/manual/template_lang.rst:662
 msgid "Template function reference"
-msgstr "Referencia de las funciones de plantillas"
+msgstr "Referencia de las funciones de plantilla"
