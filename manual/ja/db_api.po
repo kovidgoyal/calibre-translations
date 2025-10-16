@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-07 14:23+0000\n"
+"POT-Creation-Date: 2025-10-15 01:28+0000\n"
 "PO-Revision-Date: 2014-07-05 16:49+0000\n"
 "Last-Translator: akihiko tanae (tanaeakihiko), 2025\n"
 "Language-Team: Japanese (http://app.transifex.com/calibre/calibre/language/ja/)\n"
@@ -433,7 +433,7 @@ msgid ""
 "Return the value of the field ``name`` for the book identified by "
 "``book_id``. If no such book exists or it has no defined value for the field"
 " ``name`` or no such field exists, then ``default_value`` is returned."
-msgstr "book_id で指定された本のフィールド ``name`` の値を返します。そのような本が存在しない、またはフィールド名に定義された値がない、またはそのようなフィールドが存在しない場合、``default_value``が返されます。"
+msgstr "book_id で指定された本のフィールド ``name`` の値を返します。そのような本が存在しない、またはフィールド名に定義された値がない、またはそのようなフィールドが存在しない場合、``default_value`` が返されます。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.field_for:6
@@ -451,7 +451,7 @@ msgid ""
 "is identifiers for which the returned value is always a dictionary. The "
 "returned tuples are always in link order, that is, the order in which they "
 "were created."
-msgstr ""
+msgstr "is_multiple フィールドの戻り値は、値が見つからない場合でも常にタプルです（つまり、default_value は無視されます）。例外は識別子で、その戻り値は常に辞書です。戻り値のタプルは常にリンク順、つまり作成順になります。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.field_ids_for:1
@@ -466,7 +466,7 @@ msgstr "book_id で識別されるブックのフィールド名の値の ID を
 msgid ""
 "Return True iff the specified field supports notes. If field is None return "
 "frozenset of all fields that support notes."
-msgstr ""
+msgstr "指定されたフィールドが注釈をサポートしている場合、Trueを返します。フィールドがNoneの場合、注釈をサポートするすべてのフィールドのfrozensetを返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.find_identical_books:1
@@ -569,14 +569,14 @@ msgstr "指定された本のすべての形式のタプルを返します。 ve
 msgid ""
 "Return all item_ids for items that have notes in the specified field or all "
 "fields if field_name is None"
-msgstr ""
+msgstr "指定されたフィールドに注釈があるアイテムのすべてのID一覧 を返します。field_name が None の場合はすべてのフィールドを返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_all_link_maps_for_book:1
 msgid ""
 "Returns all links for all fields referenced by book identified by book_id. "
 "If book_id doesn't exist then the method returns {}."
-msgstr ""
+msgstr "book_idで識別される本が参照するすべてのフィールドのリンクをすべて返します。book_idが存在しない場合は、このメソッドは {} を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_all_link_maps_for_book:4
@@ -585,12 +585,12 @@ msgid ""
 "and tag T has link G. If book 1 has author A and tag T, this method returns "
 "{'authors':{'A':'X'}, 'tags':{'T', 'G'}}. If book 2's author is neither A "
 "nor B and has no tags, this method returns {}."
-msgstr ""
+msgstr "例: 著者AにリンクX、著者BにリンクY、タグSにリンクF、タグTにリンクGがあるとします。本1に著者AとタグTがある場合、このメソッドは {'authors':{'A':'X'}, 'tags':{'T', 'G'}} を返します。本2の著者が著者Aでも著者Bでもなく、タグもない場合、このメソッドは {} を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_all_link_maps_for_book:9
 msgid "the book id in question."
-msgstr ""
+msgstr "問い合わせるbook ID"
 
 #: ../../../__w/calibre/calibre/manual/db_api.rst:0
 msgid "Returns"
@@ -601,7 +601,7 @@ msgstr "返り値"
 msgid ""
 "{field: {field_value, link_value}, ...  for all fields with a field_value "
 "having a non-empty link value for that book"
-msgstr ""
+msgstr "{field: {field_value, link_value}, ... 空でないリンク値を持つ field_value を持つすべてのフィールドについて"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_book_path:1
@@ -609,7 +609,7 @@ msgid ""
 "Return the relative book path for the given id. Prefer this because you can "
 "choose the directory separator, default use the os one. If unsafe is True, "
 "allow to return None if the book_id is not in the library."
-msgstr ""
+msgstr "指定されたIDの本の相対パスを返します。ディレクトリセパレータを選択できるため、こちらの方が便利です。デフォルトではOSのセパレータが使用されます。unsafeがTrueの場合、book_idがライブラリに存在しない場合にNoneを返すことができます。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_categories:1
@@ -643,12 +643,12 @@ msgid ""
 " slow if doing lookups for multiple names use either get_item_ids() or "
 "get_item_name_map(). Similarly, case sensitive lookups are faster than case "
 "insensitive ones."
-msgstr ""
+msgstr "item_name のアイテムIDを返します。見つからない場合はNoneを返します。get_item_ids()またはget_item_name_map()を使用して複数の名前を検索する場合、この関数は非常に遅くなります。同様に、大文字と小文字を区別する検索は、大文字と小文字を区別しない検索より高速です。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_item_ids:1
 msgid "Return a dict mapping item_name to the item id or None"
-msgstr ""
+msgstr "item_name をアイテム ID にマッピングする辞書または None を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_item_name:1
@@ -660,22 +660,22 @@ msgstr "指定したフィールドの item_id で指定された項目の項目
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_item_name_map:1
 msgid "Return mapping of item values to ids"
-msgstr ""
+msgstr "アイテム値とIDのマッピングを返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_link_map:1
 msgid "Return a dictionary of links for the supplied field."
-msgstr ""
+msgstr "指定されたフィールドのリンクの辞書を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_link_map:3
 msgid "the lookup name of the field for which the link map is desired"
-msgstr ""
+msgstr "リンクマップが必要なフィールドの参照名"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_link_map:5
 msgid "{field_value:link_value, ...} for non-empty links"
-msgstr ""
+msgstr "空でないリンクについて {field_value:link_value, ...}"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_metadata:1
@@ -710,7 +710,7 @@ msgstr "True のとき、代わりに book_id から現在の series_index 値�
 msgid ""
 "Return a dict containing the resource data and name or None if no resource "
 "with the specified hash is found"
-msgstr ""
+msgstr "リソースデータと名前を含む辞書を返すか、指定されたハッシュを持つリソースが見つからない場合はNoneを返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.get_proxy_metadata:1
@@ -751,7 +751,7 @@ msgstr "指定した book_id が db に存在すれば True を返します"
 msgid ""
 "Import a previously exported note or an arbitrary HTML file as the note for "
 "the specified item"
-msgstr ""
+msgstr "以前にエクスポートした注釈または任意の HTML ファイルを、指定したアイテムの注釈としてインポートします。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.init:1
@@ -763,23 +763,23 @@ msgstr "バックエンドからのデータでこのキャッシュを初期化
 msgid ""
 "Return a dict of field to items that have associated notes for that field "
 "for the specified book"
-msgstr ""
+msgstr "指定された本のそのフィールドに関連付けられた注釈を持つ、フィールドの辞書を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.link_for:1
 msgid ""
 "Return the link, if any, for the specified item or None if no link is found"
-msgstr ""
+msgstr "存在すれば指定されたアイテムのリンクを返します。存在しない場合は None を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.list_extra_files:1
 msgid "Get information about extra files in the book's directory."
-msgstr ""
+msgstr "本のディレクトリ内に存在する追加ファイルの情報を取得します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.list_extra_files:3
 msgid "the database book id for the book"
-msgstr ""
+msgstr "データベースの本のID"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.list_extra_files:4
@@ -787,7 +787,7 @@ msgid ""
 "the pattern of filenames to search for. Empty pattern matches all extra "
 "files. Patterns must use / as separator. Use the DATA_FILE_PATTERN constant "
 "to match files inside the data directory."
-msgstr ""
+msgstr "検索するファイル名のパターン。空のパターンは、すべての追加ファイルに一致します。パターンは/を区切り文字として使用します。データディレクトリ内のファイルに一致させるには、DATA_FILE_PATTERN 定数を使用してください。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.list_extra_files:7
@@ -796,31 +796,31 @@ msgid ""
 "the tuple is ExtraFile(relpath, file_path, stat_result). Where relpath is "
 "the relative path of the file to the book directory using / as a separator. "
 "stat_result is the result of calling os.stat() on the file."
-msgstr ""
+msgstr "指定されたパターンに一致するすべての追加ファイルのタプル。タプルの各要素は ExtraFile(relpath, file_path, stat_result) です。relpathは、/を区切り文字として使用した、本ディレクトリへのファイルの相対パスです。stat_resultは、ファイルに対して os.stat() を呼び出した結果です。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.merge_annotations_for_book:1
 msgid ""
 "Merge the specified annotations into the existing annotations for book_id, "
 "fm, user_type, and user."
-msgstr ""
+msgstr "指定された注釈を、book_id、fm、user_type、および user の既存の注釈にマージします。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.merge_extra_files:1
 msgid ""
 "Merge the extra files from src_ids into dest_id. Conflicting files are auto-"
 "renamed unless replace=True in which case they are replaced."
-msgstr ""
+msgstr "src_ids から dest_id へ追加ファイルをマージします。ファイル名が衝突する時は、replace=True が指定されていない場合は自動的にファイル名を変更し、指定されている場合はファイルを置換します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.move_book_from_trash:1
 msgid "Undelete a book from the trash directory"
-msgstr ""
+msgstr "ゴミ箱フォルダから本を復元します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.move_format_from_trash:1
 msgid "Undelete a format from the trash directory"
-msgstr ""
+msgstr "ゴミ箱フォルダから形式を復元します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.multisort:1
@@ -839,19 +839,19 @@ msgstr "fields は、そのフォームの2 タプルのリストである必要
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.notes_data_for:1
 msgid "Return all notes data as a dict or None if note does not exist"
-msgstr ""
+msgstr "すべての注釈データを辞書として返します。注釈が存在しない場合はNoneを返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.notes_for:1
 msgid "Return the notes document or an empty string if not found"
-msgstr ""
+msgstr "注釈ドキュメントを返します。存在しない場合は空文字列を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.notes_resources_used_by:1
 msgid ""
 "Return the set of resource hashes of all resources used by the note for the "
 "specified item"
-msgstr ""
+msgstr "指定されたアイテムの注釈で使用されるすべてのリソースのハッシュのセットを返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.pref:1
@@ -873,13 +873,13 @@ msgid ""
 "Remove the books specified by the book_ids from the database and delete "
 "their format files. If ``permanent`` is False, then the format files are "
 "placed in the per-library trash directory."
-msgstr ""
+msgstr "book_ids で指定された本をデータベースから削除し、その形式ファイルも削除します。``permanent`` がFalseの場合、形式ファイルはライブラリごとのゴミ箱ディレクトリに配置されます。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.remove_extra_files:1
 msgid ""
 "Delete the specified extra files, either to Recycle Bin or permanently."
-msgstr ""
+msgstr "指定された追加ファイルをゴミ箱または完全に削除します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.remove_formats:1
@@ -903,7 +903,7 @@ msgstr "True のとき、その形式のレコードを db からだけ削除し
 msgid ""
 "A map of book id to set of formats actually deleted from the filesystem for "
 "that book"
-msgstr ""
+msgstr "本IDと、その本のファイルシステムから実際に削除された形式とのマップ"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.remove_items:1
@@ -1010,20 +1010,20 @@ msgstr "None でないとき、すべての本を検索するのではなく、�
 #: calibre.db.cache.Cache.search_annotations:1
 msgid ""
 "Return of a tuple of annotations matching the specified Full-text query."
-msgstr ""
+msgstr "指定された全文検索クエリに一致する注釈をタプルで返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.search_notes:1
 msgid ""
 "Search the text of notes using an FTS index. If the query is empty return "
 "all notes."
-msgstr ""
+msgstr "FTSインデックスを使用して注釈のテキストを検索します。クエリが空の場合は、すべての注釈を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.set_annotations_for_book:1
 msgid ""
 "Set all annotations for the specified book_id, fmt, user_type and user."
-msgstr ""
+msgstr "指定された book_id、fmt、user_type、および user のすべての注釈を設定します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.set_conversion_options:1
@@ -1069,23 +1069,23 @@ msgstr "内部利用。決して変更しないこと。"
 msgid ""
 "Sets links for item values in field. Note: this method doesn't change values"
 " not in the value_to_link_map"
-msgstr ""
+msgstr "フィールド内のアイテム値のリンクを設定します。注意: このメソッドは value_to_link_map にない値は変更しません。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.set_link_map:4
 msgid "the lookup name"
-msgstr ""
+msgstr "ルックアップ名称"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.set_link_map:5
 msgid ""
 "dict(field_value:link, ...). Note that these are values, not field ids."
-msgstr ""
+msgstr "dict(field_value:link, ...) 引数はフィールドIDでなく、値であることに注意してください"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.set_link_map:7
 msgid "books changed by setting the link"
-msgstr ""
+msgstr "リンクを設定することで変更された本"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.set_metadata:1
@@ -1115,7 +1115,7 @@ msgid ""
 "remove_unused_resources to True to cleanup unused resources, note that "
 "updating a note automatically cleans up resources pertaining to that note "
 "anyway."
-msgstr ""
+msgstr "注釈のドキュメントを設定します。検索可能なテキストがドキュメントと異なる場合は、searchable_text で指定してください。ドキュメントがリソースを参照している場合は、そのハッシュを resource_hashes に設定する必要があります。未使用のリソースをクリーンアップするには、remove_unused_resources を True に設定します。注釈を更新すると、その注釈に関連するリソースも自動的にクリーンアップされることに注意してください。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.set_pref:1
@@ -1130,7 +1130,7 @@ msgid ""
 "split v into unique non-empty values. The comparison is case sensitive. "
 "Order is not preserved. Return a list() for compatibility with proxy "
 "metadata field getters, for example tags."
-msgstr ""
+msgstr "f  が複合列の参照キーであり、列が is_multiple の場合、v を一意の空でない値に分割します。比較では大文字と小文字が区別されます。順序は保持されません。proxy metadata field getters（例：tags）との互換性のため、list() を返します。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.tags_older_than:1
@@ -1164,12 +1164,12 @@ msgstr "著者のリスト。 None でないとき、マッチするリストは
 msgid ""
 "Unretire a previously retired note for the specified item. Notes are retired"
 " when an item is removed from the database"
-msgstr ""
+msgstr "指定されたアイテムの、以前に廃止された注釈を復元します。注釈は、アイテムがデータベースから削除されたときに廃止されます。"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.update_annotations:1
 msgid "Update annotations."
-msgstr ""
+msgstr "注釈の更新"
 
 #: ../../../__w/calibre/calibre/src/calibre/db/cache.pydocstring of
 #: calibre.db.cache.Cache.user_categories_for_books:1
