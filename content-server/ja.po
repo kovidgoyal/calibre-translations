@@ -1,7 +1,8 @@
-#
+# 
 # Translators:
 # akihiko tanae (tanaeakihiko), 2025
 # akihiko tanae (tanaeakihiko), 2025
+# akihiko tanae (tanaeakihiko), 2025-2026
 # Asakura, 2015,2017,2021
 # Asakura, 2017
 # Chris Hilgenberg <chilgenb@gmail.com>, 2020
@@ -9,8 +10,8 @@
 # EbXpJ6bp <ebxpj6bp@outlook.jp>, 2018
 # Eugene Bata, 2016
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2009
-# Junghee Lee <daemul72@gmail.com>, 2022
-# Junghee Lee <daemul72@gmail.com>, 2022
+# JungHee Lee <daemul72@gmail.com>, 2022
+# JungHee Lee <daemul72@gmail.com>, 2022
 # Kayne Brookes <kayne.brookes@gmail.com>, 2016
 # Kentaro Ishimaru, 2022
 # kuromabo <md81bird@hitaki.net>, 2014
@@ -26,9 +27,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/calibre\n"
-"POT-Creation-Date: 2025-11-06T04:14:20.048Z\n"
+"POT-Creation-Date: 2026-01-18T13:51:43.592Z\n"
 "PO-Revision-Date: 2016-02-23 09:22+0000\n"
-"Last-Translator: akihiko tanae (tanaeakihiko), 2025\n"
+"Last-Translator: akihiko tanae (tanaeakihiko), 2025-2026\n"
 "Language-Team: Japanese (http://app.transifex.com/calibre/calibre/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,6 +209,7 @@ msgstr "サムネイルと本の詳細の一部を含むリスト"
 #: /__w/calibre/calibre/src/pyj/book_list/add.pyj:59
 #: /__w/calibre/calibre/src/pyj/book_list/add.pyj:95
 #: /__w/calibre/calibre/src/pyj/book_list/custom_list.pyj:288
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:349
 #: /__w/calibre/calibre/src/pyj/book_list/cover_grid.pyj:63
 msgid "by"
 msgstr "/"
@@ -596,7 +598,7 @@ msgstr "仮想ライブラリを選択してください…"
 
 #: /__w/calibre/calibre/src/pyj/book_list/views.pyj:423
 msgid "Choose a Virtual library to browse from the list below"
-msgstr "一覧表示する下層ライブラリを下の一覧から洗濯してください"
+msgstr "一覧表示する下層ライブラリを下の一覧から選択してください"
 
 #: /__w/calibre/calibre/src/pyj/book_list/views.pyj:440
 msgid "Choose book list mode…"
@@ -722,6 +724,8 @@ msgid "Publisher: {publisher}"
 msgstr "発行者: {publisher}"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:64
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:258
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:285
 msgid "Permission denied"
 msgstr "権限がありません"
 
@@ -750,6 +754,7 @@ msgid ""
 msgstr "このライブラリのインデックス作成は有効になっています。ライブラリのサイズによっては、すべての本のインデックスを作成するのに時間がかかる場合があります。"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:73
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:289
 msgid "Full text searching disabled"
 msgstr "全文検索が無効"
 
@@ -761,23 +766,28 @@ msgid ""
 msgstr "このライブラリでは全文検索インデックス作成が有効になっていません。有効にすると、インデックス作成が完了するまでに時間がかかり、その後で検索が機能します。インデックス作成を有効にしますか?"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:85
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:471
 #: /__w/calibre/calibre/src/pyj/read_book/toc.pyj:228
 msgid "No matches found"
 msgstr "一致しませんでした"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:88
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:372
 msgid "Failed to search"
 msgstr "検索に失敗しました。"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:88
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:372
 msgid "The search failed. Click \"Show details\" for more information."
 msgstr "検索に失敗しました。詳しくは \"詳細を表示\" をクリックしてください。"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:92
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:379
 msgid "Server error"
 msgstr "サーバーエラー"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:92
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:379
 msgid "Failed to parse search response from server."
 msgstr "サーバーからの検索応答を解析できませんでした。"
 
@@ -846,6 +856,146 @@ msgstr "すべての本を検索"
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:185
 msgid "Search a subset of books"
 msgstr "本のサブセットを検索"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:191
+#, python-brace-format
+msgid ""
+"\n"
+"<div class=\"h\">Search for single words</div>\n"
+"<p>Simply type the word:</p>\n"
+"<div class=\"bq\">awesome<br>calibre</div>\n"
+"\n"
+"<div class=\"h\">Search for phrases</div>\n"
+"<p>Enclose the phrase in quotes:</p>\n"
+"<div class=\"bq\">\"early run\"<br>\"song of love\"</div>\n"
+"\n"
+"<div class=\"h\">Boolean searches</div>\n"
+"<div class=\"bq\">(calibre AND ebook) NOT gun<br>simple NOT (\"high bar\" OR hard)</div>\n"
+"\n"
+"<div class=\"h\">Phrases near each other</div>\n"
+"<div class=\"bq\">NEAR(\"people\" \"in Asia\" \"try\")<br>NEAR(\"Kovid\" \"calibre\", 30)</div>\n"
+"<p>Here, 30 is the most words allowed between near groups. Defaults to 10 when unspecified.</p>\n"
+"\n"
+"<div style=\"margin-top: 1em\"><a href=\"{fts_url}\">Complete syntax reference</a></div>"
+msgstr "\n<div class=\"h\">単一の単語を検索</div>\n<p>単語をそのままタイプ:</p>\n<div class=\"bq\">awesome<br>calibre</div>\n\n<div class=\"h\">フレーズを検索</div>\n<p>フレーズをクォート記号で囲む:</p>\n<div class=\"bq\">\"early run\"<br>\"song of love\"</div>\n\n<div class=\"h\">ブール演算検索</div>\n<div class=\"bq\">(calibre AND ebook) NOT gun<br>simple NOT (\"high bar\" OR hard)</div>\n\n<div class=\"h\">近接語検索</div>\n<div class=\"bq\">NEAR(\"people\" \"in Asia\" \"try\")<br>NEAR(\"Kovid\" \"calibre\", 30)</div>\n<p>ここでは 近接グループの単語の最大距離は30です。指定しないときはデフォルトの10となります。</p>\n\n<div style=\"margin-top: 1em\"><a href=\"{fts_url}\">完全なリファレンスはこちら</a></div>"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:228
+#, python-brace-format
+msgid "Searching for {}, please wait…"
+msgstr "{} を検索しています。しばらくお待ちください…"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:258
+msgid ""
+"You do not have permission to re-index books. Only logged in users with "
+"write permission are allowed to re-index"
+msgstr "本の再インデックスする権限がありません。書き込み権限を持つログインユーザーのみが再インデックスできます。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:260
+msgid "Failed to re-index"
+msgstr "再インデックス失敗"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:260
+msgid "Re-indexing the book failed. Click \"Show details\" for more information."
+msgstr "本の再インデックスに失敗しました。詳細は \"詳細を表示\" をクリックしてください。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:261
+msgid "Re-indexing scheduled"
+msgstr "スケジュールされた再インデックス"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:261
+msgid "The book has been scheduled for re-indexing"
+msgstr "この本は再インデックスがスケジュールされました。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:261
+msgid "All books have been scheduled for re-indexing"
+msgstr "すべての本は再インデックスがスケジュールされました。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:272
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:298
+#: /__w/calibre/calibre/src/pyj/book_list/delete_book.pyj:58
+#: /__w/calibre/calibre/src/pyj/book_list/local_books.pyj:57
+#: /__w/calibre/calibre/src/pyj/book_list/edit_metadata.pyj:1136
+#: /__w/calibre/calibre/src/pyj/book_list/book_details.pyj:1071
+#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:476
+#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:841
+#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:892
+#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1102
+#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1145
+#: /__w/calibre/calibre/src/pyj/read_book/profiles.pyj:49
+#: /__w/calibre/calibre/src/pyj/read_book/overlay.pyj:388
+#: /__w/calibre/calibre/src/pyj/read_book/bookmarks.pyj:20
+msgid "Are you sure?"
+msgstr "よろしいですか？"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:272
+msgid ""
+"Re-indexing all books in the library can take a long time. Are you sure you "
+"want to proceed?"
+msgstr "ライブラリ内のすべての本のインデックスを再作成するには、長い時間がかかる場合があります。続行してもよろしいですか？"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:285
+msgid ""
+"You do not have permission to disable FTS. Only logged in users with write "
+"permission are allowed to disable FTS."
+msgstr "全文検索を無効にする権限がありません。書き込み権限を持つログインユーザーのみが、全文検索を無効にできます。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:287
+msgid "Disabling FTS failed"
+msgstr "　全文検索の無効に失敗しました"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:287
+msgid "Disabling FTS failed. Click \"Show details\" for more information."
+msgstr "全文検索の無効に失敗しました。詳細は \"詳細を表示\" をクリックしてください。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:289
+msgid ""
+"Full text searching for this library has been disabled. In the future the "
+"entire library will have to be re-indexed when re-enabling full text "
+"searching."
+msgstr "このライブラリの全文検索は無効になっています。今後、全文検索を再度有効にする時には、ライブラリ全体の再インデックスが必要となります。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:298
+msgid ""
+"Disabling full text search means that in the future the entire library will "
+"have to be re-indexed to use full text search. Are you sure you want to "
+"proceed?"
+msgstr "全文検索を無効にすると、次に全文検索を使用するにはライブラリ全体のインデックスを再作成する必要があります。続行してもよろしいですか？"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:330
+msgid ""
+"Click one of the formats below to open the book at this search result "
+"(except PDF which will open at the start):"
+msgstr "この検索結果で本を開くには、以下のいずれかの形式をクリックします (最初に開く PDF を除く)。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:335
+msgid "Open the details page for this book"
+msgstr "この本の詳細ページを開く"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:339
+msgid "Re-index this book"
+msgstr "この本の再インデックス"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:350
+msgid "Cover of"
+msgstr "表紙"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:363
+msgid "loading"
+msgstr "ローディング中"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:456
+msgid "WARNING:"
+msgstr "重要:"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:457
+#, python-brace-format
+msgid ""
+"Indexing of library only {}% complete, search results may be incomplete."
+msgstr "ライブラリのインデックス作成は {}% 完了しており、検索結果は不完全な可能性があります。"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:499
+msgid "Search text of books"
+msgstr "本のテキスト検索"
 
 #: /__w/calibre/calibre/src/pyj/book_list/search.pyj:95
 msgid "Search contains smart quotes"
@@ -1825,21 +1975,6 @@ msgstr "{0}をライブラリから削除中、お待ちください..."
 msgid "Failed to delete {0}, with error:"
 msgstr "{0} の削除に失敗 エラー:"
 
-#: /__w/calibre/calibre/src/pyj/book_list/delete_book.pyj:58
-#: /__w/calibre/calibre/src/pyj/book_list/local_books.pyj:57
-#: /__w/calibre/calibre/src/pyj/book_list/edit_metadata.pyj:1136
-#: /__w/calibre/calibre/src/pyj/book_list/book_details.pyj:1071
-#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:476
-#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:841
-#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:892
-#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1102
-#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1145
-#: /__w/calibre/calibre/src/pyj/read_book/profiles.pyj:49
-#: /__w/calibre/calibre/src/pyj/read_book/overlay.pyj:388
-#: /__w/calibre/calibre/src/pyj/read_book/bookmarks.pyj:20
-msgid "Are you sure?"
-msgstr "よろしいですか？"
-
 #: /__w/calibre/calibre/src/pyj/book_list/delete_book.pyj:67
 #, python-brace-format
 msgid ""
@@ -2512,7 +2647,7 @@ msgstr "競合するファイルを新規レコードとして、既存の本に
 
 #: /__w/calibre/calibre/src/pyj/book_list/book_details.pyj:1267
 #: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:673
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:96
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:120
 msgid "Copy"
 msgstr "コピー"
 
@@ -3198,7 +3333,7 @@ msgstr "このハイライトを完全に削除しますか？"
 msgid ""
 "Are you sure you want to delete the highlighting of \"{}\" and the "
 "associated notes permanently?"
-msgstr ""
+msgstr "ハイライトとそれに紐づく注釈を削除しますか？"
 
 #: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1100
 #, python-brace-format
@@ -3714,68 +3849,86 @@ msgstr "ページ番号"
 msgid "Typically the page number from a paper edition of this book"
 msgstr "通常、この本の印刷版のページ番号"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:70
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:83
+msgid "No such page"
+msgstr "指定ページは存在しません"
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:83
+msgid "No page {!r} exists"
+msgstr "指定ページ {!r} は存在しません"
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:87
 #, python-brace-format
 msgid "Currently on page: {}"
 msgstr "現在ページ: {}"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:72
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:89
 #, python-brace-format
 msgid "Currently on pages: {}"
 msgstr "現在ページ: {}"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:117
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:93
+msgid "Enter a page number"
+msgstr "ページ番号を入力してください"
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:141
 msgid "Current location:"
 msgstr "現在の位置:"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:123
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:147
 msgid "No such location"
 msgstr "そのような場所はありません"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:123
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:147
 #, python-brace-format
 msgid "No location {} found"
 msgstr "場所 {} が見つかりません"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:131
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:155
 msgid "No such reference"
 msgstr "参照が存在しません"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:131
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:155
 #, python-brace-format
 msgid "No reference {} found"
 msgstr "参照 {} が見つかりません"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:136
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:160
 #, python-brace-format
 msgid "Current position: {}"
 msgstr "現在の位置: {}"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:140
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:164
 msgid ""
 "Type the position, location or reference below. For a reference type ref: "
 "followed by the reference:"
 msgstr "下に位置、場所、または参照を入力。参照型の場合には ref: の後ろに参照を続けます:"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:154
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:178
 msgid "Not a valid book position"
 msgstr "位置が無効です"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:154
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:178
 #, python-brace-format
 msgid "{} is not a valid book position"
 msgstr "{} は無効な位置です"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:163
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:187
 msgid "Go to:"
 msgstr "移動:"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:168
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:192
 msgid "Go"
 msgstr "Go"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:175
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:177
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:196
+msgid ""
+"Note that using a position is not very robust, it is best to use either the "
+"location or reference."
+msgstr "位置の使用はあまり堅牢ではないことに注意してください。指定した場所または参照のいずれかを使用するのが最適です。"
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:203
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:205
 msgid "URL for this position:"
 msgstr "この場所のURL:"
 
@@ -4224,7 +4377,7 @@ msgstr "本の表示に失敗しました。"
 #: /__w/calibre/calibre/src/pyj/read_book/ui.pyj:374
 #, python-brace-format
 msgid "Viewing of the {} format is not supported."
-msgstr ""
+msgstr "関連するオーディオが見つからなかったため、オーディオを再生できませんでした"
 
 #: /__w/calibre/calibre/src/pyj/read_book/ui.pyj:375
 #, python-brace-format

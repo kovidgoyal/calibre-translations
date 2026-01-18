@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/calibre\n"
-"POT-Creation-Date: 2025-12-03T13:46:46.142Z\n"
+"POT-Creation-Date: 2026-01-18T13:51:43.592Z\n"
 "PO-Revision-Date: 2016-02-23 09:22+0000\n"
 "Last-Translator: Dimitris Adam <gt.dimitris@gmail.com>, 2021-2022\n"
 "Language-Team: Greek (http://app.transifex.com/calibre/calibre/language/el/)\n"
@@ -194,6 +194,7 @@ msgstr ""
 #: /__w/calibre/calibre/src/pyj/book_list/add.pyj:59
 #: /__w/calibre/calibre/src/pyj/book_list/add.pyj:95
 #: /__w/calibre/calibre/src/pyj/book_list/custom_list.pyj:288
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:349
 #: /__w/calibre/calibre/src/pyj/book_list/cover_grid.pyj:63
 msgid "by"
 msgstr "από"
@@ -708,6 +709,8 @@ msgid "Publisher: {publisher}"
 msgstr "Εκδότης: {publisher}"
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:64
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:258
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:285
 msgid "Permission denied"
 msgstr "Άρνηση πρόσβασης"
 
@@ -736,6 +739,7 @@ msgid ""
 msgstr ""
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:73
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:289
 msgid "Full text searching disabled"
 msgstr ""
 
@@ -747,23 +751,28 @@ msgid ""
 msgstr ""
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:85
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:471
 #: /__w/calibre/calibre/src/pyj/read_book/toc.pyj:228
 msgid "No matches found"
 msgstr "Δεν βρέθηκαν αντιστοιχίες."
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:88
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:372
 msgid "Failed to search"
 msgstr ""
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:88
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:372
 msgid "The search failed. Click \"Show details\" for more information."
 msgstr ""
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:92
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:379
 msgid "Server error"
 msgstr ""
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:92
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:379
 msgid "Failed to parse search response from server."
 msgstr ""
 
@@ -831,6 +840,146 @@ msgstr ""
 
 #: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:185
 msgid "Search a subset of books"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:191
+#, python-brace-format
+msgid ""
+"\n"
+"<div class=\"h\">Search for single words</div>\n"
+"<p>Simply type the word:</p>\n"
+"<div class=\"bq\">awesome<br>calibre</div>\n"
+"\n"
+"<div class=\"h\">Search for phrases</div>\n"
+"<p>Enclose the phrase in quotes:</p>\n"
+"<div class=\"bq\">\"early run\"<br>\"song of love\"</div>\n"
+"\n"
+"<div class=\"h\">Boolean searches</div>\n"
+"<div class=\"bq\">(calibre AND ebook) NOT gun<br>simple NOT (\"high bar\" OR hard)</div>\n"
+"\n"
+"<div class=\"h\">Phrases near each other</div>\n"
+"<div class=\"bq\">NEAR(\"people\" \"in Asia\" \"try\")<br>NEAR(\"Kovid\" \"calibre\", 30)</div>\n"
+"<p>Here, 30 is the most words allowed between near groups. Defaults to 10 when unspecified.</p>\n"
+"\n"
+"<div style=\"margin-top: 1em\"><a href=\"{fts_url}\">Complete syntax reference</a></div>"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:228
+#, python-brace-format
+msgid "Searching for {}, please wait…"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:258
+msgid ""
+"You do not have permission to re-index books. Only logged in users with "
+"write permission are allowed to re-index"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:260
+msgid "Failed to re-index"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:260
+msgid "Re-indexing the book failed. Click \"Show details\" for more information."
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:261
+msgid "Re-indexing scheduled"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:261
+msgid "The book has been scheduled for re-indexing"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:261
+msgid "All books have been scheduled for re-indexing"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:272
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:298
+#: /__w/calibre/calibre/src/pyj/book_list/delete_book.pyj:58
+#: /__w/calibre/calibre/src/pyj/book_list/local_books.pyj:57
+#: /__w/calibre/calibre/src/pyj/book_list/edit_metadata.pyj:1136
+#: /__w/calibre/calibre/src/pyj/book_list/book_details.pyj:1071
+#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:476
+#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:841
+#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:892
+#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1102
+#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1145
+#: /__w/calibre/calibre/src/pyj/read_book/profiles.pyj:49
+#: /__w/calibre/calibre/src/pyj/read_book/overlay.pyj:388
+#: /__w/calibre/calibre/src/pyj/read_book/bookmarks.pyj:20
+msgid "Are you sure?"
+msgstr "Είστε σίγουροι;"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:272
+msgid ""
+"Re-indexing all books in the library can take a long time. Are you sure you "
+"want to proceed?"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:285
+msgid ""
+"You do not have permission to disable FTS. Only logged in users with write "
+"permission are allowed to disable FTS."
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:287
+msgid "Disabling FTS failed"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:287
+msgid "Disabling FTS failed. Click \"Show details\" for more information."
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:289
+msgid ""
+"Full text searching for this library has been disabled. In the future the "
+"entire library will have to be re-indexed when re-enabling full text "
+"searching."
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:298
+msgid ""
+"Disabling full text search means that in the future the entire library will "
+"have to be re-indexed to use full text search. Are you sure you want to "
+"proceed?"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:330
+msgid ""
+"Click one of the formats below to open the book at this search result "
+"(except PDF which will open at the start):"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:335
+msgid "Open the details page for this book"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:339
+msgid "Re-index this book"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:350
+msgid "Cover of"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:363
+msgid "loading"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:456
+msgid "WARNING:"
+msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ:"
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:457
+#, python-brace-format
+msgid ""
+"Indexing of library only {}% complete, search results may be incomplete."
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/book_list/fts.pyj:499
+msgid "Search text of books"
 msgstr ""
 
 #: /__w/calibre/calibre/src/pyj/book_list/search.pyj:95
@@ -1811,21 +1960,6 @@ msgstr "Διαγραφή του {0} από τη βιβλιοθήκη, παρακ
 msgid "Failed to delete {0}, with error:"
 msgstr "Αποτυχία διαγραφής του {0}, με σφάλμα:"
 
-#: /__w/calibre/calibre/src/pyj/book_list/delete_book.pyj:58
-#: /__w/calibre/calibre/src/pyj/book_list/local_books.pyj:57
-#: /__w/calibre/calibre/src/pyj/book_list/edit_metadata.pyj:1136
-#: /__w/calibre/calibre/src/pyj/book_list/book_details.pyj:1071
-#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:476
-#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:841
-#: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:892
-#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1102
-#: /__w/calibre/calibre/src/pyj/read_book/selection_bar.pyj:1145
-#: /__w/calibre/calibre/src/pyj/read_book/profiles.pyj:49
-#: /__w/calibre/calibre/src/pyj/read_book/overlay.pyj:388
-#: /__w/calibre/calibre/src/pyj/read_book/bookmarks.pyj:20
-msgid "Are you sure?"
-msgstr "Είστε σίγουροι;"
-
 #: /__w/calibre/calibre/src/pyj/book_list/delete_book.pyj:67
 #, python-brace-format
 msgid ""
@@ -2500,7 +2634,7 @@ msgstr "Συγχώνευση με τα υπάρχοντα βιβλία, με δ�
 
 #: /__w/calibre/calibre/src/pyj/book_list/book_details.pyj:1267
 #: /__w/calibre/calibre/src/pyj/read_book/highlights.pyj:673
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:96
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:120
 msgid "Copy"
 msgstr "Αντιγραφή"
 
@@ -3704,68 +3838,86 @@ msgstr ""
 msgid "Typically the page number from a paper edition of this book"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:70
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:83
+msgid "No such page"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:83
+msgid "No page {!r} exists"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:87
 #, python-brace-format
 msgid "Currently on page: {}"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:72
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:89
 #, python-brace-format
 msgid "Currently on pages: {}"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:117
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:93
+msgid "Enter a page number"
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:141
 msgid "Current location:"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:123
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:147
 msgid "No such location"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:123
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:147
 #, python-brace-format
 msgid "No location {} found"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:131
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:155
 msgid "No such reference"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:131
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:155
 #, python-brace-format
 msgid "No reference {} found"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:136
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:160
 #, python-brace-format
 msgid "Current position: {}"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:140
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:164
 msgid ""
 "Type the position, location or reference below. For a reference type ref: "
 "followed by the reference:"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:154
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:178
 msgid "Not a valid book position"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:154
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:178
 #, python-brace-format
 msgid "{} is not a valid book position"
 msgstr ""
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:163
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:187
 msgid "Go to:"
 msgstr "Μετάβαση σε:"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:168
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:192
 msgid "Go"
 msgstr "Πάμε"
 
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:175
-#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:177
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:196
+msgid ""
+"Note that using a position is not very robust, it is best to use either the "
+"location or reference."
+msgstr ""
+
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:203
+#: /__w/calibre/calibre/src/pyj/read_book/goto.pyj:205
 msgid "URL for this position:"
 msgstr ""
 
