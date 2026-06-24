@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calibre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-12 19:09+0000\n"
+"POT-Creation-Date: 2026-06-24 05:21+0000\n"
 "PO-Revision-Date: 2014-06-17 08:35+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2026\n"
 "Language-Team: Czech (http://app.transifex.com/calibre/calibre/language/cs/)\n"
@@ -416,14 +416,14 @@ msgstr "Pokud je True, tento modul se spustí po přidání knih do databáze. V
 msgid ""
 "If True, this plugin is run after a book is converted. In this case the "
 "postconvert method of the plugin is called."
-msgstr ""
+msgstr "Pokud je True, spustí se tento modul po převodu knihy. V takovém případě se volá metoda modulu postconvert."
 
 #: ../../../__w/calibre/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.on_postdelete:1
 msgid ""
 "If True, this plugin is run after a book file is deleted from the database. "
 "In this case the postdelete method of the plugin is called."
-msgstr ""
+msgstr "Pokud je True, tento modul se spustí po odstranění souboru knihy z databáze. V takovém případě se volá metoda modulu postdelete."
 
 #: ../../../__w/calibre/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.on_preprocess:1
@@ -512,7 +512,7 @@ msgid ""
 " added to the database. Note that it is run after a conversion only, not "
 "after a book is added. It is useful for modifying the book record based on "
 "the contents of the newly added file."
-msgstr ""
+msgstr "Volá se po převodu, tj. poté, co byl výstupní soubor knihy z převodu přidán do databáze. Pamatujte, že se spouští pouze po převodu, nikoli po přidání knihy. Je užitečná pro úpravu záznamu knihy na základě obsahu nově přidaného souboru."
 
 #: ../../../__w/calibre/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.postdelete:1
@@ -521,7 +521,7 @@ msgid ""
 "database. Note that it is not run when a book record is deleted, only when "
 "one or more formats from the book are deleted. It is useful for modifying "
 "the book record based on the format of the deleted file."
-msgstr ""
+msgstr "Volá se po odstranění, tj. poté, co byl soubor knihy odstraněn z databáze. Pamatujte, že se nespouští při odstranění záznamu knihy, ale pouze při odstranění jednoho nebo více formátů z knihy. Je užitečná pro úpravu záznamu knihy na základě formátu odstraněného souboru."
 
 #: ../../../__w/calibre/calibre/src/calibre/customize/__init__.pydocstring of
 #: calibre.customize.FileTypePlugin.postadd:1
@@ -1227,7 +1227,7 @@ msgid ""
 "using the given encoding and error handler. Otherwise, returns the result of"
 " object.__str__() (if defined) or repr(object). encoding defaults to "
 "'utf-8'. errors defaults to 'strict'."
-msgstr ""
+msgstr "Vytvoří nový řetězcový objekt ze zadaného objektu. Pokud je zadáno encoding nebo errors, objekt musí poskytovat datový buffer, který bude dekódován pomocí zadaného kódování a obsluhy chyb. Jinak vrátí výsledek object.__str__() (pokud je definováno) nebo repr(object). Výchozí hodnota encoding je 'utf-8'. Výchozí hodnota errors je 'strict'."
 
 #: ../../../__w/calibre/calibre/src/calibre/customize/conversion.pydocstring
 #: of calibre.customize.conversion.OutputFormatPlugin.convert:1
@@ -1399,7 +1399,7 @@ msgstr "Ikona pro toto zařízení"
 msgid ""
 "GUI displays this as a message if not None in the status bar. Useful if "
 "opening can take a long time"
-msgstr ""
+msgstr "GUI tuto hodnotu zobrazí jako zprávu ve stavovém řádku, pokud není None. Užitečné, pokud otevírání může trvat dlouho"
 
 #: ../../../__w/calibre/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.VIRTUAL_BOOK_EXTENSIONS:1
@@ -1469,14 +1469,14 @@ msgstr "Nastavte na slovník ve tvaru {'title':title, 'msg':msg, 'det_msg':detai
 msgid ""
 "GUI displays this as a non-modal popup. Should be an instance of "
 "OpenPopupMessage"
-msgstr ""
+msgstr "GUI tuto hodnotu zobrazí jako nemodální vyskakovací okno. Měla by být instancí OpenPopupMessage"
 
 #: ../../../__w/calibre/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.model_metadata:1
 #: ../../../__w/calibre/calibre/src/calibre/devices/usbms/device.pydocstring
 #: of calibre.devices.usbms.device.Device.model_metadata:1
 msgid "Metadata about all the actual device models this driver supports"
-msgstr ""
+msgstr "Metadata o všech skutečných modelech zařízení, které tento ovladač podporuje"
 
 #: ../../../__w/calibre/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.is_usb_connected:1
@@ -1990,7 +1990,7 @@ msgstr "pb_func je volatelný objekt s následující signaturou::"
 #: ../../../__w/calibre/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.set_plugboards:6
 msgid "def pb_func(device_name, format, plugboards)"
-msgstr ""
+msgstr "def pb_func(device_name, format, plugboards)"
 
 #: ../../../__w/calibre/calibre/src/calibre/devices/interface.pydocstring of
 #: calibre.devices.interface.DevicePlugin.set_plugboards:8
@@ -2445,7 +2445,7 @@ msgid ""
 "InterfaceActionBase and InterfaceAction. The :meth:`load_actual_plugin` "
 "method of your InterfaceActionBase subclass must return an instantiated "
 "object of your InterfaceAction subclass."
-msgstr ""
+msgstr "Pokud přidáváte vlastní modul v souboru ZIP, měli byste vytvořit třídy dědící z InterfaceActionBase i InterfaceAction. Metoda :meth:`load_actual_plugin` vaší podtřídy InterfaceActionBase musí vrátit vytvořenou instanci vaší podtřídy InterfaceAction."
 
 #: ../../../__w/calibre/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction:1
@@ -2537,14 +2537,14 @@ msgid ""
 "string, None or tuple of shortcuts. If None, a keyboard shortcut "
 "corresponding to the action is not registered. If you pass an empty tuple, "
 "then the shortcut is registered with no default key binding."
-msgstr ""
+msgstr "Ve tvaru: (text, icon_path, popis, klávesová zkratka). Ikona, popis a klávesová zkratka mohou být None. Klávesová zkratka musí být buď řetězec, None, nebo n-tice zkratek. Pokud je None, klávesová zkratka odpovídající akci se nezaregistruje. Pokud předáte prázdnou n-tici, zkratka se zaregistruje bez výchozí klávesové vazby."
 
 #: ../../../__w/calibre/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.action_shortcut_name:1
 msgid ""
 "If not None, used for the name displayed to the user when customizing the "
 "keyboard shortcuts for the above action spec instead of action_spec[0]"
-msgstr ""
+msgstr "Pokud není None, použije se místo action_spec[0] jako název zobrazený uživateli při přizpůsobování klávesových zkratek pro výše uvedenou specifikaci akce"
 
 #: ../../../__w/calibre/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.action_add_menu:1
@@ -2641,7 +2641,7 @@ msgstr "Text akce."
 msgid ""
 "Either a QIcon or a file name. The file name is passed to the QIcon.ic() "
 "builtin, so you do not need to pass the full path to the images folder."
-msgstr ""
+msgstr "Buď QIcon, nebo název souboru. Název souboru se předá vestavěné funkci QIcon.ic(), takže nemusíte předávat úplnou cestu ke složce images."
 
 #: ../../../__w/calibre/calibre/src/calibre/gui2/actions/__init__.pydocstring
 #: of calibre.gui2.actions.InterfaceAction.create_menu_action:14
@@ -2936,7 +2936,7 @@ msgstr "Volá se jednou po potvrzení změn tohoto widgetu. Odpovídá za to, ž
 msgid ""
 "Called if the initially displayed tab is changed before the widget is shown,"
 " but after it is initialized."
-msgstr ""
+msgstr "Volá se, pokud je původně zobrazená karta změněna před zobrazením widgetu, ale po jeho inicializaci."
 
 #: ../../../__w/calibre/calibre/src/calibre/gui2/preferences/__init__.pydocstring
 #: of calibre.gui2.preferences.ConfigWidgetBase:1
